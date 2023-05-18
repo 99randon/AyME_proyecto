@@ -19,6 +19,8 @@
 \usepackage{bm}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
+\usepackage[spanish]{babel}
+\usepackage{datetime}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
@@ -31,7 +33,7 @@
 \lhead{\textbf{UNCuyo – Ing. Mecatrónica}\\Mendoza - Argentina}
 \chead{\textbf{311 – AUTOMÁTICA Y MÁQUINAS ELÉCTRICAS}\\ 
 \textbf{PROYECTO GLOBAL INTEGRADOR} Año: 2022}
-\rhead{Alumnos: Mamani , Vignolo\\ Fecha de presentación.}
+\rhead{Alumnos: Mamani , Vignolo\\  \today}
 \rfoot{Página \thepage{} de \pageref{LastPage}}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -42,27 +44,148 @@
 \begin{titlepage}
     \centering
     \vspace*{3cm}
-    \Huge\textbf{\textsc{Titulo}}\\
+    \Huge\textbf{\textsc{Control de Accionamiento de CA con Motor Sincronico de Imanes Permanentes}}\\
     \vspace{1.5cm}
     \large{Subtitulo}\\
     \vspace{10cm}
     \large{Autors:}\\
-    \large{\textbf{Brandon Mamani\\Vignolo Alan}}\\
+    \large{\textbf{Alan Vignolo\\Brandon Mamani}}\\
     \vfill
     \the\year\\ % o puedes especificar una fecha específica en lugar de \today
 \end{titlepage}
 
-\section*{Introduccion}
+\part*{Introducción}
+
+\lipsum
 
 \newpage
-\section*{Desarrollo}
+\part*{Desarrollo}
 
+\section*{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
+\subsection*{Modelo matemático equivalente del subsistema mecánico completo}
+
+Subsistema mecánico del motor:
+\begin{equation}
+    \label{eq:1.1}
+    J_{m}\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}\omega_{m}(t)-T_{d}(t) \\
+\end{equation}
+\begin{equation}
+    \label{eq:1.2}
+    \dot{\theta}_{m} = \omega_{m}
+\end{equation}
+
+Subsistema de tren de transmisión:
+\begin{equation}
+    \label{eq:2.1}
+    \omega_{l}(t) = \frac{1}{r}\omega_{m}(t) \\
+\end{equation}
+\begin{equation}
+    \label{eq:2.2}
+    T_{q}(t) = rT_{d}(t) \\
+\end{equation}
+
+Subsistema de la carga mecánica:
+\begin{equation}
+    \label{eq:3.1}
+    J_{l}\dot{\omega}_{l}(t) = T_{q}(t)-b_{l}\omega_{l}(t)-T_{l}(t) \\
+\end{equation}
+\begin{equation}
+    \label{eq:3.2}
+    \dot{\theta}_{l} = \omega_{l}\\
+\end{equation}
+
+Sistema mecánico equivalente completo:
+\begin{equation}
+    \label{eq:4.1}
+    (J_{m}+\frac{J_{l}}{r^2})\dot{\omega}_{m}(t) = T_{m}(t)-(b_{m}+\frac{b_{l}}{r^2})\omega_{m}(t)-\frac{T_{d}(t)}{r} \\
+\end{equation}
+
+Con este modelo matemático equivalente referido al eje del motor tiene como 
+ventaja que no presenta backlash, ademas nno hay que considerar el efecto de 
+la elasticidad torsional de la transmisión.
+
+\subsection*{Modelo dinámico del sistema físico completo}
+\subsubsection*{Modelo global no lineal (NL)}
+
+El modelo global no lineal considera tanto el sistema mecánico, previamente desarrollado
+, como los subsistemas electromagnético y térmico. 
+En primer lugar, nos enfocaremos en el subsistema electromagnético, teniendo en cuenta que 
+se utiliza un motor síncrono de corriente alterna (CA) trifásico con imanes permanentes.
+
+Ecuaciones de tensión en coordenadas abc:
+\begin{equation}
+    \begin{aligned}
+        V_{a_{s}} &= R_{s}i_{a_{s}} + \frac{d\lambda_{a_{s}}}{dt}\\
+        V_{b_{s}} &= R_{s}i_{b_{s}} + \frac{d\lambda_{b_{s}}}{dt}\\
+        V_{c_{s}} &= R_{s}i_{c_{s}} + \frac{d\lambda_{c_{s}}}{dt}\\
+    \end{aligned}
+\end{equation}
+
+Mediante la transformada de Park se obtiene:
+\begin{equation}
+    \begin{aligned}
+        V_{q_{s}} &= R_{s}i_{q_{s}} + L_{q}\frac{d\lambda_{q_{s}}}{dt} + [\lambda_{m}^r + L_{d}i_{d_{s}}]\omega_{r}\\
+        V_{d_{s}} &= R_{s}i_{d_{s}} + L_{d}\frac{d\lambda_{d_{s}}}{dt} - L_{q}i_{q_{s}}\omega_{r}\\
+        V_{0_{s}} &= R_{s}i_{0_{s}} + L_{ls}\frac{d\lambda_{0_{s}}}{dt}\\
+    \end{aligned}
+\end{equation}
+
+Estas ecuaciones representan...
+Dada la conexión que presenta el motor, podemos suponer que la corriente $i_{0_{s}}$ es nula
+
+El subsistema térmico:
+\begin{equation}
+    \frac{dT_{s}(t)}{dt} = \frac{\frac{3}{2}r_{s}({i_{a_{s}}^r(t)}^2+{i_{a_{s}}^r(t)}^2)-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}}{C_{ts}}
+\end{equation}
+
+El modelo global:
+\begin{equation}
+    \begin{cases}
+        \dot{\theta}_{m}(t) = \omega_{m}(t)\\
+        \dot{\omega}_{m}(t) = \frac{T_{m}}{T_{eq}} - \frac{b_{eq}}{T_{eq}}\omega_{m}(t) - \frac{T_{l}}{rT_{eq}}\\
+        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r - R_{s}i_{q_{s}}^r - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r+\lambda_{m}]]  \\
+        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r - R_{s}i_{d_{s}}^r + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r]  \\
+        \dot{T}_{s}(t) = \frac{\frac{3}{2}r_{s}({i_{a_{s}}^r(t)}^2+{i_{a_{s}}^r(t)}^2+2i_{0_{s}}^2(t))-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}}{C_{ts}}\\
+    \end{cases}
+\end{equation}
+
+\subsubsection*{Modelo global linealizado con parámetros variables (LPV)}
+
+
+\subsubsection*{Linealización por Realimentación NL}
+\subsubsection*{Restricción o Ley de Control mínima}
+\subsubsection*{Implementación}
 
 \newpage
-\section*{Conclusiones}
+\begin{equation}
+    \begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22} \\
+    \end{bmatrix} +
+    \begin{bmatrix}
+    \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
+    \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
+    \end{bmatrix} =
+    \begin{bmatrix}
+    c_{11} & c_{12} \\
+    c_{21} & c_{22} \\
+    \end{bmatrix}
+\end{equation}
+\begin{equation}
+    \begin{cases}
+        \begin{bmatrix}
+        \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
+        \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
+        \end{bmatrix} \\
+        2x - y = 1
+    \end{cases}
+\end{equation}
 
 \newpage
-\section*{Referencias}
+\part*{Conclusiones}
+
+\newpage
+\part*{Referencias}
 
 \label{LastPage}    
 \end{document}
