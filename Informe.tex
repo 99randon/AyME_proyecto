@@ -447,11 +447,21 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         V_{q_{s}}(t) = L_{q}\frac{di_{q_{s}}^r(t)}{dt} + R_{s}i_{q_{s}}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^r + \mathbf{L_{d}i_{d_{s}}^r(t)P_{p}\omega_{m}(t)}
     \end{equation}
 
+    \begin{equation}
+        \begin{cases}
+            \dot{\theta}_{m}(t) = \omega_{m}(t)\\
+            \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^r i_{q_{s}}^r(t) - b_{eq}\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
+            \dot{i}_{q_{s}}^r(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^r]\\
+            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{q_{s}}^r}^2(t) + {i_{d_{s}}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
+            \dot{i}_{d_{s}}^r(t) = -\frac{R_{s}(t)}{L_{d}}i_{d_{s}}^r(t) \\
+        \end{cases}    
+    \end{equation}
+
 \end{enumerate}
 
 %-------------------- 2D --------------------------%
 
-\subsubsection*{Linealización por Realimentación NL}
+\subsubsection*{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
 
 \newpage
 \part*{Conclusiones}
