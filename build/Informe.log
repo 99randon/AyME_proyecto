@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.5.16)  24 MAY 2023 00:36
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.5.16)  30 MAY 2023 16:44
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex
@@ -1313,6 +1313,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [3]
+Overfull \hbox (1.52371pt too wide) detected at line 334
+ []$[]   [] \OT1/cmr/m/n/10 = [] []$ 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -1339,7 +1343,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[6] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[7] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ))
@@ -1347,13 +1360,13 @@ LaTeX Info: Redefining \% on input line 9.
 Here is how much of LuaTeX's memory you used:
  33412 strings out of 478309
  156261,1977958 words of node,token memory allocated
- 1005 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 97 attribute, 97 glue_spec
-, 50 attribute_list, 2 write nodes
-   avail lists: 2:2501,3:168,4:36,5:1062,6:52,7:10998,8:79,9:2513,10:9,11:1218
+ 1101 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 129 attribute, 97 glue_spe
+c, 66 attribute_list, 2 write nodes
+   avail lists: 2:2750,3:168,4:24,5:1062,6:56,7:10998,8:82,9:2775,10:9,11:1218
  52342 multiletter control sequences out of 65536+600000
  67 fonts using 28137559 bytes
- 99i,16n,98p,1092b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,98p,1092b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/windows/fonts/calibri.ttf><//?/c:/windows/fonts/calibrib.ttf><C:/Program
  Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/
@@ -1364,9 +1377,9 @@ les/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmsy7.pfb>
-Output written on Informe.pdf (7 pages, 190364 bytes).
+Output written on Informe.pdf (8 pages, 200816 bytes).
 
-PDF statistics: 81 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
