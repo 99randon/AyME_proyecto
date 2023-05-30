@@ -410,16 +410,48 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         V_{d_{s}}^r(t) = -L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}
     \end{equation}
 
-    \item Cuarto ítem
+    Se aplica la inversa de Park
+
+    \begin{equation}
+        \begin{cases}
+            V_{a_{s}}(t) = cos(\theta_{r}(t))V_{q_{s}}^r(t) + sin(\theta_{r}(t))V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
+            V_{b_{s}}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
+            V_{c_{s}}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) + \frac{2\pi}{3})V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
+        \end{cases}
+    \end{equation}
+
+    Susituyendo
+
+    \begin{equation}
+        \begin{cases}
+            V_{a_{s}}(t) = cos(\theta_{r}(t))V_{q_{s}}^r(t) - sin(\theta_{r}(t))L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
+            V_{b_{s}}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{q_{s}}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
+            V_{c_{s}}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
+        \end{cases}
+    \end{equation}
+
+    \item Dinamica Residual
     
+    \begin{equation}
+        \begin{aligned}
+        \frac{di_{d_{s}}^r(t)}{dt} = \frac{1}{L_{d}}[-R_{s}(t)i_{d_{s}}^r(t)] \\
+        \frac{di_{d_{s}}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}i_{d_{s}}^r(t) = 0 \\
+        \end{aligned}
+    \end{equation} 
 
+    \begin{equation}
+        i_{d_{s}}^r(t) = i_{d_{s}}^r(0)e^{-\frac{R_{s}(t)}{L_{d}}t}
+    \end{equation}
 
-    \item Quinto ítem
-
-
+    \begin{equation}
+        V_{q_{s}}(t) = L_{q}\frac{di_{q_{s}}^r(t)}{dt} + R_{s}i_{q_{s}}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^r + \mathbf{L_{d}i_{d_{s}}^r(t)P_{p}\omega_{m}(t)}
+    \end{equation}
 
 \end{enumerate}
 
+%-------------------- 2D --------------------------%
+
+\subsubsection*{Linealización por Realimentación NL}
 
 \newpage
 \part*{Conclusiones}
