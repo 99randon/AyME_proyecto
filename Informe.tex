@@ -21,6 +21,7 @@
 \usepackage{fontspec}
 \usepackage[spanish]{babel}
 \usepackage{datetime}
+\usepackage{enumitem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
@@ -32,7 +33,7 @@
 \fancyhf{}
 \lhead{\textbf{UNCuyo – Ing. Mecatrónica}\\Mendoza - Argentina}
 \chead{\textbf{311 – AUTOMÁTICA Y MÁQUINAS ELÉCTRICAS}\\ 
-\textbf{PROYECTO GLOBAL INTEGRADOR} Año: 2022}
+\textbf{PROYECTO GLOBAL INTEGRADOR}}
 \rhead{Alumnos: Mamani , Vignolo\\  \today}
 \rfoot{Página \thepage{} de \pageref{LastPage}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -64,7 +65,7 @@
 \section*{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
 \subsection*{Modelo matemático equivalente del subsistema mecánico completo}
 
-Subsistema mecánico del motor:
+Subsistema mecánico del motor de CA trifásica síncrono, con el rotor referido al estator - sistema inercial de referencia:
 \begin{equation}
     \label{eq:1.1}
     J_{m}\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}\omega_{m}(t)-T_{d}(t) \\
@@ -100,92 +101,274 @@ Sistema mecánico equivalente completo:
     (J_{m}+\frac{J_{l}}{r^2})\dot{\omega}_{m}(t) = T_{m}(t)-(b_{m}+\frac{b_{l}}{r^2})\omega_{m}(t)-\frac{T_{d}(t)}{r} \\
 \end{equation}
 
+\begin{equation}
+    J_{eq}\dot{\omega}_{m}(t) = T_{m}(t)-b_{eq}\omega_{m}(t)-\frac{T_{d}(t)}{r} \\
+\end{equation}
+
+\begin{equation}
+    \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[T_{m}(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+\end{equation}
+
+\begin{equation}
+\begin{cases}
+    \begin{bmatrix}
+        \dot{\theta}_{m}(t)\\
+        \dot{\omega}_{m}(t)\\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 1\\
+        0 & -\frac{b_{eq}}{J_{eq}}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \theta_{m}(t)\\
+        \omega_{m}(t)\\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        0 & 0\\
+        \frac{1}{J_{eq}} & -\frac{1}{J_{eq}r}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        T_{m}(t)\\
+        T_{l}(t)\\
+    \end{bmatrix}\\
+    y(t) = 
+    \begin{bmatrix} 1 & 0\\ \end{bmatrix} 
+    \begin{bmatrix} \theta_{m}(t)\\ \omega_{m}(t)\\ \end{bmatrix}
+\end{cases}
+\end{equation}
+
 Con este modelo matemático equivalente referido al eje del motor tiene como 
-ventaja que no presenta backlash, ademas nno hay que considerar el efecto de 
+ventaja que no presenta backlash, ademas no hay que considerar el efecto de 
 la elasticidad torsional de la transmisión.
 
 \subsection*{Modelo dinámico del sistema físico completo}
 \subsubsection*{Modelo global no lineal (NL)}
 
 El modelo global no lineal considera tanto el sistema mecánico, previamente desarrollado
-, como los subsistemas electromagnético y térmico. 
+, como los subsistemas electromagnético y térmico.\\
+
 En primer lugar, nos enfocaremos en el subsistema electromagnético, teniendo en cuenta que 
-se utiliza un motor síncrono de corriente alterna (CA) trifásico con imanes permanentes.
+se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitación de imanes 
+permanentes. El estator esta conectado en estrella con bornes abc accesible y neutro no accesible.
+Consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
 
 Ecuaciones de tensión en coordenadas abc:
 \begin{equation}
     \begin{aligned}
-        V_{a_{s}} &= R_{s}i_{a_{s}} + \frac{d\lambda_{a_{s}}}{dt}\\
-        V_{b_{s}} &= R_{s}i_{b_{s}} + \frac{d\lambda_{b_{s}}}{dt}\\
-        V_{c_{s}} &= R_{s}i_{c_{s}} + \frac{d\lambda_{c_{s}}}{dt}\\
+        V_{a_{s}}(t) &= R_{s}i_{a_{s}}(t) + \frac{d\lambda_{a_{s}}}{dt}\\
+        V_{b_{s}}(t) &= R_{s}i_{b_{s}}(t) + \frac{d\lambda_{b_{s}}}{dt}\\
+        V_{c_{s}}(t) &= R_{s}i_{c_{s}}(t) + \frac{d\lambda_{c_{s}}}{dt}\\
     \end{aligned}
 \end{equation}
 
-Mediante la transformada de Park se obtiene:
+Mediante la transformación de Park, que consiste en premultiplicar por la matriz de Park se obtiene:
 \begin{equation}
     \begin{aligned}
-        V_{q_{s}} &= R_{s}i_{q_{s}} + L_{q}\frac{d\lambda_{q_{s}}}{dt} + [\lambda_{m}^r + L_{d}i_{d_{s}}]\omega_{r}\\
-        V_{d_{s}} &= R_{s}i_{d_{s}} + L_{d}\frac{d\lambda_{d_{s}}}{dt} - L_{q}i_{q_{s}}\omega_{r}\\
-        V_{0_{s}} &= R_{s}i_{0_{s}} + L_{ls}\frac{d\lambda_{0_{s}}}{dt}\\
+        V_{q_{s}}(t) &= R_{s}i_{q_{s}}(t) + L_{q}\dot{i}_{q_{s}}^r(t) + [\lambda_{m}^r + L_{d}i_{d_{s}}(t)]\omega_{r}(t)\\
+        V_{d_{s}}(t) &= R_{s}i_{d_{s}}(t) + L_{d}\dot{i}_{d_{s}}^r(t)  - L_{q}i_{q_{s}}(t)\omega_{r}(t)\\
+        V_{0_{s}}(t) &= R_{s}i_{0_{s}}(t) + L_{ls}\dot{i}_{0_{s}}^r(t) \\
     \end{aligned}
 \end{equation}
 
-Estas ecuaciones representan...
+\begin{equation}
+    \begin{cases}
+        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r(t)+\lambda_{m}^r]]  \\
+        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r(t) - R_{s}i_{d_{s}}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r(t)]  \\
+        \dot{i}_{0_{s}}(t) = \frac{1}{L_{ls}}[V_{0_{s}}^r(t) - R_{s}i_{0_{s}}^r(t)]  \\
+    \end{cases}
+\end{equation}
+
+%Dudas:
 Dada la conexión que presenta el motor, podemos suponer que la corriente $i_{0_{s}}$ es nula
 
-El subsistema térmico:
+El subsistema térmico
+Solo se consideran las pérdidas eléctricas resistivas causadas por el efecto Joule (calor),
+ despreciando las pérdidas magnéticas en el núcleo y las transferencia de calor por conducción 
+y convección natural. La potencia de pérdidas calóricas está dada por:\\
 \begin{equation}
-    \frac{dT_{s}(t)}{dt} = \frac{\frac{3}{2}r_{s}({i_{a_{s}}^r(t)}^2+{i_{a_{s}}^r(t)}^2)-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}}{C_{ts}}
+    P_{s_{perd}}(t) =  \frac{3}{2}R_{s}(t)(i_{q_{s}}^r(t)^2+i_{d_{s}}^r(t)^2+2.i_{0_{s}}(t))\\
+\end{equation}
+\par El balance térmico en el estator:
+\begin{equation}
+    P_{s_{perd}}(t) = C_{s}\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
+\end{equation}
+
+Torque electromagnético:
+\begin{equation}
+    T_{m}(t) = \frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s}}^r(t)
 \end{equation}
 
 El modelo global:
 \begin{equation}
     \begin{cases}
         \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-        \dot{\omega}_{m}(t) = \frac{T_{m}}{T_{eq}} - \frac{b_{eq}}{T_{eq}}\omega_{m}(t) - \frac{T_{l}}{rT_{eq}}\\
-        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r - R_{s}i_{q_{s}}^r - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r+\lambda_{m}]]  \\
-        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r - R_{s}i_{d_{s}}^r + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r]  \\
-        \dot{T}_{s}(t) = \frac{\frac{3}{2}r_{s}({i_{a_{s}}^r(t)}^2+{i_{a_{s}}^r(t)}^2+2i_{0_{s}}^2(t))-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}}{C_{ts}}\\
+        \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s}}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r(t)+\lambda_{m}^r]]  \\
+        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r(t) - R_{s}i_{d_{s}}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r(t)]  \\
+        \dot{T}_{s}(t) = \frac{1}{C_{ts}}[\frac{3}{2}r_{s}({i_{a_{s}}^r(t)}^2+{i_{a_{s}}^r(t)}^2+2i_{0_{s}}(t)^2)-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
     \end{cases}
 \end{equation}
+
+
+%-------------------------- 2B------------------------------------------%
 
 \subsubsection*{Modelo global linealizado con parámetros variables (LPV)}
 
+% Poner toda la demo? Seguir corrigiendo ya que tengo inconsistencias con I0
 
-\subsubsection*{Linealización por Realimentación NL}
-\subsubsection*{Restricción o Ley de Control mínima}
-\subsubsection*{Implementación}
-
-\newpage
-\begin{equation}
-    \begin{bmatrix}
-    a_{11} & a_{12} \\
-    a_{21} & a_{22} \\
-    \end{bmatrix} +
-    \begin{bmatrix}
-    \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
-    \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
-    \end{bmatrix} =
-    \begin{bmatrix}
-    c_{11} & c_{12} \\
-    c_{21} & c_{22} \\
-    \end{bmatrix}
-\end{equation}
+Cuasi-estacionario
 \begin{equation}
     \begin{cases}
-        \begin{bmatrix}
-        \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
-        \frac{d\lambda_{a_{s}}}{dt} & \frac{d\lambda_{a_{s}}}{dt}\\ 
-        \end{bmatrix} \\
-        2x - y = 1
+        \dot{\theta}_{m0} = \omega_{m0} = cte\\
+        \dot{\omega}_{m0} = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s0}}^r(L_{d}-L_{q})]i_{q_{s0}}^r - b_{eq}\omega_{m0} - \frac{T_{l0}}{r}] = 0\\
+        \dot{i}_{q_{s0}} = \frac{1}{L_{q}}[V_{q_{s0}}^r - R_{s}i_{q_{s0}}^r - P_{p}\omega_{m0}[L_{d}i_{d_{s0}}^r+\lambda_{m}^r]] = 0\\
+        \dot{i}_{d_{s0}} = \frac{1}{L_{d}}[V_{d_{s0}}^r - R_{s}i_{d_{s0}}^r + P_{p}\omega_{m0}L_{q}i_{q_{s0}}^r] = 0 \\
+        \dot{T}_{s0} = \frac{1}{C_{ts}}[\frac{3}{2}r_{s}({i_{a_{s0}}^r}^2+{i_{a_{s0}}^r}^2+2i_{0_{s0}}^2)-\frac{T_{s0}-T_{amb0}}{R_{ts-amb}}] = 0\\
     \end{cases}
 \end{equation}
+
+Parámetros Variables
+\begin{equation}
+    \begin{cases}
+        \Delta\dot{\theta}_{m}(t) = \Delta\omega_{m}(t)\\
+        \Delta\dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\{[\lambda_{m}^r + i_{d_{s0}}^r(L_{d}-L_{q})]\Delta i_{q_{s}}^r(t) + \Delta i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s0}}^r\}- b_{eq}\Delta\omega_{m}(t) - \frac{\Delta T_{l}(t)}{r}]\\
+        \Delta\dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[\Delta V_{q_{s}}^r(t) - R_{s}\Delta i_{q_{s}}^r(t) - P_{p}\Delta\omega_{m}(t)[L_{d}i_{d_{s0}}^r+\lambda_{m}^r] - P_{p}\omega_{m0}L_{d}\Delta i_{d_{s}}^r(t)] \\
+        \Delta\dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}\Delta [V_{d_{s}}^r(t) - R_{s}\Delta i_{d_{s}}^r(t) + P_{p}\Delta\omega_{m}(t)L_{q}i_{q_{s0}}^r + P_{p}\omega_{m0}L_{q}\Delta i_{q_{s}}^r(t)]  \\
+        \Delta\dot{T}_{s}(t) = \frac{1}{C_{ts}}\{\frac{3}{2}r_{s}[{2i_{a_{s}}^r\Delta i_{a_{s}}^r(t)} + 2i_{a_{s}}^r\Delta i_{a_{s}}^r(t)+4i_{0_{s}}\Delta i_{0_{s}}(t)]-\frac{\Delta T_{s}(t)-\Delta T_{amb}(t)}{R_{ts-amb}}\}\\
+    \end{cases}
+\end{equation}
+
+\begin{multline}
+    \begin{bmatrix}
+        \Delta\dot{\theta}_{m}(t)\\
+        \Delta\dot{\omega}_{m}(t)\\
+        \Delta\dot{i}_{q_{s}}(t)\\
+        \Delta\dot{i}_{d_{s}}(t)\\
+        \Delta\dot{T}_{s}(t)\\
+    \end{bmatrix} =
+    \begin{bmatrix}
+        0 & 1 & 0 & 0 & 0 & 0 \\
+        0 & -b_{eq} & \frac{3}{2}P_{p}\frac{[\lambda_{m}^r + i_{q_{s0}}^r(t)(L_{d}-L_{q})]}{J_{eq}} & \frac{3}{2}\frac{P_{p}(L_{d}-L_{q})i_{q_{s}}^r}{J_{eq}} & 0 & 0\\
+        0 & -\frac{P_{p}(\lambda_{m}^r + L_{d}i_{d_{s0}}^r)}{L_{q}} & -\frac{R_{s}}{L_{q}} & -\frac{L_{d}P_{p}\omega_{m0}}{L_{q}} & 0 & 0\\
+        0 & \frac{P_{p}i_{q_{s0}}^r L_{q}}{L_{d}} & \frac{L_{q}P_{p}\omega_{m0}}{L_{d}} & -\frac{R_{s}}{L_{d}} & 0 & 0\\
+        0 & 0 & \frac{3R_{s}}{C_{ts}}i_{q_{s0}}^r & \frac{3R_{s}}{C_{ts}}i_{d_{s0}}^r & XXXX & -\frac{1}{C_{ts}R_{ts-amb}}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \Delta{\theta}_{m}(t)\\
+        \Delta{\omega}_{m}(t)\\
+        \Delta{i}_{q_{s}}(t)\\
+        \Delta{i}_{d_{s}}(t)\\
+        \Delta{T}_{s}(t)\\
+    \end{bmatrix}\\  + 
+    \begin{bmatrix}
+        0 & 0 & 0 & 0 & 0\\
+        -\frac{1}{rJ_{eq}} & 0 & 0 & 0 & 0\\
+        0 & \frac{1}{L_{q}} & 0 & 0 & 0\\
+        0 & 0 & \frac{1}{L_{d}} & 0 & 0\\
+        0 & 0 & 0 & 0 & \frac{1}{C_{ts}R_{ts-amb}}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \Delta{T}_{l}(t)\\
+        \Delta{V}_{q_{s}}(t)\\
+        \Delta{V}_{d_{s}}(t)\\
+        XXXX\\
+        \Delta T_{amb}(t)\\
+    \end{bmatrix} 
+\end{multline}
+
+
+%-------------------- 2C --------------------------%
+
+\subsubsection*{Linealización por Realimentación NL}
+
+Se busca un modelo simplificado lineal invariante LTI equivalente al modelo NL del sistema, 
+para ello se propone un controlador de realimentación de estados que permita linealizar el 
+modelo global NL obtenido anteriormente, por lo que se propone:
+
+\begin{itemize}
+    \item Aplicar la estrategia de “Control Vectorial con campo orientado” la cual 
+    consiste en desacoplar los canales de flujo magnético y torque, lo cual provoca
+    un forzamiento de $i_{d_{s}}=0$ 
+    \item Desacoplar el subsistema térmico, ya que se considera que hay variaciones despreciables 
+    de Rs en el rango de temperaturas de trabajo.
+\end{itemize}
+
+\begin{enumerate}[label=\roman*.]
+    \item Ecuaciones vectoriales/matriciales LTI de estado y de salida. 
+    Matrices del modelo LTI equivalente.
+
+    \begin{equation}
+        \begin{cases}
+            \dot{\theta}_{m}(t) = \omega_{m}(t)\\
+            \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^ri_{q_{s}}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+            \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^r]  \\
+        \end{cases}
+    \end{equation}
+
+    \begin{equation}
+        \begin{cases}
+            \begin{bmatrix}
+                \dot{\theta}_{m}(t)\\
+                \dot{\omega}_{m}(t)\\
+                \dot{i}_{q_{s}}(t)\\
+            \end{bmatrix} =
+            \begin{bmatrix}
+                0 & 1 & 0\\
+                0 & -\frac{b_{eq}}{J_{eq}} & \frac{3}{2}\frac{P_{p}\lambda_{m}^r}{J_{eq}}\\
+                0 & -\frac{P_{p}\lambda_{m}^r}{L_{q}} & -\frac{R_{s}}{L_{q}}\\
+            \end{bmatrix}
+            \begin{bmatrix}
+                {\theta}_{m}(t)\\
+                {\omega}_{m}(t)\\
+                {i}_{q_{s}}(t)\\
+            \end{bmatrix} +
+            \begin{bmatrix}
+                0\\
+                0\\
+                \frac{1}{L_{eq}}\\
+            \end{bmatrix} V_{q_{s}}^r(t) +
+            \begin{bmatrix}
+                0\\
+                -\frac{1}{rJ_{eq}}\\
+            \end{bmatrix} T_{l}(t)\\
+            y(t) =
+            \begin{bmatrix}
+                1 & 0 & 0\\
+            \end{bmatrix}
+            \begin{bmatrix}
+                {\theta}_{m}(t)\\
+                {\omega}_{m}(t)\\
+                {i}_{q_{s}}(t)\\
+            \end{bmatrix}
+        \end{cases}
+    \end{equation}
+        
+    \item Segundo ítem
+    
+    
+    
+    \item Tercer ítem
+
+
+
+    \item Cuarto ítem
+    
+
+
+    \item Quinto ítem
+
+
+
+\end{enumerate}
+
 
 \newpage
 \part*{Conclusiones}
 
 \newpage
 \part*{Referencias}
-
+\lipsum{}
 \label{LastPage}    
 \end{document}
