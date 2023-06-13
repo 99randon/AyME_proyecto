@@ -257,13 +257,13 @@ Para el caso general en el que ${i}_{d_{s}}(t) \neq 0$...
     f(X_{0}(t) + \Delta x(t), U_{0}(t) + \Delta u (t)) \approx f(X_{0}(t), U_{0}(t)) + \frac{\partial f}{\partial x}\mid_{0}\Delta x(t) + \frac{\partial f}{\partial u}\mid_{0}\Delta u(t)
 \end{equation}
 
-Parte no lineal que representa el espacio de operacion global NL:
+Parte no lineal que representa el espacio de operación global NL:
 
 \begin{equation}
     \dot{X}_{0}(t) = f(X_{0}(t), U_{0}(t)) \quad \approx 0 \;/\; \text{cte}; \quad X_{0}(0) = x_{0}
 \end{equation}
 
-Parte lineal dinamica que representa las pequeñas variaciones alrededor de los puntos de operacion:
+Parte lineal dinámica que representa las pequeñas variaciones alrededor de los puntos de operación:
 
 \begin{equation}
     \Delta\dot{x}(t) = \frac{\partial f}{\partial x}\mid_{0}\Delta x(t) + \frac{\partial f}{\partial u}\mid_{0}\Delta u(t); \quad \Delta x(0) = 0\\
@@ -404,7 +404,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
     
     
     
-    \item Restriccion o Ley de Control minima
+    \item Restricción o Ley de Control mínima
 
     \begin{equation}
         V_{d_{s}}^r(t) = -L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}
@@ -420,7 +420,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         \end{cases}
     \end{equation}
 
-    Susituyendo
+    Sustituyendo
 
     \begin{equation}
         \begin{cases}
@@ -430,7 +430,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         \end{cases}
     \end{equation}
 
-    \item Dinamica Residual
+    \item Dinámica Residual
     
     \begin{equation}
         \begin{aligned}
@@ -462,6 +462,28 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 %-------------------- 2D --------------------------%
 
 \subsubsection*{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
+
+El modelo dinámico global LPV para el caso general donde $i_{d_{s}}^r \neq 0$
+es una mejor representación del sistema real al tener mejor representadas sus 
+no linealidades
+
+%-------------------- 2E --------------------------%
+
+\subsubsection*{Funciones de transferencia para el modelo LTI}
+
+\begin{equation}
+    \begin{aligned}
+        L[f{t}] = F(s)\\
+        L[\dot{f}(t)] = s F(s) - f(0)\\
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+        S\Theta_{m}(S) = \Omega_{m}(S)\\
+        x = y\\
+    \end{cases}
+\end{equation}
 
 \newpage
 \part*{Conclusiones}
