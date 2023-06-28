@@ -22,9 +22,11 @@
 \usepackage[spanish]{babel}
 \usepackage{datetime}
 \usepackage{enumitem}
+\usepackage{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
+\hypersetup{colorlinks=true, linkcolor=blue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{a4paper}
@@ -157,57 +159,58 @@ Consideramos que la carga de cada fase sera equivalente de forma que la conexió
 Ecuaciones de tensión en coordenadas abc:
 \begin{equation}
     \begin{aligned}
-        V_{a_{s}}(t) &= R_{s}(t)i_{a_{s}}(t) + \frac{d\lambda_{a_{s}}}{dt}\\
-        V_{b_{s}}(t) &= R_{s}(t)i_{b_{s}}(t) + \frac{d\lambda_{b_{s}}}{dt}\\
-        V_{c_{s}}(t) &= R_{s}(t)i_{c_{s}}(t) + \frac{d\lambda_{c_{s}}}{dt}\\
+        V_{as}(t) &= R_{s}(t)i_{as}(t) + \frac{d\lambda_{as}}{dt}\\
+        V_{bs}(t) &= R_{s}(t)i_{bs}(t) + \frac{d\lambda_{bs}}{dt}\\
+        V_{cs}(t) &= R_{s}(t)i_{cs}(t) + \frac{d\lambda_{cs}}{dt}\\
     \end{aligned}
 \end{equation}
 
 Mediante la transformación de Park, que consiste en premultiplicar por la matriz de Park se obtiene:
 \begin{equation}
     \begin{aligned}
-        V_{q_{s}}(t) &= R_{s}(t)i_{q_{s}}(t) + L_{q}\dot{i}_{q_{s}}^r(t) + [\lambda_{m}^r + L_{d}i_{d_{s}}(t)]\omega_{r}(t)\\
-        V_{d_{s}}(t) &= R_{s}(t)i_{d_{s}}(t) + L_{d}\dot{i}_{d_{s}}^r(t)  - L_{q}i_{q_{s}}(t)\omega_{r}(t)\\
-        V_{0_{s}}(t) &= R_{s}(t)i_{0_{s}}(t) + L_{ls}\dot{i}_{0_{s}}^r(t) \\
+        V_{qs}(t) &= R_{s}(t)i_{qs}(t) + L_{q}\dot{i}_{qs}^r(t) + [\lambda_{m}^{\prime r} + L_{d}i_{ds}(t)]\omega_{r}(t)\\
+        V_{ds}(t) &= R_{s}(t)i_{ds}(t) + L_{d}\dot{i}_{ds}^r(t)  - L_{q}i_{qs}(t)\omega_{r}(t)\\
+        V_{0s}(t) &= R_{s}(t)i_{0s}(t) + L_{ls}\dot{i}_{0s}^r(t) \\
     \end{aligned}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:mi_ecuacion}
     \begin{cases}
-        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}(t)i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r(t)+\lambda_{m}^r]]  \\
-        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r(t) - R_{s}(t)i_{d_{s}}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r(t)]  \\
-        \dot{i}_{0_{s}}(t) = \frac{1}{L_{ls}}[V_{0_{s}}^r(t) - R_{s}(t)i_{0_{s}}^r(t)]  \\
+        \dot{i}_{qs}(t) = \frac{1}{L_{q}}[V_{qs}^r(t) - R_{s}(t)i_{qs}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{ds}^r(t)+\lambda_{m}^{\prime r}]]  \\
+        \dot{i}_{ds}(t) = \frac{1}{L_{d}}[V_{ds}^r(t) - R_{s}(t)i_{ds}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{qs}^r(t)]  \\
+        \dot{i}_{0s}(t) = \frac{1}{L_{ls}}[V_{0s}^r(t) - R_{s}(t)i_{0s}^r(t)]  \\
     \end{cases}
 \end{equation}
 
 %Dudas:
-Dada la conexión que presenta el motor, podemos suponer que la corriente $i_{0_{s}}$ es nula
+Dada la conexión que presenta el motor, podemos suponer que la corriente $i_{0s}$ es nula
 
 El subsistema térmico
 Solo se consideran las pérdidas eléctricas resistivas causadas por el efecto Joule (calor),
  despreciando las pérdidas magnéticas en el núcleo y las transferencia de calor por conducción 
 y convección natural. La potencia de pérdidas calóricas está dada por:\\
 \begin{equation}
-    P_{s_{perd}}(t) =  \frac{3}{2}R_{s}(t)(i_{q_{s}}^r(t)^2+i_{d_{s}}^r(t)^2+2.i_{0_{s}}(t))\\
+    P_{s_{perd}}(t) =  \frac{3}{2}R_{s}(t)(i_{qs}^r(t)^2+i_{ds}^r(t)^2+2.i_{0s}(t))\\
 \end{equation}
 \par El balance térmico en el estator:
 \begin{equation}
-    P_{s_{perd}}(t) = C_{s}\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
+    P_{s_{perd}}(t) = cs\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
 \end{equation}
 
+% 16
 Torque electromagnético:
-\begin{equation}
-    T_{m}(t) = \frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s}}^r(t)
+\begin{equation}\label{eq.torque_electromagnetico}
+    T_{m}(t) = \frac{3}{2}P_{p}[\lambda_{m}^{\prime r}+i_{ds}^r(t)(L_{d}-L_{q})]i_{qs}^r(t)
 \end{equation}
 
 El modelo global:
 \begin{equation}
     \begin{cases}
         \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-        \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s}}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
-        \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}(t)i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{d_{s}}^r(t)+\lambda_{m}^r]]  \\
-        \dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}[V_{d_{s}}^r(t) - R_{s}(t)i_{d_{s}}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{q_{s}}^r(t)]  \\
-        \dot{T}_{s}(t) = \frac{1}{C_{ts}}[\frac{3}{2}R_{s}(t)({i_{q_{s}}^r(t)}^2+{i_{d_{s}}^r(t)}^2+2i_{0_{s}}(t)^2)-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
+        \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^{\prime r}+i_{ds}^r(t)(L_{d}-L_{q})]i_{qs}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+        \dot{i}_{qs}(t) = \frac{1}{L_{q}}[V_{qs}^r(t) - R_{s}(t)i_{qs}^r(t) - P_{p}\omega_{m}(t)[L_{d}i_{ds}^r(t)+\lambda_{m}^{\prime r}]]  \\
+        \dot{i}_{ds}(t) = \frac{1}{L_{d}}[V_{ds}^r(t) - R_{s}(t)i_{ds}^r(t) + P_{p}\omega_{m}(t)L_{q}i_{qs}^r(t)]  \\
+        \dot{T}_{s}(t) = \frac{1}{C_{ts}}[\frac{3}{2}R_{s}(t)({i_{qs}^r(t)}^2+{i_{ds}^r(t)}^2+2i_{0s}(t)^2)-\frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
     \end{cases}
 \end{equation}
 
@@ -216,7 +219,7 @@ El modelo global:
 
 \subsubsection*{Modelo global linealizado con parámetros variables (LPV)}
 
-Para el caso general en el que ${i}_{d_{s}}(t) \neq 0$... 
+Para el caso general en el que ${i}_{ds}(t) \neq 0$... 
 
 \begin{equation}
     \begin{cases}
@@ -273,8 +276,8 @@ Cuasi-estacionario
 \begin{equation}
     \begin{cases}
         \dot{\theta}_{m0} = \omega_{m0} = cte\\
-        \dot{\omega}_{m0} = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^r+i_{d_{s0}}^r(L_{d}-L_{q})]i_{q_{s0}}^r - b_{eq}\omega_{m0} - \frac{T_{l0}}{r}] = 0\\
-        \dot{i}_{q_{s0}} = \frac{1}{L_{q}}[V_{q_{s0}}^r - R_{s}(t)i_{q_{s0}}^r - P_{p}\omega_{m0}[L_{d}i_{d_{s0}}^r+\lambda_{m}^r]] = 0\\
+        \dot{\omega}_{m0} = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}[\lambda_{m}^{\prime r}+i_{d_{s0}}^r(L_{d}-L_{q})]i_{q_{s0}}^r - b_{eq}\omega_{m0} - \frac{T_{l0}}{r}] = 0\\
+        \dot{i}_{q_{s0}} = \frac{1}{L_{q}}[V_{q_{s0}}^r - R_{s}(t)i_{q_{s0}}^r - P_{p}\omega_{m0}[L_{d}i_{d_{s0}}^r+\lambda_{m}^{\prime r}]] = 0\\
         \dot{i}_{d_{s0}} = \frac{1}{L_{d}}[V_{d_{s0}}^r - R_{s}(t)i_{d_{s0}}^r + P_{p}\omega_{m0}L_{q}i_{q_{s0}}^r] = 0 \\
         \dot{i}_{0_{s0}} = \frac{1}{L_{ls}}[V_{0_{s0}} - R_{s}(t)i_{0_{s0}}] = 0\\
         \dot{T}_{s0} = \frac{1}{C_{ts}}[\frac{3}{2}R_{s}(t)({i_{q_{s0}}^r}^2+{i_{d_{s0}}^r}^2+2i_{0_{s0}}^2)-\frac{T_{s0}-T_{amb0}}{R_{ts-amb}}] = 0\\
@@ -285,11 +288,11 @@ Parámetros Variables
 \begin{equation}
     \begin{cases}
         \Delta\dot{\theta}_{m}(t) = \Delta\omega_{m}(t)\\
-        \Delta\dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\{[\lambda_{m}^r + i_{d_{s0}}^r(L_{d}-L_{q})]\Delta i_{q_{s}}^r(t) + \Delta i_{d_{s}}^r(t)(L_{d}-L_{q})]i_{q_{s0}}^r\}- b_{eq}\Delta\omega_{m}(t) - \frac{\Delta T_{l}(t)}{r}]\\
-        \Delta\dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[\Delta V_{q_{s}}^r(t) - R_{s}(t)\Delta i_{q_{s}}^r(t) - P_{p}\Delta\omega_{m}(t)[L_{d}i_{d_{s0}}^r+\lambda_{m}^r] - P_{p}\omega_{m0}L_{d}\Delta i_{d_{s}}^r(t)] \\
-        \Delta\dot{i}_{d_{s}}(t) = \frac{1}{L_{d}}\Delta [V_{d_{s}}^r(t) - R_{s}(t)\Delta i_{d_{s}}^r(t) + P_{p}\Delta\omega_{m}(t)L_{q}i_{q_{s0}}^r + P_{p}\omega_{m0}L_{q}\Delta i_{q_{s}}^r(t)]  \\
-        \Delta\dot{i}_{0_{s}}(t) = \frac{1}{L_{ls}}[\Delta V_{0_{s}}(t) - R_{s}(t)\Delta i_{0_{s}}(t)] \\
-        \Delta\dot{T}_{s}(t) = \frac{1}{C_{ts}}\{\frac{3}{2}R_{s}(t)[{2i_{q_{s}}^r\Delta i_{d_{s}}^r(t)} + 2i_{a_{s}}^r\Delta i_{a_{s}}^r(t)+4i_{0_{s}}\Delta i_{0_{s}}(t)]-\frac{\Delta T_{s}(t)-\Delta T_{amb}(t)}{R_{ts-amb}}\}\\
+        \Delta\dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\{[\lambda_{m}^{\prime r} + i_{d_{s0}}^r(L_{d}-L_{q})]\Delta i_{qs}^r(t) + \Delta i_{ds}^r(t)(L_{d}-L_{q})]i_{q_{s0}}^r\}- b_{eq}\Delta\omega_{m}(t) - \frac{\Delta T_{l}(t)}{r}]\\
+        \Delta\dot{i}_{qs}(t) = \frac{1}{L_{q}}[\Delta V_{qs}^r(t) - R_{s}(t)\Delta i_{qs}^r(t) - P_{p}\Delta\omega_{m}(t)[L_{d}i_{d_{s0}}^r+\lambda_{m}^{\prime r}] - P_{p}\omega_{m0}L_{d}\Delta i_{ds}^r(t)] \\
+        \Delta\dot{i}_{ds}(t) = \frac{1}{L_{d}}\Delta [V_{ds}^r(t) - R_{s}(t)\Delta i_{ds}^r(t) + P_{p}\Delta\omega_{m}(t)L_{q}i_{q_{s0}}^r + P_{p}\omega_{m0}L_{q}\Delta i_{qs}^r(t)]  \\
+        \Delta\dot{i}_{0s}(t) = \frac{1}{L_{ls}}[\Delta V_{0s}(t) - R_{s}(t)\Delta i_{0s}(t)] \\
+        \Delta\dot{T}_{s}(t) = \frac{1}{C_{ts}}\{\frac{3}{2}R_{s}(t)[{2i_{qs}^r\Delta i_{ds}^r(t)} + 2i_{as}^r\Delta i_{as}^r(t)+4i_{0s}\Delta i_{0s}(t)]-\frac{\Delta T_{s}(t)-\Delta T_{amb}(t)}{R_{ts-amb}}\}\\
     \end{cases}
 \end{equation}
 
@@ -297,15 +300,15 @@ Parámetros Variables
     \begin{bmatrix}
         \Delta\dot{\theta}_{m}(t)\\
         \Delta\dot{\omega}_{m}(t)\\
-        \Delta\dot{i}_{q_{s}}(t)\\
-        \Delta\dot{i}_{d_{s}}(t)\\
-        \Delta\dot{i}_{0_{s}}(t)\\
+        \Delta\dot{i}_{qs}(t)\\
+        \Delta\dot{i}_{ds}(t)\\
+        \Delta\dot{i}_{0s}(t)\\
         \Delta\dot{T}_{s}(t)\\
     \end{bmatrix} =
     \begin{bmatrix}
         0 & 1 & 0 & 0 & 0  & 0 \\
-        0 & -b_{eq} & \frac{3}{2}P_{p}\frac{[\lambda_{m}^r + i_{q_{s0}}^r(t)(L_{d}-L_{q})]}{J_{eq}} & \frac{3}{2}\frac{P_{p}(L_{d}-L_{q})i_{q_{s}}^r}{J_{eq}} & 0 & 0\\
-        0 & -\frac{P_{p}(\lambda_{m}^r + L_{d}i_{d_{s0}}^r)}{L_{q}} & -\frac{R_{s}(t)}{L_{q}} & -\frac{L_{d}P_{p}\omega_{m0}}{L_{q}} & 0 & 0\\
+        0 & -b_{eq} & \frac{3}{2}P_{p}\frac{[\lambda_{m}^{\prime r} + i_{q_{s0}}^r(t)(L_{d}-L_{q})]}{J_{eq}} & \frac{3}{2}\frac{P_{p}(L_{d}-L_{q})i_{qs}^r}{J_{eq}} & 0 & 0\\
+        0 & -\frac{P_{p}(\lambda_{m}^{\prime r} + L_{d}i_{d_{s0}}^r)}{L_{q}} & -\frac{R_{s}(t)}{L_{q}} & -\frac{L_{d}P_{p}\omega_{m0}}{L_{q}} & 0 & 0\\
         0 & \frac{P_{p}i_{q_{s0}}^r L_{q}}{L_{d}} & \frac{L_{q}P_{p}\omega_{m0}}{L_{d}} & -\frac{R_{s}(t)}{L_{d}} & 0 & 0\\
         0 & 0 & 0 & 0 & -\frac{R_{s}(t)}{L_{ls}} & 0\\
         0 & 0 & \frac{3R_{s}(t)}{C_{ts}}i_{q_{s0}}^r & \frac{3R_{s}(t)}{C_{ts}}i_{d_{s0}}^r & \frac{6R_{s}(t)}{C_{ts}}i_{0_{s0}} & -\frac{1}{C_{ts}R_{ts-amb}}\\
@@ -313,8 +316,8 @@ Parámetros Variables
     \begin{bmatrix}
         \Delta{\theta}_{m}(t)\\
         \Delta{\omega}_{m}(t)\\
-        \Delta{i}_{q_{s}}(t)\\
-        \Delta{i}_{d_{s}}(t)\\
+        \Delta{i}_{qs}(t)\\
+        \Delta{i}_{ds}(t)\\
         \Delta{T}_{s}(t)\\
     \end{bmatrix}\\  + 
     \begin{bmatrix}
@@ -326,8 +329,8 @@ Parámetros Variables
     \end{bmatrix}
     \begin{bmatrix}
         \Delta{T}_{l}(t)\\
-        \Delta{V}_{q_{s}}(t)\\
-        \Delta{V}_{d_{s}}(t)\\
+        \Delta{V}_{qs}(t)\\
+        \Delta{V}_{ds}(t)\\
         XXXX\\
         \Delta T_{amb}(t)\\
     \end{bmatrix} 
@@ -345,7 +348,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 \begin{itemize}
     \item Aplicar la estrategia de “Control Vectorial con campo orientado” la cual 
     consiste en desacoplar los canales de flujo magnético y torque, lo cual provoca
-    un forzamiento de $i_{d_{s}}=0$ 
+    un forzamiento de $i_{ds}=0$ 
     \item Desacoplar el subsistema térmico, ya que se considera que hay variaciones despreciables 
     de Rs en el rango de temperaturas de trabajo.
 \end{itemize}
@@ -357,8 +360,8 @@ modelo global NL obtenido anteriormente, por lo que se propone:
     \begin{equation}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-            \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^ri_{q_{s}}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
-            \dot{i}_{q_{s}}(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^r]  \\
+            \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r}i_{qs}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+            \dot{i}_{qs}(t) = \frac{1}{L_{q}}[V_{qs}^r(t) - R_{s}i_{qs}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^{\prime r}]  \\
         \end{cases}
     \end{equation}
 
@@ -367,23 +370,23 @@ modelo global NL obtenido anteriormente, por lo que se propone:
             \begin{bmatrix}
                 \dot{\theta}_{m}(t)\\
                 \dot{\omega}_{m}(t)\\
-                \dot{i}_{q_{s}}(t)\\
+                \dot{i}_{qs}(t)\\
             \end{bmatrix} =
             \begin{bmatrix}
                 0 & 1 & 0\\
-                0 & -\frac{b_{eq}}{J_{eq}} & \frac{3}{2}\frac{P_{p}\lambda_{m}^r}{J_{eq}}\\
-                0 & -\frac{P_{p}\lambda_{m}^r}{L_{q}} & -\frac{R_{s}}{L_{q}}\\
+                0 & -\frac{b_{eq}}{J_{eq}} & \frac{3}{2}\frac{P_{p}\lambda_{m}^{\prime r}}{J_{eq}}\\
+                0 & -\frac{P_{p}\lambda_{m}^{\prime r}}{L_{q}} & -\frac{R_{s}}{L_{q}}\\
             \end{bmatrix}
             \begin{bmatrix}
                 {\theta}_{m}(t)\\
                 {\omega}_{m}(t)\\
-                {i}_{q_{s}}(t)\\
+                {i}_{qs}(t)\\
             \end{bmatrix} +
             \begin{bmatrix}
                 0\\
                 0\\
                 \frac{1}{L_{eq}}\\
-            \end{bmatrix} V_{q_{s}}^r(t) +
+            \end{bmatrix} V_{qs}^r(t) +
             \begin{bmatrix}
                 0\\
                 -\frac{1}{rJ_{eq}}\\
@@ -395,7 +398,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
             \begin{bmatrix}
                 {\theta}_{m}(t)\\
                 {\omega}_{m}(t)\\
-                {i}_{q_{s}}(t)\\
+                {i}_{qs}(t)\\
             \end{bmatrix}
         \end{cases}
     \end{equation}
@@ -407,16 +410,16 @@ modelo global NL obtenido anteriormente, por lo que se propone:
     \item Restricción o Ley de Control mínima
 
     \begin{equation}
-        V_{d_{s}}^r(t) = -L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}
+        V_{ds}^r(t) = -L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}
     \end{equation}
 
     Se aplica la inversa de Park
 
     \begin{equation}
         \begin{cases}
-            V_{a_{s}}(t) = cos(\theta_{r}(t))V_{q_{s}}^r(t) + sin(\theta_{r}(t))V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
-            V_{b_{s}}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
-            V_{c_{s}}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) + \frac{2\pi}{3})V_{d_{s}}^r(t) + V_{0_{s}}^r(t)\\
+            V_{as}(t) = cos(\theta_{r}(t))V_{qs}^r(t) + sin(\theta_{r}(t))V_{ds}^r(t) + V_{0s}^r(t)\\
+            V_{bs}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{qs}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})V_{ds}^r(t) + V_{0s}^r(t)\\
+            V_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{qs}^r(t) + sin(\theta_{r}(t) + \frac{2\pi}{3})V_{ds}^r(t) + V_{0s}^r(t)\\
         \end{cases}
     \end{equation}
 
@@ -424,9 +427,9 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 
     \begin{equation}
         \begin{cases}
-            V_{a_{s}}(t) = cos(\theta_{r}(t))V_{q_{s}}^r(t) - sin(\theta_{r}(t))L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
-            V_{b_{s}}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{q_{s}}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
-            V_{c_{s}}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{q_{s}}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{q_{s}}^r(t)\omega_{m}(t)P_{p}\\
+            V_{as}(t) = cos(\theta_{r}(t))V_{qs}^r(t) - sin(\theta_{r}(t))L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
+            V_{bs}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})V_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
+            V_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})V_{qs}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
         \end{cases}
     \end{equation}
 
@@ -434,26 +437,26 @@ modelo global NL obtenido anteriormente, por lo que se propone:
     
     \begin{equation}
         \begin{aligned}
-        \frac{di_{d_{s}}^r(t)}{dt} = \frac{1}{L_{d}}[-R_{s}(t)i_{d_{s}}^r(t)] \\
-        \frac{di_{d_{s}}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}i_{d_{s}}^r(t) = 0 \\
+        \frac{di_{ds}^r(t)}{dt} = \frac{1}{L_{d}}[-R_{s}(t)i_{ds}^r(t)] \\
+        \frac{di_{ds}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}i_{ds}^r(t) = 0 \\
         \end{aligned}
     \end{equation} 
 
     \begin{equation}
-        i_{d_{s}}^r(t) = i_{d_{s}}^r(0)e^{-\frac{R_{s}(t)}{L_{d}}t}
+        i_{ds}^r(t) = i_{ds}^r(0)e^{-\frac{R_{s}(t)}{L_{d}}t}
     \end{equation}
 
     \begin{equation}
-        V_{q_{s}}(t) = L_{q}\frac{di_{q_{s}}^r(t)}{dt} + R_{s}i_{q_{s}}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^r + \mathbf{L_{d}i_{d_{s}}^r(t)P_{p}\omega_{m}(t)}
+        V_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}i_{qs}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^{\prime r} + \mathbf{L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t)}
     \end{equation}
 
     \begin{equation}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-            \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^r i_{q_{s}}^r(t) - b_{eq}\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
-            \dot{i}_{q_{s}}^r(t) = \frac{1}{L_{q}}[V_{q_{s}}^r(t) - R_{s}i_{q_{s}}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^r]\\
-            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{q_{s}}^r}^2(t) + {i_{d_{s}}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
-            \dot{i}_{d_{s}}^r(t) = -\frac{R_{s}(t)}{L_{d}}i_{d_{s}}^r(t) \\
+            \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r} i_{qs}^r(t) - b_{eq}\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
+            \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}[V_{qs}^r(t) - R_{s}i_{qs}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^{\prime r}]\\
+            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
+            \dot{i}_{ds}^r(t) = -\frac{R_{s}(t)}{L_{d}}i_{ds}^r(t) \\
         \end{cases}    
     \end{equation}
 
@@ -463,27 +466,657 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 
 \subsubsection*{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
 
-El modelo dinámico global LPV para el caso general donde $i_{d_{s}}^r \neq 0$
+El modelo dinámico global LPV para el caso general donde $i_{ds}^r \neq 0$
 es una mejor representación del sistema real al tener mejor representadas sus 
-no linealidades
+no linealidades.
+En cambio el modelo LTI, donde $i_{ds}^r = 0$, tiene la ventaja de un modelo 
+con un mayor grado de simplicidad. Sin embargo, esta simplificación  causa que 
+el espacio de puntos de operación se reduzca.
+Analizaremos el comportamiento del sistema frente a cambios de $i_{ds}^r$, 
+considerando el estado estacionario. 
+
+\begin{itemize}
+    
+    \item Respecto al par electromagnético:
+
+    \begin{equation}
+        T_{m}(t) = \frac{3}{2}P_{p}[\lambda_{m}^{\prime r} + (L_{d}-L_{q})i_{ds}^r(t)]
+    \end{equation}
+
+    Para motores de polos salientes $L_{d} > L_{q}$, entonces cuando $i_{ds}^r(t)$
+    toma valores positivos el campo magnético se refuerza lo que aumenta el torque del
+    motor. Si la corriente directa toma valores negativos el campo magnético se debilita 
+    y disminuye el torque del motor. 
+
+    \item Respecto al subsistema eléctrico:
+
+    % Voltaje con minúsculas
+    \begin{equation}
+        \dot{i}_{ds}^r = \frac{1}{L_{d}}[v_{ds}(t) - R_{s}(t)i_{ds}^r(t) + L_{q}i_{qs}^r(t)P_{p}\omega_[m](t)] = 0
+    \end{equation}
+    \begin{equation}
+        \omega_{m}(t) = \frac{-v_{ds}(t) + R_{s}(t)i_{ds}^r(t)}{L_{q}}
+    \end{equation}
+
+    En este caso, la velocidad del motor disminuye cuando la corriente $i_{ds}^r$ 
+    aumenta. Por lo que podemos concluir que el torque reaccionara inversamente 
+    a la velocidad.
+
+\end{itemize}
+
+En el caso que $i_{ds}^r(t) = 0$, el flujo concatenado solamente esta afectado por 
+los imanes permanentes.
 
 %-------------------- 2E --------------------------%
 
 \subsubsection*{Funciones de transferencia para el modelo LTI}
 
+Las funciones de transferencia nos permiten relacionar las salidas con las entradas del sistema.
+Como nuestro sistema dispone de dos entradas obtendremos dos funciones de transferencia.
+
+Para comenzar, es necesario aplicar la transformada de Laplace a las ecuaciones del modelo LTI:
+
 \begin{equation}
-    \begin{aligned}
-        L[f{t}] = F(s)\\
-        L[\dot{f}(t)] = s F(s) - f(0)\\
-    \end{aligned}
+        L[f{t}] = F(s)
 \end{equation}
+
+La transformada de Laplace posee la siguiente propiedad
+
+\begin{equation}
+        L[\dot{f}(t)] = s F(s) - f(0)
+\end{equation}
+
+Al aplicar la transformada y recordando que las condiciones iniciales son nulas, el 
+modelo queda
 
 \begin{equation}
     \begin{cases}
-        S\Theta_{m}(S) = \Omega_{m}(S)\\
-        x = y\\
+        s\Theta_{m}(s) = \Omega_{m}(s)\\
+        s\Omega_{m}(s) = \frac{1}{J_{eq}}[\frac{3}{2} P_{p} \lambda_{m}^{\prime r} I_{qs}^r(s) - b_{eq}\Omega(s) - \frac{T_{l}(s)}{r}]\\
+        s I_{qs}^r(s) = \frac{1}{L_{q}}[V_{qs}^r(s) - R_{s}I_{qs}^r(s) - P_{p}\Omega_{m}(s)\lambda_{m}^{\prime r}]\\
     \end{cases}
 \end{equation}
+
+Para obtener las funciones de transferencia del modelo, se despeja $I_{qs}^r(s)$
+
+\begin{equation}
+    I_{qs}^r(s) = \frac{V_{qs}^r(s) - P_{p}\Omega_{m}(s)\lambda_{m}^{\prime r}}{s L_{q} + R_{s}}
+\end{equation}
+ 
+Remplazando en las ecuaciones de estado 
+
+\begin{equation}
+    \Theta_{m}(s) = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.V_{qs}(s) - \frac{1}{r}.(s.L_{q}+R_{s}).T_{l}(s)}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
+\end{equation}
+
+De esta expresion se obtienen las funciones de transferencia respecto de las entradas tension $V_{qs}(s)$ y torque $T_{l}(s)$
+
+\begin{equation}
+    G_{1}(s) = \frac{\Theta_{m}(s)}{V_{qs}(s)} = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
+\end{equation}
+
+\begin{equation}
+    G_{2}(s) = \frac{\Theta_{m}(s)}{T_{l}(s)} = \frac{- \frac{1}{r}.(s.L_{q}+R_{s})}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
+\end{equation}
+
+
+%-------------------- 5.2 --------------------------%
+
+
+\section*{Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}
+
+El control vectorial es una técnica avanzada utilizada para controlar motores de corriente alterna y máquinas 
+síncronas. Permite controlar de manera independiente la magnitud y la fase de la corriente de alimentación de la 
+máquina para lograr un control preciso del torque y la velocidad. Una implementación común del control vectorial 
+es el controlador de movimiento en cascada con modulador de torque equivalente, utilizado en aplicaciones de alto 
+rendimiento como sistemas de tracción eléctrica y accionamiento de maquinaria industrial.
+
+En el controlador de movimiento en cascada con modulador de torque equivalente, se utiliza un controlador de 
+velocidad externo para generar una señal de referencia de velocidad que se compara con la velocidad real de la 
+máquina. La diferencia entre estas señales se utiliza para generar una señal de referencia de torque, que controla 
+la corriente de alimentación. El modulador de torque equivalente convierte la señal de referencia de torque en una
+señal de corriente de alimentación mediante la técnica de modulación de ancho de pulso (PWM), controlando así la 
+magnitud y la fase de la corriente de alimentación.
+
+%-------------------- 1 --------------------------%
+
+\subsection*{Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}
+
+En el próximo paso de nuestro sistema, se llevará a cabo la implementación de un modulador de torque equivalente, 
+conocido también como controlador interno vectorial de corriente/torque. Este controlador nos permitirá, de manera
+similar a una máquina de corriente continua, controlar el sistema utilizando consignas de torque como entradas, 
+las cuales serán posteriormente transformadas en consignas de tensión. Para lograrlo, procederemos a implementar 
+el controlador completo con su correspondiente diagrama de bloques, utilizando el modelo NL completo y los valores
+de parámetros adecuados, siguiendo los lineamientos que se detallarán a continuación.
+
+%-------------------- 1.a --------------------------%
+
+\subsubsection*{Desacople de las realimentaciones de estado hacia la entrada}
+
+Considerando que el modulador de tensión es lo suficientemente rápido y preciso, podemos asumir que su ganancia 
+es unitaria. Por lo tanto, podemos considerar que en la entrada del modulador de tensión se tiene una consigna 
+de tensión a seguir, y esta misma tensión se aplicará a la salida del modulador. 
+En otras palabras, en la salida del modulador se obtiene la tensión como variable física. Con base en lo 
+mencionado, podemos establecer que:
+
+\begin{equation}
+    v_{abc}(t) \approx v^*_{abc}(t)
+\end{equation}
+
+Utilizando la transformada de Park, podemos definir una consigna de tensión en coordenadas virtuales 
+$v^{r*}_{qd0s}(t)$ que nos permita obtener una tensión $v^{r}_{qd0s}(t)$ que compense los efectos de 
+retroalimentación y permita el desacople de las variables de estado.
+
+Recordando las \hyperref[eq:mi_ecuacion]{Ecuaciones \ref*{eq:mi_ecuacion}}, se observa que los términos 
+del lado derecho de la igualdad, a excepción de las tensiones de fase virtuales, representan las 
+realimentaciones físicas del sistema. Por lo tanto, podemos definir las compensaciones que deben 
+realizarse en el controlador para cancelar los efectos de la retroalimentación, las cuales son:
+
+\begin{equation}\label{eq:compensaciones}
+    \begin{cases}
+        v^r_{qs}(t) = v^{r*}_{qs}(t) + R_{s}.i_{qs}^r(t) + \omega_m(t).P_p.[\lambda^{\prime r}_m + L_d.i_{qs}^r(t)] \\
+        v^r_{ds}(t) = v^{r*}_{ds}(t) + R_{s}.i_{ds}^r(t) - \omega_m(t).P_p.L_q.i_{qs}^r(t) \\
+        v^r_{0s}(t) = v^{r*}_{0s}(t) + R_{s}.i_{0s}^r(t) \\
+    \end{cases}
+\end{equation}
+
+Realizando estas compensaciones, tenemos acceso directo a manipular el torque electromagnético, 
+sin los efectos de las realimentaciones físicas, ni las caídas de tensión en los bobinados.
+
+Reemplazando las \hyperref[eq:compensaciones]{Ecuaciones \ref*{eq:compensaciones}} en las
+\hyperref[eq:mi_ecuacion]{Ecuaciones \ref*{eq:mi_ecuacion}}, se obtienen las siguientes expresiones:
+
+\begin{equation}\label{eq:proporcionlaidad_corrientes_tensiones_de_entrada}
+    \begin{cases}
+        v^{r*}_{qs}(t) = L_q. \dot{i}_{qs}^r(t) \\
+        v^{r*}_{ds}(t) = L_d. \dot{i}_{ds}^r(t) \\
+        v^{r*}_{0s}(t) = L_{ls}. \dot{i}_{0s}^r(t) \\
+    \end{cases}
+\end{equation}
+
+% Aca muestra una imagen del modelo el modelo pag. 35 %
+
+% En la siguiente página se muestra el modelo de bloques que considera el desacople de las 
+% realimentaciones físicas, teniendo en cuenta la variación de la temperatura del sistema $(Ts(t))$. 
+% En este modelo, se tiene en cuenta que la resistencia de los devanados del estator varía con la 
+% temperatura. Se ha decidido mantener esta variación en la resistencia, ya que fue considerada en 
+% el modelo no lineal con la ley de control mínima. Aunque se reconoce que la variación de la 
+% resistencia con la temperatura es pequeña, mantener esta variación permite lograr acciones de control 
+% más efectivas, replicando de manera más precisa el comportamiento real del sistema físico. Además, 
+% el costo computacional de esta medida es mínimo.
+
+%-------------------- 1.b --------------------------%
+
+\subsubsection*{Diseño de lazos de control de corrientes}
+
+La consigna de tensión es función de la corriente del sistema, por lo que se puede controlar usando 
+una consigna de corriente proporcional. Con el error de corriente entre la corriente de consigna 
+$i_{qd0s}^{r*}(t)$y la corriente real del sistema se modela $v_{qd0s}^{r*}(t)$ con una ley de 
+control proporcional.. El modelo resultante es el siguiente:
+
+\begin{equation}
+    \begin{cases}
+        L_q. \dot{i}_{qs}^r(t) = v^{r*}_{qs}(t) = [i_{qs}^{r*}(t) - i_{qs}^r(t)].R_q^\prime \\
+        L_d. \dot{i}_{ds}^r(t) = v^{r*}_{ds}(t) = [i_{ds}^{r*}(t) - i_{ds}^r(t)].R_d^\prime \\
+        L_{ls}. \dot{i}_{0s}^r(t) = v^{r*}_{0s}(t) = [i_{0s}^{r*}(t) - i_{0s}^r(t)].R_{0}^\prime \\
+    \end{cases}
+\end{equation}
+
+Las variables $R^\prime$ representan las ganancias del control proporcional. Se necesita obtener 
+el valor de óptimo de esta ganancia, por lo cual se analiza la función de transferencia del modulador.
+
+Al aplicar la transformada de Laplace obtenemos:
+
+\begin{equation}
+    \begin{cases}
+        L_q. s.I_{qs}^r(s) = [I_{qs}^{r*}(s) - I_{qs}^r(s)].R_q^\prime \\
+        L_d. s.I_{ds}^r(s) = [I_{ds}^{r*}(s) - I_{ds}^r(s)].R_d^\prime \\
+        L_{ls}. s.I_{0s}^r(s) = [I_{0s}^{r*}(s) - I_{0s}^r(s)].R_{0}^\prime \\
+    \end{cases}
+\end{equation}
+
+Las funciones de transferencia son:
+
+\begin{align*}
+    G_{qs}(s) &= \frac{I_{qs}^r(s)}{I_{qs}^{r*}(s)} = \frac{1}{\frac{L_q}{R_q^\prime}.s + 1}  \\
+    G_{ds}(s) &= \frac{I_{ds}^r(s)}{I_{ds}^{r*}(s)} = \frac{1}{\frac{L_d}{R_d^\prime}.s + 1}  \\
+    G_{0s}(s) &= \frac{I_{0s}^r(s)}{I_{0s}^{r*}(s)} = \frac{1}{\frac{L_{ls}}{R_{0}^\prime}.s + 1}
+\end{align*}
+
+Se puede observar que las funciones de transferencia son de primer orden y no poseen ceros. Dado que
+los parámetros son positivos también podemos afirmar que las funciones de transferencia son estables.
+
+Estas funciones de transferencia tienen la forma típica de un filtro pasa bajos, donde el valor que
+multiplica a la variable $s$ es la constante del tiempo del sistema \tau que a la vez es el inverso
+la frecuencia de corte del filtro. Si \tau toma un valor muy pequeño, dispondremos de una ancho de 
+banda muy grande, lo cual proporciona una respuesta rápida.
+
+El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que para todos los lazos $p = -5000 rad/s$
+podemos calcular los valores de las ganancias:
+
+\begin{equation}
+    \frac{L}{R^\prime} = -\frac{1}{p} \to R^\prime = -L.p
+\end{equation}
+
+Resolviendo para cada rama:
+
+\begin{align*}
+    R_q^\prime &= -L_q.p = 29\varOmega  \\
+    R_d^\prime &= -L_d.p = 33\varOmega \\
+    R_0^\prime &= -L_{ls}.p = 4\varOmega
+\end{align*}
+
+Con este lazo de corriente logramos que el error entre la consigna de corriente y la corriente real
+converja mas rápidamente a cero, de forma que responda de mejor manera a las perturbaciones.
+
+% Imágenes %
+
+% Estaría bueno responder la diferencia entre la consigna 5.1.2.c.vi %
+
+%-------------------- 1.c --------------------------%
+
+\subsubsection*{Incorporación de consigna de torque}
+
+Volvemos a usar nuevamente el método de la sección anterior en el que realizamos una realimentación
+para controlar el sistema mediante consignas de torque $T_m^*(t)$. La consigna sigue el siguiente modelo:
+
+\begin{equation}
+    T_m^*(t) = T_m^{r\prime}(t) + b_{eq}.\omega_m(t)
+\end{equation}
+
+Este modelo contempla la realimentación física debida a la fricción, que genera perdidas en el torque.
+
+Sabiendo que el torque y la corriente están relacionados por la ecuación del
+\hyperref[eq.torque_electromagnetico]{Torque electromagnético (\ref*{eq.torque_electromagnetico})}
+expresamos las consignas de troque $T_m^{*\prime}$ en función de las consignas de corriente $i_{qs}^{r*}$:
+
+\begin{equation}
+    T_m^{*}(t) = \frac{3}{2}.P_p.[\lambda_m^{\prime r} + (L_d - L_q)i_{ds}^{r}(t)].i_{qs}^{r*}(t)
+\end{equation}
+
+Despejando de estas ultimas dos ecuaciones, obtenemos:
+
+\begin{equation}
+    i_{qs}^{r*}(t) = \frac{T_m^{*\prime}(t) + b_{eq}.\omega_m(t)}{\frac{2}{3}.P_p.[\lambda_m^{\prime r} + (L_d - L_q)i_{ds}^{r}(t)]}
+\end{equation}
+
+% IMAGEN DEL MODULADOR DE TORQUE %
+
+% DUDAS YA QUE NO TRABAJAMOS CON IDS %
+
+De esta ecuación podemos determinar el efecto que tendrá la corriente $i_{ds}^{r*}$ sobre el flujo magnético:
+
+\begin{itemize}
+    \item Si $i_{ds}^{r*} > 0 A$ entonces se produce un reforzamiento de campo.
+    \item Si $i_{ds}^{r*} = 0 A$ entonces se produce un desacople entre la rama correspondiente a 
+    la cuadratura que anula los efectos de reforzamiento y debilitamiento.
+    \item Si $i_{ds}^{r*} < 0 A$ entonces se produce un debilitamiento de campo.
+\end{itemize}
+
+\subsection*{Controlador externo de movimiento (posición/velocidad)}
+
+El controlador externo de movimiento se agrega con el fin de mejorar la dinámica del sistema y corregir los
+errores de estado estacionario producidos por cargas perturbadoras. En la rama derivativa tomaremos el 
+error entre la consigna de velocidad y la velocidad real. El error de posición se obtiene integrando el 
+error de velocidad lo que indica que no son variables independientes, este va en la rama proporcional.
+En la rama integral se tendrá la integral del erro de posición. 
+
+% Filtro pasa alto %
+Con esta configuración del controlador PID solo tendremos como entrada el error de velocidades, no tendremos
+que introducir acciones derivativas lo que nos permitirá evitar la amplificación del ruido y obtener un 
+controlador mas estable. Los bloques integrales actúan como filtros pasa bajos lo que nos ayuda a eliminar
+el ruido de los errores de posición y velocidad dada su naturaleza de alta frecuencia.
+
+Se diseña el controlador utilizando el método de sintonía serie con $n = 2,5$, $\omega_{pos} = 800 rad/s$, y
+considerando los valores nominales de $j_l$, $b_l$. 
+
+El controlador de movimiento se muestra en la siguiente figura: 
+
+% IMAGEN DEL PID %
+
+La salida del controlador sera el torque consigna que ingresara al modulador de torque. Modelando en el 
+dominio de Laplace se tiene:
+
+\begin{equation}\label{eq.controlador_error}
+    T_m^{*\prime}(s) = e_\omega(s).b_a + e_\theta(s).K_{sa} + e_\theta(s).K_{sia}.\frac{1}{s}
+\end{equation}
+
+Donde:
+
+\begin{align*}
+    e_\theta(s) &= \Theta_m^*(s) - \Theta_m(s) \\
+    e_\omega(s) &= e_\theta(s).s
+\end{align*}
+
+La relación entre el torque y la variación de velocidad del motor en el modelo del subsistema mecánico, 
+teniendo en cuanta el desacople de fricción realizado anteriormente, es:
+
+\begin{equation}
+    J_{eq}.\dot{\omega}_(t) = T_m^*(t) - \frac{T_l(t)}{r}
+\end{equation}
+
+Aplicando la transformada de Laplace:
+
+\begin{equation}
+    J_{eq}.s^2.\Theta_m(s) = T_m^*(s) - \frac{T_l(s)}{r}
+\end{equation}
+
+Reemplazando esta ecuación en la
+\hyperref[eq.controlador_error]{ecuación del controlador (\ref*{eq.controlador_error})}:
+
+\begin{equation}
+    J_{eq}.s^3.\Theta_m(s) = [s^2.b_a + s.K_{sa} + K_{sia}].[\Theta_m^*(s) - \Theta_m(s)] - s.\frac{T_l(s)}{r}
+\end{equation}
+
+Despejando, la posición del retor queda expresada como:
+
+\begin{equation}
+    \Theta_m(s) = \frac{s^2.b_a + s.K_{sa} + K_{sia}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}.\Theta_m^*(s) - \frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}.\frac{T_l(s)}{r}
+\end{equation}
+
+A partir de esta ecuación podemos obtener las funciones de transferencia del controlador:
+
+\begin{align}
+    G_1(s) &= \frac{\Theta_m(s)}{\Theta_m^*(s)} = \frac{s^2.b_a + s.K_{sa} + K_{sia}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}} \\
+    G_2(s) &= \frac{\Theta_m(s)}{\frac{T_l(s)}{r}} = -\frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}
+\end{align}
+
+En régimen estacionario para una entrada escalón unitario podemos observar:
+
+\begin{itemize}
+    \item $K_{sai} \neq 0 \to G_1(s) = 1 $ y $G_2(s) = 0$
+    \item $K_{sai} = 0 \to G_2(s) = 1 $ y $G_2(s) = \frac{1}{K_{sa}} $
+\end{itemize}
+
+Estos resultados muestran que que la función de transferencia
+correspondiente a la entrada de perturbación tejen un cero en el origen por lo que el error de estado 
+estacionario es nulo. En caso de que la acción integral sea nula si tendrá un error dado por $1/K_{sa}$
+
+En cuanto a la función de transferencia correspondiente a la entrada de referencia tiene ganancia
+unitaria a baja frecuencia por lo que el error de estado estacionario, según el teorema del valor final, 
+es nulo. 
+
+Podemos concluir que este  controlador no tiene error de régimen permanente ante entradas del tipo escalón.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
 \part*{Conclusiones}
