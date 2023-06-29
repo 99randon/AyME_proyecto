@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1687984856 "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" "build/Informe.pdf" "Informe" 1687984862 0
+["lualatex"] 1688051185 "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" "build/Informe.pdf" "Informe" 1688051191 0
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -204,6 +204,7 @@
   "C:/Program Files/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Program Files/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1601897756 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "C:/Program Files/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty" 1668504483 18450 88279bf67c81e69f8e3f1c1bad1a26c5 ""
+  "C:/Program Files/MiKTeX/tex/latex/float/float.sty" 1469023953 6916 16d2656a1984957e674b149555f1ea1d ""
   "C:/Program Files/MiKTeX/tex/latex/fmtcount/fcnumparser.sty" 1582571040 12791 43a81443714469abac77ce09f44ad2e2 ""
   "C:/Program Files/MiKTeX/tex/latex/fmtcount/fcprefix.sty" 1582571040 12519 5c732241af77b5f0e56e640b7d538395 ""
   "C:/Program Files/MiKTeX/tex/latex/fmtcount/fmtcount.sty" 1582571040 32021 ed70d543c537f19c96fc753321f1c3cc ""
@@ -318,10 +319,12 @@
   "C:/Users/brand/AppData/Local/MiKTeX/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1684276622 127320 35b6fe32a3356e3503b8fedb3ddae43f ""
   "C:/Users/brand/AppData/Local/MiKTeX/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1684898162 2311 8f7c3b81d9ce82d5c3ee0dc2055e306b ""
   "C:/Users/brand/AppData/Local/MiKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz" 1684276622 59054 81d87fbf31f66bf70649e690a99c8992 ""
-  "Informe.tex" 1687984856 37309 bfd28b970c499cb32ec3479e606f3e5c ""
-  "build/Informe.aux" 1687984861 2120 da7207d367c2686ea3b1acd349ea6c42 "lualatex"
-  "build/Informe.out" 1687984861 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" 1687984856 37309 bfd28b970c499cb32ec3479e606f3e5c ""
+  "Informe.tex" 1688051185 54401 1db2709e5bb79ce1db8f2caf49096568 ""
+  "build/Informe.aux" 1688051190 2740 84cdb54cac133690079eef5ce5087b3a "lualatex"
+  "build/Informe.out" 1688051189 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" 1688051185 54401 1db2709e5bb79ce1db8f2caf49096568 ""
+  "frecuancia_amortiguamiento_rs.png" 1688047336 51575 e08a3d8b4e0380e03eba40ced30f0142 ""
+  "polosyceros.png" 1688044888 60805 3748d1ae3a9b9deb1524f2afbac277b8 ""
   (generated)
   "build/Informe.aux"
   "build/Informe.log"

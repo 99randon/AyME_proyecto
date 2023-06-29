@@ -23,6 +23,7 @@
 \usepackage{datetime}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{float}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
@@ -36,7 +37,7 @@
 \lhead{\textbf{UNCuyo – Ing. Mecatrónica}\\Mendoza - Argentina}
 \chead{\textbf{311 – AUTOMÁTICA Y MÁQUINAS ELÉCTRICAS}\\ 
 \textbf{PROYECTO GLOBAL INTEGRADOR}}
-\rhead{Alumnos: Mamani , Vignolo\\  \today}
+\rhead{Mamani - Vignolo\\  \today}
 \rfoot{Página \thepage{} de \pageref{LastPage}}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -549,15 +550,340 @@ Remplazando en las ecuaciones de estado
     \Theta_{m}(s) = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.V_{qs}(s) - \frac{1}{r}.(s.L_{q}+R_{s}).T_{l}(s)}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
 \end{equation}
 
-De esta expresion se obtienen las funciones de transferencia respecto de las entradas tension $V_{qs}(s)$ y torque $T_{l}(s)$
+De esta expresión se obtienen las funciones de transferencia respecto de las entradas tension $V_{qs}(s)$ y torque $T_{l}(s)$
 
-\begin{equation}
+\begin{equation}\label{eq.trasnferencia_1}
     G_{1}(s) = \frac{\Theta_{m}(s)}{V_{qs}(s)} = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq.transferencia_2}
     G_{2}(s) = \frac{\Theta_{m}(s)}{T_{l}(s)} = \frac{- \frac{1}{r}.(s.L_{q}+R_{s})}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
 \end{equation}
+
+%-------------------- 5.1.3 --------------------------%
+
+\subsection*{Análisis de Estabilidad}
+
+Para realizar un análisis de estabilidad debemos primero determinar polos (ceros del denominador) del 
+sistema a partir de la función de transferencia obtenida anteriormente:
+
+\begin{equation}
+    s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2] = 0
+\end{equation}
+
+Utilizando Matlab para poder resolver este polinomio obtenemos que los valores que la satisfacen son:
+
+\begin{align*}
+    s_{1} &= 0\\
+    s_{2} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) + sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_eq + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}\\
+    s_{3} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) - sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_eq + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}
+\end{align*}
+
+Reemplazando los valores de los parámetros y teniendo en cuenta que Rs puede estar entre 
+$1,02\, \Omega$ y $1,32\, \Omega$ de manera lineal encontramos los polos se encuentran en 
+función de este valor dado que las demás variables son datos conocidos.
+
+Para determinar los ceros evaluamos  el numerador de la función de transferencia
+\hyperref[eq.transferencia_2]{función de transferencia (\ref*{eq.transferencia_2})}
+. De aquí notamos que solo $T_l(t)$ introduce ceros al sistema, obteniendo, al igual que en el caso 
+de los polos, funciones dependientes de $Rs$.
+
+\begin{align*}
+    s.L_q+ R_s = 0 &\to& s = - \frac{R_s}{L_q} = - \frac{R_s}{5,9.10^3}\\ 
+\end{align*}
+
+Podemos hacer un gráfico en el plano imaginario sobre como varían estos valores según el valor de 
+$R_s$. Asi obtenemos la siguiente figura:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{polosyceros.png}
+    \caption{Polos y ceros en función de $R_s$}
+\end{figure}
+
+En esta figura se grafican los sucesivos valores que pueden tomar los polos y el cero si variamos el 
+valor de $R_s$. Notamos una pequeña disminución de la parte imaginaria con el aumento de esta variable, 
+aunque esto es casi despreciable. También se logra visualizar la distancia al eje imaginario que 
+tiene cada posible valor y sobre todo el valor mas cercano a esta (representa el caso menos 
+amortiguado).
+
+De la misma podemos concluir que a medida que el valor de la temperatura aumenta, aumentando $R_s$, el 
+sistema se vuelve mas estable. Esto se puede ver ya que al aumentar la parte real negativa, los 
+mismos vuelven la respuesta del sistema mas amortiguados.
+
+Para obtener el valor de la frecuencia natural del sistema y el amortiguamiento relativo, podemos 
+comparar la ecuación característica del sistema con la forma estándar que toma un sistema de tercer 
+orden. Pero al trabajar sobre el polinomio característico, teniendo en cuenta que un polo es 0, 
+podemos simplificar y compararlo con uno de orden 2:
+
+\begin{equation}
+    s^2 + 2.\xi.\omega_n.s + \omega_n^2 = 0
+\end{equation}
+
+Igualando ambas expresiones obtenemos los siguiente valores:
+
+\begin{align*}
+    \omega_n = \sqrt{\frac{R_s.b_{eq} + \frac{3}{2}.P_p^2.{\lambda_m^{\prime r}}^2}{J_{eq}.L_q}} \\
+    \xi = \frac{L_q.b_{eq} + R_s.J_{eq}}{2.J_{eq}.L_q.\omega_n}
+\end{align*}
+
+Reemplazando los valores de los parámetros obtenemos que:
+
+\begin{align*}
+    314,50 rad/s < \omega_n < 314,72rad/s \\
+    \xi < 1
+\end{align*}
+
+El valor de wn no varia significativamente con una variación de $R_s$. El valor de $\xi$
+se ve influenciado de mayor manera aunque siempre se mantiene en rangos menores a 1, lo que 
+indica que es un sistema subamortiguado.
+
+Podemos ver como varían estos valores en los siguientes gráficos:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{frecuancia_amortiguamiento_rs.png}
+    \caption{Frecuencia natural y amortiguamiento en función de $R_s$}
+\end{figure}
+
+%-------------------- 5.1.4 --------------------------%
+
+\subsection*{Análisis de Observabilidad}
+
+Para realizar el análisis de observabilidad completa de estados para el modelo LTI equivalente 
+aumentado desde la salida $\theta_m$, evaluamos el rango de la matriz de observabilidad "$O$".
+
+En este caso la matriz de observabilidad, teniendo en cuenta que es un sistema de 3er orden, 
+debe tener orden 3 también. Asi:
+
+\begin{equation}
+    O = \begin{bmatrix}
+        C \\
+        C.A \\
+        C.A^2
+    \end{bmatrix}
+\end{equation}
+
+Con:
+
+\begin{equation}
+    C = \begin{bmatrix}
+        1 & 0 & 0
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    C.A = 
+    \begin{bmatrix}
+        1 & 0 & 0
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 1 & 0
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    C.A^2 =
+    \begin{bmatrix}
+        1 & 0 & 0
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}}
+    \end{bmatrix}
+\end{equation}
+
+Por lo tanto:
+
+\begin{equation}
+    O = 
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}}
+    \end{bmatrix}
+\end{equation}
+
+El rango de esta matriz es 3, por lo tanto el sistema es completamente observable a partir de la 
+salida $\theta_m$.
+
+Estrictamente debemos decir que el sistema es parcialmente observable a partir de tener la posición 
+como variable de salida ya que no se pueden obtener los estados de $i_ds^r$ ni $T_s^°$.
+
+Podemos realizar el mismo análisis a partir de tener como variable medida la velocidad, utilizando 
+un taco generador. En este caso tendremos:
+
+\begin{equation}
+    C = \begin{bmatrix}
+        0 & 1 & 0
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation*}
+    C.A = 
+    \begin{bmatrix}
+        0 & 1 & 0
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    C.A^2 =
+    \begin{bmatrix}
+        0 & 1 & 0
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & -\frac{b_{eq}}{J_{eq}} - \frac{3.P_p^2.{\lambda_m^{\prime r}}^2}{2.J_{eq}.L_q} & \frac{3.b_{eq}.P_p.\lambda_m^{\prime r}}{2.J_{eq}^2}
+    \end{bmatrix}
+\end{equation*}
+
+Entonces: 
+
+\begin{equation*}
+    O = 
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{b_{eq}}{J_{eq}} - \frac{3.P_p^2.{\lambda_m^{\prime r}}^2}{2.J_{eq}.L_q} & \frac{3.b_{eq}.P_p.\lambda_m^{\prime r}}{2.J_{eq}^2}
+    \end{bmatrix}
+\end{equation*}
+
+El rango de esta matriz es 2, por lo tanto podemos afirmar que el sistema no es observable a 
+partir de la salida w𝑚. Esto se debe a que conociendo la velocidad no se puede estimar la 
+posición sin conocer la condición inicial de la misma.
+
+%-------------------- 5.1.5 --------------------------%
+
+\subsection*{Análisis de Controlabilidad}
+
+Para afirmar si el sistema es controlable a partir de la entrada manipulada estipulada 
+$V_{qs}^r(t)$ debemos estudiar el rango de la matriz de controlabilidad $C$. Esta nos 
+proporcionara la certeza de si el sistema LTI se puede transferir desde cualquier estado inicial
+a cualquier otro estado, mediante un vector de control no restringido en un intervalo de tiempo 
+finito.
+
+Para este caso la matriz de Controlabilidad es:
+
+\begin{equation}
+    C = 
+    \begin{bmatrix}
+        B & A.B & A^2.B
+    \end{bmatrix}
+\end{equation}
+
+Con:
+
+\begin{equation*}
+    B = 
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        \frac{1}{L_q}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    A.B = 
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        \frac{1}{L_q}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 \\
+        \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        -\frac{R_s}{L_q}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    A^2.B =
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q}
+    \end{bmatrix}.
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        \frac{1}{L_q}
+    \end{bmatrix}
+    =
+    \begin{matrix}
+        \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}.L_q} \\
+        -\frac{3.P_p.b_{eq}.\lambda_m^{\prime r}}{2.J_{eq}^2.L_q} - \frac{3.P_p.\lambda_m^{\prime r}.R_s}{2.J_{eq}.L_q^2} \\
+        \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}^2}
+    \end{matrix}
+\end{equation*}
+
+Entonces:
+
+\begin{equation*}
+    C = 
+    \begin{bmatrix}
+        0 & 0 & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}.L_q} \\
+        0 & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} & -\frac{3.P_p.b_{eq}.\lambda_m^{\prime r}}{2.J_{eq}^2.L_q} - \frac{3.P_p.\lambda_m^{\prime r}.R_s}{2.J_{eq}.L_q^2} \\
+        \frac{1}{L_q} & -\frac{3.P_p.b_{eq}.\lambda_m^{\prime r}}{2.J_{eq}^2.L_q} - \frac{3.P_p.\lambda_m^{\prime r}.R_s}{2.J_{eq}.L_q^2} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}^2}
+    \end{bmatrix}
+\end{equation*}
+
+En este caso el rango de la matriz de controlabilidad es 3, por lo tanto podemos afirmar que el 
+sistema LTI equivalente simplificado es controlable desde la entrada indicada. Cabe aclarar que 
+a partir de $V_{qs}^r(t)$ no es posible controlar la salida de los estados $i_ds^r$ ni $T_s^°$ 
+del sistema LTI equivalente aumentado. Estas podrían controlares si se agrega entradas de control 
+destinadas específicamente para esto.
+
+%-------------------- 5.1.6 --------------------------%
+
+\subsection*{Simulación Dinámica}
+
+
 
 
 %-------------------- 5.2 --------------------------%
@@ -753,6 +1079,8 @@ De esta ecuación podemos determinar el efecto que tendrá la corriente $i_{ds}^
     \item Si $i_{ds}^{r*} < 0 A$ entonces se produce un debilitamiento de campo.
 \end{itemize}
 
+%-------------------- 2 --------------------------%
+
 \subsection*{Controlador externo de movimiento (posición/velocidad)}
 
 El controlador externo de movimiento se agrega con el fin de mejorar la dinámica del sistema y corregir los
@@ -778,7 +1106,7 @@ La salida del controlador sera el torque consigna que ingresara al modulador de 
 dominio de Laplace se tiene:
 
 \begin{equation}\label{eq.controlador_error}
-    T_m^{*\prime}(s) = e_\omega(s).b_a + e_\theta(s).K_{sa} + e_\theta(s).K_{sia}.\frac{1}{s}
+    T_m^{*\prime}(s) = e_\omega(s).b_a + e_\theta(s).K_{sa} + e_\theta(s).K_{sai}.\frac{1}{s}
 \end{equation}
 
 Donde:
@@ -805,20 +1133,20 @@ Reemplazando esta ecuación en la
 \hyperref[eq.controlador_error]{ecuación del controlador (\ref*{eq.controlador_error})}:
 
 \begin{equation}
-    J_{eq}.s^3.\Theta_m(s) = [s^2.b_a + s.K_{sa} + K_{sia}].[\Theta_m^*(s) - \Theta_m(s)] - s.\frac{T_l(s)}{r}
+    J_{eq}.s^3.\Theta_m(s) = [s^2.b_a + s.K_{sa} + K_{sai}].[\Theta_m^*(s) - \Theta_m(s)] - s.\frac{T_l(s)}{r}
 \end{equation}
 
 Despejando, la posición del retor queda expresada como:
 
 \begin{equation}
-    \Theta_m(s) = \frac{s^2.b_a + s.K_{sa} + K_{sia}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}.\Theta_m^*(s) - \frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}.\frac{T_l(s)}{r}
+    \Theta_m(s) = \frac{s^2.b_a + s.K_{sa} + K_{sai}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}.\Theta_m^*(s) - \frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}.\frac{T_l(s)}{r}
 \end{equation}
 
 A partir de esta ecuación podemos obtener las funciones de transferencia del controlador:
 
 \begin{align}
-    G_1(s) &= \frac{\Theta_m(s)}{\Theta_m^*(s)} = \frac{s^2.b_a + s.K_{sa} + K_{sia}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}} \\
-    G_2(s) &= \frac{\Theta_m(s)}{\frac{T_l(s)}{r}} = -\frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sia}}
+    G_1(s) &= \frac{\Theta_m(s)}{\Theta_m^*(s)} = \frac{s^2.b_a + s.K_{sa} + K_{sai}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}} \\
+    G_2(s) &= \frac{\Theta_m(s)}{\frac{T_l(s)}{r}} = -\frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}
 \end{align}
 
 En régimen estacionario para una entrada escalón unitario podemos observar:
@@ -830,274 +1158,182 @@ En régimen estacionario para una entrada escalón unitario podemos observar:
 
 Estos resultados muestran que que la función de transferencia
 correspondiente a la entrada de perturbación tejen un cero en el origen por lo que el error de estado 
-estacionario es nulo. En caso de que la acción integral sea nula si tendrá un error dado por $1/K_{sa}$
-
+estacionario es nulo. En caso de que la acción integral sea nula si tendrá un error dado por $1/K_{sa}$.
 En cuanto a la función de transferencia correspondiente a la entrada de referencia tiene ganancia
 unitaria a baja frecuencia por lo que el error de estado estacionario, según el teorema del valor final, 
-es nulo. 
-
-Podemos concluir que este  controlador no tiene error de régimen permanente ante entradas del tipo escalón.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+es nulo. Podemos concluir que este  controlador no tiene error de régimen permanente ante entradas del tipo escalón.
+
+Aplicamos el método de sintonía en serie, con $n = 2,5$ y $\omega_{pos} = 800 rad/s$
+para la determinar las ganancias del controlador. Dado que el polinomio 
+característico de forma normalizada del sistema es:
+
+\begin{equation}
+    P(s) = s^3 + \frac{b_a}{J_{eq}}.s^2 + \frac{K_{sa}}{J_{eq}}.s + \frac{K_{sai}}{J_{eq}}
+\end{equation}
+
+Podemos llegar a las siguientes expresiones:
+
+\begin{align*}
+    n.\omega_{pos} &= \frac{b_a}{J_{eq}}; & &n.\omega_{pos}^2 = \frac{K_{sa}}{J_{eq}}; & n.\omega_{pos}^3 = \frac{K_{sai}}{J_{eq}} \\
+\end{align*}
+
+Dados los valores nominales de $J_{eq}$ y $b_l$, se obtiene $J_{eq} = 5,6510.10^6$, entonces:
+
+\begin{align*}
+    b_a = J_{eq}.n.\omega_{pos} &= 0,0113\, \frac{N.m}{rad/s} \\ 
+    K_{sa} = J_{eq}.n.\omega_{pos}^2 &= 9,0416\, \frac{N.m}{rad} \\
+    K_{sai} = J_{eq}.n.\omega_{pos}^3 &= 2893\, \frac{N.m}{rad.s}
+\end{align*}
+
+Con estos valores podemos determinar los polos del sistema a lazo cerrado. Sabiendo que la distancia
+de los polos al origen es la misma para los 3 polos. Con $\xi = 0,75$
+
+\begin{itemize}
+    \item Para valores nominales de $J_l$ y $b_l$:
+    
+    \begin{align*}
+        s_1 = -800\, \frac{rad}{s} & & s_2,3  = -600 \pm 529,15\, j \, \frac{rad}{s} 
+    \end{align*}
+    
+    \item Para valores máximos de $J_l$ y $b_l$:
+    
+    \begin{align*}
+        s_1 = -613,75\, \frac{rad}{s} & & s_2,3  = -508,98 \pm 649,26\, j \, \frac{rad}{s} 
+    \end{align*}
+
+    \item Para valores mínimos de $J_l$ y $b_l$:
+    
+    \begin{align*}
+        s_1 = -1498,5\, \frac{rad}{s} & & s_2,3  = -542,3 \pm 383,7\, j \, \frac{rad}{s} 
+    \end{align*}
+
+\end{itemize}
+
+% MOSTRAR LA IMAGEN DE LOS POLOS %
+
+%-------------------- 2 --------------------------%
+
+\subsubsection*{ENtrada de referencia o set-point}
+
+Por último, se incluye la opción de ingresar el control de posición mediante una referencia o punto de 
+ajuste de posición de las coordenadas articulares del brazo del robot SCARA. Esto resulta conveniente, ya que 
+en muchas ocasiones es más sencillo utilizar los algoritmos de Cinemática del robot para controlar 
+el brazo, utilizando sus coordenadas articulares. De forma que:
+
+\begin{equation}
+    q_1^* = \frac{\theta_m^*(t)}{r}
+\end{equation}
+
+% IMAGEN DEL SET-POINT %
+
+%-------------------- 3 --------------------------%
+
+\subsection*{Observador de Estado de orden reducido}
+
+Un observador de estado es un componente utilizado en sistemas de control para estimar el estado interno 
+de un sistema dinámico a partir de las mediciones de entradas y salidas del sistema. En este caso, se
+utiliza un observador de estado de orden reducido para poder realimentar la velocidad angular del motor 
+ya que este no cuenta con un sensor para medirla directamente.
+
+El sistema no es observable desde la velocidad $\omega_m(t)$ como lo indica el criterio de observabilidad 
+de Kalman, pero si desde la posición $\theta_m(t)$. Por lo tanto estimaremos la velocidad a partir de la 
+posición.
+
+Al incorporar el observador al subsistema mecánico podemos omitir $-b_{eq}.\omega_{m}(t)$ ya que al 
+contar con sensores de corriente con realimentación física este efecto ya está desacoplado.  
+
+El modelo del subsistema mecánico se puede expresar como:
+
+\begin{equation}
+    \begin{cases}
+        \dot{x}(t) = A.x(t) + B_c.u(t) +B_d.d(t)  \, ; \,\, x(t_0) = x_0\\
+        y(t) = C.x(t) \\
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+    \begin{cases}
+        \dot{x}(t) = 
+        \begin{bmatrix}
+            0 & 1 \\
+            0 & 0 \\
+        \end{bmatrix}
+        .x(t) + 
+        \begin{bmatrix}
+            0 \\
+            \frac{1}{J_{eq}} \\
+        \end{bmatrix}
+        .T_m(t) +
+        \begin{bmatrix}
+            0 \\
+            -\frac{1}{J_{eq}.r} \\
+        \end{bmatrix}
+        .T_l(t)\\
+        y(t) = 
+        \begin{bmatrix}
+            1 & 0 \\
+        \end{bmatrix}
+        .x(t) \\
+    \end{cases}
+\end{equation}
+
+El observador de estado de Luenberger crea un modelo estimado del sistema original que reproduce su 
+comportamiento a partir de las variables de entrada y salida medibles. Luego, utiliza este modelo estimado 
+junto con una corrección proporcional al error de salida para estimar el estado interno del sistema en 
+tiempo real. Aplicándolo al sistema anterior, se obtiene:
+
+\begin{equation}
+    \begin{cases}
+        \dot{\hat{x}}(t) = \hat{A}.\hat{x}(t) + \hat{B}.u(t) + K_e.(y(t) - \hat{y}(t)) \, ; \,\, \hat{x}(t_0) = 0\\
+        \hat{y}(t) = \hat{C}.\hat{x}(t) \\
+    \end{cases}
+\end{equation}
+
+Donde la matriz $K_e$ contiene los parámetros de ajuste del observador
+
+\begin{equation}
+    K_e = 
+    \begin{bmatrix}
+        k_{e\theta} & k_{e\omega} \\
+    \end{bmatrix}
+\end{equation}
+
+Con el error de estimación definido como:
+
+\begin{equation}\label{eq.error_estimacion}
+    e(t) = x(t) - \hat{x}(t)
+\end{equation}
+
+Asumiendo un funcionamiento ideal, las matrices de ambos sistemas real coinciden con las matrices del
+modelo del observador. Trabajando el sistema y reemplazando en la   
+\hyperref[eq.error_estimacion]{ecuación (\ref*{eq.error_estimacion})}
+se obtiene la dinámica del error:
+
+\begin{equation}
+    \dot{e}(t) = [A - K_e.C].e(t) + B.d(t)
+\end{equation}
+
+Considerando que no hay perturbaciones $d(t) = 0$, se pueden obtener los parámetros de ajuste del observador
+mediante el polinomio característico del sistema dado por los autovalores de la matriz 
+$A^\prime = [A - K_e.C]$:
+
+\begin{equation}
+    \mid s.I - A^\prime\mid \,\,= 
+    \begin{bmatrix}
+        s + k_{e\theta} & -1 \\
+        k_{e\omega} & s 
+    \end{bmatrix}
+    = s^2 + k_{e\theta}.s + k_{e\omega}
+\end{equation}
+
+Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$, obtengo:
+
+\begin{align*}
+    K_{e\theta} = 6400\,rad/s \\
+    K_{e\omega} = 10,24.10^6\,rad/s
+\end{align*}
+
+% IMAGEN DEL OBSERVADOR %
 
 
 
