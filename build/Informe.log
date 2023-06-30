@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.5.16)  29 JUN 2023 12:06
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.5.16)  29 JUN 2023 17:50
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex
@@ -1410,10 +1410,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 ("C:/Program Files/MiKTeX/tex/latex/amsfonts/umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 152--154
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -1423,10 +1419,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 189--193
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -1436,8 +1428,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [3]
-Overfull \hbox (1.2031pt too wide) detected at line 338
- []$[]   [] \OT1/cmr/m/n/10 = [] []$ 
+Overfull \hbox (41.9589pt too wide) detected at line 384
+[][]
  []
 
 
@@ -1467,10 +1459,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [6]
-<polosyceros.png, id=120, 378.0277pt x 320.76761pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[7]
+<polosyceros.png, id=133, 378.0277pt x 320.76761pt>
 File: polosyceros.png Graphic file (type png)
 <use polosyceros.png>
-Package luatex.def Info: polosyceros.png  used on input line 600.
+Package luatex.def Info: polosyceros.png  used on input line 697.
 (luatex.def)             Requested size: 378.02676pt x 320.76682pt.
 
 
@@ -1481,14 +1482,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[7
+[8
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
 <./polosyceros.png>]
-<frecuancia_amortiguamiento_rs.png, id=131, 306.86954pt x 243.49431pt>
+<frecuancia_amortiguamiento_rs.png, id=144, 306.86954pt x 243.49431pt>
 File: frecuancia_amortiguamiento_rs.png Graphic file (type png)
 <use frecuancia_amortiguamiento_rs.png>
 Package luatex.def Info: frecuancia_amortiguamiento_rs.png  used on input line 
-645.
+742.
 (luatex.def)             Requested size: 306.86877pt x 243.4937pt.
 
 
@@ -1499,7 +1500,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[8
+[9
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
 <./frecuancia_amortiguamiento_rs.png>]
 
@@ -1510,19 +1511,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[9
+[10
 Missing character: There is no 𝑚 (U+1D45A) in font calibri:mode=node;script=l
 atn;language=dflt;+tlig;!
 ]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[10]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -1585,7 +1577,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[17] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[18] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -1594,16 +1595,16 @@ Package rerunfilecheck Info: File `Informe.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40092 strings out of 478309
- 156416,1977958 words of node,token memory allocated
- 1715 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 335 attribute, 99 glue_spe
-c, 169 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2582,3:236,4:30,5:1294,6:70,7:10994,8:98,9:2773,10:12,11:1
-216
- 58699 multiletter control sequences out of 65536+600000
+ 40099 strings out of 478309
+ 156412,1977958 words of node,token memory allocated
+ 1751 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 347 attribute, 99 glue_spe
+c, 175 attribute_list, 2 write nodes
+   avail lists: 1:3,2:2211,3:236,4:38,5:1294,6:70,7:10994,8:105,9:2226,10:12,11:
+1216
+ 58702 multiletter control sequences out of 65536+600000
  69 fonts using 30391015 bytes
- 99i,16n,98p,1092b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,15n,98p,1092b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/windows/fonts/calibri.ttf><//?/c:/windows/fonts/calibrib.ttf><C:/Program
  Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/
@@ -1613,10 +1614,11 @@ s/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
 les/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb>
-Output written on Informe.pdf (18 pages, 396541 bytes).
+cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pf
+b>
+Output written on Informe.pdf (19 pages, 414082 bytes).
 
-PDF statistics: 296 PDF objects out of 1000 (max. 8388607)
- 128 named destinations out of 1000 (max. 131072)
+PDF statistics: 313 PDF objects out of 1000 (max. 8388607)
+ 132 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
