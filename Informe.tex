@@ -1,6 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{geometry}
@@ -24,10 +23,14 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{tocbibind}
+\usepackage{titlesec}
+\usepackage{tocloft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
-\hypersetup{colorlinks=true, linkcolor=blue}
+\hypersetup{colorlinks=true, linkcolor=black, pdfborderstyle={/S/U/W 1}}
+\titleformat{\part}[block]{\normalfont\huge\bfseries}{\thepart. \,}{0pc}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{a4paper}
@@ -47,16 +50,25 @@
 
 \begin{titlepage}
     \centering
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{encabezado.png}
+    \end{figure}
     \vspace*{3cm}
-    \Huge\textbf{\textsc{Control de Accionamiento de CA con Motor Sincronico de Imanes Permanentes}}\\
-    \vspace{1.5cm}
-    \large{Subtitulo}\\
-    \vspace{10cm}
-    \large{Autors:}\\
+    \huge{\textbf{Automática y Maquinas Eléctricas}}\\
+    \vspace*{3cm}
+    \Huge\textbf{Control de Accionamiento de CA con Motor Sincrónico de Imanes Permanentes}\\
+    \vspace{8cm}
+    \large{Autores:}\\
     \large{\textbf{Alan Vignolo\\Brandon Mamani}}\\
     \vfill
     \the\year\\ % o puedes especificar una fecha específica en lugar de \today
 \end{titlepage}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+\newpage
 
 \part*{Introducción}
 
@@ -65,40 +77,48 @@
 \newpage
 \part*{Desarrollo}
 
-\section*{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
-\subsection*{Modelo matemático equivalente del subsistema mecánico completo}
+\section{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
+
+\subsection{Modelo matemático equivalente del subsistema mecánico completo}
 
 Subsistema mecánico del motor de CA trifásica síncrono, con el rotor referido al estator - sistema inercial de referencia:
+
 \begin{equation}
     \label{eq:1.1}
     J_{m}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}.\omega_{m}(t)-T_{d}(t) \\
 \end{equation}
+
 \begin{equation}
     \label{eq:1.2}
     \dot{\theta}_{m} = \omega_{m}
 \end{equation}
 
 Subsistema de tren de transmisión:
+
 \begin{equation}
     \label{eq:2.1}
     \omega_{l}(t) = \frac{1}{r}.\omega_{m}(t) \\
 \end{equation}
+
 \begin{equation}
     \label{eq:2.2}
     T_{q}(t) = r.T_{d}(t) \\
 \end{equation}
 
 Subsistema de la carga mecánica:
+
 \begin{equation}
     \label{eq:3.1}
     J_{l}.\dot{\omega}_{l}(t) = T_{q}(t)-b_{l}.\omega_{l}(t)-T_{l}(t) \\
 \end{equation}
+
 \begin{equation}
     \label{eq:3.2}
     \dot{\theta}_{l} = \omega_{l}\\
 \end{equation}
 
 Sistema mecánico equivalente completo:
+
 \begin{equation}
     \label{eq:4.1}
     (J_{m}+\frac{J_l}{r^2}).\dot{\omega}_{m}(t) = T_{m}(t)-(b_{m}+\frac{b_{l}}{r^2}).\omega_{m}(t)-\frac{T_{l}(t)}{r} \\
@@ -148,11 +168,11 @@ la elasticidad torsional de la transmisión.
 
 % ------------------  5.1.2  --------------------- %
 
-\subsection*{Modelo dinámico del sistema físico completo}
+\subsection{Modelo dinámico del sistema físico completo}
 
 % ------------------ 5.1.2.a --------------------- %
 
-\subsubsection*{Modelo global no lineal (NL)}
+\subsubsection{Modelo global no lineal (NL)}
 
 En el modelo global no lineal consideramos todos los sistemas involucrados 
 como el sistema mecánico, previamente desarrollado, 
@@ -240,7 +260,7 @@ Reemplazando estas dos ecuaciones y juntando los demás subsistemas obtenemos el
 
 %-------------------------- 5.1.2.B ------------------------------------------%
 
-\subsubsection*{Modelo global linealizado con parámetros variables (LPV)}
+\subsubsection{Modelo global linealizado con parámetros variables (LPV)}
 
 Para el caso general en el que ${i}_{ds}(t) \neq 0$. Se puede representar al sistema no lineal de forma genérica
 como: 
@@ -387,7 +407,7 @@ obtenemos:
 
 %-------------------- 5.1.2.c --------------------------%
 
-\subsubsection*{Linealización por Realimentación NL}
+\subsubsection{Linealización por Realimentación NL}
 
 Se busca un modelo simplificado lineal invariante LTI equivalente al modelo NL del sistema, 
 para ello se propone un controlador de realimentación de estados que permita linealizar el 
@@ -562,7 +582,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 
 %-------------------- 5.1.2.d --------------------------%
 
-\subsubsection*{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
+\subsubsection{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
 
 El modelo dinámico global LPV para el caso general donde $i_{ds}^r \neq 0$
 es una mejor representación del sistema real al tener mejor representadas sus 
@@ -607,7 +627,7 @@ los imanes permanentes.
 
 %-------------------- 5.1.2.e --------------------------%
 
-\subsubsection*{Funciones de transferencia para el modelo LTI}
+\subsubsection{Funciones de transferencia para el modelo LTI}
 
 Las funciones de transferencia nos permiten relacionar las salidas con las entradas del sistema.
 Como nuestro sistema dispone de dos entradas obtendremos dos funciones de transferencia.
@@ -659,7 +679,7 @@ De esta expresión se obtienen las funciones de transferencia respecto de las en
 
 %-------------------- 5.1.3 --------------------------%
 
-\subsection*{Análisis de Estabilidad}
+\subsection{Análisis de Estabilidad}
 
 Para realizar un análisis de estabilidad debemos primero determinar polos (ceros del denominador) del 
 sistema a partir de la función de transferencia obtenida anteriormente:
@@ -745,7 +765,7 @@ Podemos ver como varían estos valores en los siguientes gráficos:
 
 %-------------------- 5.1.4 --------------------------%
 
-\subsection*{Análisis de Observabilidad}
+\subsection{Análisis de Observabilidad}
 
 Para realizar el análisis de observabilidad completa de estados para el modelo LTI equivalente 
 aumentado desde la salida $\theta_m$, evaluamos el rango de la matriz de observabilidad "$O$".
@@ -886,7 +906,7 @@ posición sin conocer la condición inicial de la misma.
 
 %-------------------- 5.1.5 --------------------------%
 
-\subsection*{Análisis de Controlabilidad}
+\subsection{Análisis de Controlabilidad}
 
 Para afirmar si el sistema es controlable a partir de la entrada manipulada estipulada 
 $v_{qs}^r(t)$ debemos estudiar el rango de la matriz de controlabilidad $C$. Esta nos 
@@ -978,7 +998,7 @@ destinadas específicamente para esto.
 
 %-------------------- 5.1.6 --------------------------%
 
-\subsection*{Simulación Dinámica}
+\subsection{Simulación Dinámica}
 
 
 
@@ -986,7 +1006,7 @@ destinadas específicamente para esto.
 %-------------------- 5.2 --------------------------%
 
 
-\section*{Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}
+\section{Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}
 
 El control vectorial es una técnica avanzada utilizada para controlar motores de corriente alterna y máquinas 
 síncronas. Permite controlar de manera independiente la magnitud y la fase de la corriente de alimentación de la 
@@ -1003,7 +1023,7 @@ magnitud y la fase de la corriente de alimentación.
 
 %-------------------- 5.2.1 --------------------------%
 
-\subsection*{Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}
+\subsection{Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}
 
 En el próximo paso de nuestro sistema, se llevará a cabo la implementación de un modulador de torque equivalente, 
 conocido también como controlador interno vectorial de corriente/torque. Este controlador nos permitirá, de manera
@@ -1014,7 +1034,7 @@ de parámetros adecuados, siguiendo los lineamientos que se detallarán a contin
 
 %-------------------- 5.2.1.a --------------------------%
 
-\subsubsection*{Desacople de las realimentaciones de estado hacia la entrada}
+\subsubsection{Desacople de las realimentaciones de estado hacia la entrada}
 
 Considerando que el modulador de tensión es lo suficientemente rápido y preciso, podemos asumir que su ganancia 
 es unitaria. Por lo tanto, podemos considerar que en la entrada del modulador de tensión se tiene una consigna 
@@ -1070,7 +1090,7 @@ Reemplazando las \hyperref[eq:compensaciones]{Ecuaciones \ref*{eq:compensaciones
 
 %-------------------- 5.2.1.b --------------------------%
 
-\subsubsection*{Diseño de lazos de control de corrientes}
+\subsubsection{Diseño de lazos de control de corrientes}
 
 La consigna de tensión es función de la corriente del sistema, por lo que se puede controlar usando 
 una consigna de corriente proporcional. Con el error de corriente entre la corriente de consigna 
@@ -1138,7 +1158,7 @@ converja mas rápidamente a cero, de forma que responda de mejor manera a las pe
 
 %-------------------- 5.2.1.c --------------------------%
 
-\subsubsection*{Incorporación de consigna de torque}
+\subsubsection{Incorporación de consigna de torque}
 
 Volvemos a usar nuevamente el método de la sección anterior en el que realizamos una realimentación
 para controlar el sistema mediante consignas de torque $T_m^*(t)$. La consigna sigue el siguiente modelo:
@@ -1178,7 +1198,7 @@ De esta ecuación podemos determinar el efecto que tendrá la corriente $i_{ds}^
 
 %-------------------- 5.2.2 --------------------------%
 
-\subsection*{Controlador externo de movimiento (posición/velocidad)}
+\subsection{Controlador externo de movimiento (posición/velocidad)}
 
 El controlador externo de movimiento se agrega con el fin de mejorar la dinámica del sistema y corregir los
 errores de estado estacionario producidos por cargas perturbadoras. En la rama derivativa tomaremos el 
@@ -1310,7 +1330,7 @@ de los polos al origen es la misma para los 3 polos. Con $\xi = 0,75$
 
 %-------------------- 5.2.2 --------------------------%
 
-\subsubsection*{Entrada de referencia o set-point}
+\subsubsection{Entrada de referencia o set-point}
 
 Por último, se incluye la opción de ingresar el control de posición mediante una referencia o punto de 
 ajuste de posición de las coordenadas articulares del brazo del robot SCARA. Esto resulta conveniente, ya que 
@@ -1325,7 +1345,7 @@ el brazo, utilizando sus coordenadas articulares. De forma que:
 
 %-------------------- 5.2.3 --------------------------%
 
-\subsection*{Observador de Estado de orden reducido}
+\subsection{Observador de Estado de orden reducido}
 
 Un observador de estado es un componente utilizado en sistemas de control para estimar el estado interno 
 de un sistema dinámico a partir de las mediciones de entradas y salidas del sistema. En este caso, se
@@ -1434,10 +1454,498 @@ Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$,
 
 %-------------------- 5.2.4 --------------------------%
 
+\subsection{Simulación en tiempo continuo con modelo completo NL}
+
+\subsubsection{Seguimiento de consignas de movimiento}
+
+La posición deseada de la articulación, $q^*_1(t)$, se define como una función de tiempo que depende 
+de la variable $θ^∗_m(t)$, donde $r$ es una constante. 
+
+Para generar el perfil de movimiento, utilizamos un perfil trapezoidal en el que tanto la rampa de 
+ascenso como la de descenso se producen en un intervalo de tiempo de 5 segundos. Durante este tiempo,
+la posición deseada de $q^∗_1(t)$ alcanza un valor de $2\pi$ radianes entre las dos rampas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{perfil_trapezoidal.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.a.2.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.a.3.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.a.4.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.a.5.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.a.6.png}
+\end{figure}
+
+\subsubsection{Rechazo a perturbaciones}
+
+para evaluar la respuesta del sistema ante perturbaciones, proporcionamos una consigna constante 
+igual a 0 con un escalón como perturbación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.b.1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.b.2.png}
+\end{figure}
+
+Notamos un error de estado estacionario en este caso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.4.b.3.png}
+\end{figure}
+
 %-------------------- 5.2.5 --------------------------%
+
+\subsection{Verificación de desempeño y/o mejoras}
+
+%-------------------- 5.2.5.a --------------------------%
+
+\subsubsection{Especificaciones de operación (valores límites)}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+         & \multicolumn{2}{c|}{Especificación de Operación} & \multicolumn{2}{c|}{Valores obtenidos en simulación} \\
+        \hline
+         & Régimen continuo & Valor máximo & Régimen continuo & Valor máximo \\
+        \hline
+        Torque motor & 0.023 & 0.093 & 0.009 & 3.7 \\
+        \hline
+        Velocidad angular & 691.15 &  & 394.9 &  \\
+        \hline
+        Corriente en el estator & 0.4 & 2 & 0.030 & 54 \\
+        \hline
+        Tensión en el estator & 24 &  & 19.01 &\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Causa primera: puntos de inflexión en la consigna genera picos muy altos.
+
+Una forma de mejorar esto es suavizar la consigna. Podemos aplicar un filtro a la entrada de esta 
+o como en nuestro caso, trabajar sobre el perfil de velocidad angular. Al eliminar los cambios 
+abruptos o líneas verticales, logramos eliminar los picos que se generan en los puntos de 
+inflexión del perfil de posición.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2..5.1.a.1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2..5.1.a.2.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2..5.1.a.3.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2..5.1.a.4.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2..5.1.a.5.png}
+\end{figure}
+
+Al aplicar este cambio hacemos que el sistema no sobrepase los valores pico de las especificaciones
+que eran los que no respondían de forma satisfactoria.
+
+%-------------------- 5.2.5.b --------------------------%
+
+\subsubsection{Observador}
+
+En las simulaciones que hemos realizado, se puede observar un error de estado estacionario no nulo 
+ante perturbaciones de carga. Este error surge debido a que el observador de estado no está 
+realimentando la entrada de perturbación. Aunque podría ser tentador tratar de corregir esto 
+mediante la realimentación del par de carga, esto podría implicar la adición de sensores costosos 
+y potencialmente imprecisos, lo que mantendría el error.
+
+En lugar de esto, proponemos una solución a través de la adición de una acción integral al 
+observador de estado, un enfoque que aborda el problema a través de software sin requerir hardware 
+adicional. Esto implica la introducción de un nuevo estado en nuestro observador que tiene en 
+cuenta el tiempo que permanece la estimación del estado en un valor erróneo. Este nuevo estado es 
+una integración del error entre la variable medida y su estimación, y se define como:
+
+\begin{equation}
+    z(t) = \int (\theta(t) - \hat{\theta}(t))\,dt
+\end{equation}
+
+Ahora, el modelo del observador se redefine para incluir este estado integral y la entrada del 
+observador también se ajusta para incluir este nuevo estado:
+
+\begin{align*}
+    \dot{\tilde{\theta}}(t) &= K_e \theta \left(\theta(t) - \tilde{\theta}(t)\right) + \tilde{\omega}(t) \\
+    \dot{\tilde{\omega}}(t) &= K_e \omega \left(\theta(t) - \tilde{\theta}(t)\right) + T_m \dot{'}(t) J_eq + z(t) \\
+    \dot{\tilde{z}}(t) &= K_e i \left(\theta(t) - \tilde{\theta}(t)\right)
+\end{align*}
+
+Para sintonizar las ganancias del observador, determinamos la ecuación característica del 
+observador y la comparamos con la de un sistema con características deseadas. Para este propósito, 
+asumimos que queremos que todos los polos del observador estén ubicados en -3200 rad/s. Esto nos 
+da los valores de las ganancias del observador:
+
+\begin{align*}
+    K_e\theta = 9.6 \times 10^3 \, \text{rad/s}
+    K_e\omega = 3.072 \times 10^7 \, \text{rad/s}^2
+    K_ei = 3.2768 \times 10^{10} \, \text{rad/s}^3
+\end{align*}
+
+Estas ganancias aseguran que el error de estado estacionario converja asintóticamente a cero, 
+incluso ante perturbaciones de carga. Así, la adición de la acción integral en el observador ha 
+resuelto el problema sin la necesidad de hardware adicional.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.1.b.1.png}
+\end{figure}
+
+Vemos como el valor de tita real es igual a 0 luego de un transitorio debido a la perturbación. 
+Esto además se puede corroborar en la siguiente imagen que representa el error entre la consigna y 
+el valor real de la posición angular:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.1.b.2.png}
+\end{figure}
+
+%-------------------- 5.2.5.c --------------------------%
+
+\subsubsection{Comportamiento térmico del motor}
+
+Procedemos a verificar la temperatura del bobinado cuando la consigna involucra una operación 
+continua repetitiva sumado una perturbación continua. Estas dos se crearon a partir de la consigna 
+inicial repetida dentro de un lapso de $300$ segundos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.1.c.1.png}
+    \caption{Temperatura sin suavizado}
+\end{figure}
+
+Vemos que cuando la consigna es la original, el sistema sobrepasa los limites de temperatura, lo 
+que podría producir una degradación de los componentes. Además notamos que esta se vuelve 
+asintótica.
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.1.c.2.png}
+    \caption{Temperatura con suavizado}
+\end{figure}
+    
+En este caso, al igual que en el anterior, la respuesta en temperatura se vuelve asintótica pero 
+a valores dentro de los limites permitidos.
+
+%-------------------- 5.2.5.d --------------------------%
+
+\subsubsection{Desempeño del sistema ante una respuesta no ideal de los sensores}
+
+En este segmento, se estudian los efectos de las respuestas no ideales (banda limitada) de los 
+sensores que miden las corrientes, la posición angular del motor, y la temperatura. Se siguen las 
+siguientes especificaciones:
+
+\begin{itemize}
+    \item Sensor de corriente: modelo pasa bajo (LP) en el espacio de estados (SS) de 2° orden, 
+    con una frecuencia natural de $6000\,rad/s$ y un factor de amortiguamiento $(\xi)$ de $1$.
+
+    \item Sensor de posición angular: modelo LP en SS de 2° orden, con una frecuencia natural de 
+    $2000\,rad/s$ y un factor de amortiguamiento de $1$.
+
+    \item Sensor de temperatura: modelo LP en SS de 1° orden, con una constante de tiempo ($\tau$)  
+    de $20\,s$.
+\end{itemize}
+
+Para los filtros de segundo orden, se usa la función de transferencia:
+
+\begin{equation*}
+    G(s) = \frac{\omega_n^2}{s^2 + 2\omega_n\zeta s + \omega_n^2}
+\end{equation*}
+
+Donde se puede demostrar que la función de transferencia de un modelo en el espacio de estados se 
+calcula con la ecuación:
+
+\begin{equation*}
+    G(s) = C(sI - A)^{-1}B + D
+\end{equation*}
+
+Si se toma como matriz de estados $A$:
+
+\[
+A = \begin{bmatrix}
+0 & -1 \\
+\omega_n^2 & -2\omega_n\zeta
+\end{bmatrix}
+\]
+
+Entonces, igualando las ecuaciones, las matrices del modelo en el espacio de estados deben ser:
+
+\[
+A = \begin{bmatrix}
+0 & -1 \\
+\omega_n^2 & -2\omega_n\zeta
+\end{bmatrix}, \quad
+B = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad
+C = \begin{bmatrix}
+0 & 1
+\end{bmatrix}, \quad
+D = \begin{bmatrix}
+0
+\end{bmatrix}
+\]
+
+Por lo tanto, los sensores de corriente y posición angular quedan definidos por:
+
+Para el sensor de corriente:
+
+\[
+A_{iac} = \begin{bmatrix}
+0 & -1 \\
+36 \times 10^6 & -12000
+\end{bmatrix}, \quad
+B_{iac} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad
+C_{iac} = \begin{bmatrix}
+0 & 1
+\end{bmatrix}, \quad
+D_{iac} = \begin{bmatrix}
+0
+\end{bmatrix}
+\]
+
+Para el sensor de posición:
+\[
+A_{pos} = \begin{bmatrix}
+0 & -1 \\
+4 \times 10^6 & -4000
+\end{bmatrix}, \quad
+B_{pos} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}, \quad
+C_{pos} = \begin{bmatrix}
+0 & 1
+\end{bmatrix}, \quad
+D_{pos} = \begin{bmatrix}
+0
+\end{bmatrix}
+\]
+
+Para el filtro de primer orden, la función de transferencia es:
+
+\[
+G(s) = \frac{1}{1 + \tau s}
+\]
+
+De donde se puede deducir que:
+
+Para el sensor de temperatura:
+\[
+A_T = \begin{bmatrix}
+-0.05
+\end{bmatrix}, \quad
+B_T = \begin{bmatrix}
+1
+\end{bmatrix}, \quad
+C_T = \begin{bmatrix}
+0.05
+\end{bmatrix}, \quad
+D_T = \begin{bmatrix}
+0
+\end{bmatrix}
+\]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.2.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.3.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.4.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.5.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.6.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.7.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.8.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.9.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.10.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.11.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.12.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.13.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.14.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.15.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.d.16.png}
+\end{figure}
+
+%-------------------- 5.2.5.d --------------------------%
+
+\subsubsection{Moduladore trifásico de tensión no ideal}
+
+El desempeño de un sistema eléctrico se analiza incorporando características no ideales en el 
+modulador de tensión trifásico, centrando la atención en la saturación y limitación del ancho de 
+banda. Se modela el modulador como un filtro pasa bajos con una saturación de tensión definida por 
+$√2.V_s.√3$, donde $V_{smáx} = 24\,Vca$ rms. El filtro pasa bajo se define con una frecuencia 
+natural $\omega = 6000\,rad/s$ y un factor de amortiguamiento $\xi = 1$, representándose en el 
+espacio de estados con las siguientes matrices: 
+
+    \begin{align*}
+    A = \begin{bmatrix}
+    0 & -1 \\
+    36 \times 10^6 & -12000
+    \end{bmatrix}, \quad
+    B = \begin{bmatrix}
+    10
+    \end{bmatrix}, \quad
+    C = \begin{bmatrix}
+    0 & 1
+    \end{bmatrix}, \quad
+    D = \begin{bmatrix}
+    0
+    \end{bmatrix}
+\end{align*}
+
+Estas matrices provienen de las obtenidas en el punto anterior. 
+
+Al implementar estas características no ideales, se observa una degradación en el desempeño 
+del sistema. La saturación del modulador provoca un creciente error entre la consigna y la
+posición actual. Este error se debe a que la máquina no recibe la tensión necesaria para generar 
+el torque correcto y corregir su posición. En consecuencia, las tensiones reales se estancan en 
+sus valores límites de saturación, mientras que las consignas de tensión siguen aumentando de 
+forma exponencial. 
+
+Por otro lado, la introducción del modelo de filtro pasa-bajo provoca efectos 
+similares a la degradación de los sensores. La solución sugerida para estas inestabilidades es la 
+incorporación de la dinámica de los sensores y el modulador de torque en el modelo del sistema, 
+lo que permitiría un ajuste más preciso
+
+Aplicando inicialmente solo la saturación:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.e.1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.e.2.png}
+\end{figure}
+
+Notamos que no afecta significativamente ya que para alcanzar la consigna suavizada, las tensiones 
+nunca superan la de saturación.
+
+Continuamos la simulación aplicando los bloques necesarios para implementar una respuesta no ideal 
+del modulador, ante la consigna con la que venimos trabajando. Se obtuvieron los siguientes 
+resultados:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.e.3.png}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.5.e.4.png}
+\end{figure}
+
+Vemos que ahora el sistema es incapaz de cumplir con la consigna.
 
 %-------------------- 5.2.6 --------------------------%
 
+\subsection{Version Final}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{5.2.6.png}
+\end{figure}
 
 \newpage
 \part*{Conclusiones}

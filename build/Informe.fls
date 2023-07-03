@@ -913,6 +913,24 @@ INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocbibind\tocbibind.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tocloft\tocloft.sty
 INPUT C:\Users\brand\AppData\Local\MiKTeX\luatex-cache\generic\names\luaotfload-lookup-cache.luc
 INPUT C:\Users\brand\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\calibri.luc
 INPUT C:\Users\brand\AppData\Local\MiKTeX\luatex-cache\generic\fonts\otl\calibrib.luc
@@ -950,16 +968,85 @@ INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
+OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.pdf
+OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.pdf
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
 OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
 OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
-OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.pdf
-OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.pdf
+INPUT .\encabezado.png
+INPUT .\encabezado.png
+INPUT .\encabezado.png
+INPUT .\encabezado.png
+INPUT .\encabezado.png
+INPUT .\encabezado.png
 INPUT C:\Users\brand\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
+INPUT .\encabezado.png
+INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi7.tfm
@@ -978,20 +1065,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
@@ -1022,6 +1101,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr5.tfm
+OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+OUTPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.toc
+INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-la.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
+INPUT C:\Program Files\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-la.tex
 INPUT .\polosyceros.png
 INPUT .\polosyceros.png
 INPUT .\polosyceros.png
@@ -1036,6 +1121,279 @@ INPUT .\frecuancia_amortiguamiento_rs.png
 INPUT .\frecuancia_amortiguamiento_rs.png
 INPUT .\frecuancia_amortiguamiento_rs.png
 INPUT .\frecuancia_amortiguamiento_rs.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.2.png
+INPUT .\perfil_trapezoidal.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.2.png
+INPUT .\5.2.4.a.3.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.a.4.png
+INPUT .\5.2.4.a.5.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.a.6.png
+INPUT .\5.2.4.b.1.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2.4.b.2.png
+INPUT .\5.2.4.b.3.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.1.png
+INPUT .\5.2..5.1.a.2.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2..5.1.a.3.png
+INPUT .\5.2..5.1.a.4.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2..5.1.a.5.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.b.1.png
+INPUT .\5.2.5.1.b.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.1.c.1.png
+INPUT .\5.2.5.1.c.2.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.1.png
+INPUT .\5.2.5.d.2.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.3.png
+INPUT .\5.2.5.d.4.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.5.png
+INPUT .\5.2.5.d.6.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.7.png
+INPUT .\5.2.5.d.8.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.9.png
+INPUT .\5.2.5.d.10.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.11.png
+INPUT .\5.2.5.d.12.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.13.png
+INPUT .\5.2.5.d.14.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.d.15.png
+INPUT .\5.2.5.d.16.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.1.png
+INPUT .\5.2.5.e.2.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.6.png
+INPUT .\5.2.6.png
+INPUT .\5.2.6.png
+INPUT .\5.2.6.png
+INPUT .\5.2.6.png
+INPUT .\5.2.6.png
+INPUT .\5.2.5.e.3.png
+INPUT .\5.2.5.e.4.png
+INPUT .\5.2.6.png
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.aux
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.aux
 INPUT c:\Users\brand\Documents\AyME_proyecto\AyME_proyecto\build\Informe.out
