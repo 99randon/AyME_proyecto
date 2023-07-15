@@ -1,7 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{amssymb}
@@ -26,6 +28,8 @@
 \usepackage{tocbibind}
 \usepackage{titlesec}
 \usepackage{tocloft}
+\usepackage{wrapfig}
+\usepackage{subcaption}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
@@ -33,6 +37,7 @@
 \titleformat{\part}[block]{\normalfont\huge\bfseries}{\thepart. \,}{0pc}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \geometry{a4paper}
 \geometry{top=1.9cm, bottom=3.67cm, left=1.9cm, right=1.32cm}
 \pagestyle{fancy}
@@ -44,6 +49,7 @@
 \rfoot{Página \thepage{} de \pageref{LastPage}}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\headrulewidth}{0.4pt}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -68,23 +74,293 @@
 \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 \tableofcontents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+
+\newpage
+
+\part*{Resumen}
+
+aLGO DE TEXTO
+
+
 \newpage
 
 \part*{Introducción}
 
-\lipsum
+\lipsum[0]
+
+Para despues.
 
 \newpage
+
 \part*{Desarrollo}
 
+%-------------------------Introducción al problema-------------------------%
+
+\section{Modelo base}
+
+\subsection{Carga Mecánica}
+    
+    La carga mecánica en este caso se refiere a un eje descentralizado utilizado en la articulación "hombro" 
+    de un robot SCARA. Esta articulación se encuentra en la base inercial y tiene un grado de libertad 
+    rotacional en un eje vertical. Los parámetros equivalentes de esta carga varían dependiendo de la posición 
+    y la velocidad angular instantáneas de la articulación "codo" del robot.
+
+    En este trabajo, no se incluye la modelización de la dinámica no lineal acoplada del robot. En su lugar, 
+    se considera una aproximación de la dinámica de carga tal como se ve desde el eje de la articulación 
+    "hombro", asumiendo la variación de los parámetros equivalentes.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{Alan1.jpg}
+        \caption{Modelo ilustrativo del robot SCARA}
+    \end{figure}
+
+    El modelo simplificado equivalente utilizado parte del eje de salida del tren de transmisión y toma en 
+    cuenta la coordenada articular del eje de la articulación "hombro" denotada como $q_1(t) = θ_l(t)$. La 
+    ecuación que describe este modelo es:
+
+    \begin{equation}\label{eq:carga_mecanica1}
+        J_{l}.\dot{\omega}_{l}(t) = T_{q}(t)-b_{l}.\omega_{l}(t)-T_{l}(t)
+    \end{equation}
+
+    \begin{equation}\label{eq:carga_mecanica2}
+        \dot{\theta}_{l} = \omega_{l} \,\, \Leftrightarrow \,\, \theta_{l}(t) = \int_{0}^{t} \omega_{l}(\xi). \,d\xi + \theta_{l}(0)
+    \end{equation}
+
+    Parámetros equivalentes:
+
+    \begin{itemize}
+        \item Momento de inercia: \quad\quad \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(J_l \thickapprox (0.2520 \pm 0.1260) \, kg.m^2\)
+            \end{minipage}
+        \item Amortiguamiento viscoso: \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(b_l \thickapprox (0 \pm 0.0030) \, N.m.s/rad \)
+            \end{minipage}
+    \end{itemize}
+
+
+    Especificaciones de operación
+
+    \begin{itemize}
+        \item Torque de carga: \quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(T_l(t) \thickapprox (0 \pm 6.28) \, N.m \)
+            \end{minipage}
+    \end{itemize}
+
+\subsection{Tren de transmisión}
+
+    En este sistema, se utiliza una caja reductora reversible con un sistema de engranajes planetarios. Se 
+    asume un acoplamiento rígido, lo que significa que no hay elasticidad torsional ni 
+    juego o holgura en el sistema. El momento de inercia equivalente y las pérdidas de energía debidas a la 
+    fricción interna se reflejan en el eje de entrada y se consideran junto con el motor.
+
+    Al considerar este acoplamiento rígido, podemos simplificar el subsistema mecánico completo, ya que no 
+    tenemos en cuenta la deformación elástica que ocurre en los engranajes durante la transmisión del par. 
+    En otras palabras, podemos tratar la carga mecánica y el motor eléctrico como una unidad, lo que resulta 
+    en un subsistema mecánico completo de un grado de libertad (1 g.d.l.).
+
+    Las relaciones del modelo equivalente (rígido) del tren de transmisión son las siguientes:
+
+    \begin{equation}\label{eq:tren_de_transmision1}
+        \omega_{l}(t) = \frac{1}{r}.\omega_{m}(t)
+    \end{equation}
+    
+    \begin{equation}\label{eq:tren_de_transmision2}
+        T_{q}(t) = r.T_{d}(t)
+    \end{equation}
+
+    Parámetros equivalentes:
+
+    \begin{itemize}
+        \item Relación de reducción total: \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(r = 314.3008 : 1\)
+            \end{minipage}
+    \end{itemize}
+
+    Especificaciones de operación
+
+    \begin{itemize}
+        \item Velocidad nominal (salida): \quad \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(n_{1nom} = 21 rpm (\omega_{lnom} = 2.2 rad/s)\)
+            \end{minipage}
+        \item Torque nominal: \quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(T_{qnom}(t) = 7.26 \, N.m \)
+            \end{minipage}
+        \item Torque pico: \quad\quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
+            \centering
+            \(T_{qmax}(t) = 29.42 \, N.m \)
+            \end{minipage}
+    \end{itemize}
+
+
+\subsection{Maquina eléctrica}
+    
+    En este caso, se utiliza un motor de corriente alterna (CA) trifásico con excitación por imanes permanentes. 
+
+    \subsubsection{Subsistema mecánico}
+        
+        El subsistema mecánico del motor, que incluye el rotor y el tren de transmisión referidos 
+        al estator estacionario, se describe mediante el siguiente modelo equivalente:
+        
+        \begin{equation}\label{eq:subsistema_macanico1}
+            J_{m}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}.\omega_{m}(t)-T_{d}(t)
+        \end{equation}
+        
+        Además, se establece una relación entre la velocidad angular $\omega_m(t)$ y la derivada temporal de la 
+        coordenada angular $\theta_m(t)$ mediante la relación:
+        
+        \begin{equation}\label{eq:subsistema_mecanico2}
+            \dot{\theta}_{m} = \omega_{m} \Leftrightarrow \theta_{m}(t) = \int_{0}^{t} \omega_{m}(\xi). \,d\xi + \theta_{m}(0)
+        \end{equation}
+
+    \subsubsection{Subsistema electromagnético}
+        
+    En el caso de un motor eléctrico trifásico de tipo sincrónico con excitación por imanes permanentes, 
+    es posible representar un modelo idealizado equivalente utilizando coordenadas eléctricas de 
+    entrehierro $'qd0'$ fijas al rotor mediante la Transformación de Park del circuito del estator 
+    estacionario.
+
+    La Transformación de Park permite convertir el sistema de coordenadas trifásicas del estator 
+    estacionario ($f_{abcs}(t)$) en coordenadas $'qd0'$ fijas al rotor ($f_{rqd0s}(t)$). Esto se hace 
+    mediante la siguiente relación:
+
+    \begin{equation}
+        \begin{bmatrix}
+            f_{qs}^r(t)\\
+            f_{ds}^r(t)\\
+            f_{0s}^r(t)
+        \end{bmatrix}
+        =\frac{2}{3}.
+        \begin{bmatrix}
+            cos(\theta_r(t)) & cos(\theta_r(t) - \frac{2\pi}{3}) & cos(\theta_r(t) + \frac{2\pi}{3})\\
+            sin(\theta_r(t)) & sin(\theta_r(t) - \frac{2\pi}{3}) & sin(\theta_r(t) + \frac{2\pi}{3})\\
+            \frac{1}{2} & \frac{1}{2} & \frac{1}{2}
+        \end{bmatrix}.
+        \begin{bmatrix}
+            f_{as}(t)\\
+            f_{bs}(t)\\
+            f_{cs}(t)
+        \end{bmatrix}
+    \end{equation}
+
+    La transformación inversa, que nos permite volver al sistema de coordenadas del estator, se puede 
+    expresar mediante la siguiente relación:
+    
+    \begin{equation}
+        \begin{bmatrix}
+            f_{as}(t)\\
+            f_{bs}(t)\\
+            f_{cs}(t)
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            cos(\theta_r(t)) & sin(\theta_r(t)) & 1\\
+            cos(\theta_r(t) - \frac{2\pi}{3}) & sin(\theta_r(t) - \frac{2\pi}{3}) & 1\\
+            cos(\theta_r(t) + \frac{2\pi}{3}) & sin(\theta_r(t) + \frac{2\pi}{3}) & 1
+        \end{bmatrix}.
+        \begin{bmatrix}
+            f_{qs}^r(t)\\
+            f_{ds}^r(t)\\
+            f_{0s}^r(t)
+        \end{bmatrix}
+    \end{equation}
+
+    Además, el torque electromagnético se calcula utilizando la siguiente fórmula:
+
+    \begin{equation}\label{eq.torque_electromagnetico}
+        T_{m}(t) = \frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t)
+    \end{equation}
+        
+
+    \subsubsection{Subsistema térmico} 
+    
+    se consideran únicamente las pérdidas eléctricas resistivas debido al efecto Joule en el bobinado del 
+    estator, sin tener en cuenta las pérdidas magnéticas en el núcleo. Además, se asume que la 
+    transferencia de calor se produce por conducción y convección natural, sin utilizar ventilación forzada.
+
+    La potencia de pérdidas calóricas se calcula utilizando las siguientes expresiones:
+
+    \begin{equation}
+        P_{s_{perd}}(t) =  \frac{3}{2}.R_{s}(t).[i_{qs}^r(t)^2+i_{ds}^r(t)^2+2.i_{0s}(t)]\\
+    \end{equation}
+    
+    \begin{equation}
+        P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
+    \end{equation}
+
+\subsection{Inversor trifásico de alimentación}
+
+El sistema utiliza un inversor trifásico de 4 cuadrantes, compuesto por un puente trifásico con llaves 
+electrónicas semiconductoras, como transistores MOSFETs o IGBTs, alimentado desde una fuente ideal de 
+corriente continua (CC). El inversor se controla mediante modulación de ancho de pulso (PWM) y proporciona 
+tensiones de fase equilibradas y senoidales en el estator de la máquina eléctrica sincrónica.
+
+El modelo promediado considera las tensiones de fase en el estator como senoidales de secuencia positiva 
+(abc) equilibradas, con un módulo variable Vsl(t) y una frecuencia ωe(t). El ángulo de carga del rotor, 
+δ(t), representa el desfasaje instantáneo entre la coordenada eléctrica fija al rotor y la coordenada 
+eléctrica sincrónica del estator, y depende del torque erogado.
+
+\subsection{Sensores de realimentación}
+
+El sistema cuenta con varios dispositivos físicos para la medición y acondicionamiento de las variables. A 
+continuación se describen los dispositivos y las variables medidas:
+
+Un sensor de temperatura (por ejemplo, un sensor de resistencia térmica, RTD) ubicado en el bobinado del 
+estator. La variable medida es $T_s(t)$, que se utiliza para monitorear el calentamiento y estimar la 
+resistencia del estator, $R_s(t)$.
+
+Sensor de posición angular (codificador incremental o "encoder") montado en el eje del motor. Se asume un 
+proceso de "homing" y decodificación idealizada. La variable medida es $\theta_m(t)$, que representa la posición 
+angular absoluta rectificada después de girar más de una revolución. 
+
+  
+Tres sensores de corriente instantánea de fase, montados en la salida trifásica del inversor hacia los 
+bornes del estator. Las variables medidas son $i_{as}(t)$, $i_{bs}(t)$ y $i_{cs}(t)$, que representan las corrientes 
+instantáneas de fase.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \includegraphics[width=0.75\textwidth]{Alan6.jpg}
+      \caption{Sensor de temperatura}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \includegraphics[width=0.75\textwidth]{Alan5.jpg}
+      \caption{Encoder}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \includegraphics[width=0.75\textwidth]{Alan4.jpg}
+      \caption{Sensor de corriente}
+    \end{subfigure}
+    \caption{Imágenes ilustrativas}
+  \end{figure}
+
+
+Se asume que todos los sensores tienen una respuesta ideal, es decir, un filtro "pasatodo" con ganancia 
+unitaria y un ancho de banda infinito.
+
+%-------------------------5.1-------------------------%
+
 \section{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
+
+
+
+%-------------------------5.1.1-------------------------%
 
 \subsection{Modelo matemático equivalente del subsistema mecánico completo}
 
 Subsistema mecánico del motor de CA trifásica síncrono, con el rotor referido al estator - sistema inercial de referencia:
 
-\begin{equation}
-    \label{eq:1.1}
+\begin{equation}\label{eq:1.1}
     J_{m}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}.\omega_{m}(t)-T_{d}(t) \\
 \end{equation}
 
@@ -1948,10 +2224,18 @@ Vemos que ahora el sistema es incapaz de cumplir con la consigna.
 \end{figure}
 
 \newpage
+
 \part*{Conclusiones}
 
+Al final podemos llegar a concluir...
+
 \newpage
+
 \part*{Referencias}
-\lipsum{}
+
+A continuación se listan las referencias utilizadas para la realización de este trabajo:
+
+
 \label{LastPage}    
+
 \end{document}
