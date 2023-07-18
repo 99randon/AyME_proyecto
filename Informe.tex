@@ -127,28 +127,19 @@ Para despues.
         \dot{\theta}_{l} = \omega_{l} \,\, \Leftrightarrow \,\, \theta_{l}(t) = \int_{0}^{t} \omega_{l}(\xi). \,d\xi + \theta_{l}(0)
     \end{equation}
 
-    Parámetros equivalentes:
+    \noindent Parámetros equivalentes:\\
 
-    \begin{itemize}
-        \item Momento de inercia: \quad\quad \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(J_l \thickapprox (0.2520 \pm 0.1260) \, kg.m^2\)
-            \end{minipage}
-        \item Amortiguamiento viscoso: \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(b_l \thickapprox (0 \pm 0.0030) \, N.m.s/rad \)
-            \end{minipage}
-    \end{itemize}
+    \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
+        \(\bullet\) Momento de inercia: & \(J_l \thickapprox (0.2520 \pm 0.1260) \, \text{kg.m}^2\) \\
+        \(\bullet\) Amortiguamiento viscoso: & \(b_l \thickapprox (0 \pm 0.0030) \, \text{N.m.s/rad}\)
+    \end{tabular}
+    \\\\
+    \noindent Especificaciones de operación:\\
 
-
-    Especificaciones de operación
-
-    \begin{itemize}
-        \item Torque de carga: \quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(T_l(t) \thickapprox (0 \pm 6.28) \, N.m \)
-            \end{minipage}
-    \end{itemize}
+    \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
+        \(\bullet\) Torque de carga: & \(T_l(t) \thickapprox (0 \pm 6.28) \, \text{N.m}\)
+    \end{tabular}
+    
 
 \subsection{Tren de transmisión}
 
@@ -172,31 +163,19 @@ Para despues.
         T_{q}(t) = r.T_{d}(t)
     \end{equation}
 
-    Parámetros equivalentes:
+    \noindent Parámetros equivalentes:\\
 
-    \begin{itemize}
-        \item Relación de reducción total: \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(r = 314.3008 : 1\)
-            \end{minipage}
-    \end{itemize}
+    \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
+        \bullet\, Relación de reducción total: & \(r = 314.3008 : 1\)
+    \end{tabular}
+    \\\\
+    Especificaciones de operación:\\
 
-    Especificaciones de operación
-
-    \begin{itemize}
-        \item Velocidad nominal (salida): \quad \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(n_{1nom} = 21 rpm (\omega_{lnom} = 2.2 rad/s)\)
-            \end{minipage}
-        \item Torque nominal: \quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(T_{qnom}(t) = 7.26 \, N.m \)
-            \end{minipage}
-        \item Torque pico: \quad\quad\quad\quad \begin{minipage}[c]{0.5\textwidth}
-            \centering
-            \(T_{qmax}(t) = 29.42 \, N.m \)
-            \end{minipage}
-    \end{itemize}
+    \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
+        \bullet\, Velocidad nominal (salida): \quad\quad\quad \ & \(n_{1nom} = 21 \, \text{rpm} \, (\omega_{lnom} = 2.2 \, \text{rad/s})\) \\
+        \bullet\, Torque nominal: & \(T_{qnom}(t) = 7.26 \, \text{N.m}\) \\
+        \bullet\, Torque pico: & \(T_{qmax}(t) = 29.42 \, \text{N.m}\)
+    \end{tabular}
 
 
 \subsection{Maquina eléctrica}
@@ -230,7 +209,7 @@ Para despues.
     estacionario ($f_{abcs}(t)$) en coordenadas $'qd0'$ fijas al rotor ($f_{rqd0s}(t)$). Esto se hace 
     mediante la siguiente relación:
 
-    \begin{equation}
+    \begin{equation}\label{eq:transformacion_de_park}
         \begin{bmatrix}
             f_{qs}^r(t)\\
             f_{ds}^r(t)\\
@@ -252,7 +231,7 @@ Para despues.
     La transformación inversa, que nos permite volver al sistema de coordenadas del estator, se puede 
     expresar mediante la siguiente relación:
     
-    \begin{equation}
+    \begin{equation}\label{eq:transformacion_de_park_inversa}
         \begin{bmatrix}
             f_{as}(t)\\
             f_{bs}(t)\\
@@ -271,13 +250,21 @@ Para despues.
         \end{bmatrix}
     \end{equation}
 
-    Además, el torque electromagnético se calcula utilizando la siguiente fórmula:
+    Sabiendo qeu las coordenadas eléctrica del entrehierro $qd0$ fijas al rotor están dadas por:
+
+    \begin{equation}\label{eq.coordenadas_fijas_al_rotor}
+        \begin{aligned}
+            \dot{\theta}_r = \omega_r(t) \Leftrightarrow  \theta_r = \int_0^t \omega_r(\xi).d\xi + \theta_r(0)\\
+            \theta_r(t) = P_p.\theta_m(t) \therefore \omega_r(t) = P_p.\omega_m(t)\\
+        \end{aligned}
+    \end{equation}
+
+    Se determina que el torque electromagnético se calcula utilizando la siguiente fórmula:
 
     \begin{equation}\label{eq.torque_electromagnetico}
         T_{m}(t) = \frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t)
     \end{equation}
         
-
     \subsubsection{Subsistema térmico} 
     
     se consideran únicamente las pérdidas eléctricas resistivas debido al efecto Joule en el bobinado del 
@@ -286,13 +273,41 @@ Para despues.
 
     La potencia de pérdidas calóricas se calcula utilizando las siguientes expresiones:
 
-    \begin{equation}
+    \begin{equation}\label{termico1}
         P_{s_{perd}}(t) =  \frac{3}{2}.R_{s}(t).[i_{qs}^r(t)^2+i_{ds}^r(t)^2+2.i_{0s}(t)]\\
     \end{equation}
     
-    \begin{equation}
+    \begin{equation}\label{termico2}
         P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
     \end{equation}
+
+    \noindent Parámetros equivalentes:\\
+
+    \begin{tabular}{@{} p{0.4\textwidth} p{0.6\textwidth} @{}}
+        \(\bullet\) Momento de inercia (motor y caja): & \(J_m \approx 3.1 \times 10^{-6} \, \text{kg.m}^2\) \\
+        \(\bullet\) Coeficiente de fricción viscosa (motor y caja): & \(b_m \approx 1.5 \times 10^{-5} \, \text{N.m.rad/s}\) \\
+        \(\bullet\) Pares de polos magnéticos: & \(P_p = 3\) pares (es decir, 6 polos) \\
+        \(\bullet\) Flujo magnético equivalente de imanes concatenado por espiras del bobinado de estator: & \(\lambda'_{mr} \approx 0.01546 \, \text{V.s/rad}\)\\
+        \(\bullet\) Inductancia de estator (eje en cuadratura): & \(L_q \approx 5.8 \, \text{mH}\) \\
+        \(\bullet\) Inductancia de estator (eje directo): & \(L_d \approx 6.6 \, \text{mH}\) \\
+        \(\bullet\) Inductancia de dispersión de estator: & \(L_{ls} \approx 0.8 \, \text{mH}\) \\
+        \(\bullet\) Resistencia de estator, por fase: & \(R_s \approx 1.02 \, \Omega\) (@40 °C) → \(1.32 \, \Omega\) (@115 °C) \\
+        \(\bullet\) Coeficiente de aumento de \(R_s\) con \(T_s^\circ(t)\): & \(\alpha_C = 3.9 \times 10^{-3} \, 1°C\) \\
+        \(\bullet\) Capacitancia térmica de estator: & \(C_{ts} \approx 0.818 \, \text{W°C/s}\) (almacenamiento interno) \\
+        \(\bullet\) Resistencia térmica estator-ambiente: & \(R_{ts-amb} \approx 146.7 \, °C/W\) (disipación al ambiente) \\
+        \(\bullet\) Constante de tiempo térmica: & \(\tau_{ts-amb} = R_{ts-amb} \cdot C_{ts} \approx 120 \, \text{s}\)
+    \end{tabular}    
+    \\\\
+    Especificaciones de operación:\\
+
+    \begin{tabular}{@{} p{0.4\textwidth} p{0.6\textwidth} @{}}
+        \(\bullet\) Velocidad nominal rotor: & \(n_m \approx 6600 \, \text{rpm}\) (\(\omega_m \approx 691.15 \, \text{rad/s}\)) \\
+        \(\bullet\) Tensión nominal de línea: & \(V_{sl} \approx 24 \, \text{V}_{\text{ca rms}}\) (tensión nominal de fase: \(V_{sf} \approx V_{sl} \sqrt{3}\)) \\
+        \(\bullet\) Corriente nominal: & \(I_s \approx 0.4 \, \text{A}_{\text{ca rms}}\) (régimen continuo) \\
+        \(\bullet\) Corriente máxima: & \(I_{s \max} \approx 2.0 \, \text{A}_{\text{ca rms}}\) (corta duración, aceleración) \\
+        \(\bullet\) Temperatura máxima de bobinado estator: & \(T_{s \max} = 115 \, °C\) \\
+        \(\bullet\) Rango de temperatura ambiente de operación: & \(-15 °C \leq T_{amb} \leq 40 °C\)
+    \end{tabular}
 
 \subsection{Inversor trifásico de alimentación}
 
@@ -305,6 +320,12 @@ El modelo promediado considera las tensiones de fase en el estator como senoidal
 (abc) equilibradas, con un módulo variable Vsl(t) y una frecuencia ωe(t). El ángulo de carga del rotor, 
 δ(t), representa el desfasaje instantáneo entre la coordenada eléctrica fija al rotor y la coordenada 
 eléctrica sincrónica del estator, y depende del torque erogado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Alan7.jpg}
+    \caption{Circuito inversor ilustrativo}
+\end{figure}
 
 \subsection{Sensores de realimentación}
 
@@ -352,48 +373,19 @@ unitaria y un ancho de banda infinito.
 
 \section{Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}
 
-
-
 %-------------------------5.1.1-------------------------%
 
 \subsection{Modelo matemático equivalente del subsistema mecánico completo}
 
-Subsistema mecánico del motor de CA trifásica síncrono, con el rotor referido al estator - sistema inercial de referencia:
+Para obtener el modelo matemático equivalente de un grado de libertad correspondiente al subsistema 
+mecánico completo, primero debemos referenciar la carga al eje del rotor de la máquina eléctrica. Esto 
+nos permitirá obtener un modelo matemático que tenga en cuenta la dinámica de la carga en relación con 
+el rotor.
 
-\begin{equation}\label{eq:1.1}
-    J_{m}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}.\omega_{m}(t)-T_{d}(t) \\
-\end{equation}
-
-\begin{equation}
-    \label{eq:1.2}
-    \dot{\theta}_{m} = \omega_{m}
-\end{equation}
-
-Subsistema de tren de transmisión:
-
-\begin{equation}
-    \label{eq:2.1}
-    \omega_{l}(t) = \frac{1}{r}.\omega_{m}(t) \\
-\end{equation}
-
-\begin{equation}
-    \label{eq:2.2}
-    T_{q}(t) = r.T_{d}(t) \\
-\end{equation}
-
-Subsistema de la carga mecánica:
-
-\begin{equation}
-    \label{eq:3.1}
-    J_{l}.\dot{\omega}_{l}(t) = T_{q}(t)-b_{l}.\omega_{l}(t)-T_{l}(t) \\
-\end{equation}
-
-\begin{equation}
-    \label{eq:3.2}
-    \dot{\theta}_{l} = \omega_{l}\\
-\end{equation}
-
-Sistema mecánico equivalente completo:
+Comenzamos sustituyendo las ecuaciones de
+\hyperref[eq:carga_mecanica1]{Carga mecánica (\ref*{eq:carga_mecanica1})}, 
+\hyperref[eq:tren_de_transmision1, eq:tren_de_transmision2]{Tren de transmisión (\ref*{eq:tren_de_transmision1}, \ref*{eq:tren_de_transmision2})}, y
+\hyperref[eq:subsistema_macanico1]{Subsistema mecánico (\ref*{eq:subsistema_macanico1})} de la maquina eléctrica.
 
 \begin{equation}
     \label{eq:4.1}
@@ -407,6 +399,8 @@ Sistema mecánico equivalente completo:
 \begin{equation}
     \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[T_{m}(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
 \end{equation}
+
+Se puede expresar de forma matricial como:
 
 \begin{equation}
 \begin{cases}
@@ -451,17 +445,16 @@ la elasticidad torsional de la transmisión.
 \subsubsection{Modelo global no lineal (NL)}
 
 En el modelo global no lineal consideramos todos los sistemas involucrados 
-como el sistema mecánico, previamente desarrollado, 
-y los subsistemas electromagnético y térmico.
+tanto el sistema mecánico, previamente desarrollado, como los subsistemas de la maquina eléctrica.
 
-En primer lugar, nos enfocaremos en el subsistema electromagnético, teniendo en cuenta que 
+En primer lugar, nos enfocaremos en el subsistema electromagnético, recordando que 
 se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitación de imanes 
-permanentes. El estator esta conectado en estrella con bornes abc accesible y neutro no accesible.
+permanentes. El estator esta conectado en estrella con bornes $abc$ accesible y neutro no accesible.
 Consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
 
 Ecuaciones de tensión en coordenadas abc:
 
-\begin{equation}
+\begin{equation}\label{eq.tensiones_abc}
     \begin{aligned}
         v_{as}(t) &= R_{s}(t).i_{as}(t) + \frac{d\lambda_{as}}{dt}\\
         v_{bs}(t) &= R_{s}(t).i_{bs}(t) + \frac{d\lambda_{bs}}{dt}\\
@@ -469,17 +462,9 @@ Ecuaciones de tensión en coordenadas abc:
     \end{aligned}
 \end{equation}
 
-Mediante la transformación de Park, que consiste en premultiplicar por la matriz de Park y teniendo en 
-cuenta las coordenadas $qd0$ fijas al rotor:
-
-\begin{equation}
-    \begin{aligned}
-        \dot{\theta}_r = \omega_r(t) \Leftrightarrow  \theta_r = \int_0^t \omega_r(\xi).d\xi + \theta_r(0)\\
-        \theta_r(t) = P_p.theta_m(t) \therefore \omega_r(t) = P_p.\omega_m(t)\\
-    \end{aligned}
-\end{equation}
-
-Se obtiene:
+Mediante la
+\hyperref[eq:transformacion_de_park]{transformación de Park (\ref*{eq:transformacion_de_park})}
+, se obtiene:
 
 \begin{equation}\label{eq.tensiones_qd0}
     \begin{aligned}
@@ -489,7 +474,7 @@ Se obtiene:
     \end{aligned}
 \end{equation}
 
-Reordenando:
+Reordenando nos quedan las ecuaciones que definen al sistema electromagnético:
 
 \begin{equation}\label{eq:mi_ecuacion}
     \begin{cases}
@@ -499,27 +484,24 @@ Reordenando:
     \end{cases}
 \end{equation}
 
-El torque electromagnético queda definido por:
+Recordando que el
+\hyperref[eq.torque_electromagnetico]{Torque electromagnético (\ref*{eq.torque_electromagnetico})} 
+se reordena la expresión de forma que quede despejada la variable de interés:
 
-\begin{equation}\label{eq.torque_electromagnetico}
-    T_{m}(t) = \frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t)
+\begin{equation}\label{eq.torque_electromagnetico_reordenado}
+    \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
 \end{equation}
 
-Para el subsistema térmico solo se consideran las pérdidas eléctricas resistivas causadas por el 
-efecto Joule (calor), despreciando las pérdidas magnéticas en el núcleo y las transferencia de 
-calor por conducción y convección natural. La potencia de pérdidas calóricas está dada por:
+El comportamiento subsistema térmico es descripto por las ecuaciones del
+\hyperref[termico1, termico2]{(\ref*{termico1}, \ref*{termico2})}, igualando estas ecuaciones 
+llegamos a la siguiente expresión:
 
-\begin{equation}
-    P_{s_{perd}}(t) =  \frac{3}{2}.R_{s}(t).[i_{qs}^r(t)^2+i_{ds}^r(t)^2+2.i_{0s}(t)]\\
+\begin{equation}\label{termico3}
+    \dot{T}_{s}(t) = \frac{1}{C_{ts}}.[\frac{3}{2}.R_{s}(t).[{i_{qs}^r(t)}^2+{i_{ds}^r(t)}^2 + 2.i_{0s}(t)^2] - \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
 \end{equation}
 
-El balance térmico en el estator:
-
-\begin{equation}
-    P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
-\end{equation}
-
-Reemplazando estas dos ecuaciones y juntando los demás subsistemas obtenemos el modelo global:
+El modelo global no lineal queda definido por las ecuaciones (\ref{eq:subsistema_mecanico2}),
+(\ref{eq:mi_ecuacion}), (\ref{eq.torque_electromagnetico_reordenado}) y (\ref{termico3}).
 
 \begin{equation}\label{eq.modelo_global}
     \begin{cases}
@@ -532,7 +514,121 @@ Reemplazando estas dos ecuaciones y juntando los demás subsistemas obtenemos el
     \end{cases}
 \end{equation}
 
-% IMAGEN DEL DIAGRAMA GLOBAL NL %
+De este sistema podemos definir el vector de las variables de estado, las entradas 
+manipuladas, las entradas de perturbación y las salidas:
+
+\[ x(t) =
+\begin{bmatrix}
+\theta_m(t) \\
+\omega_m(t) \\
+i^r_{qs}(t) \\
+i^r_{ds}(t) \\
+i_{0s}(t) \\
+T_s(t)
+\end{bmatrix}
+; \quad
+x(t_0) =
+\begin{bmatrix}
+\theta_{m0} \\
+\omega_{m0} \\
+i^{r0}_{qs} \\
+i^{r0}_{ds} \\
+i_{0s0} \\
+T_{s0}
+\end{bmatrix}
+; \quad
+u(t) =
+\begin{bmatrix}
+v^r_{qs}(t) \\
+v^r_{ds}(t) \\
+v_{0s}(t)
+\end{bmatrix}
+; \quad
+d(t) =
+\begin{bmatrix}
+T_l(t) \\
+T_{\text{amb}}(t)
+\end{bmatrix}
+; \quad
+y(t) = 
+\begin{bmatrix}
+    \theta_m(t) \\
+    \omega_m(t) \\
+    i^r_{qs}(t) \\
+    i^r_{ds}(t) \\
+    i_{0s}(t) \\
+    T_s(t)
+\end{bmatrix}
+\]
+
+% Imagen del modelo global no lineal
+
+Utilizando las ecuaciones que modelan las distintas partes del sistema realizamos el 
+diagrama de bloques utilizando la herramienta que nos provee Matlab, Simulink.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{no_lineal.png}
+    \caption{Modelo global no lineal}
+\end{figure}
+
+El subsistema mecánico esta compuesto por:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{sub_mecanico.png}
+    \caption{Diagramas de bloques subsistema mecánico}
+\end{figure}
+
+Donde los bloques interno son:
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_mecanico2.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_mecanico3.png}
+    \end{subfigure}
+    \caption{Bloques internos del subsistema mecánico}
+\end{figure}
+
+Mientras que el subsistema térmico esta dado por:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{sub_termico.png}
+    \caption{Diagramas de bloques subsistema térmico}
+\end{figure}
+
+Finalmente el subsistema electromagnético esta compuesto por:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{sub_electromagentico.png}
+\end{figure}
+
+Los bloques interno contienen:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[]{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_electromagentico4.png}
+    \end{subfigure}
+    \\
+    \begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_electromagentico3.png}
+    \end{subfigure}
+    \\
+    \begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_electromagentico2.png}
+    \end{subfigure}
+    \caption{Bloques internos del subsistema electromagnético}
+\end{figure}
 
 %-------------------------- 5.1.2.B ------------------------------------------%
 
@@ -550,7 +646,6 @@ como:
 
 Donde $f$ es una función que representa la dinámica del sistema en términos de las variable 
 de estado $x(t)$ y las estradas $u(t)$.  
-
 Dados los punto de equilibrio dinámico donde las derivadas de las variables de estado son nulas:
 
 \begin{equation}
@@ -652,7 +747,7 @@ obtenemos:
         0 & \frac{P_{p}.i_{qs0}^r .L_{q}}{L_{d}} & \frac{L_{q}.P_{p}.\omega_{m0}}{L_{d}} & -\frac{R_{s}(t)}{L_{d}} & 0 & 0\\
         0 & 0 & 0 & 0 & -\frac{R_{s}(t)}{L_{ls}} & 0\\
         0 & 0 & \frac{3.R_{s}(t)}{C_{ts}}.i_{qs0}^r & \frac{3.R_{s}(t)}{C_{ts}}.i_{ds0}^r & \frac{6.R_{s}(t)}{C_{ts}}.i_{0s0} & -\frac{1}{C_{ts}.R_{ts-amb}}\\
-    \end{bmatrix}
+    \end{bmatrix}.\\
     \begin{bmatrix}
         \Delta{\theta}_{m}(t)\\
         \Delta{\omega}_{m}(t)\\
@@ -660,7 +755,7 @@ obtenemos:
         \Delta{i}_{ds}(t)\\
         \Delta{i}_{0s}(t)\\
         \Delta{T}_{s}(t)\\
-    \end{bmatrix}\\  + 
+    \end{bmatrix}  + 
     \begin{bmatrix}
         0 & 0 & 0 & 0 & 0\\
         -\frac{1}{rJ_{eq}} & 0 & 0 & 0 & 0\\
@@ -685,18 +780,26 @@ obtenemos:
 
 \subsubsection{Linealización por Realimentación NL}
 
-Se busca un modelo simplificado lineal invariante LTI equivalente al modelo NL del sistema, 
-para ello se propone un controlador de realimentación de estados que permita linealizar el 
-modelo global NL obtenido anteriormente, por lo que se propone:
+Podemos obtener un modelo simplificado lineal invariante en el tiempo (LTI) equivalente del sistema
+si aplicamos una estrategia de control vectorial con campo orientado en el controlador para imponer
+que la corriente en el eje d $i_{ds}(t)$ sea igual a cero. Además, podemos despreciar 
+el acoplamiento no lineal con el subsistema térmico debido a las pequeñas variaciones de la 
+resistencia \(R_s\) con la temperatura, lo que nos permite considerar su dinámica como lineal.
 
-\begin{itemize}
-    \item Aplicar la estrategia de “Control Vectorial con campo orientado” la cual 
-    consiste en desacoplar los canales de flujo magnético y torque, lo cual provoca
-    un forzamiento de $i_{ds}=0$ 
-    \item Dada la conexión estrella con neutro flotante $i_{0s} = 0 \to \dot{i}_0s = 0 \to v_{0s} = 0$
-    \item Desacoplar el subsistema térmico, ya que se considera que hay variaciones despreciables 
-    de $R_s$ en el rango de temperaturas de trabajo.
-\end{itemize}
+Considerando que el estator de la máquina eléctrica es de tipo estrella con neutro flotante, 
+podemos afirmar que la suma de las corrientes de fase \(abc\) será nula. Con esto, podemos aplicar 
+una transformación directa de Park para relacionar las corrientes en el sistema.
+
+Para lograr la desacoplar los canales de flujo magnético y torque, aplicamos la estrategia de 
+"Control Vectorial con campo orientado." Esto consiste en forzar una corriente nula en el eje 
+d \(i_{ds}(t) = 0\) mediante el controlador y, si es necesario, aplicar una "Restricción o Ley 
+de Control NL" sobre la variable manipulada virtual \(v_{qd0s}(t)\) o su equivalente por 
+transformada de Park, \(v_{{abc}}(t)\).
+
+Para desacoplar el subsistema térmico, consideramos que las variaciones en la resistencia \(R_s\) 
+en el rango de temperaturas de trabajo son despreciables y, por lo tanto, la temperatura no 
+afectará significativamente el comportamiento del resto del sistema. Esto nos permite asumir 
+una dinámica lineal para el subsistema térmico.
 
 \begin{enumerate}[label=\roman*.]
     \item \textbf{Ecuaciones vectoriales/matriciales LTI de estado y de salida.} 
@@ -704,7 +807,7 @@ modelo global NL obtenido anteriormente, por lo que se propone:
     Aplicadas las condiciones mencionadas nos queda un sistema LTI similar al de un maquina 
     de corriente continua con escobillas. El estado inicial sera nulo.
 
-    \begin{equation}
+    \begin{equation}\label{eq.lti}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
             \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r}i_{qs}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
@@ -759,9 +862,13 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         \dot{T}_{s}(t) = \frac{1}{C_{ts}}.[\frac{3}{2}.R_{s}.{i_{qs}^r(t)}^2 - \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
     \end{equation}
         
-    \item \textbf{Diagrama de bloques de estado (forma desagregada o escalar)}
+    \item \textbf{Diagrama de bloques de estado}
     
-    % IMAGEN DEL MODELO LTI $
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{LTI.png}
+        \caption{Diagrama de bloques de estado del sistema LTI.}
+    \end{figure}
     
     \item \textbf{Restricción o Ley de Control mínima}
 
@@ -790,20 +897,34 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         \begin{cases}
             v_{as}(t) = cos(\theta_{r}(t))v_{qs}^r(t) - sin(\theta_{r}(t))L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
             v_{bs}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
-            v_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})v_{qs}^r(t) + sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
+            v_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
         \end{cases}
     \end{equation}
 
-    Esta sra la realimentación necesaria para desacoplar los canales de flujo magnetico y torque.
+    Esta sera la realimentación necesaria para desacoplar los canales de flujo magnético y torque.
 
-    \item \textbf{Implementacion sobre el modelo global NL}
+    \item \textbf{Implementación sobre el modelo global NL}
 
     % IMAGEN DE LA REALIMENTACION %
 
+    Implementamos la ley de control al modelo global NL, e incorporamos el inversor trifásico (modulador de tensión) y los sensores que consideramos por el momento ideales. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{realimentacion.png}
+        \caption{Diagrama de bloques del sistema NL con restricción o ley de control mínima.}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{controlador.png}
+        \caption{Diagrama del controlador.}
+    \end{figure}
+
     \item \textbf{Dinámica Residual}
     
-    Al aplicar la ley de control minimo suposimos que $i_{ds} = 0$, sin embargo, esto no es del todo cierto
-    por lo que se debe tener en cuenta la dinamica residual de la corriente $i_{ds}$, la cual se puede
+    Al aplicar la ley de control mínimo supusimos que $i_{ds} = 0$, sin embargo, esto no es del todo cierto
+    por lo que se debe tener en cuenta la dinámica residual de la corriente $i_{ds}$, la cual se puede
     modelar con la siguiente EDO:
 
     \begin{equation*}
@@ -819,34 +940,32 @@ modelo global NL obtenido anteriormente, por lo que se propone:
         i_{ds}^r(t) = i_{ds}^r(0)e^{-\frac{R_{s}(t)}{L_{d}}t}
     \end{equation}
 
-    Esta solucion nos indica que el efecto de la dinamica residual es despreciable en el tiempo, ya que actua como
+    Esta solución nos indica que el efecto de la dinámica residual es despreciable en el tiempo, ya que actúa como
     un sistema subamortiguado de primer orden.
 
-    En regimen natural producira un comportamiento no lineal sobre el sistema esta dado por:
+    En régimen natural producirá un comportamiento no lineal sobre el sistema que esta dado por:
 
     \begin{equation}\label{eq.dinamica_residual}
         v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}i_{qs}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^{\prime r} + \mathbf{L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t)}
     \end{equation}
 
-    Incorporando la dianmica residual al modelo LTI:
+    Incorporando la dinámica residual al modelo LTI:    
 
     \begin{equation}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
             \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r} i_{qs}^r(t) - b_{eq}\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
             \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}[v_{qs}^r(t) - R_{s}i_{qs}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^{\prime r}]\\
-            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
             \dot{i}_{ds}^r(t) = -\frac{R_{s}(t)}{L_{d}}i_{ds}^r(t) \\
+            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
         \end{cases}    
     \end{equation}
 
-    % IMAGEN DE LA DINAMICA RESIDUAL %
-
     \item \textbf{Restricción Ley de Control complementaria minima en el eje q}
     
-    Para anular el efecto NL del acoplamineto de la dinamica residual podemos a partir de la
+    Para anular el efecto NL del acoplamiento de la dinámica residual podemos a partir de la
     \hyperref[eq.dinamica_residual]{ecuación (\ref*{eq.dinamica_residual})}
-    plantear la siguiente restricción sobre el eje q:
+    plantear la siguiente restricción sobre el eje q de forma que la no linealidad se anule:
 
     \begin{equation}
         v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}i_{qs}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^{\prime r} + L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t) - \mathbf{L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t)}
@@ -854,33 +973,60 @@ modelo global NL obtenido anteriormente, por lo que se propone:
 
     % IMAGEN DEL MODELO %
 
+    A continuación se muestran los modelos LTI equivalente aumentado y el NL desacoplado con Ley de Control NL.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{LTI_aumentado1.png}
+        \caption{Diagrama de bloques del modelo LTI equivalente aumentado.}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{LTI_AUMENTADO_Q.jpg}
+        \caption{Diagrama de bloques del sistema NL con ley de control mínima en eje d y q.}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.jpg}
+        \caption{Diagrama del controlador.}
+    \end{figure}
+
+
 \end{enumerate}
 
 %-------------------- 5.1.2.d --------------------------%
 
 \subsubsection{Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}
 
-El modelo dinámico global LPV para el caso general donde $i_{ds}^r \neq 0$
-es una mejor representación del sistema real al tener mejor representadas sus 
-no linealidades.
-En cambio el modelo LTI, donde $i_{ds}^r = 0$, tiene la ventaja de un modelo 
-con un mayor grado de simplicidad. Sin embargo, esta simplificación  causa que 
-el espacio de puntos de operación se reduzca.
-Analizaremos el comportamiento del sistema frente a cambios de $i_{ds}^r$, 
-considerando el estado estacionario. 
+El Modelo Dinámico Global LPV se basa en el concepto de Variabilidad de Parámetros Lineales (LPV), 
+lo que significa que considera la variación de los parámetros en función de ciertas variables, como 
+la corriente en directo $i^r_{ds}(t)$. Este enfoque tiene la ventaja de tener en cuenta la esencia no 
+lineal del sistema, lo que permite una representación más precisa y realista del comportamiento del 
+sistema en diferentes puntos de operación. Debido a esta consideración de parámetros variables, el 
+modelo global LPV ofrece una mayor cantidad de puntos de trabajo en comparación con el modelo LTI 
+equivalente.
+
+Por otro lado, el Modelo Dinámico LTI Equivalente Aumentado es un caso particular del modelo LPV, 
+donde se impone la restricción $i^r_{ds}(t) \equiv 0$, es decir, la corriente en directo se mantiene 
+constante. Esta restricción conduce a un sistema lineal y más simple, lo que facilita el análisis 
+matemático y el diseño de controladores. Sin embargo, esta simplicidad viene a expensas de la pérdida 
+de la esencia no lineal del sistema real, lo que puede limitar la precisión de las predicciones en 
+ciertos escenarios.
 
 \begin{itemize}
     
     \item Respecto al par electromagnético:
-
-    \begin{equation}
-        T_{m}(t) = \frac{3}{2}P_{p}[\lambda_{m}^{\prime r} + (L_{d}-L_{q})i_{ds}^r(t)]
-    \end{equation}
-
-    Para motores de polos salientes $L_{d} > L_{q}$, entonces cuando $i_{ds}^r(t)$
-    toma valores positivos el campo magnético se refuerza lo que aumenta el torque del
-    motor. Si la corriente directa toma valores negativos el campo magnético se debilita 
-    y disminuye el torque del motor. 
+    
+    Recordando la
+    \hyperref[eq.torque_electromagnetico]{ecuación (\ref*{eq.torque_electromagnetico})}
+    que describe el comportamiento del Torque Electromagnético.
+    Podemos observar que para motores de polos salientes $L_{d} > L_{q}$, entonces cuando $i_{ds}^r(t)$
+    toma valores \textbf{positivos} el campo magnético se refuerza lo que aumenta el torque del
+    motor. Si la corriente directa toma valores \textbf{negativos} el campo magnético se debilita 
+    y disminuye el torque del motor. En el caso que $i_{ds}^r(t) = 0$, el flujo concatenado solamente esta afectado por 
+    los imanes permanentes.
 
     \item Respecto al subsistema eléctrico:
 
@@ -898,46 +1044,40 @@ considerando el estado estacionario.
 
 \end{itemize}
 
-En el caso que $i_{ds}^r(t) = 0$, el flujo concatenado solamente esta afectado por 
-los imanes permanentes.
+En términos de diseño y control, los modelos lineales, como el LTI equivalente aumentado, son más 
+fáciles de manejar matemáticamente y permiten el diseño de controladores óptimos con herramientas 
+establecidas como el control óptimo y la teoría de control de retroalimentación. Además, son más 
+eficientes computacionalmente, lo que facilita la simulación y el análisis rápido del sistema. Sin 
+embargo, los modelos no lineales, como el LPV, ofrecen una mayor precisión y flexibilidad en la 
+representación de sistemas reales complejos.
 
 %-------------------- 5.1.2.e --------------------------%
 
 \subsubsection{Funciones de transferencia para el modelo LTI}
 
 Las funciones de transferencia nos permiten relacionar las salidas con las entradas del sistema.
-Como nuestro sistema dispone de dos entradas obtendremos dos funciones de transferencia.
-
-Para comenzar, es necesario aplicar la transformada de Laplace a las ecuaciones del modelo LTI:
-
-\begin{equation}
-        L[f{t}] = F(s)
-\end{equation}
-
-La transformada de Laplace posee la siguiente propiedad
+Como nuestro sistema dispone de dos entradas obtendremos dos funciones de transferencia. Aplicando 
+la transformada de Laplace $L[f(t)] = F(s)$ a las ecuaciones del modelo LTI (\ref{eq.lti}), ademas,
+recordando que la transformada de Laplace posee la siguiente propiedad
 
 \begin{equation}
-        L[\dot{f}(t)] = s F(s) - f(0)
+        L[\dot{f}(t)] = s.F(s) - f(0)
 \end{equation}
 
-Al aplicar la transformada y recordando que las condiciones iniciales son nulas, el 
-modelo queda
+Entonces al aplicar la transformada y recordando que las condiciones iniciales son nulas, el 
+modelo queda:
 
 \begin{equation}
     \begin{cases}
-        s\Theta_{m}(s) = \Omega_{m}(s)\\
-        s\Omega_{m}(s) = \frac{1}{J_{eq}}[\frac{3}{2} P_{p} \lambda_{m}^{\prime r} I_{qs}^r(s) - b_{eq}\Omega(s) - \frac{T_{l}(s)}{r}]\\
-        s I_{qs}^r(s) = \frac{1}{L_{q}}[v_{qs}^r(s) - R_{s}I_{qs}^r(s) - P_{p}\Omega_{m}(s)\lambda_{m}^{\prime r}]\\
+        s.\Theta_{m}(s) = \Omega_{m}(s)\\
+        s.\Omega_{m}(s) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.I_{qs}^r(s) - b_{eq}.\Omega_m(s) - \frac{T_{l}(s)}{r}]\\
+        s.I_{qs}^r(s) = \frac{1}{L_{q}}.[v_{qs}^r(s) - R_{s}.I_{qs}^r(s) - P_{p}.\Omega_{m}(s).\lambda_{m}^{\prime r}]\\
     \end{cases}
 \end{equation}
 
-Para obtener las funciones de transferencia del modelo, se despeja $I_{qs}^r(s)$
-
-\begin{equation}
-    I_{qs}^r(s) = \frac{v_{qs}^r(s) - P_{p}\Omega_{m}(s)\lambda_{m}^{\prime r}}{s L_{q} + R_{s}}
-\end{equation}
- 
-Remplazando en las ecuaciones de estado 
+Para obtener las funciones de transferencia del modelo, primero despejamos $I_{qs}^r(s)$
+de la tercera ecuación y la reemplazamos en la segunda. Luego despejamos $\Omega_m(s)$ para 
+finalmente reemplazarla en la primer ecuación y obtener la expresión que representa la salida del sistema: 
 
 \begin{equation}
     \Theta_{m}(s) = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.v_{qs}(s) - \frac{1}{r}.(s.L_{q}+R_{s}).T_{l}(s)}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
