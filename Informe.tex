@@ -1112,18 +1112,18 @@ Utilizando Matlab para poder resolver este polinomio obtenemos que los valores q
     s_{3} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) - sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_eq + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}
 \end{align*}
 
-Reemplazando los valores de los parámetros y teniendo en cuenta que Rs puede estar entre 
-$1,02\, \Omega$ y $1,32\, \Omega$ de manera lineal encontramos los polos se encuentran en 
-función de este valor dado que las demás variables son datos conocidos.
+Reemplazando los valores de los parámetros y teniendo en cuenta que $R_s$ puede variar con la temperatura entre 
+$1,02\, \Omega$ y $1,32\, \Omega$ de manera lineal, se observa que los polos se encuentran en 
+función de este valor dado que las demás valores son parámetros fijos del sistema.
 
-Para determinar los ceros evaluamos  el numerador de la función de transferencia
+Para determinar los ceros evaluamos  el numerador de la
 \hyperref[eq.transferencia_2]{función de transferencia (\ref*{eq.transferencia_2})}
 . De aquí notamos que solo $T_l(t)$ introduce ceros al sistema, obteniendo, al igual que en el caso 
 de los polos, funciones dependientes de $Rs$.
 
-\begin{align*}
-    s.L_q+ R_s = 0 &\to& s = - \frac{R_s}{L_q} = - \frac{R_s}{5,9.10^3}\\ 
-\end{align*}
+\begin{equation*}
+    s.L_q+ R_s = 0 \quad\quad\quad\to\quad\quad\quad s = - \frac{R_s}{L_q} = - \frac{R_s}{5,9.10^3}\\ 
+\end{equation*}
 
 Podemos hacer un gráfico en el plano imaginario sobre como varían estos valores según el valor de 
 $R_s$. Asi obtenemos la siguiente figura:
@@ -1142,7 +1142,7 @@ amortiguado).
 
 De la misma podemos concluir que a medida que el valor de la temperatura aumenta, aumentando $R_s$, el 
 sistema se vuelve mas estable. Esto se puede ver ya que al aumentar la parte real negativa, los 
-mismos vuelven la respuesta del sistema mas amortiguados.
+mismos vuelven la respuesta del sistema mas amortiguado.
 
 Para obtener el valor de la frecuencia natural del sistema y el amortiguamiento relativo, podemos 
 comparar la ecuación característica del sistema con la forma estándar que toma un sistema de tercer 
@@ -1162,12 +1162,12 @@ Igualando ambas expresiones obtenemos los siguiente valores:
 
 Reemplazando los valores de los parámetros obtenemos que:
 
-\begin{align*}
-    314,50 rad/s < \omega_n < 314,72rad/s \\
-    \xi < 1
-\end{align*}
+\begin{equation*}\begin{aligned}
+    314,50\,rad/s < \omega_n < 314,72\,rad/s \\
+    0.28 < \xi < 0.36 \quad\quad\quad\quad
+\end{aligned}\end{equation*}
 
-El valor de wn no varia significativamente con una variación de $R_s$. El valor de $\xi$
+La frecuencia natural ($\omega_n$) no varia significativamente con $R_s$, en cambio el valor de $\xi$
 se ve influenciado de mayor manera aunque siempre se mantiene en rangos menores a 1, lo que 
 indica que es un sistema subamortiguado.
 
@@ -1317,7 +1317,7 @@ Entonces:
 \end{equation*}
 
 El rango de esta matriz es 2, por lo tanto podemos afirmar que el sistema no es observable a 
-partir de la salida w𝑚. Esto se debe a que conociendo la velocidad no se puede estimar la 
+partir de la salida $\omega_n$. Esto se debe a que, conociendo la velocidad, no se puede estimar la 
 posición sin conocer la condición inicial de la misma.
 
 %-------------------- 5.1.5 --------------------------%
@@ -1417,7 +1417,77 @@ destinadas específicamente para esto.
 \subsection{Simulación Dinámica}
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{5.1.6_consigna.jpg}
+    \caption{Consigna $v_q(t)$.}
+\end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{5.1.6_carga.jpg}
+    \caption{Carga $T_l(t)$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_tita.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.83\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_tita_NL.jpg}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_omega.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_omega_NL.jpg}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_torque.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_torque_NL.jpg}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_iabc.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_iabc_NL.jpg}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_iqd0.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_iqd0_NL.jpg}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_temperatura.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.85\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_temperatura_NL.jpg}
+    \end{subfigure}
+\end{figure}
 
 %-------------------- 5.2 --------------------------%
 
