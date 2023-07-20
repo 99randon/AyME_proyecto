@@ -1416,6 +1416,12 @@ destinadas específicamente para esto.
 
 \subsection{Simulación Dinámica}
 
+Realizamos uan simulación dinámica en el dominio del tiempo, comparando el modelo NL completo 
+desacoplado con Ley de control NL con el modelo LTI equivalente aumentado.
+
+\subsubsection{Respuesta del estado interno a pulso de consigna de tension de estador en el eje $q$}
+
+La consiga es la que se muestra en la siguiente figura:
 
 \begin{figure}[H]
     \centering
@@ -1423,71 +1429,161 @@ destinadas específicamente para esto.
     \caption{Consigna $v_q(t)$.}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{5.1.6_carga.jpg}
-    \caption{Carga $T_l(t)$}
-\end{figure}
+Como se puede observar toma el valor de $+19.596 \, V$ en el intervalo de tiempo de $0.1 \, s$ a $0.7 \, s$.
+Esta consigna se superpone con un doble pulso de torque de carga como el que se muestra en la figura (\ref{fig:torque_carga}).
+$T_l(t)$ toma su  valor máximo ($+6.28 \, N.m$) de $0.3 \, s$ a $0.5 \, s$ y su mínimo ($-6.28 \, N.m$) de $0.5 \, s$ a $0.9 \, s$.
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \includegraphics[width=0.85\textwidth]{5.1.6_carga2.jpg}
+    \caption{Carga $T_l(t)$}
+    \label{fig:torque_carga}
+\end{figure}
+
+A continuación se mostraran las respuestas del sistema a la consigna de tensión de estator en el eje $q$.
+Se ira comparando cada variable una a una entre el LTI equivalente aumentado y el modelo NL con Ley de control NL, 
+en ese mismo orden.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_tita.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.83\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_tita_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta de la posición ($\theta_m(t)$) en función del tiempo.}
+    \label{fig:posicion}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_omega.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_omega_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta de la velocidad ($\omega_m(t)$) en función del tiempo.}
+    \label{fig:velocidad}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_torque.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_torque_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta del torque ($T_m(t)$) en función del tiempo.}
+    \label{fig:torque_electromagentico}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_iabc.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_iabc_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta de las corrientes ($i_{abc}(t)$) en función del tiempo.}
+    \label{fig:iabc}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_iqd0.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_iqd0_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta de las corrientes ($i_{qd0}(t)$) en función del tiempo.}
+    \label{fig:iqd0}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{5.1.6_temperatura.jpg}
     \end{subfigure}
-    \begin{subfigure}[b]{0.85\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_temperatura_NL.jpg}
     \end{subfigure}
+    \caption{Respuesta de la temperatura ($T_s(t)$) en función del tiempo.}
+    \label{fig:temperatura}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_vqd0.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_vqd0_NL.jpg}
+    \end{subfigure}
+    \caption{Respuesta de la tensión ($v_{qd0}(t)$) en función del tiempo.}
+    \label{fig:temperatura}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=\textwidth]{5.1.6_vabc.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.8\textwidth}
+        \includegraphics[width=1\textwidth]{5.1.6_vabc_NL.jpg}
+    \end{subfigure}
+    \caption{Respuesta de la tensión ($v_{abc}(t)$) en función del tiempo.}
+    \label{fig:temperatura}
+\end{figure}
+
+De la Figura (\ref{fig:posicion}) se puede observar que la posición del rotor ($\theta_m(t)$)
+varia casi linealmente en el periodo en el que la consiga de tensión en el eje $q$ es positiva.
+
+La velocidad ($\omega_m(t)$) en la Figura (\ref{fig:velocidad}) pasa por un transitorio luego 
+se estabiliza a un valor constante. En $0.3 \, s$, que es cuando comienza el doble pulso del 
+torque de carga, se observa una leve decaimiento de la velocidad a la vez que el torque electromagnético
+de la Figura (\ref{fig:torque_electromagentico}) aumenta para compensar el torque de carga.
+De forma opuesta, cuando tenemos un torque de carga negativo ($t = 0.5 \, s$), el torque electromagnético 
+disminuye y la velocidad angular aumenta.
+
+Las figura de las corrientes (\ref{fig:iabc}) y (\ref{fig:iqd0}) muestra que en los transitorios del torque electromagnético
+se producen picos de corriente. Esto se debe a que el torque electromagnético es proporcional a la corriente.
+Estos picos produce que en la Figura de la temperatura (\ref{fig:temperatura}) se produzcan aumentos de esta.
+La temperatura tiene un comportamiento escalonado debido a los dos transitorios que se producen.
+Es posible observar también que al momento de activarse el torque de carga, la temperatura tiene una 
+pendiente mayor, esto se debe a que el torque electromagnético aumento para compensar el de carga.
+
+Para ambos modelos encontramos un comportamiento bastante similar, lo cual nos indica que el modelo LTI
+es una buena aproximación del modelo NL. Esto se debe a que como ya se ha mencionado anteriormente, la 
+variación de la temperatura es muy pequeña, por lo que no influye significativamente en los valores de $R_s$.
+
+Podemos observar en la siguiente figura que la Ley de control aplicada es efectiva, ya que la corriente
+en ele eje $d$ toma un rango de valores muy pequeños.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_id.jpg}
+    \caption{Respuesta de la corriente en el eje $d$ ($i_d(t)$) en función del tiempo.}
+\end{figure}
+
+Estas perturbaciones se deben a los transitorios ya mencionados del torque, aunque también se observa 
+el decaimiento que esta tiene que cumple con el comportamiento predicho en la dinámica residual. 
+
+Finalmente mostramos los cuadrantes de operación de la maquina eléctrica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_torque_velocidad.png}
+    \caption{Cuadrantes de operación de la maquina eléctrica.}
+\end{figure}
+
+De esta figura podemos determinar dos puntos de equilibrio, uno correspondiente al punto de trabajo 
+de la maquina, cuando esta en motorización. El otro corresponde a la posición de la....
+
 
 %-------------------- 5.2 --------------------------%
 
