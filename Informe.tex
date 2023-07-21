@@ -1820,16 +1820,11 @@ de tensión sera la misma que se aplicara en la salida. Est ose pude expresar co
 
 Como ya vimos anteriormente, podemos pasar de coordenadas $abc$ a coordenadas $dq0$ mediante la
 transformada de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
+de forma que obtengamos valores que compensen las realimentaciones para lograr el desacoplamiento.
 
-
-Utilizando la transformada de Park, podemos definir una consigna de tensión en coordenadas virtuales 
-$v^{r*}_{qd0s}(t)$ que nos permita obtener una tensión $v^{r}_{qd0s}(t)$ que compense los efectos de 
-retroalimentación y permita el desacople de las variables de estado.
-
-Recordando las \hyperref[eq:mi_ecuacion]{Ecuaciones \ref*{eq:mi_ecuacion}}, se observa que los términos 
-del lado derecho de la igualdad, a excepción de las tensiones de fase virtuales, representan las 
-realimentaciones físicas del sistema. Por lo tanto, podemos definir las compensaciones que deben 
-realizarse en el controlador para cancelar los efectos de la retroalimentación, las cuales son:
+A partir de las \hyperref[eq:mi_ecuacion]{ecuaciones \ref*{eq:mi_ecuacion}} que describen el comportamiento
+del modelo electromagnético, se determina la representación de las realimentaciones físicas del sistema. 
+Por lo tanto, podemos definir las realimentaciones que deben realizarse como:
 
 \begin{equation}\label{eq:compensaciones}
     \begin{cases}
@@ -1856,25 +1851,28 @@ Reemplazando las \hyperref[eq:compensaciones]{Ecuaciones \ref*{eq:compensaciones
 A continuación mostramos los diagramas de bloques: 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{desacople_expandido.png}
-    \caption{Diagrama de bloques de realimentación y desacople de variables.}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.25\textwidth]{desacople.png}
-    \caption{Diagrama de bloques de realimentación y desacople de variables compacto.}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{desacople_expandido.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{desacople.png}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagramas de bloques de realimentación y desacople de variables.}
 \end{figure}
 
 %-------------------- 5.2.1.b --------------------------%
 
 \subsubsection{Diseño de lazos de control de corrientes}
 
-La consigna de tensión es función de la corriente del sistema, por lo que se puede controlar usando 
+De la ecuación (\ref{eq:proporcionlaidad_corrientes_tensiones_de_entrada}) podemos observar 
+la consigna de tensión es función de la corriente del sistema, por lo que se puede controlar usando 
 una consigna de corriente proporcional. Con el error de corriente entre la corriente de consigna 
-$i_{qd0s}^{r*}(t)$y la corriente real del sistema se modela $v_{qd0s}^{r*}(t)$ con una ley de 
-control proporcional.. El modelo resultante es el siguiente:
+$i_{qd0s}^{r*}(t)$ y la corriente real $i_{qd0s}^{r}(t)$ del sistema se modela $v_{qd0s}^{r*}(t)$ 
+con una ley de control proporcional. El modelo resultante es el siguiente:
 
 \begin{equation}
     \begin{cases}
@@ -1886,8 +1884,7 @@ control proporcional.. El modelo resultante es el siguiente:
 
 Las variables $R^\prime$ representan las ganancias del control proporcional. Se necesita obtener 
 el valor de óptimo de esta ganancia, por lo cual se analiza la función de transferencia del modulador.
-
-Al aplicar la transformada de Laplace obtenemos:
+Para poder determinar estas ganancias aplicamos la transformada de Laplace y obtenemos:
 
 \begin{equation}
     \begin{cases}
@@ -1897,7 +1894,7 @@ Al aplicar la transformada de Laplace obtenemos:
     \end{cases}
 \end{equation}
 
-Las funciones de transferencia son:
+A partir de estas ecuaciones determinamos las funciones de transferencia:
 
 \begin{align*}
     G_{qs}(s) &= \frac{I_{qs}^r(s)}{I_{qs}^{r*}(s)} = \frac{1}{\frac{L_q}{R_q^\prime}.s + 1}  \\
@@ -1905,8 +1902,9 @@ Las funciones de transferencia son:
     G_{0s}(s) &= \frac{I_{0s}^r(s)}{I_{0s}^{r*}(s)} = \frac{1}{\frac{L_{ls}}{R_{0}^\prime}.s + 1}
 \end{align*}
 
-Se puede observar que las funciones de transferencia son de primer orden y no poseen ceros. Dado que
-los parámetros son positivos también podemos afirmar que las funciones de transferencia son estables.
+Estas funciones de transferencia son de primer orden y no poseen ceros. Dado que
+los parámetros de cada una son positivos también podemos afirmar que las funciones de 
+transferencia son estables.
 
 Estas funciones de transferencia tienen la forma típica de un filtro pasa bajos, donde el valor que
 multiplica a la variable $s$ es la constante del tiempo del sistema \tau que a la vez es el inverso
@@ -1914,7 +1912,7 @@ la frecuencia de corte del filtro. Si \tau toma un valor muy pequeño, dispondre
 banda muy grande, lo cual proporciona una respuesta rápida.
 
 El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que para todos los lazos $p = -5000 rad/s$
-podemos calcular los valores de las ganancias:
+podemos calcular los valores de las ganancias con la siguiente expresión:
 
 \begin{equation}
     \frac{L}{R^\prime} = -\frac{1}{p} \to R^\prime = -L.p
@@ -1931,15 +1929,19 @@ Resolviendo para cada rama:
 Con este lazo de corriente logramos que el error entre la consigna de corriente y la corriente real
 converja mas rápidamente a cero, de forma que responda de mejor manera a las perturbaciones.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{modulador_de_corriente_extendido.png}
-    \caption{Diagrama de bloques de modulador de corriente expandido.}
-\end{figure}
+El diagrama de bloques correspondiente a este lazo de control es el siguiente:
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.25\textwidth]{modulador_de_corriente.png}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{modulador_de_corriente_extendido.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{modulador_de_corriente.png}
+        \caption{Compacto.}
+    \end{subfigure}
     \caption{Diagrama de bloques de modulador de corriente.}
 \end{figure}
 
@@ -1950,7 +1952,7 @@ converja mas rápidamente a cero, de forma que responda de mejor manera a las pe
 Volvemos a usar nuevamente el método de la sección anterior en el que realizamos una realimentación
 para controlar el sistema mediante consignas de torque $T_m^*(t)$. La consigna sigue el siguiente modelo:
 
-\begin{equation}
+\begin{equation}\label{eq.1}
     T_m^*(t) = T_m^{r\prime}(t) + b_{eq}.\omega_m(t)
 \end{equation}
 
@@ -1960,11 +1962,11 @@ Sabiendo que el torque y la corriente están relacionados por la ecuación del
 \hyperref[eq.torque_electromagnetico]{Torque electromagnético (\ref*{eq.torque_electromagnetico})}
 expresamos las consignas de troque $T_m^{*\prime}$ en función de las consignas de corriente $i_{qs}^{r*}$:
 
-\begin{equation}
+\begin{equation}\label{eq.2}
     T_m^{*}(t) = \frac{3}{2}.P_p.[\lambda_m^{\prime r} + (L_d - L_q)i_{ds}^{r}(t)].i_{qs}^{r*}(t)
 \end{equation}
 
-Despejando de estas ultimas dos ecuaciones, obtenemos:
+Despejando de estas ultimas dos ecuaciones (\ref{eq.1}) y (\ref{eq.2}), obtenemos:
 
 \begin{equation}
     i_{qs}^{r*}(t) = \frac{T_m^{*\prime}(t) + b_{eq}.\omega_m(t)}{\frac{2}{3}.P_p.[\lambda_m^{\prime r} + (L_d - L_q)i_{ds}^{r}(t)]}
@@ -1972,28 +1974,27 @@ Despejando de estas ultimas dos ecuaciones, obtenemos:
 
 % IMAGEN DEL MODULADOR DE TORQUE %
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{modulador_de_torque_expandido.png}
-    \caption{Diagrama de bloques de modulador de torque expandido.}
-\end{figure}
+El diagrama de bloques correspondiente a este lazo de control es el siguiente:
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.25\textwidth]{modulador_de_torque.png}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{modulador_de_torque_expandido.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{modulador_de_torque.png}
+        \caption{Compacto.}
+    \end{subfigure}
     \caption{Diagrama de bloques de modulador de torque.}
 \end{figure}
 
-% DUDAS YA QUE NO TRABAJAMOS CON IDS %
-
-De esta ecuación podemos determinar el efecto que tendrá la corriente $i_{ds}^{r*}$ sobre el flujo magnético:
-
-\begin{itemize}
-    \item Si $i_{ds}^{r*} > 0 A$ entonces se produce un reforzamiento de campo.
-    \item Si $i_{ds}^{r*} = 0 A$ entonces se produce un desacople entre la rama correspondiente a 
-    la cuadratura que anula los efectos de reforzamiento y debilitamiento.
-    \item Si $i_{ds}^{r*} < 0 A$ entonces se produce un debilitamiento de campo.
-\end{itemize}
+En este lazo de control, podemos observar nuevamente el impacto que tiene la corriente $i_{ds}(t)$ 
+sobre el campo magnético. Si $i_{ds}^{r*}$ es mayor a $0\,A$, se produce un reforzamiento de campo. Si 
+$i_{ds}^{r*}$ es igual a $0\,A$, ocurre un desacople en la rama correspondiente a la cuadratura, lo cual 
+anula los efectos de reforzamiento y debilitamiento. En cambio, si $i_{ds}^{r*}$ es menor a $0\,A$, se 
+produce un debilitamiento de campo.
 
 %-------------------- 5.2.2 --------------------------%
 
@@ -2003,9 +2004,8 @@ El controlador externo de movimiento se agrega con el fin de mejorar la dinámic
 errores de estado estacionario producidos por cargas perturbadoras. En la rama derivativa tomaremos el 
 error entre la consigna de velocidad y la velocidad real. El error de posición se obtiene integrando el 
 error de velocidad lo que indica que no son variables independientes, este va en la rama proporcional.
-En la rama integral se tendrá la integral del erro de posición. 
+En la rama integral se tendrá la integral del error de posición. 
 
-% Filtro pasa alto %
 Con esta configuración del controlador PID solo tendremos como entrada el error de velocidades, no tendremos
 que introducir acciones derivativas lo que nos permitirá evitar la amplificación del ruido y obtener un 
 controlador mas estable. Los bloques integrales actúan como filtros pasa bajos lo que nos ayuda a eliminar
