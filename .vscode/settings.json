@@ -5,8 +5,10 @@
         "computacionalmente",
         "controlabilidad",
         "Controlabilidad",
+        "desfasaje",
         "difinen",
         "estator",
+        "forcing",
         "grafican",
         "Laplace",
         "linealizado",
@@ -24,7 +26,8 @@
         "torsional",
         "trifásica",
         "trifásicas",
-        "trifásico"
+        "trifásico",
+        "weakening"
     ],
     "cSpell.enabled": true
 }

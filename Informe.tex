@@ -30,6 +30,7 @@
 \usepackage{tocloft}
 \usepackage{wrapfig}
 \usepackage{subcaption}
+\usepackage{multirow}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
@@ -1581,52 +1582,245 @@ Finalmente mostramos los cuadrantes de operación de la maquina eléctrica.
     \caption{Cuadrantes de operación de la maquina eléctrica.}
 \end{figure}
 
-De esta figura podemos determinar dos puntos de equilibrio, uno correspondiente al punto de trabajo 
-de la maquina, cuando esta en motorización. El otro corresponde a la posición de la....
+De esta figura podemos observar que la maquina trabaja en los 4 cuadrantes, esto quiere decir que trabaja como 
+motor y como generador. Ademas se puede determinar dos puntos de equilibrio, uno correspondiente al punto 
+de trabajo de la maquina, cuando esta en motorización. El otro corresponde a la posición de la de apagado.
+Las oscilaciones que se presentan al rededor de estos puntos son debido a los cambios del torque de carga.
 
+\subsubsection{Velocidad y corriente final de establecimiento luego de cada transitorio}
+
+Determinaremos de forma gráfica, utilizando el modelo NL completo desacoplado con ley de control  NL, 
+distintas características que son de vital importancia para analizar el comportamiento de la velocidad 
+y corriente.
+
+Los distintos valores de tiempo utilizados son: T1 = 0.1 s, T2=0.3 s, T3 = 0.5 s, T4 = 0.7 s y T5=0.9 s. 
+Estos equivalen a los tiempos en el que la consigna o el torque de carga cambian de valor.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        & \multicolumn{5}{c|}{Velocidad Angular} \\
+        \hline
+        Tiempo & T1 & T2 & T3 & T4 & T5 \\
+        \hline
+        Valor Final [rad/s] & 420 & 414 & 427 & 6.33 & 0 \\
+        \hline
+        Tiempo de Crecimiento [ms] & 4.50 & 2.18 & 2.35 & 4.68 & 2.56 \\
+        \hline
+        Tiempo de Establecimiento [ms] & 126 & 356 & 555 & 749 & 972 \\
+        \hline
+        Sobre pico [rad/s] & 144 & 5.23 & 10.71 & 146 & 5.31 \\
+        \hline
+    \end{tabular}
+    \caption{Características de la velocidad angular.}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        & \multicolumn{5}{c|}{Corriente} \\
+        \hline
+        Tiempo & T1 & T2 & T3 & T4 & T5 \\
+        \hline
+        Valor Final [A]& 0.09 & 0.38 & -0.19 & -0.28 & 0 \\
+        \hline
+        Tiempo de Crecimiento [ms] & 0.02 & 3.40 & 3.41 & 0.01 & 3.23 \\
+        \hline
+        Tiempo de Establecimiento [ms] & 161 & 345 & 568 & 763 & 972 \\
+        \hline
+        Sobre pico [A] & 7.82 & 0.09 & 0.18 & 7.77 & 0.09 \\
+        \hline
+    \end{tabular}
+    \caption{Características de la corriente.}
+\end{table}
+
+Los resultados obtenidos en el sistema LTI son muy parecidos y se determino no introducirlos. ya 
+que el método gráfico es muy sensible y se pueden ver variaciones entre los dos modelos que no 
+son concisos. Por otro lado es importante remarcar que dichas características son muy parecidos 
+si comparamos valor por valor. Esto es debido a la poca variación que se tiene al trabajar de una 
+forma u la otra. 
+
+En el estudio de las acciones externas sobre el sistema, se nota que tanto la velocidad angular como 
+el torque electromagnético responden de manera diferente a ciertos cambios. La velocidad angular
+muestra una mayor sensibilidad ante variaciones de tensión, mientras que el torque electromagnético 
+se ve más influenciado por cambios en el torque de perturbación.
+
+A pesar de las diferencias en sus respuestas transitorias, al analizar las funciones que relacionan 
+estas magnitudes con sus respectivas entradas, se observa que comparten similitudes. Estas similitudes 
+se explican por las ganancias que afectan a las entradas correspondientes en cada expresión. 
+Específicamente, la corriente/torque motor presenta una mayor ganancia respecto a la entrada perturbada 
+en comparación con la velocidad angular. Por otro lado, la corriente/torque motor muestra una menor 
+ganancia con respecto a la tensión en comparación con la velocidad angular.
+
+\subsubsection{Comparación de distintas condiciones iniciales}
+
+Las siguientes imágenes muestran el comportamiento de la corriente en tiempo real al seleccionar dos 
+estados iniciales diferentes, $i^r_{ds}(0) = 0.5 \, A$ e $i^r_{ds}(0) = -0.5 \, A$, en dos modelos.
+
+Primero mostramos los resultados obtenidos en el modelo "Global NL con ley de control NL".
+
+\begin{itemize}
+    \item $i^r_{ds}(0) = 0.5 A$
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{5.1.6_cid1.png}
+        \caption{Respuesta de la corriente en el eje $d$ ($i_d(t)$) en función del tiempo para la condición inicial $i^r_{ds}(0) = 0.5 A$.}
+    \end{figure}
+
+    \item $i^r_{ds}(0) = -0.5 A$
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{5.1.6_cid2.png}
+        \caption{Respuesta de la corriente en el eje $d$ ($i_d(t)$) en función del tiempo para la condición inicial $i^r_{ds}(0) = -0.5 A$.}
+    \end{figure}
+\end{itemize}
+
+A continuación mostramos los resultados obtenidos en el modelo "LTI equivalente aumentado".
+
+\begin{itemize}
+    \item $i^r_{ds}(0) = 0.5 A$
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{5.1.6_cid3.png}
+        \caption{Respuesta de la corriente en el eje $d$ ($i_d(t)$) en función del tiempo para la condición inicial $i^r_{ds}(0) = 0.5 A$.}
+    \end{figure}
+
+    \item $i^r_{ds}(0) = -0.5 A$
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{5.1.6_cid4.png}
+        \caption{Respuesta de la corriente en el eje $d$ ($i_d(t)$) en función del tiempo para la condición inicial $i^r_{ds}(0) = -0.5 A$.}
+    \end{figure}
+\end{itemize}
+
+No se aprecian diferencias significativas en la evolución de la corriente en tiempo real entre ambos 
+modelos en ninguno de los casos.
+
+Se nota que no existen efectos notables en la evolución de las demás variables del sistema cuando se 
+impone $i^r_{ds}(0) = ±0.5 \, A$. Esto se debe a que, mediante la Ley de Control complementaria mínima en el 
+eje q, se elimina por completo el acoplamiento residual NL, incluso en régimen natural, logrando un 
+modelo equivalente completamente lineal e independiente del estado inicial de $i^r_{ds}(t)$.
+
+\subsubsection{Field forcing/weakening}
+
+Añadimos una nueva consigna de tensión en el eje '$d$' a las especificaciones ya mencionadas, con el 
+valor $V^r_{ds}(t) = 0 \, V \rightarrow V^r_{qs_nom}/10 = ±1,9596 \, Vcc$ en $t_{step1} = 0,5 \, s$ 
+(field forcing/weakening a lazo abierto), sumada a la restricción o ley de control NL.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d1.png}
+    \caption{Consigna de tensión $v^*_{ds}$ para field forcing.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d2.png}
+    \caption{COnsigna de tensión $v^*_{ds}$ para field weakening.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d3.png}
+    \caption{Valores finales de $v_{ds}(t)$ con consigna.}
+\end{figure}
+
+La comprobación de los efectos previamente mencionados muestra que un debilitamiento del campo 
+magnético del estator (field weakening) produce un aumento en la velocidad angular en estado 
+estacionario, mientras que disminuye el torque motor. Por otro lado, el reforzamiento del campo 
+magnético del estator (field forcing) produce una disminución de la velocidad angular en estado 
+estacionario, pero a su vez aumenta el torque motor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d4.png}
+    \caption{Comparación de velocidad angular para field forcing/weakening y sin ningún efecto.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d5.png}
+    \caption{Comparación de torque electromagnético para field forcing/weakening y sin ningún efecto.}
+\end{figure}
+
+Por otro lado podemos observar los efectos de mantener esta consigna de $V_d$ en las gráficas de 
+$\theta$ y $T_s$. En la primera se provoca un desfasaje en los valores finales mientras que la 
+temperatura crece de manera lineal hasta que la misma cese la tensión.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d6.png}
+    \caption{Comparación de posición angular para field forcing/weakening y sin ningún efecto.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.1.6_d7.png}
+    \caption{Comparación de temperatura del estator para field forcing/weakening y sin ningún efecto.}
+\end{figure}
+
+Es crucial señalar que esta nueva consigna no afecta en absoluto al sistema LTI equivalente aumentado. 
+La razón radica en el hecho de haber desacoplado la corriente en directo de la corriente en 
+cuadratura, lo que implica la pérdida de la posibilidad de realizar este tipo de acciones
+
+\newpage
 
 %-------------------- 5.2 --------------------------%
 
 
 \section{Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}
 
-El control vectorial es una técnica avanzada utilizada para controlar motores de corriente alterna y máquinas 
-síncronas. Permite controlar de manera independiente la magnitud y la fase de la corriente de alimentación de la 
-máquina para lograr un control preciso del torque y la velocidad. Una implementación común del control vectorial 
-es el controlador de movimiento en cascada con modulador de torque equivalente, utilizado en aplicaciones de alto 
-rendimiento como sistemas de tracción eléctrica y accionamiento de maquinaria industrial.
+El control vectorial es una técnica avanzada que se emplea en la gestión de máquinas eléctricas, como 
+los motores de corriente alterna y las máquinas síncronas. Esta metodología posibilita el control 
+independiente de la magnitud y la fase de la corriente de alimentación de la máquina, permitiendo así 
+un control preciso del torque y la velocidad. Una implementación frecuente de este tipo de control es 
+el controlador de movimiento en cascada con modulador de torque equivalente, especialmente en aplicaciones 
+de alto rendimiento como los sistemas de tracción eléctrica y los sistemas de accionamiento de maquinaria 
+industrial.
 
-En el controlador de movimiento en cascada con modulador de torque equivalente, se utiliza un controlador de 
-velocidad externo para generar una señal de referencia de velocidad que se compara con la velocidad real de la 
-máquina. La diferencia entre estas señales se utiliza para generar una señal de referencia de torque, que controla 
-la corriente de alimentación. El modulador de torque equivalente convierte la señal de referencia de torque en una
-señal de corriente de alimentación mediante la técnica de modulación de ancho de pulso (PWM), controlando así la 
-magnitud y la fase de la corriente de alimentación.
+En el esquema del controlador de movimiento en cascada con modulador de torque equivalente, se utiliza 
+un controlador de velocidad externo para generar una señal de referencia de velocidad. Esta señal se 
+compara con la velocidad real de la máquina eléctrica, y la diferencia entre ambas señales se utiliza 
+para generar una señal de referencia de torque. Este sistema es fundamental para controlar la corriente 
+de alimentación de la máquina. Posteriormente, el modulador de torque equivalente se emplea para 
+transformar la señal de referencia de torque en una señal de corriente de alimentación que se aplica 
+a la máquina.
 
 %-------------------- 5.2.1 --------------------------%
 
 \subsection{Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}
 
-En el próximo paso de nuestro sistema, se llevará a cabo la implementación de un modulador de torque equivalente, 
-conocido también como controlador interno vectorial de corriente/torque. Este controlador nos permitirá, de manera
-similar a una máquina de corriente continua, controlar el sistema utilizando consignas de torque como entradas, 
-las cuales serán posteriormente transformadas en consignas de tensión. Para lograrlo, procederemos a implementar 
-el controlador completo con su correspondiente diagrama de bloques, utilizando el modelo NL completo y los valores
-de parámetros adecuados, siguiendo los lineamientos que se detallarán a continuación.
+En su funcionamiento, el Modulador de Torque Equivalente recibe consignas de torque como entradas, 
+que representan la cantidad de par motor deseado. Estas consignas de torque se convierten posteriormente 
+en consignas de tensión, lo que permite controlar la magnitud y la fase de la corriente de alimentación 
+de la máquina eléctrica de forma independiente.
 
 %-------------------- 5.2.1.a --------------------------%
 
 \subsubsection{Desacople de las realimentaciones de estado hacia la entrada}
 
-Considerando que el modulador de tensión es lo suficientemente rápido y preciso, podemos asumir que su ganancia 
-es unitaria. Por lo tanto, podemos considerar que en la entrada del modulador de tensión se tiene una consigna 
-de tensión a seguir, y esta misma tensión se aplicará a la salida del modulador. 
-En otras palabras, en la salida del modulador se obtiene la tensión como variable física. Con base en lo 
-mencionado, podemos establecer que:
+Es posible lograr el desacoplamiento de todas las realimentaciones físicas naturales de 
+estado hacia la entrada en una máquina eléctrica mediante la implementación de una estrategia 
+de control adecuada que utilice un modulador de tensión con ganancia unitaria. Para esto debemos 
+suponer que el modulador de tensión es lo suficientemente rápido y preciso, de forma que no 
+introduzca una amplificación o atenuación adicional de la señal. 
+
+Con esta hipótesis podemos considerar que la consigna de tensión a seguir en entrada del modulador 
+de tensión sera la misma que se aplicara en la salida. Est ose pude expresar como: 
 
 \begin{equation}
     v_{abc}(t) \approx v^*_{abc}(t)
 \end{equation}
+
+Como ya vimos anteriormente, podemos pasar de coordenadas $abc$ a coordenadas $dq0$ mediante la
+transformada de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
+
 
 Utilizando la transformada de Park, podemos definir una consigna de tensión en coordenadas virtuales 
 $v^{r*}_{qd0s}(t)$ que nos permita obtener una tensión $v^{r}_{qd0s}(t)$ que compense los efectos de 
@@ -1659,16 +1853,19 @@ Reemplazando las \hyperref[eq:compensaciones]{Ecuaciones \ref*{eq:compensaciones
     \end{cases}
 \end{equation}
 
-% Aca muestra una imagen del modelo el modelo pag. 35 %
+A continuación mostramos los diagramas de bloques: 
 
-% En la siguiente página se muestra el modelo de bloques que considera el desacople de las 
-% realimentaciones físicas, teniendo en cuenta la variación de la temperatura del sistema $(Ts(t))$. 
-% En este modelo, se tiene en cuenta que la resistencia de los devanados del estator varía con la 
-% temperatura. Se ha decidido mantener esta variación en la resistencia, ya que fue considerada en 
-% el modelo no lineal con la ley de control mínima. Aunque se reconoce que la variación de la 
-% resistencia con la temperatura es pequeña, mantener esta variación permite lograr acciones de control 
-% más efectivas, replicando de manera más precisa el comportamiento real del sistema físico. Además, 
-% el costo computacional de esta medida es mínimo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{desacople_expandido.png}
+    \caption{Diagrama de bloques de realimentación y desacople de variables.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{desacople.png}
+    \caption{Diagrama de bloques de realimentación y desacople de variables compacto.}
+\end{figure}
 
 %-------------------- 5.2.1.b --------------------------%
 
@@ -1734,9 +1931,17 @@ Resolviendo para cada rama:
 Con este lazo de corriente logramos que el error entre la consigna de corriente y la corriente real
 converja mas rápidamente a cero, de forma que responda de mejor manera a las perturbaciones.
 
-% Imágenes %
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{modulador_de_corriente_extendido.png}
+    \caption{Diagrama de bloques de modulador de corriente expandido.}
+\end{figure}
 
-% Estaría bueno responder la diferencia entre la consigna 5.1.2.c.vi %
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{modulador_de_corriente.png}
+    \caption{Diagrama de bloques de modulador de corriente.}
+\end{figure}
 
 %-------------------- 5.2.1.c --------------------------%
 
@@ -1766,6 +1971,18 @@ Despejando de estas ultimas dos ecuaciones, obtenemos:
 \end{equation}
 
 % IMAGEN DEL MODULADOR DE TORQUE %
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{modulador_de_torque_expandido.png}
+    \caption{Diagrama de bloques de modulador de torque expandido.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{modulador_de_torque.png}
+    \caption{Diagrama de bloques de modulador de torque.}
+\end{figure}
 
 % DUDAS YA QUE NO TRABAJAMOS CON IDS %
 

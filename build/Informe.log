@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.7.12)  20 JUL 2023 11:42
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.7.12)  21 JUL 2023 12:37
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex
@@ -1357,6 +1357,12 @@ Package caption Info: New subtype `subfigure' on input line 239.
 \c@subfigure=\count384
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count385
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip171
+\multirow@cntb=\count386
+\multirow@dima=\skip172
+\bigstrutjot=\dimen336
 )
 luaotfload | cache : Lookup cache loaded from C:/Users/brand/AppData/Local/MiKTe
 X/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
@@ -1395,9 +1401,9 @@ g;+smcp;"
 (fontspec)             <->"calibri/BI:mode=node;script=latn;language=dflt;+tlig
 ;+smcp;"
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 36.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+LaTeX Info: Redefining \. on input line 56.
+LaTeX Info: Redefining \% on input line 56.
 (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
@@ -1411,31 +1417,31 @@ LaTeX Warning: Label `fig:temperatura' multiply defined.
 )
 \openout1 = Informe.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
-5.
+6.
  (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1475,16 +1481,16 @@ LaTeX Font Info:    ... okay on input line 55.
 (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count386
-\scratchdimen=\dimen336
+\scratchcounter=\count387
+\scratchdimen=\dimen337
 \scratchbox=\box79
-\nofMPsegments=\count387
-\nofMParguments=\count388
+\nofMPsegments=\count388
+\nofMParguments=\count389
 \everyMPshowfont=\toks61
-\MPscratchCnt=\count389
-\MPscratchDim=\dimen337
-\MPnumerator=\count390
-\makeMPintoPDFobject=\count391
+\MPscratchCnt=\count390
+\MPscratchDim=\dimen338
+\MPnumerator=\count391
+\makeMPintoPDFobject=\count392
 \everyMPtoPDFconversion=\toks62
 )
 (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
@@ -1501,7 +1507,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 55.
+ on input line 56.
 
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
@@ -1509,59 +1515,59 @@ Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 55.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 55.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 55.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 55.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 55.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 55.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 55.
-LaTeX Font Info:    Redeclaring math accent \check on input line 55.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 55.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 55.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 55.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 55.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 56.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 56.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 56.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 56.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 56.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 56.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 56.
+LaTeX Font Info:    Redeclaring math accent \check on input line 56.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 56.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 56.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 56.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 56.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 56.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 55.
+(Font)              `operators' in the math version `normal' on input line 56.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/calibri(0)/m/n on input line 55.
+(Font)                  OT1/cmr/m/n --> TU/calibri(0)/m/n on input line 56.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 55.
+(Font)              `operators' in the math version `bold' on input line 56.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/calibri(0)/m/n on input line 55.
+(Font)                  OT1/cmr/bx/n --> TU/calibri(0)/m/n on input line 56.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/calibri(0)/m/n --> TU/calibri(0)/m/n on input line 5
-5.
+6.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/calibri(0)/m/it on input line 55.
+(Font)                  OT1/cmr/m/it --> TU/calibri(0)/m/it on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/calibri(0)/b/n on input line 55.
+(Font)                  OT1/cmr/bx/n --> TU/calibri(0)/b/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 55.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 55.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 56.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/calibri(0)/m/n --> TU/calibri(0)/b/n on input line 5
-5.
+6.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/calibri(0)/b/it on input line 55.
+(Font)                  OT1/cmr/bx/it --> TU/calibri(0)/b/it on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 55.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 55.
-Package hyperref Info: Link coloring ON on input line 55.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 56.
+Package hyperref Info: Link coloring ON on input line 56.
 (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.out)
 (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.out)
 \@outlinefile=\write5
@@ -1569,10 +1575,10 @@ Package hyperref Info: Link coloring ON on input line 55.
 \openout5 = Informe.out
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<encabezado.png, id=186, 505.4082pt x 53.4798pt>
+<encabezado.png, id=198, 505.4082pt x 53.4798pt>
 File: encabezado.png Graphic file (type png)
 <use encabezado.png>
-Package luatex.def Info: encabezado.png  used on input line 61.
+Package luatex.def Info: encabezado.png  used on input line 62.
 (luatex.def)             Requested size: 505.88997pt x 53.53024pt.
 
 [1
@@ -1630,35 +1636,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [4]
-<Alan1.jpg, id=265, 447.92343pt x 447.92343pt>
+<Alan1.jpg, id=280, 447.92343pt x 447.92343pt>
 File: Alan1.jpg Graphic file (type jpg)
 <use Alan1.jpg>
-Package luatex.def Info: Alan1.jpg  used on input line 114.
+Package luatex.def Info: Alan1.jpg  used on input line 115.
 (luatex.def)             Requested size: 126.47249pt x 126.47025pt.
 
 Missing character: There is no θ (U+03B8) in font cmmi10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 132--138
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 133--139
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--138
+Underfull \hbox (badness 10000) in paragraph at lines 133--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--138
+Underfull \hbox (badness 10000) in paragraph at lines 133--139
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 139--142
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 140--143
 [][] 
  []
 
@@ -1671,27 +1677,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [5<./Alan1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 168--173
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 169--174
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--173
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--173
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 174--179
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 175--180
 [][] 
  []
 
@@ -1704,34 +1710,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 286--302
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 287--303
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--302
+Underfull \hbox (badness 10000) in paragraph at lines 287--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--302
+Underfull \hbox (badness 10000) in paragraph at lines 287--303
 
  []
 
 
-Overfull \hbox (26.99998pt too wide) in paragraph at lines 303--311
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 304--312
 [][] 
  []
 
-<Alan7.jpg, id=297, 401.5pt x 210.7875pt>
+<Alan7.jpg, id=312, 401.5pt x 210.7875pt>
 File: Alan7.jpg Graphic file (type jpg)
 <use Alan7.jpg>
-Package luatex.def Info: Alan7.jpg  used on input line 326.
+Package luatex.def Info: Alan7.jpg  used on input line 327.
 (luatex.def)             Requested size: 252.94498pt x 132.80003pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1742,25 +1748,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [7]
-<Alan6.jpg, id=307, 667.1077pt x 667.1077pt>
+<Alan6.jpg, id=322, 667.1077pt x 667.1077pt>
 File: Alan6.jpg Graphic file (type jpg)
 <use Alan6.jpg>
-Package luatex.def Info: Alan6.jpg  used on input line 352.
+Package luatex.def Info: Alan6.jpg  used on input line 353.
 (luatex.def)             Requested size: 113.82639pt x 113.82416pt.
-<Alan5.jpg, id=308, 526.96875pt x 448.67625pt>
+<Alan5.jpg, id=323, 526.96875pt x 448.67625pt>
 File: Alan5.jpg Graphic file (type jpg)
 <use Alan5.jpg>
-Package luatex.def Info: Alan5.jpg  used on input line 357.
+Package luatex.def Info: Alan5.jpg  used on input line 358.
 (luatex.def)             Requested size: 113.82639pt x 96.91536pt.
-<Alan4.jpg, id=309, 1606.0pt x 1606.0pt>
+<Alan4.jpg, id=324, 1606.0pt x 1606.0pt>
 File: Alan4.jpg Graphic file (type jpg)
 <use Alan4.jpg>
-Package luatex.def Info: Alan4.jpg  used on input line 362.
+Package luatex.def Info: Alan4.jpg  used on input line 363.
 (luatex.def)             Requested size: 113.82639pt x 113.80379pt.
 
 
 LaTeX Warning: Hyper reference `eq:tren_de_transmision1, eq:tren_de_transmision
-2' on page 8 undefined on input line 387.
+2' on page 8 undefined on input line 388.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1773,7 +1779,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8<./Alan7.jpg><./Alan6.jpg><./Alan5.jpg><./Alan4.jpg>]
 
 LaTeX Warning: Hyper reference `termico1, termico2' on page 9 undefined on inpu
-t line 496.
+t line 497.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1784,15 +1790,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [9]
-<no_lineal.png, id=341, 794.41408pt x 376.91585pt>
+<no_lineal.png, id=356, 794.41408pt x 376.91585pt>
 File: no_lineal.png Graphic file (type png)
 <use no_lineal.png>
-Package luatex.def Info: no_lineal.png  used on input line 571.
+Package luatex.def Info: no_lineal.png  used on input line 572.
 (luatex.def)             Requested size: 505.88997pt x 240.0233pt.
-<sub_mecanico.png, id=342, 794.97pt x 290.74777pt>
+<sub_mecanico.png, id=357, 794.97pt x 290.74777pt>
 File: sub_mecanico.png Graphic file (type png)
 <use sub_mecanico.png>
-Package luatex.def Info: sub_mecanico.png  used on input line 579.
+Package luatex.def Info: sub_mecanico.png  used on input line 580.
 (luatex.def)             Requested size: 505.88997pt x 185.02649pt.
 
 
@@ -1804,30 +1810,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [10<./no_lineal.png>]
-<sub_mecanico2.png, id=354, 670.99916pt x 324.65907pt>
+<sub_mecanico2.png, id=369, 670.99916pt x 324.65907pt>
 File: sub_mecanico2.png Graphic file (type png)
 <use sub_mecanico2.png>
-Package luatex.def Info: sub_mecanico2.png  used on input line 588.
+Package luatex.def Info: sub_mecanico2.png  used on input line 589.
 (luatex.def)             Requested size: 252.94498pt x 122.3859pt.
-<sub_mecanico3.png, id=355, 529.7947pt x 259.06015pt>
+<sub_mecanico3.png, id=370, 529.7947pt x 259.06015pt>
 File: sub_mecanico3.png Graphic file (type png)
 <use sub_mecanico3.png>
-Package luatex.def Info: sub_mecanico3.png  used on input line 592.
+Package luatex.def Info: sub_mecanico3.png  used on input line 593.
 (luatex.def)             Requested size: 252.94498pt x 123.68732pt.
 
-Overfull \hbox (1.50714pt too wide) in paragraph at lines 586--594
+Overfull \hbox (1.50714pt too wide) in paragraph at lines 587--595
 [][] [] 
  []
 
-<sub_termico.png, id=356, 791.63446pt x 365.79738pt>
+<sub_termico.png, id=371, 791.63446pt x 365.79738pt>
 File: sub_termico.png Graphic file (type png)
 <use sub_termico.png>
-Package luatex.def Info: sub_termico.png  used on input line 601.
+Package luatex.def Info: sub_termico.png  used on input line 602.
 (luatex.def)             Requested size: 505.88997pt x 233.75787pt.
-<sub_electromagentico.png, id=357, 443.0707pt x 319.65576pt>
+<sub_electromagentico.png, id=372, 443.0707pt x 319.65576pt>
 File: sub_electromagentico.png Graphic file (type png)
 <use sub_electromagentico.png>
-Package luatex.def Info: sub_electromagentico.png  used on input line 609.
+Package luatex.def Info: sub_electromagentico.png  used on input line 610.
 (luatex.def)             Requested size: 505.88997pt x 364.98201pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1839,20 +1845,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [11<./sub_mecanico.png><./sub_mecanico2.png><./sub_mecanico3.png><./sub_termico.
 png>]
-<sub_electromagentico4.png, id=371, 705.46638pt x 274.07008pt>
+<sub_electromagentico4.png, id=386, 705.46638pt x 274.07008pt>
 File: sub_electromagentico4.png Graphic file (type png)
 <use sub_electromagentico4.png>
-Package luatex.def Info: sub_electromagentico4.png  used on input line 618.
+Package luatex.def Info: sub_electromagentico4.png  used on input line 619.
 (luatex.def)             Requested size: 505.88997pt x 196.5399pt.
-<sub_electromagentico3.png, id=372, 764.95015pt x 315.76431pt>
+<sub_electromagentico3.png, id=387, 764.95015pt x 315.76431pt>
 File: sub_electromagentico3.png Graphic file (type png)
 <use sub_electromagentico3.png>
-Package luatex.def Info: sub_electromagentico3.png  used on input line 623.
+Package luatex.def Info: sub_electromagentico3.png  used on input line 624.
 (luatex.def)             Requested size: 505.88997pt x 208.82909pt.
-<sub_electromagentico2.png, id=373, 533.68616pt x 205.13562pt>
+<sub_electromagentico2.png, id=388, 533.68616pt x 205.13562pt>
 File: sub_electromagentico2.png Graphic file (type png)
 <use sub_electromagentico2.png>
-Package luatex.def Info: sub_electromagentico2.png  used on input line 628.
+Package luatex.def Info: sub_electromagentico2.png  used on input line 629.
 (luatex.def)             Requested size: 505.88997pt x 194.46141pt.
 
 
@@ -1883,10 +1889,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [14]
-<LTI.png, id=409, 714.91708pt x 460.3043pt>
+<LTI.png, id=424, 714.91708pt x 460.3043pt>
 File: LTI.png Graphic file (type png)
 <use LTI.png>
-Package luatex.def Info: LTI.png  used on input line 869.
+Package luatex.def Info: LTI.png  used on input line 870.
 (luatex.def)             Requested size: 505.88997pt x 325.72264pt.
 
 
@@ -1898,10 +1904,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [15]
-<realimentacion.png, id=421, 713.24931pt x 452.52138pt>
+<realimentacion.png, id=436, 713.24931pt x 452.52138pt>
 File: realimentacion.png Graphic file (type png)
 <use realimentacion.png>
-Package luatex.def Info: realimentacion.png  used on input line 914.
+Package luatex.def Info: realimentacion.png  used on input line 915.
 (luatex.def)             Requested size: 505.88997pt x 320.9748pt.
 
 
@@ -1913,10 +1919,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [16<./LTI.png>]
-<controlador.png, id=436, 887.25323pt x 280.18523pt>
+<controlador.png, id=451, 887.25323pt x 280.18523pt>
 File: controlador.png Graphic file (type png)
 <use controlador.png>
-Package luatex.def Info: controlador.png  used on input line 920.
+Package luatex.def Info: controlador.png  used on input line 921.
 (luatex.def)             Requested size: 505.88997pt x 159.75426pt.
 
 
@@ -1928,15 +1934,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [17<./realimentacion.png><./controlador.png>]
-<LTI_aumentado1.png, id=449, 710.4697pt x 464.7517pt>
+<LTI_aumentado1.png, id=464, 710.4697pt x 464.7517pt>
 File: LTI_aumentado1.png Graphic file (type png)
 <use LTI_aumentado1.png>
-Package luatex.def Info: LTI_aumentado1.png  used on input line 980.
+Package luatex.def Info: LTI_aumentado1.png  used on input line 981.
 (luatex.def)             Requested size: 505.88997pt x 330.94044pt.
-<LTI_AUMENTADO_Q.jpg, id=450, 1076.02pt x 690.58pt>
+<LTI_AUMENTADO_Q.jpg, id=465, 1076.02pt x 690.58pt>
 File: LTI_AUMENTADO_Q.jpg Graphic file (type jpg)
 <use LTI_AUMENTADO_Q.jpg>
-Package luatex.def Info: LTI_AUMENTADO_Q.jpg  used on input line 986.
+Package luatex.def Info: LTI_AUMENTADO_Q.jpg  used on input line 987.
 (luatex.def)             Requested size: 505.88997pt x 324.67801pt.
 
 
@@ -1948,11 +1954,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [18<./LTI_aumentado1.png>]
-<LTI_AUMENTADO_Q_CONTROLADOR.jpg, id=464, 1519.6775pt x 485.815pt>
+<LTI_AUMENTADO_Q_CONTROLADOR.jpg, id=479, 1519.6775pt x 485.815pt>
 File: LTI_AUMENTADO_Q_CONTROLADOR.jpg Graphic file (type jpg)
 <use LTI_AUMENTADO_Q_CONTROLADOR.jpg>
 Package luatex.def Info: LTI_AUMENTADO_Q_CONTROLADOR.jpg  used on input line 99
-2.
+3.
 (luatex.def)             Requested size: 505.88997pt x 161.72049pt.
 
 
@@ -1973,10 +1979,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [20]
-<polosyceros.png, id=490, 378.0277pt x 320.76761pt>
+<polosyceros.png, id=505, 378.0277pt x 320.76761pt>
 File: polosyceros.png Graphic file (type png)
 <use polosyceros.png>
-Package luatex.def Info: polosyceros.png  used on input line 1133.
+Package luatex.def Info: polosyceros.png  used on input line 1134.
 (luatex.def)             Requested size: 378.02676pt x 320.76682pt.
 
 
@@ -1988,11 +1994,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [21<./polosyceros.png>]
-<frecuancia_amortiguamiento_rs.png, id=500, 306.86954pt x 243.49431pt>
+<frecuancia_amortiguamiento_rs.png, id=515, 306.86954pt x 243.49431pt>
 File: frecuancia_amortiguamiento_rs.png Graphic file (type png)
 <use frecuancia_amortiguamiento_rs.png>
 Package luatex.def Info: frecuancia_amortiguamiento_rs.png  used on input line 
-1178.
+1179.
 (luatex.def)             Requested size: 306.86877pt x 243.4937pt.
 
 
@@ -2015,16 +2021,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1422.
+(hyperref)                removing `math shift' on input line 1423.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1422.
+(hyperref)                removing `math shift' on input line 1423.
 
-<5.1.6_consigna.jpg, id=522, 1051.93pt x 531.9875pt>
+<5.1.6_consigna.jpg, id=537, 1051.93pt x 531.9875pt>
 File: 5.1.6_consigna.jpg Graphic file (type jpg)
 <use 5.1.6_consigna.jpg>
-Package luatex.def Info: 5.1.6_consigna.jpg  used on input line 1428.
+Package luatex.def Info: 5.1.6_consigna.jpg  used on input line 1429.
 (luatex.def)             Requested size: 430.00955pt x 217.46689pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2035,20 +2041,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [24]
-<5.1.6_carga2.jpg, id=531, 946.53625pt x 355.3275pt>
+<5.1.6_carga2.jpg, id=546, 946.53625pt x 355.3275pt>
 File: 5.1.6_carga2.jpg Graphic file (type jpg)
 <use 5.1.6_carga2.jpg>
-Package luatex.def Info: 5.1.6_carga2.jpg  used on input line 1438.
+Package luatex.def Info: 5.1.6_carga2.jpg  used on input line 1439.
 (luatex.def)             Requested size: 430.00955pt x 161.42485pt.
-<5.1.6_tita.jpg, id=532, 959.585pt x 358.33875pt>
+<5.1.6_tita.jpg, id=547, 959.585pt x 358.33875pt>
 File: 5.1.6_tita.jpg Graphic file (type jpg)
 <use 5.1.6_tita.jpg>
-Package luatex.def Info: 5.1.6_tita.jpg  used on input line 1450.
+Package luatex.def Info: 5.1.6_tita.jpg  used on input line 1451.
 (luatex.def)             Requested size: 404.71352pt x 151.13551pt.
-<5.1.6_tita_NL.jpg, id=533, 949.5475pt x 355.3275pt>
+<5.1.6_tita_NL.jpg, id=548, 949.5475pt x 355.3275pt>
 File: 5.1.6_tita_NL.jpg Graphic file (type jpg)
 <use 5.1.6_tita_NL.jpg>
-Package luatex.def Info: 5.1.6_tita_NL.jpg  used on input line 1453.
+Package luatex.def Info: 5.1.6_tita_NL.jpg  used on input line 1454.
 (luatex.def)             Requested size: 404.71352pt x 151.44864pt.
 
 
@@ -2060,25 +2066,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [25<./5.1.6_consigna.jpg><./5.1.6_carga2.jpg>]
-<5.1.6_omega.jpg, id=542, 945.5325pt x 351.3125pt>
+<5.1.6_omega.jpg, id=557, 945.5325pt x 351.3125pt>
 File: 5.1.6_omega.jpg Graphic file (type jpg)
 <use 5.1.6_omega.jpg>
-Package luatex.def Info: 5.1.6_omega.jpg  used on input line 1462.
+Package luatex.def Info: 5.1.6_omega.jpg  used on input line 1463.
 (luatex.def)             Requested size: 404.71352pt x 150.37526pt.
-<5.1.6_omega_NL.jpg, id=543, 949.5475pt x 354.32375pt>
+<5.1.6_omega_NL.jpg, id=558, 949.5475pt x 354.32375pt>
 File: 5.1.6_omega_NL.jpg Graphic file (type jpg)
 <use 5.1.6_omega_NL.jpg>
-Package luatex.def Info: 5.1.6_omega_NL.jpg  used on input line 1465.
+Package luatex.def Info: 5.1.6_omega_NL.jpg  used on input line 1466.
 (luatex.def)             Requested size: 404.71352pt x 151.02081pt.
-<5.1.6_torque.jpg, id=544, 950.55125pt x 352.31625pt>
+<5.1.6_torque.jpg, id=559, 950.55125pt x 352.31625pt>
 File: 5.1.6_torque.jpg Graphic file (type jpg)
 <use 5.1.6_torque.jpg>
-Package luatex.def Info: 5.1.6_torque.jpg  used on input line 1474.
+Package luatex.def Info: 5.1.6_torque.jpg  used on input line 1475.
 (luatex.def)             Requested size: 404.71352pt x 150.0039pt.
-<5.1.6_torque_NL.jpg, id=545, 946.53625pt x 351.3125pt>
+<5.1.6_torque_NL.jpg, id=560, 946.53625pt x 351.3125pt>
 File: 5.1.6_torque_NL.jpg Graphic file (type jpg)
 <use 5.1.6_torque_NL.jpg>
-Package luatex.def Info: 5.1.6_torque_NL.jpg  used on input line 1477.
+Package luatex.def Info: 5.1.6_torque_NL.jpg  used on input line 1478.
 (luatex.def)             Requested size: 404.71352pt x 150.20909pt.
 
 
@@ -2091,25 +2097,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26<./5.1.6_tita.jpg><./5.1.6_tita_NL.jpg><./5.1.6_omega.jpg><./5.1.6_omega_NL.j
 pg>]
-<5.1.6_iabc.jpg, id=554, 950.55125pt x 354.32375pt>
+<5.1.6_iabc.jpg, id=569, 950.55125pt x 354.32375pt>
 File: 5.1.6_iabc.jpg Graphic file (type jpg)
 <use 5.1.6_iabc.jpg>
-Package luatex.def Info: 5.1.6_iabc.jpg  used on input line 1486.
+Package luatex.def Info: 5.1.6_iabc.jpg  used on input line 1487.
 (luatex.def)             Requested size: 404.71352pt x 150.85863pt.
-<5.1.6_iabc_NL.jpg, id=555, 950.55125pt x 352.31625pt>
+<5.1.6_iabc_NL.jpg, id=570, 950.55125pt x 352.31625pt>
 File: 5.1.6_iabc_NL.jpg Graphic file (type jpg)
 <use 5.1.6_iabc_NL.jpg>
-Package luatex.def Info: 5.1.6_iabc_NL.jpg  used on input line 1489.
+Package luatex.def Info: 5.1.6_iabc_NL.jpg  used on input line 1490.
 (luatex.def)             Requested size: 404.71352pt x 150.0039pt.
-<5.1.6_iqd0.jpg, id=556, 940.51375pt x 350.30875pt>
+<5.1.6_iqd0.jpg, id=571, 940.51375pt x 350.30875pt>
 File: 5.1.6_iqd0.jpg Graphic file (type jpg)
 <use 5.1.6_iqd0.jpg>
-Package luatex.def Info: 5.1.6_iqd0.jpg  used on input line 1498.
+Package luatex.def Info: 5.1.6_iqd0.jpg  used on input line 1499.
 (luatex.def)             Requested size: 404.71352pt x 150.74207pt.
-<5.1.6_iqd0_NL.jpg, id=557, 948.54375pt x 353.32pt>
+<5.1.6_iqd0_NL.jpg, id=572, 948.54375pt x 353.32pt>
 File: 5.1.6_iqd0_NL.jpg Graphic file (type jpg)
 <use 5.1.6_iqd0_NL.jpg>
-Package luatex.def Info: 5.1.6_iqd0_NL.jpg  used on input line 1501.
+Package luatex.def Info: 5.1.6_iqd0_NL.jpg  used on input line 1502.
 (luatex.def)             Requested size: 404.71352pt x 150.74934pt.
 
 
@@ -2122,25 +2128,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [27<./5.1.6_torque.jpg><./5.1.6_torque_NL.jpg><./5.1.6_iabc.jpg><./5.1.6_iabc_NL
 .jpg>]
-<5.1.6_temperatura.jpg, id=566, 953.5625pt x 352.31625pt>
+<5.1.6_temperatura.jpg, id=581, 953.5625pt x 352.31625pt>
 File: 5.1.6_temperatura.jpg Graphic file (type jpg)
 <use 5.1.6_temperatura.jpg>
-Package luatex.def Info: 5.1.6_temperatura.jpg  used on input line 1510.
+Package luatex.def Info: 5.1.6_temperatura.jpg  used on input line 1511.
 (luatex.def)             Requested size: 404.71352pt x 149.53082pt.
-<5.1.6_temperatura_NL.jpg, id=567, 950.55125pt x 355.3275pt>
+<5.1.6_temperatura_NL.jpg, id=582, 950.55125pt x 355.3275pt>
 File: 5.1.6_temperatura_NL.jpg Graphic file (type jpg)
 <use 5.1.6_temperatura_NL.jpg>
-Package luatex.def Info: 5.1.6_temperatura_NL.jpg  used on input line 1513.
+Package luatex.def Info: 5.1.6_temperatura_NL.jpg  used on input line 1514.
 (luatex.def)             Requested size: 404.71352pt x 151.28598pt.
-<5.1.6_vqd0.jpg, id=568, 712.16063pt x 262.73157pt>
+<5.1.6_vqd0.jpg, id=583, 712.16063pt x 262.73157pt>
 File: 5.1.6_vqd0.jpg Graphic file (type jpg)
 <use 5.1.6_vqd0.jpg>
-Package luatex.def Info: 5.1.6_vqd0.jpg  used on input line 1522.
+Package luatex.def Info: 5.1.6_vqd0.jpg  used on input line 1523.
 (luatex.def)             Requested size: 404.71352pt x 149.30553pt.
-<5.1.6_vqd0_NL.jpg, id=569, 694.84593pt x 283.81032pt>
+<5.1.6_vqd0_NL.jpg, id=584, 694.84593pt x 283.81032pt>
 File: 5.1.6_vqd0_NL.jpg Graphic file (type jpg)
 <use 5.1.6_vqd0_NL.jpg>
-Package luatex.def Info: 5.1.6_vqd0_NL.jpg  used on input line 1525.
+Package luatex.def Info: 5.1.6_vqd0_NL.jpg  used on input line 1526.
 (luatex.def)             Requested size: 404.71352pt x 165.30298pt.
 
 
@@ -2153,15 +2159,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [28<./5.1.6_iqd0.jpg><./5.1.6_iqd0_NL.jpg><./5.1.6_temperatura.jpg><./5.1.6_temp
 eratura_NL.jpg>]
-<5.1.6_vabc.jpg, id=578, 711.4078pt x 264.23718pt>
+<5.1.6_vabc.jpg, id=593, 711.4078pt x 264.23718pt>
 File: 5.1.6_vabc.jpg Graphic file (type jpg)
 <use 5.1.6_vabc.jpg>
-Package luatex.def Info: 5.1.6_vabc.jpg  used on input line 1534.
+Package luatex.def Info: 5.1.6_vabc.jpg  used on input line 1535.
 (luatex.def)             Requested size: 404.71352pt x 150.32645pt.
-<5.1.6_vabc_NL.jpg, id=579, 711.4078pt x 264.23718pt>
+<5.1.6_vabc_NL.jpg, id=594, 711.4078pt x 264.23718pt>
 File: 5.1.6_vabc_NL.jpg Graphic file (type jpg)
 <use 5.1.6_vabc_NL.jpg>
-Package luatex.def Info: 5.1.6_vabc_NL.jpg  used on input line 1537.
+Package luatex.def Info: 5.1.6_vabc_NL.jpg  used on input line 1538.
 (luatex.def)             Requested size: 404.71352pt x 150.32645pt.
 
 
@@ -2174,15 +2180,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [29<./5.1.6_vqd0.jpg><./5.1.6_vqd0_NL.jpg><./5.1.6_vabc.jpg><./5.1.6_vabc_NL.jpg
 >]
-<5.1.6_id.jpg, id=594, 712.91344pt x 268.75406pt>
+<5.1.6_id.jpg, id=609, 712.91344pt x 268.75406pt>
 File: 5.1.6_id.jpg Graphic file (type jpg)
 <use 5.1.6_id.jpg>
-Package luatex.def Info: 5.1.6_id.jpg  used on input line 1569.
+Package luatex.def Info: 5.1.6_id.jpg  used on input line 1570.
 (luatex.def)             Requested size: 404.71352pt x 152.56807pt.
-<5.1.6_torque_velocidad.png, id=595, 443.0707pt x 361.35pt>
+<5.1.6_torque_velocidad.png, id=610, 443.0707pt x 361.35pt>
 File: 5.1.6_torque_velocidad.png Graphic file (type png)
 <use 5.1.6_torque_velocidad.png>
-Package luatex.def Info: 5.1.6_torque_velocidad.png  used on input line 1580.
+Package luatex.def Info: 5.1.6_torque_velocidad.png  used on input line 1581.
 (luatex.def)             Requested size: 404.71352pt x 330.06961pt.
 
 
@@ -2203,6 +2209,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [31<./5.1.6_torque_velocidad.png>]
+<5.1.6_cid1.png, id=627, 532.01839pt x 202.91193pt>
+File: 5.1.6_cid1.png Graphic file (type png)
+<use 5.1.6_cid1.png>
+Package luatex.def Info: 5.1.6_cid1.png  used on input line 1669.
+(luatex.def)             Requested size: 404.71352pt x 154.36017pt.
+<5.1.6_cid2.png, id=628, 527.571pt x 196.24084pt>
+File: 5.1.6_cid2.png Graphic file (type png)
+<use 5.1.6_cid2.png>
+Package luatex.def Info: 5.1.6_cid2.png  used on input line 1677.
+(luatex.def)             Requested size: 404.71352pt x 150.54295pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2211,7 +2228,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[32]
+[32<./5.1.6_cid1.png>]
+<5.1.6_cid3.png, id=638, 524.79138pt x 193.46123pt>
+File: 5.1.6_cid3.png Graphic file (type png)
+<use 5.1.6_cid3.png>
+Package luatex.def Info: 5.1.6_cid3.png  used on input line 1689.
+(luatex.def)             Requested size: 404.71352pt x 149.19585pt.
+<5.1.6_cid4.png, id=639, 525.3473pt x 196.24084pt>
+File: 5.1.6_cid4.png Graphic file (type png)
+<use 5.1.6_cid4.png>
+Package luatex.def Info: 5.1.6_cid4.png  used on input line 1697.
+(luatex.def)             Requested size: 404.71352pt x 151.17776pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2220,7 +2248,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[33]
+[33<./5.1.6_cid2.png><./5.1.6_cid3.png><./5.1.6_cid4.png>]
+<5.1.6_d1.png, id=652, 525.90323pt x 194.01715pt>
+File: 5.1.6_d1.png Graphic file (type png)
+<use 5.1.6_d1.png>
+Package luatex.def Info: 5.1.6_d1.png  used on input line 1718.
+(luatex.def)             Requested size: 404.71352pt x 149.31372pt.
+<5.1.6_d2.png, id=653, 525.3473pt x 195.129pt>
+File: 5.1.6_d2.png Graphic file (type png)
+<use 5.1.6_d2.png>
+Package luatex.def Info: 5.1.6_d2.png  used on input line 1724.
+(luatex.def)             Requested size: 404.71352pt x 150.32124pt.
+<5.1.6_d3.png, id=654, 524.23546pt x 194.57307pt>
+File: 5.1.6_d3.png Graphic file (type png)
+<use 5.1.6_d3.png>
+Package luatex.def Info: 5.1.6_d3.png  used on input line 1730.
+(luatex.def)             Requested size: 404.71352pt x 150.21361pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2229,7 +2273,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[34]
+[34<./5.1.6_d1.png><./5.1.6_d2.png><./5.1.6_d3.png>]
+<5.1.6_d4.png, id=667, 523.67953pt x 196.24084pt>
+File: 5.1.6_d4.png Graphic file (type png)
+<use 5.1.6_d4.png>
+Package luatex.def Info: 5.1.6_d4.png  used on input line 1742.
+(luatex.def)             Requested size: 404.71352pt x 151.66585pt.
+<5.1.6_d5.png, id=668, 526.45915pt x 195.129pt>
+File: 5.1.6_d5.png Graphic file (type png)
+<use 5.1.6_d5.png>
+Package luatex.def Info: 5.1.6_d5.png  used on input line 1748.
+(luatex.def)             Requested size: 404.71352pt x 150.0086pt.
+<5.1.6_d6.png, id=669, 524.79138pt x 194.01715pt>
+File: 5.1.6_d6.png Graphic file (type png)
+<use 5.1.6_d6.png>
+Package luatex.def Info: 5.1.6_d6.png  used on input line 1758.
+(luatex.def)             Requested size: 404.71352pt x 149.62457pt.
+<5.1.6_d7.png, id=670, 526.45915pt x 195.129pt>
+File: 5.1.6_d7.png Graphic file (type png)
+<use 5.1.6_d7.png>
+Package luatex.def Info: 5.1.6_d7.png  used on input line 1764.
+(luatex.def)             Requested size: 404.71352pt x 150.0086pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2238,7 +2303,116 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[35]
+[35<./5.1.6_d4.png><./5.1.6_d5.png><./5.1.6_d6.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[36<./5.1.6_d7.png>]
+<desacople_expandido.png, id=694, 438.6233pt x 384.14285pt>
+File: desacople_expandido.png Graphic file (type png)
+<use desacople_expandido.png>
+Package luatex.def Info: desacople_expandido.png  used on input line 1860.
+(luatex.def)             Requested size: 404.71352pt x 354.46494pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[37]
+<desacople.png, id=704, 312.9847pt x 406.37978pt>
+File: desacople.png Graphic file (type png)
+<use desacople.png>
+Package luatex.def Info: desacople.png  used on input line 1866.
+(luatex.def)             Requested size: 126.47249pt x 164.21085pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[38<./desacople_expandido.png><./desacople.png>]
+<modulador_de_corriente_extendido.png, id=715, 527.01508pt x 343.56046pt>
+File: modulador_de_corriente_extendido.png Graphic file (type png)
+<use modulador_de_corriente_extendido.png>
+Package luatex.def Info: modulador_de_corriente_extendido.png  used on input li
+ne 1936.
+(luatex.def)             Requested size: 404.71352pt x 263.83464pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[39]
+<modulador_de_corriente.png, id=725, 343.56046pt x 399.7087pt>
+File: modulador_de_corriente.png Graphic file (type png)
+<use modulador_de_corriente.png>
+Package luatex.def Info: modulador_de_corriente.png  used on input line 1942.
+(luatex.def)             Requested size: 126.47249pt x 147.13971pt.
+<modulador_de_torque_expandido.png, id=727, 676.00246pt x 357.45854pt>
+File: modulador_de_torque_expandido.png Graphic file (type png)
+<use modulador_de_torque_expandido.png>
+Package luatex.def Info: modulador_de_torque_expandido.png  used on input line 
+1977.
+(luatex.def)             Requested size: 404.71352pt x 214.00224pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[40<./modulador_de_corriente_extendido.png><./modulador_de_corriente.png>]
+<modulador_de_torque.png, id=742, 260.72792pt x 346.896pt>
+File: modulador_de_torque.png Graphic file (type png)
+<use modulador_de_torque.png>
+Package luatex.def Info: modulador_de_torque.png  used on input line 1983.
+(luatex.def)             Requested size: 126.47249pt x 168.27081pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[41<./modulador_de_torque_expandido.png><./modulador_de_torque.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[42]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[43]
 Missing character: There is no θ (U+03B8) in font cmmi10!
 Missing character: There is no ∗ (U+2217) in font calibri:mode=node;script=lat
 n;language=dflt;+tlig;!
@@ -2246,134 +2420,144 @@ Missing character: There is no ∗ (U+2217) in font calibri:mode=node;script=lat
 n;language=dflt;+tlig;!
 Missing character: There is no ∗ (U+2217) in font calibri:mode=node;script=lat
 n;language=dflt;+tlig;!
-<perfil_trapezoidal.png, id=661, 782.925pt x 358.33875pt>
+<perfil_trapezoidal.png, id=777, 782.925pt x 358.33875pt>
 File: perfil_trapezoidal.png Graphic file (type png)
 <use perfil_trapezoidal.png>
-Package luatex.def Info: perfil_trapezoidal.png  used on input line 2052.
+Package luatex.def Info: perfil_trapezoidal.png  used on input line 2269.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-<5.2.4.a.2.png, id=662, 782.925pt x 358.33875pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[44]
+<5.2.4.a.2.png, id=790, 782.925pt x 358.33875pt>
 File: 5.2.4.a.2.png Graphic file (type png)
 <use 5.2.4.a.2.png>
-Package luatex.def Info: 5.2.4.a.2.png  used on input line 2057.
+Package luatex.def Info: 5.2.4.a.2.png  used on input line 2274.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[36<./perfil_trapezoidal.png>]
-<5.2.4.a.3.png, id=676, 782.925pt x 358.33875pt>
+<5.2.4.a.3.png, id=791, 782.925pt x 358.33875pt>
 File: 5.2.4.a.3.png Graphic file (type png)
 <use 5.2.4.a.3.png>
-Package luatex.def Info: 5.2.4.a.3.png  used on input line 2062.
+Package luatex.def Info: 5.2.4.a.3.png  used on input line 2279.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-<5.2.4.a.4.png, id=677, 782.925pt x 358.33875pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[45<./perfil_trapezoidal.png><./5.2.4.a.2.png>]
+<5.2.4.a.4.png, id=802, 782.925pt x 358.33875pt>
 File: 5.2.4.a.4.png Graphic file (type png)
 <use 5.2.4.a.4.png>
-Package luatex.def Info: 5.2.4.a.4.png  used on input line 2067.
+Package luatex.def Info: 5.2.4.a.4.png  used on input line 2284.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[37<./5.2.4.a.2.png><./5.2.4.a.3.png>]
-<5.2.4.a.5.png, id=688, 782.925pt x 360.1455pt>
+<5.2.4.a.5.png, id=803, 782.925pt x 360.1455pt>
 File: 5.2.4.a.5.png Graphic file (type png)
 <use 5.2.4.a.5.png>
-Package luatex.def Info: 5.2.4.a.5.png  used on input line 2072.
+Package luatex.def Info: 5.2.4.a.5.png  used on input line 2289.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-<5.2.4.a.6.png, id=689, 782.925pt x 357.7365pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[46<./5.2.4.a.3.png><./5.2.4.a.4.png>]
+<5.2.4.a.6.png, id=814, 782.925pt x 357.7365pt>
 File: 5.2.4.a.6.png Graphic file (type png)
 <use 5.2.4.a.6.png>
-Package luatex.def Info: 5.2.4.a.6.png  used on input line 2077.
+Package luatex.def Info: 5.2.4.a.6.png  used on input line 2294.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[38<./5.2.4.a.4.png><./5.2.4.a.5.png>]
-<5.2.4.b.1.png, id=700, 782.925pt x 357.7365pt>
+<5.2.4.b.1.png, id=815, 782.925pt x 357.7365pt>
 File: 5.2.4.b.1.png Graphic file (type png)
 <use 5.2.4.b.1.png>
-Package luatex.def Info: 5.2.4.b.1.png  used on input line 2087.
+Package luatex.def Info: 5.2.4.b.1.png  used on input line 2304.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
-<5.2.4.b.2.png, id=701, 782.925pt x 357.7365pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[47<./5.2.4.a.5.png><./5.2.4.a.6.png>]
+<5.2.4.b.2.png, id=826, 782.925pt x 357.7365pt>
 File: 5.2.4.b.2.png Graphic file (type png)
 <use 5.2.4.b.2.png>
-Package luatex.def Info: 5.2.4.b.2.png  used on input line 2092.
+Package luatex.def Info: 5.2.4.b.2.png  used on input line 2309.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[39<./5.2.4.a.6.png><./5.2.4.b.1.png>]
-<5.2.4.b.3.png, id=712, 782.925pt x 360.1455pt>
+<5.2.4.b.3.png, id=827, 782.925pt x 360.1455pt>
 File: 5.2.4.b.3.png Graphic file (type png)
 <use 5.2.4.b.3.png>
-Package luatex.def Info: 5.2.4.b.3.png  used on input line 2099.
+Package luatex.def Info: 5.2.4.b.3.png  used on input line 2316.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-<5.2..5.1.a.1.png, id=713, 782.925pt x 360.1455pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[48<./5.2.4.b.1.png><./5.2.4.b.2.png>]
+<5.2..5.1.a.1.png, id=838, 782.925pt x 360.1455pt>
 File: 5.2..5.1.a.1.png Graphic file (type png)
 <use 5.2..5.1.a.1.png>
-Package luatex.def Info: 5.2..5.1.a.1.png  used on input line 2137.
+Package luatex.def Info: 5.2..5.1.a.1.png  used on input line 2354.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[40<./5.2.4.b.2.png><./5.2.4.b.3.png>]
-<5.2..5.1.a.2.png, id=725, 782.925pt x 360.1455pt>
+<5.2..5.1.a.2.png, id=839, 782.925pt x 360.1455pt>
 File: 5.2..5.1.a.2.png Graphic file (type png)
 <use 5.2..5.1.a.2.png>
-Package luatex.def Info: 5.2..5.1.a.2.png  used on input line 2142.
+Package luatex.def Info: 5.2..5.1.a.2.png  used on input line 2359.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-<5.2..5.1.a.3.png, id=726, 782.925pt x 358.33875pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[49<./5.2.4.b.3.png><./5.2..5.1.a.1.png>]
+<5.2..5.1.a.3.png, id=850, 782.925pt x 358.33875pt>
 File: 5.2..5.1.a.3.png Graphic file (type png)
 <use 5.2..5.1.a.3.png>
-Package luatex.def Info: 5.2..5.1.a.3.png  used on input line 2147.
+Package luatex.def Info: 5.2..5.1.a.3.png  used on input line 2364.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[41<./5.2..5.1.a.1.png><./5.2..5.1.a.2.png>]
-<5.2..5.1.a.4.png, id=737, 782.925pt x 357.13425pt>
+<5.2..5.1.a.4.png, id=851, 782.925pt x 357.13425pt>
 File: 5.2..5.1.a.4.png Graphic file (type png)
 <use 5.2..5.1.a.4.png>
-Package luatex.def Info: 5.2..5.1.a.4.png  used on input line 2152.
+Package luatex.def Info: 5.2..5.1.a.4.png  used on input line 2369.
 (luatex.def)             Requested size: 505.88997pt x 230.76671pt.
-<5.2..5.1.a.5.png, id=738, 782.925pt x 357.7365pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[50<./5.2..5.1.a.2.png><./5.2..5.1.a.3.png>]
+<5.2..5.1.a.5.png, id=863, 782.925pt x 357.7365pt>
 File: 5.2..5.1.a.5.png Graphic file (type png)
 <use 5.2..5.1.a.5.png>
-Package luatex.def Info: 5.2..5.1.a.5.png  used on input line 2157.
+Package luatex.def Info: 5.2..5.1.a.5.png  used on input line 2374.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
 
 
@@ -2384,46 +2568,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[42<./5.2..5.1.a.3.png><./5.2..5.1.a.4.png>]
-<5.2.5.1.b.1.png, id=749, 782.925pt x 360.74776pt>
+[51<./5.2..5.1.a.4.png><./5.2..5.1.a.5.png>]
+<5.2.5.1.b.1.png, id=875, 782.925pt x 360.74776pt>
 File: 5.2.5.1.b.1.png Graphic file (type png)
 <use 5.2.5.1.b.1.png>
-Package luatex.def Info: 5.2.5.1.b.1.png  used on input line 2209.
+Package luatex.def Info: 5.2.5.1.b.1.png  used on input line 2426.
 (luatex.def)             Requested size: 505.88997pt x 233.10161pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[43<./5.2..5.1.a.5.png>]
-<5.2.5.1.b.2.png, id=759, 782.925pt x 359.54324pt>
+<5.2.5.1.b.2.png, id=876, 782.925pt x 359.54324pt>
 File: 5.2.5.1.b.2.png Graphic file (type png)
 <use 5.2.5.1.b.2.png>
-Package luatex.def Info: 5.2.5.1.b.2.png  used on input line 2218.
+Package luatex.def Info: 5.2.5.1.b.2.png  used on input line 2435.
 (luatex.def)             Requested size: 505.88997pt x 232.3233pt.
-<5.2.5.1.c.1.png, id=760, 782.925pt x 358.941pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[52<./5.2.5.1.b.1.png>]
+<5.2.5.1.c.1.png, id=885, 782.925pt x 358.941pt>
 File: 5.2.5.1.c.1.png Graphic file (type png)
 <use 5.2.5.1.c.1.png>
-Package luatex.def Info: 5.2.5.1.c.1.png  used on input line 2231.
+Package luatex.def Info: 5.2.5.1.c.1.png  used on input line 2448.
 (luatex.def)             Requested size: 505.88997pt x 231.93414pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[44<./5.2.5.1.b.1.png><./5.2.5.1.b.2.png>]
-<5.2.5.1.c.2.png, id=771, 782.925pt x 358.941pt>
+<5.2.5.1.c.2.png, id=886, 782.925pt x 358.941pt>
 File: 5.2.5.1.c.2.png Graphic file (type png)
 <use 5.2.5.1.c.2.png>
-Package luatex.def Info: 5.2.5.1.c.2.png  used on input line 2241.
+Package luatex.def Info: 5.2.5.1.c.2.png  used on input line 2458.
 (luatex.def)             Requested size: 505.88997pt x 231.93414pt.
 
 
@@ -2434,158 +2608,169 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[45<./5.2.5.1.c.1.png><./5.2.5.1.c.2.png>]
-<5.2.5.d.1.png, id=782, 782.925pt x 360.74776pt>
+[53<./5.2.5.1.b.2.png><./5.2.5.1.c.1.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[54<./5.2.5.1.c.2.png>]
+<5.2.5.d.1.png, id=905, 782.925pt x 360.74776pt>
 File: 5.2.5.d.1.png Graphic file (type png)
 <use 5.2.5.d.1.png>
-Package luatex.def Info: 5.2.5.d.1.png  used on input line 2373.
+Package luatex.def Info: 5.2.5.d.1.png  used on input line 2590.
 (luatex.def)             Requested size: 505.88997pt x 233.10161pt.
-<5.2.5.d.2.png, id=783, 782.925pt x 359.54324pt>
+<5.2.5.d.2.png, id=906, 782.925pt x 359.54324pt>
 File: 5.2.5.d.2.png Graphic file (type png)
 <use 5.2.5.d.2.png>
-Package luatex.def Info: 5.2.5.d.2.png  used on input line 2378.
+Package luatex.def Info: 5.2.5.d.2.png  used on input line 2595.
 (luatex.def)             Requested size: 505.88997pt x 232.3233pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[46<./5.2.5.d.1.png>]
-<5.2.5.d.3.png, id=792, 782.925pt x 360.1455pt>
+<5.2.5.d.3.png, id=907, 782.925pt x 360.1455pt>
 File: 5.2.5.d.3.png Graphic file (type png)
 <use 5.2.5.d.3.png>
-Package luatex.def Info: 5.2.5.d.3.png  used on input line 2383.
+Package luatex.def Info: 5.2.5.d.3.png  used on input line 2600.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-<5.2.5.d.4.png, id=793, 782.925pt x 358.941pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[55<./5.2.5.d.1.png><./5.2.5.d.2.png>]
+<5.2.5.d.4.png, id=918, 782.925pt x 358.941pt>
 File: 5.2.5.d.4.png Graphic file (type png)
 <use 5.2.5.d.4.png>
-Package luatex.def Info: 5.2.5.d.4.png  used on input line 2388.
+Package luatex.def Info: 5.2.5.d.4.png  used on input line 2605.
 (luatex.def)             Requested size: 505.88997pt x 231.93414pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[47<./5.2.5.d.2.png><./5.2.5.d.3.png>]
-<5.2.5.d.5.png, id=804, 782.925pt x 356.532pt>
+<5.2.5.d.5.png, id=919, 782.925pt x 356.532pt>
 File: 5.2.5.d.5.png Graphic file (type png)
 <use 5.2.5.d.5.png>
-Package luatex.def Info: 5.2.5.d.5.png  used on input line 2393.
+Package luatex.def Info: 5.2.5.d.5.png  used on input line 2610.
 (luatex.def)             Requested size: 505.88997pt x 230.37755pt.
-<5.2.5.d.6.png, id=805, 782.925pt x 358.33875pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[56<./5.2.5.d.3.png><./5.2.5.d.4.png>]
+<5.2.5.d.6.png, id=930, 782.925pt x 358.33875pt>
 File: 5.2.5.d.6.png Graphic file (type png)
 <use 5.2.5.d.6.png>
-Package luatex.def Info: 5.2.5.d.6.png  used on input line 2398.
+Package luatex.def Info: 5.2.5.d.6.png  used on input line 2615.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[48<./5.2.5.d.4.png><./5.2.5.d.5.png>]
-<5.2.5.d.7.png, id=816, 782.925pt x 357.7365pt>
+<5.2.5.d.7.png, id=931, 782.925pt x 357.7365pt>
 File: 5.2.5.d.7.png Graphic file (type png)
 <use 5.2.5.d.7.png>
-Package luatex.def Info: 5.2.5.d.7.png  used on input line 2403.
+Package luatex.def Info: 5.2.5.d.7.png  used on input line 2620.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
-<5.2.5.d.8.png, id=817, 782.925pt x 357.13425pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[57<./5.2.5.d.5.png><./5.2.5.d.6.png>]
+<5.2.5.d.8.png, id=942, 782.925pt x 357.13425pt>
 File: 5.2.5.d.8.png Graphic file (type png)
 <use 5.2.5.d.8.png>
-Package luatex.def Info: 5.2.5.d.8.png  used on input line 2408.
+Package luatex.def Info: 5.2.5.d.8.png  used on input line 2625.
 (luatex.def)             Requested size: 505.88997pt x 230.76671pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[49<./5.2.5.d.6.png><./5.2.5.d.7.png>]
-<5.2.5.d.9.png, id=828, 782.925pt x 359.54324pt>
+<5.2.5.d.9.png, id=943, 782.925pt x 359.54324pt>
 File: 5.2.5.d.9.png Graphic file (type png)
 <use 5.2.5.d.9.png>
-Package luatex.def Info: 5.2.5.d.9.png  used on input line 2413.
+Package luatex.def Info: 5.2.5.d.9.png  used on input line 2630.
 (luatex.def)             Requested size: 505.88997pt x 232.3233pt.
-<5.2.5.d.10.png, id=829, 782.925pt x 359.54324pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[58<./5.2.5.d.7.png><./5.2.5.d.8.png>]
+<5.2.5.d.10.png, id=954, 782.925pt x 359.54324pt>
 File: 5.2.5.d.10.png Graphic file (type png)
 <use 5.2.5.d.10.png>
-Package luatex.def Info: 5.2.5.d.10.png  used on input line 2418.
+Package luatex.def Info: 5.2.5.d.10.png  used on input line 2635.
 (luatex.def)             Requested size: 505.88997pt x 232.3233pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[50<./5.2.5.d.8.png><./5.2.5.d.9.png>]
-<5.2.5.d.11.png, id=841, 782.925pt x 356.532pt>
+<5.2.5.d.11.png, id=955, 782.925pt x 356.532pt>
 File: 5.2.5.d.11.png Graphic file (type png)
 <use 5.2.5.d.11.png>
-Package luatex.def Info: 5.2.5.d.11.png  used on input line 2423.
+Package luatex.def Info: 5.2.5.d.11.png  used on input line 2640.
 (luatex.def)             Requested size: 505.88997pt x 230.37755pt.
-<5.2.5.d.12.png, id=842, 782.925pt x 358.941pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[59<./5.2.5.d.9.png><./5.2.5.d.10.png>]
+<5.2.5.d.12.png, id=966, 782.925pt x 358.941pt>
 File: 5.2.5.d.12.png Graphic file (type png)
 <use 5.2.5.d.12.png>
-Package luatex.def Info: 5.2.5.d.12.png  used on input line 2428.
+Package luatex.def Info: 5.2.5.d.12.png  used on input line 2645.
 (luatex.def)             Requested size: 505.88997pt x 231.93414pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[51<./5.2.5.d.10.png><./5.2.5.d.11.png>]
-<5.2.5.d.13.png, id=853, 782.925pt x 358.33875pt>
+<5.2.5.d.13.png, id=967, 782.925pt x 358.33875pt>
 File: 5.2.5.d.13.png Graphic file (type png)
 <use 5.2.5.d.13.png>
-Package luatex.def Info: 5.2.5.d.13.png  used on input line 2433.
+Package luatex.def Info: 5.2.5.d.13.png  used on input line 2650.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-<5.2.5.d.14.png, id=854, 782.925pt x 360.1455pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[60<./5.2.5.d.11.png><./5.2.5.d.12.png>]
+<5.2.5.d.14.png, id=979, 782.925pt x 360.1455pt>
 File: 5.2.5.d.14.png Graphic file (type png)
 <use 5.2.5.d.14.png>
-Package luatex.def Info: 5.2.5.d.14.png  used on input line 2438.
+Package luatex.def Info: 5.2.5.d.14.png  used on input line 2655.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[52<./5.2.5.d.12.png><./5.2.5.d.13.png>]
-<5.2.5.d.15.png, id=865, 782.925pt x 357.7365pt>
+<5.2.5.d.15.png, id=980, 782.925pt x 357.7365pt>
 File: 5.2.5.d.15.png Graphic file (type png)
 <use 5.2.5.d.15.png>
-Package luatex.def Info: 5.2.5.d.15.png  used on input line 2443.
+Package luatex.def Info: 5.2.5.d.15.png  used on input line 2660.
 (luatex.def)             Requested size: 505.88997pt x 231.15584pt.
-<5.2.5.d.16.png, id=866, 782.925pt x 360.1455pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[61<./5.2.5.d.13.png><./5.2.5.d.14.png>]
+<5.2.5.d.16.png, id=991, 782.925pt x 360.1455pt>
 File: 5.2.5.d.16.png Graphic file (type png)
 <use 5.2.5.d.16.png>
-Package luatex.def Info: 5.2.5.d.16.png  used on input line 2448.
+Package luatex.def Info: 5.2.5.d.16.png  used on input line 2665.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
 
+Missing character: There is no á (U+00E1) in font cmmi7!
+Missing character: There is no á (U+00E1) in font cmmi7!
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2594,32 +2779,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[53<./5.2.5.d.14.png><./5.2.5.d.15.png>]
-Missing character: There is no á (U+00E1) in font cmmi7!
-Missing character: There is no á (U+00E1) in font cmmi7!
-<5.2.5.e.1.png, id=877, 782.925pt x 357.13425pt>
+[62<./5.2.5.d.15.png><./5.2.5.d.16.png>]
+<5.2.5.e.1.png, id=1002, 782.925pt x 357.13425pt>
 File: 5.2.5.e.1.png Graphic file (type png)
 <use 5.2.5.e.1.png>
-Package luatex.def Info: 5.2.5.e.1.png  used on input line 2496.
+Package luatex.def Info: 5.2.5.e.1.png  used on input line 2713.
 (luatex.def)             Requested size: 505.88997pt x 230.76671pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[54<./5.2.5.d.16.png>]
-<5.2.5.e.2.png, id=886, 782.925pt x 358.33875pt>
+<5.2.5.e.2.png, id=1003, 782.925pt x 358.33875pt>
 File: 5.2.5.e.2.png Graphic file (type png)
 <use 5.2.5.e.2.png>
-Package luatex.def Info: 5.2.5.e.2.png  used on input line 2501.
+Package luatex.def Info: 5.2.5.e.2.png  used on input line 2718.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-<5.2.5.e.3.png, id=887, 782.925pt x 360.1455pt>
+<5.2.5.e.3.png, id=1004, 782.925pt x 360.1455pt>
 File: 5.2.5.e.3.png Graphic file (type png)
 <use 5.2.5.e.3.png>
-Package luatex.def Info: 5.2.5.e.3.png  used on input line 2513.
+Package luatex.def Info: 5.2.5.e.3.png  used on input line 2730.
 (luatex.def)             Requested size: 505.88997pt x 232.71245pt.
 
 
@@ -2630,16 +2804,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[55<./5.2.5.e.1.png><./5.2.5.e.2.png>]
-<5.2.5.e.4.png, id=898, 782.925pt x 358.33875pt>
+[63<./5.2.5.e.1.png><./5.2.5.e.2.png>]
+<5.2.5.e.4.png, id=1015, 782.925pt x 358.33875pt>
 File: 5.2.5.e.4.png Graphic file (type png)
 <use 5.2.5.e.4.png>
-Package luatex.def Info: 5.2.5.e.4.png  used on input line 2518.
+Package luatex.def Info: 5.2.5.e.4.png  used on input line 2735.
 (luatex.def)             Requested size: 505.88997pt x 231.54501pt.
-<5.2.6.png, id=899, 782.925pt x 346.896pt>
+<5.2.6.png, id=1016, 782.925pt x 346.896pt>
 File: 5.2.6.png Graphic file (type png)
 <use 5.2.6.png>
-Package luatex.def Info: 5.2.6.png  used on input line 2529.
+Package luatex.def Info: 5.2.6.png  used on input line 2746.
 (luatex.def)             Requested size: 505.88997pt x 224.15112pt.
 
 
@@ -2650,7 +2824,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[56<./5.2.5.e.3.png><./5.2.5.e.4.png>]
+[64<./5.2.5.e.3.png><./5.2.5.e.4.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2659,7 +2833,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[57<./5.2.6.png>]
+[65<./5.2.6.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2668,7 +2842,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[58]
+[66]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2677,7 +2851,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[59] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
+[67] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -2693,18 +2867,18 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Informe.out' has not changed.
-(rerunfilecheck)             Checksum: 38711B17FE804B1BAC395E74DF0DCA8F;11859.
+(rerunfilecheck)             Checksum: C06D848F86C71B089F9378F39564BDA7;12813.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42632 strings out of 477545
+ 42889 strings out of 477545
  125129,1977958 words of node,token memory allocated
  2015 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 380 attribute, 131 glue_sp
 ec, 191 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:1,2:2330,3:464,4:186,5:1084,6:134,7:9206,8:105,9:2199,10:16,11
-:1035
- 62152 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:2330,3:494,4:198,5:1270,6:143,7:10218,8:105,9:2199,10:19,1
+1:1351
+ 62340 multiletter control sequences out of 65536+600000
  98 fonts using 20131391 bytes
  99i,15n,128p,1092b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <./calibri.ttf><//?/c:/windows/fonts/calibrib.ttf><C:/Users/brand/AppData/Local/
@@ -2721,9 +2895,9 @@ ype1/public/amsfonts/cm/cmsy5.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/brand/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/brand/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Informe.pdf (60 pages, 3878272 bytes).
+Output written on Informe.pdf (68 pages, 4244838 bytes).
 
-PDF statistics: 991 PDF objects out of 1000 (max. 8388607)
- 259 named destinations out of 1000 (max. 131072)
- 384 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1109 PDF objects out of 1200 (max. 8388607)
+ 289 named destinations out of 1000 (max. 131072)
+ 408 words of extra memory for PDF output out of 10000 (max. 100000000)
 
