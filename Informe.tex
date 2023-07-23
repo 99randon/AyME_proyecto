@@ -579,18 +579,19 @@ El subsistema mecánico esta compuesto por:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{sub_mecanico.png}
+    \includegraphics[width=0.8\textwidth]{sub_mecanico.png}
     \caption{Diagramas de bloques subsistema mecánico}
 \end{figure}
 
 Donde los bloques interno son:
 
 \begin{figure}[H]
-    \begin{subfigure}[b]{0.5\textwidth}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_mecanico2.png}
     \end{subfigure}
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_mecanico3.png}
     \end{subfigure}
@@ -601,7 +602,7 @@ Mientras que el subsistema térmico esta dado por:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{sub_termico.png}
+    \includegraphics[width=0.8\textwidth]{sub_termico.png}
     \caption{Diagramas de bloques subsistema térmico}
 \end{figure}
 
@@ -609,24 +610,24 @@ Finalmente el subsistema electromagnético esta compuesto por:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{sub_electromagentico.png}
+    \includegraphics[width=0.8\textwidth]{sub_electromagentico.png}
 \end{figure}
 
 Los bloques interno contienen:
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[]{1\textwidth}
+    \begin{subfigure}[]{0.8\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico4.png}
     \end{subfigure}
     \\
-    \begin{subfigure}[b]{1\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico3.png}
     \end{subfigure}
     \\
-    \begin{subfigure}[b]{1\textwidth}
+    \begin{subfigure}[b]{0.8\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico2.png}
     \end{subfigure}
@@ -920,9 +921,39 @@ una dinámica lineal para el subsistema térmico.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{controlador.png}
+        \includegraphics[width=0.8\textwidth]{controlador.png}
         \caption{Diagrama del controlador.}
     \end{figure}
+
+    \begin{figure}[H]
+        \begin{subfigure}[b]{0.75\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{sensores_ideales.jpg}
+            \caption{Expandido.}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{sensores_ideales_compacto.jpg}
+            \caption{Compacto.}
+        \end{subfigure}
+        \caption{Diagrama de bloques de los sensores ideales.}
+    \end{figure}
+
+    \begin{figure}[H]
+        \begin{subfigure}[b]{0.75\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{modulador_tension.jpg}
+            \caption{Expandido.}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{modulador_tension_compacto.jpg}
+            \caption{Compacto.}
+        \end{subfigure}
+        \caption{Diagrama de bloques del modulador de tensión ideal.}
+    \end{figure}
+
+    
 
     \item \textbf{Dinámica Residual}
     
@@ -992,7 +1023,7 @@ una dinámica lineal para el subsistema térmico.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.jpg}
+        \includegraphics[width=0.8\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.jpg}
         \caption{Diagrama del controlador.}
     \end{figure}
 
@@ -1866,6 +1897,23 @@ A continuación mostramos los diagramas de bloques:
     \caption{Diagramas de bloques de realimentación y desacople de variables.}
 \end{figure}
 
+Para llevar a cabo el desacople de la realimentación de la temperatura también hacemos uso del 
+siguiente controlador, que representa la influencia de $T_s(t)$ sobre $R_s$.
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{realimentacion_temperatura.jpg}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{realimentacion_temperatura_compacto.jpg}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagramas de bloques de realimentación de la temperatura .}
+\end{figure}
+
 %-------------------- 5.2.1.b --------------------------%
 
 \subsubsection{Diseño de lazos de control de corrientes}
@@ -2190,17 +2238,27 @@ el brazo, utilizando sus coordenadas articulares. De forma que:
 
 \subsection{Observador de Estado de orden reducido}
 
-Un observador de estado es un componente utilizado en sistemas de control para estimar el estado interno 
-de un sistema dinámico a partir de las mediciones de entradas y salidas del sistema. En este caso, se
-utiliza un observador de estado de orden reducido para poder realimentar la velocidad angular del motor 
-ya que este no cuenta con un sensor para medirla directamente.
+El observador de estado es un sistema esencial en la automatización y el control que tiene la capacidad de 
+estimar el estado interno de un sistema dinámico a partir de las mediciones de las entradas y las salidas. 
+Este observador se vuelve especialmente relevante en casos en los que ciertos estados del sistema no pueden 
+ser medidos directamente, como en nuestro caso, la velocidad angular del motor $\omega_m(t)$.
 
-El sistema no es observable desde la velocidad $\omega_m(t)$ como lo indica el criterio de observabilidad 
-de Kalman, pero si desde la posición $\theta_m(t)$. Por lo tanto estimaremos la velocidad a partir de la 
-posición.
+Para la configuración de nuestro sistema, hemos implementado un observador de estado reducido. Esta 
+decisión surge de las limitaciones de los sensores disponibles. En particular, no contamos con un sensor 
+de velocidad para medir directamente la velocidad angular del motor, sino que solo disponemos de un 
+encoder que mide la posición del eje.
 
-Al incorporar el observador al subsistema mecánico podemos omitir $-b_{eq}.\omega_{m}(t)$ ya que al 
-contar con sensores de corriente con realimentación física este efecto ya está desacoplado.  
+De acuerdo con el criterio de observabilidad de Kalman, nuestro sistema LTI resultó ser completamente 
+observable desde la posición $\theta_m(t)$, pero no desde la velocidad $\omega_m(t)$. Sin embargo, con el 
+encoder disponible, podemos estimar la velocidad a partir de la medición de la posición del eje. Esta 
+estimación se realiza en tiempo real y nos permite 
+aplicar una acción de control adecuada para realimentar el sistema.
+
+Además, es importante tener en cuenta que en nuestro observador solo se incorpora el subsistema mecánico, 
+puesto que contamos con sensores de corriente con su realimentación física de efectos viscosos desacoplada. 
+Esto se debe a que nos interesa específicamente la velocidad angular del motor $\omega_m(t)$. La entrada del 
+observador es la consigna de torque $𝑇_𝑚^{∗\prime}$, obtenida a la salida del controlador de movimiento PID. 
+Suponemos que el modulador de torque tiene un ancho de banda grande y una ganancia unitaria.
 
 El modelo del subsistema mecánico se puede expresar como:
 
@@ -2294,6 +2352,20 @@ Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$,
 \end{align*}
 
 % IMAGEN DEL OBSERVADOR %
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{observador_reducido.jpg}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{observador_reducido_compacto.jpg}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagrama de bloques del observador de estado reducido.}
+\end{figure}
 
 %-------------------- 5.2.4 --------------------------%
 
@@ -2532,9 +2604,17 @@ da los valores de las ganancias del observador:
 El nuevo observador de estado se representa en el siguiente diagrama de bloques:
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{observador_mejorado.jpg}
-    \caption{Observador de estado mejorado.}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{observador_mejorado.jpg}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{observador_reducido_compacto.jpg}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagrama de bloques del observador de estado mejorado.}
 \end{figure}
 
 Estas ganancias aseguran que el error de estado estacionario converja asintóticamente a cero, 
@@ -2725,8 +2805,16 @@ D_T = \begin{bmatrix}
 \]
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{sensores_no_ideales.png}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{sensores_no_ideales.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{sensores_ideales_compacto.jpg}
+        \caption{Compacto.}
+    \end{subfigure}
     \caption{Diagrama de bloque de sensores no ideales.}
 \end{figure}
 
@@ -2849,8 +2937,16 @@ las siguientes matrices:
 El diagrama de bloques correspondiente es:
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{5.2.5.e.1.png}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{5.2.5.e.1.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{modulador_tension_compacto.jpg}
+        \caption{Compacto.}
+    \end{subfigure}
     \caption{Diagrama de bloques del modulador de tensión no ideal.}
 \end{figure}
 
@@ -2913,7 +3009,35 @@ el observador de estado mejorado y los sensores no ideales.
 
 \part*{Conclusiones}
 
-Al final podemos llegar a concluir...
+Este informe ha culminado en el diseño, evaluación y simulación eficiente del sistema de control de la 
+articulación hombro de un robot SCARA, haciendo uso de un motor eléctrico trifásico de corriente alterna 
+con imanes permanentes. Este proceso ha subrayado la importancia de aplicar de forma práctica los 
+conocimientos adquiridos en el ámbito académico, reforzando su relevancia en futuros escenarios 
+profesionales.
+
+En el desarrollo del proyecto, se plantearon diversas hipótesis que se contrastaron mediante 
+simulaciones. En una fase inicial, se adoptó una visión idealizada de los componentes del controlador 
+y del motor. Sin embargo, conforme avanzaba el estudio, se adoptó una perspectiva más realista, 
+enfatizando la necesidad de una modelación precisa en la creación de sistemas de control.
+
+Se identificó la importancia crucial de la implementación de sensores precisos y un modulador de tensión 
+apropiado en la seguridad y eficacia del sistema de control. Estos componentes desempeñan un papel 
+fundamental en la optimización del rendimiento del controlador, y su influencia es determinante para 
+el éxito de todo el sistema.
+
+Las simulaciones han sido un recurso esencial en este proyecto, proporcionando un entorno seguro para el
+estudio y la comprensión del comportamiento del sistema. A través de la implementación de consignas de 
+perfil suave, se consiguió cumplir con las especificaciones de operación, evitando al mismo tiempo 
+picos de corriente y tensión.
+
+Desde una visión más amplia, este estudio enfatiza la necesidad de una gestión eficiente de los 
+recursos, tanto hardware como software. Este aspecto, es crucial para la eficiencia y éxito del 
+proyecto.
+
+Asimismo, se ha puesto de manifiesto la importancia de prestar atención a las variables que, aunque 
+no estén directamente relacionadas con el rendimiento, forman parte esencial del sistema. Finalmente, 
+este estudio destaca la necesidad de tener en cuenta tanto los aspectos técnicos como los ambientales 
+para el éxito de futuros proyectos en este campo.
 
 \newpage
 
