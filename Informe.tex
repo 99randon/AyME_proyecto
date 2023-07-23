@@ -207,7 +207,7 @@ Para despues.
     estacionario.
 
     La Transformación de Park permite convertir el sistema de coordenadas trifásicas del estator 
-    estacionario ($f_{abcs}(t)$) en coordenadas $'qd0'$ fijas al rotor ($f_{rqd0s}(t)$). Esto se hace 
+    estacionario ($f_{abcs}(t)$) en coordenadas $'qd0'$ fijas al rotor ($f^r_{qd0s}(t)$). Esto se hace 
     mediante la siguiente relación:
 
     \begin{equation}\label{eq:transformacion_de_park}
@@ -251,7 +251,7 @@ Para despues.
         \end{bmatrix}
     \end{equation}
 
-    Sabiendo qeu las coordenadas eléctrica del entrehierro $qd0$ fijas al rotor están dadas por:
+    Sabiendo que las coordenadas eléctrica del entrehierro $qd0$ fijas al rotor están dadas por:
 
     \begin{equation}\label{eq.coordenadas_fijas_al_rotor}
         \begin{aligned}
@@ -268,7 +268,7 @@ Para despues.
         
     \subsubsection{Subsistema térmico} 
     
-    se consideran únicamente las pérdidas eléctricas resistivas debido al efecto Joule en el bobinado del 
+    Se consideran únicamente las pérdidas eléctricas resistivas debido al efecto Joule en el bobinado del 
     estator, sin tener en cuenta las pérdidas magnéticas en el núcleo. Además, se asume que la 
     transferencia de calor se produce por conducción y convección natural, sin utilizar ventilación forzada.
 
@@ -318,8 +318,8 @@ corriente continua (CC). El inversor se controla mediante modulación de ancho d
 tensiones de fase equilibradas y senoidales en el estator de la máquina eléctrica sincrónica.
 
 El modelo promediado considera las tensiones de fase en el estator como senoidales de secuencia positiva 
-(abc) equilibradas, con un módulo variable Vsl(t) y una frecuencia ωe(t). El ángulo de carga del rotor, 
-δ(t), representa el desfasaje instantáneo entre la coordenada eléctrica fija al rotor y la coordenada 
+(abc) equilibradas, con un módulo variable $V_{sl}(t)$ y una frecuencia $\omega_e(t)$. El ángulo de carga del rotor, 
+$\delta (t)$, representa el desfasaje instantáneo entre la coordenada eléctrica fija al rotor y la coordenada 
 eléctrica sincrónica del estator, y depende del torque erogado.
 
 \begin{figure}[H]
@@ -726,7 +726,7 @@ obtenemos:
             \Delta\dot{\theta}_{m}(t) = \Delta\omega_{m}(t)\\
             \Delta\dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.\{[\lambda_{m}^{\prime r} + i_{ds0}^r.(L_{d}-L_{q})].\Delta i_{qs}^r(t) + \Delta i_{ds}^r(t).(L_{d}-L_{q})].i_{qs0}^r\}- b_{eq}.\Delta\omega_{m}(t) - \frac{\Delta T_{l}(t)}{r}]\\
             \Delta\dot{i}_{qs}(t) = \frac{1}{L_{q}}.[\Delta v_{qs}^r(t) - R_{s}(t).\Delta i_{qs}^r(t) - P_{p}.\Delta\omega_{m}(t).[L_{d}.i_{ds0}^r + \lambda_{m}^{\prime r}] - P_{p}.\omega_{m0}.L_{d}.\Delta i_{ds}^r(t)] \\
-            \Delta\dot{i}_{ds}(t) = \frac{1}{L_{d}}.\Delta [v_{ds}^r(t) - R_{s}(t).\Delta i_{ds}^r(t) + P_{p}.\Delta\omega_{m}(t).L_{q}.i_{qs0}^r + P_{p}.\omega_{m0}.L_{q}.\Delta i_{qs}^r(t)]  \\
+            \Delta\dot{i}_{ds}(t) = \frac{1}{L_{d}}.[\Delta v_{ds}^r(t) - R_{s}(t).\Delta i_{ds}^r(t) + P_{p}.\Delta\omega_{m}(t).L_{q}.i_{qs0}^r + P_{p}.\omega_{m0}.L_{q}.\Delta i_{qs}^r(t)]  \\
             \Delta\dot{i}_{0s}(t) = \frac{1}{L_{ls}}.[\Delta v_{0s}(t) - R_{s}(t).\Delta i_{0s}(t)] \\
             \Delta\dot{T}_{s}(t) = \frac{1}{C_{ts}}.\{\frac{3}{2}.R_{s}(t).[{2.i_{qs}^r.\Delta i_{ds}^r(t)} + 2.i_{as}^r.\Delta i_{as}^r(t) + 4.i_{0s}.\Delta i_{0s}(t)]-\frac{\Delta T_{s}(t)-\Delta T_{amb}(t)}{R_{ts-amb}}\}\\
         \end{cases}
@@ -770,9 +770,9 @@ obtenemos:
     \end{bmatrix}
     \begin{bmatrix}
         \Delta{T}_{l}(t)\\
-        \Delta{V}_{qs}(t)\\
-        \Delta{V}_{ds}(t)\\
-        \Delta{V}_{0s}(t)\\
+        \Delta{v}_{qs}(t)\\
+        \Delta{v}_{ds}(t)\\
+        \Delta{v}_{0s}(t)\\
         \Delta T_{amb}(t)\\
     \end{bmatrix} 
 \end{gathered}
@@ -786,7 +786,7 @@ obtenemos:
 
 Podemos obtener un modelo simplificado lineal invariante en el tiempo (LTI) equivalente del sistema
 si aplicamos una estrategia de control vectorial con campo orientado en el controlador para imponer
-que la corriente en el eje d $i_{ds}(t)$ sea igual a cero. Además, podemos despreciar 
+que la corriente en el eje $d$ ($i_{ds}(t)$) sea igual a cero. Además, podemos despreciar 
 el acoplamiento no lineal con el subsistema térmico debido a las pequeñas variaciones de la 
 resistencia \(R_s\) con la temperatura, lo que nos permite considerar su dinámica como lineal.
 
@@ -796,7 +796,7 @@ una transformación directa de Park para relacionar las corrientes en el sistema
 
 Para lograr la desacoplar los canales de flujo magnético y torque, aplicamos la estrategia de 
 "Control Vectorial con campo orientado." Esto consiste en forzar una corriente nula en el eje 
-d \(i_{ds}(t) = 0\) mediante el controlador y, si es necesario, aplicar una "Restricción o Ley 
+$d$ ($i_{ds}(t) = 0$) mediante el controlador y, si es necesario, aplicar una "Restricción o Ley 
 de Control NL" sobre la variable manipulada virtual \(v_{qd0s}(t)\) o su equivalente por 
 transformada de Park, \(v_{{abc}}(t)\).
 
@@ -814,8 +814,8 @@ una dinámica lineal para el subsistema térmico.
     \begin{equation}\label{eq.lti}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-            \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r}i_{qs}^r(t) - b_{eq}\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
-            \dot{i}_{qs}(t) = \frac{1}{L_{q}}[v_{qs}^r(t) - R_{s}i_{qs}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^{\prime r}]  \\
+            \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}[\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.i_{qs}^r(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
+            \dot{i}_{qs}(t) = \frac{1}{L_{q}}[v_{qs}^r(t) - R_{s}.i_{qs}^r(t) - P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r}]  \\
         \end{cases}
     \end{equation}
 
@@ -830,8 +830,8 @@ una dinámica lineal para el subsistema térmico.
             \end{bmatrix} =
             \begin{bmatrix}
                 0 & 1 & 0\\
-                0 & -\frac{b_{eq}}{J_{eq}} & \frac{3}{2}\frac{P_{p}\lambda_{m}^{\prime r}}{J_{eq}}\\
-                0 & -\frac{P_{p}\lambda_{m}^{\prime r}}{L_{q}} & -\frac{R_{s}}{L_{q}}\\
+                0 & -\frac{b_{eq}}{J_{eq}} & \frac{3}{2}.\frac{P_{p}.\lambda_{m}^{\prime r}}{J_{eq}}\\
+                0 & -\frac{P_{p}.\lambda_{m}^{\prime r}}{L_{q}} & -\frac{R_{s}}{L_{q}}\\
             \end{bmatrix}
             \begin{bmatrix}
                 {\theta}_{m}(t)\\
@@ -842,11 +842,11 @@ una dinámica lineal para el subsistema térmico.
                 0\\
                 0\\
                 \frac{1}{L_{eq}}\\
-            \end{bmatrix} v_{qs}^r(t) +
+            \end{bmatrix} .v_{qs}^r(t) +
             \begin{bmatrix}
                 0\\
-                -\frac{1}{rJ_{eq}}\\
-            \end{bmatrix} T_{l}(t)\\
+                -\frac{1}{r.J_{eq}}\\
+            \end{bmatrix} .T_{l}(t)\\
             y(t) =
             \begin{bmatrix}
                 1 & 0 & 0\\
@@ -880,11 +880,11 @@ una dinámica lineal para el subsistema térmico.
     \hyperref[eq.tensiones_qd0]{ecuación (\ref*{eq.tensiones_qd0})}. De manera que:
 
     \begin{equation}
-        v_{ds}^r(t) = -L_{q}.i{qs}^r(t).\omega_{m}(t).P_{p}
+        v_{ds}^r(t) = -L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}
     \end{equation}
 
     Dado que se trata de una variable virtual no podemos controlarla directamente, por lo que buscaremos
-    expresarla en termino de las coordenadas "abc", por lo que aplicamos la transformada inversa de Park.
+    expresarla en termino de las coordenadas "$abc$", por lo que aplicamos la transformada inversa de Park.
     Resolviendo llegamos a:
 
     \begin{equation}
@@ -899,9 +899,9 @@ una dinámica lineal para el subsistema térmico.
 
     \begin{equation}
         \begin{cases}
-            v_{as}(t) = cos(\theta_{r}(t))v_{qs}^r(t) - sin(\theta_{r}(t))L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
-            v_{bs}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3})v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
-            v_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3})v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3})L_{q}i{qs}^r(t)\omega_{m}(t)P_{p}\\
+            v_{as}(t) = cos(\theta_{r}(t)).v_{qs}^r(t) - sin(\theta_{r}(t)).L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}\\
+            v_{bs}(t) = cos(\theta_{r}(t) - \frac{2\pi}{3}).v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3}).L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}\\
+            v_{cs}(t) = cos(\theta_{r}(t) + \frac{2\pi}{3}).v_{qs}^r(t) - sin(\theta_{r}(t) - \frac{2\pi}{3}).L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}\\
         \end{cases}
     \end{equation}
 
@@ -961,17 +961,14 @@ una dinámica lineal para el subsistema térmico.
     por lo que se debe tener en cuenta la dinámica residual de la corriente $i_{ds}$, la cual se puede
     modelar con la siguiente EDO:
 
-    \begin{equation*}
-        \begin{aligned}
-        \frac{di_{ds}^r(t)}{dt} = \frac{1}{L_{d}}[-R_{s}(t)i_{ds}^r(t)] \\
-        \frac{di_{ds}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}i_{ds}^r(t) = 0 
-        \end{aligned}
-    \end{equation*} 
+    \begin{equation}
+        \frac{di_{ds}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}.i_{ds}^r(t) = 0 
+    \end{equation} 
 
     La cual tiene como solución:
 
     \begin{equation}
-        i_{ds}^r(t) = i_{ds}^r(0)e^{-\frac{R_{s}(t)}{L_{d}}t}
+        i_{ds}^r(t) = i_{ds}^r(0).e^{-\frac{R_{s}(t)}{L_{d}}.t}
     \end{equation}
 
     Esta solución nos indica que el efecto de la dinámica residual es despreciable en el tiempo, ya que actúa como
@@ -980,7 +977,7 @@ una dinámica lineal para el subsistema térmico.
     En régimen natural producirá un comportamiento no lineal sobre el sistema que esta dado por:
 
     \begin{equation}\label{eq.dinamica_residual}
-        v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}i_{qs}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^{\prime r} + \mathbf{L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t)}
+        v_{qs}(t) = L_{q}.\frac{di_{qs}^r(t)}{dt} + R_{s}.i_{qs}^r(t) + P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r} + \mathbf{L_{d}.i_{ds}^r(t).P_{p}.\omega_{m}(t)}
     \end{equation}
 
     Incorporando la dinámica residual al modelo LTI:    
@@ -988,21 +985,21 @@ una dinámica lineal para el subsistema térmico.
     \begin{equation}
         \begin{cases}
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
-            \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}P_{p}\lambda_{m}^{\prime r} i_{qs}^r(t) - b_{eq}\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
-            \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}[v_{qs}^r(t) - R_{s}i_{qs}^r(t) - P_{p}\omega_{m}(t)\lambda_{m}^{\prime r}]\\
-            \dot{i}_{ds}^r(t) = -\frac{R_{s}(t)}{L_{d}}i_{ds}^r(t) \\
-            \dot{T}_{s}(t) = \frac{1}{C_[ts]}\{\frac{3}{2}R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
+            \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r} .i_{qs}^r(t) - b_{eq}.\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
+            \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}.[v_{qs}^r(t) - R_{s}.i_{qs}^r(t) - P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r}]\\
+            \dot{i}_{ds}^r(t) = -\frac{R_{s}(t)}{L_{d}}.i_{ds}^r(t) \\
+            \dot{T}_{s}(t) = \frac{1}{C_[ts]}.\{\frac{3}{2}.R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
         \end{cases}    
     \end{equation}
 
-    \item \textbf{Restricción Ley de Control complementaria minima en el eje q}
+    \item \textbf{Restricción Ley de Control complementaria mínima en el eje q}
     
     Para anular el efecto NL del acoplamiento de la dinámica residual podemos a partir de la
     \hyperref[eq.dinamica_residual]{ecuación (\ref*{eq.dinamica_residual})}
     plantear la siguiente restricción sobre el eje q de forma que la no linealidad se anule:
 
     \begin{equation}
-        v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}i_{qs}^r(t) + P_{p}\omega_{m}(t)\lambda_{m}^{\prime r} + L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t) - \mathbf{L_{d}i_{ds}^r(t)P_{p}\omega_{m}(t)}
+        v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}.i_{qs}^r(t) + P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r} + L_{d}.i_{ds}^r(t).P_{p}.\omega_{m}(t) - \mathbf{L_{d}.i_{ds}^r(t).P_{p}.\omega_{m}(t)}
     \end{equation}
 
     % IMAGEN DEL MODELO %
@@ -1066,10 +1063,10 @@ ciertos escenarios.
 
     % Voltaje con minúsculas
     \begin{equation}
-        \dot{i}_{ds}^r = \frac{1}{L_{d}}[v_{ds}(t) - R_{s}(t)i_{ds}^r(t) + L_{q}i_{qs}^r(t)P_{p}\omega_[m](t)] = 0
+        \dot{i}_{ds}^r = \frac{1}{L_{d}}[v_{ds}(t) - R_{s}(t).i_{ds}^r(t) + L_{q}.i_{qs}^r(t).P_{p}.\omega_[m](t)] = 0
     \end{equation}
     \begin{equation}
-        \omega_{m}(t) = \frac{-v_{ds}(t) + R_{s}(t)i_{ds}^r(t)}{L_{q}}
+        \omega_{m}(t) = \frac{-v_{ds}(t) + R_{s}(t).i_{ds}^r(t)}{L_{q}}
     \end{equation}
 
     En este caso, la velocidad del motor disminuye cuando la corriente $i_{ds}^r$ 
@@ -1117,7 +1114,7 @@ finalmente reemplazarla en la primer ecuación y obtener la expresión que repre
     \Theta_{m}(s) = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}.v_{qs}(s) - \frac{1}{r}.(s.L_{q}+R_{s}).T_{l}(s)}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
 \end{equation}
 
-De esta expresión se obtienen las funciones de transferencia respecto de las entradas tension $v_{qs}(s)$ y torque $T_{l}(s)$
+De esta expresión se obtienen las funciones de transferencia respecto de las entradas tensión $v_{qs}(s)$ y torque $T_{l}(s)$
 
 \begin{equation}\label{eq.trasnferencia_1}
     G_{1}(s) = \frac{\Theta_{m}(s)}{v_{qs}(s)} = \frac{\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r}}{s^3.J_{eq}.L_{q} + s^2.(b_{eq}.L_{q} +  R_{s}.J_{eq}) + s.[b_{eq}.R_{s}+\frac{3}{2}.(P_{p}.\lambda_{m}^{\prime r})^2]}
@@ -1189,10 +1186,14 @@ podemos simplificar y compararlo con uno de orden 2:
 
 Igualando ambas expresiones obtenemos los siguiente valores:
 
-\begin{align*}
-    \omega_n = \sqrt{\frac{R_s.b_{eq} + \frac{3}{2}.P_p^2.{\lambda_m^{\prime r}}^2}{J_{eq}.L_q}} \\
+\begin{equation}
+    \omega_n = \sqrt{\frac{R_s.b_{eq} + \frac{3}{2}.P_p^2.{\lambda_m^{\prime r}}^2}{J_{eq}.L_q}}
+\end{equation}
+
+\begin{equation}
     \xi = \frac{L_q.b_{eq} + R_s.J_{eq}}{2.J_{eq}.L_q.\omega_n}
-\end{align*}
+\end{equation}
+
 
 Reemplazando los valores de los parámetros obtenemos que:
 
@@ -1453,14 +1454,14 @@ destinadas específicamente para esto.
 Realizamos uan simulación dinámica en el dominio del tiempo, comparando el modelo NL completo 
 desacoplado con Ley de control NL con el modelo LTI equivalente aumentado.
 
-\subsubsection{Respuesta del estado interno a pulso de consigna de tension de estador en el eje $q$}
+\subsubsection{Respuesta del estado interno a pulso de consigna de tensión de estador en el eje $q$}
 
 La consiga es la que se muestra en la siguiente figura:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{5.1.6_consigna.jpg}
-    \caption{Consigna $v_q(t)$.}
+    \caption{Consigna de tensión $v_q(t)$.}
 \end{figure}
 
 Como se puede observar toma el valor de $+19.596 \, V$ en el intervalo de tiempo de $0.1 \, s$ a $0.7 \, s$.
@@ -1755,7 +1756,7 @@ valor $V^r_{ds}(t) = 0 \, V \rightarrow V^r_{qs_nom}/10 = ±1,9596 \, Vcc$ en $t
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.1.6_d2.png}
-    \caption{COnsigna de tensión $v^*_{ds}$ para field weakening.}
+    \caption{Consigna de tensión $v^*_{ds}$ para field weakening.}
 \end{figure}
 
 \begin{figure}[H]

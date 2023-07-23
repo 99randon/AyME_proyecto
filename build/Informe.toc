@@ -26,7 +26,7 @@
 \contentsline {subsection}{\numberline {2.4}Análisis de Observabilidad}{23}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Análisis de Controlabilidad}{24}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Simulación Dinámica}{25}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Respuesta del estado interno a pulso de consigna de tension de estador en el eje $q$}{25}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.1}Respuesta del estado interno a pulso de consigna de tensión de estador en el eje $q$}{25}{subsubsection.2.6.1}%
 \contentsline {subsubsection}{\numberline {2.6.2}Velocidad y corriente final de establecimiento luego de cada transitorio}{32}{subsubsection.2.6.2}%
 \contentsline {subsubsection}{\numberline {2.6.3}Comparación de distintas condiciones iniciales}{32}{subsubsection.2.6.3}%
 \contentsline {subsubsection}{\numberline {2.6.4}Field forcing/weakening}{34}{subsubsection.2.6.4}%
