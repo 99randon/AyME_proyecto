@@ -14,8 +14,8 @@
 \contentsline {subsubsection}{\numberline {1.3.3}Subsistema térmico}{7}{subsubsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.4}Inversor trifásico de alimentación}{7}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Sensores de realimentación}{8}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Modelo matemático equivalente del subsistema mecánico completo}{8}{subsection.2.1}%
+\contentsline {section}{\numberline {2}Modelado, Análisis y Simulación dinámica del SISTEMA FÍSICO a Lazo Abierto}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Modelo matemático equivalente del subsistema mecánico completo}{9}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Modelo dinámico del sistema físico completo}{9}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Modelo global no lineal (NL)}{9}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Modelo global linealizado con parámetros variables (LPV)}{13}{subsubsection.2.2.2}%
@@ -36,17 +36,17 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Diseño de lazos de control de corrientes}{38}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Incorporación de consigna de torque}{39}{subsubsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.2}Controlador externo de movimiento (posición/velocidad)}{40}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Entrada de referencia o set-point}{42}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Observador de Estado de orden reducido}{42}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Simulación en tiempo continuo con modelo completo NL}{43}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Seguimiento de consignas de movimiento}{43}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Rechazo a perturbaciones}{45}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Entrada de referencia o set-point}{43}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Observador de Estado de orden reducido}{43}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Simulación en tiempo continuo con modelo completo NL}{44}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Seguimiento de consignas de movimiento}{44}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Rechazo a perturbaciones}{46}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Verificación de desempeño y/o mejoras}{47}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Especificaciones de operación (valores límites)}{47}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Observador}{49}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}Comportamiento térmico del motor}{51}{subsubsection.3.5.3}%
 \contentsline {subsubsection}{\numberline {3.5.4}Desempeño del sistema ante una respuesta no ideal de los sensores}{52}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}Moduladore trifásico de tensión no ideal}{60}{subsubsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.6}Version Final}{63}{subsection.3.6}%
-\contentsline {part}{Conclusiones}{64}{figure.caption.86}%
-\contentsline {part}{Referencias}{65}{figure.caption.86}%
+\contentsline {subsubsection}{\numberline {3.5.5}Modulador trifásico de tensión no ideal}{57}{subsubsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.6}Version Final}{58}{subsection.3.6}%
+\contentsline {part}{Conclusiones}{60}{figure.caption.84}%
+\contentsline {part}{Referencias}{61}{figure.caption.84}%

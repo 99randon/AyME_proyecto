@@ -367,8 +367,10 @@ instantáneas de fase.
   \end{figure}
 
 
-Se asume que todos los sensores tienen una respuesta ideal, es decir, un filtro "pasatodo" con ganancia 
+Se asume que todos los sensores tienen una respuesta ideal, es decir, un filtro "pasa-todo" con ganancia 
 unitaria y un ancho de banda infinito.
+
+\newpage
 
 %-------------------------5.1-------------------------%
 
@@ -1907,8 +1909,8 @@ los parámetros de cada una son positivos también podemos afirmar que las funci
 transferencia son estables.
 
 Estas funciones de transferencia tienen la forma típica de un filtro pasa bajos, donde el valor que
-multiplica a la variable $s$ es la constante del tiempo del sistema \tau que a la vez es el inverso
-la frecuencia de corte del filtro. Si \tau toma un valor muy pequeño, dispondremos de una ancho de 
+multiplica a la variable $s$ es la constante del tiempo del sistema $\tau$ que a la vez es el inverso
+la frecuencia de corte del filtro. Si $\tau$ toma un valor muy pequeño, dispondremos de una ancho de 
 banda muy grande, lo cual proporciona una respuesta rápida.
 
 El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que para todos los lazos $p = -5000 rad/s$
@@ -2000,23 +2002,44 @@ produce un debilitamiento de campo.
 
 \subsection{Controlador externo de movimiento (posición/velocidad)}
 
-El controlador externo de movimiento se agrega con el fin de mejorar la dinámica del sistema y corregir los
-errores de estado estacionario producidos por cargas perturbadoras. En la rama derivativa tomaremos el 
-error entre la consigna de velocidad y la velocidad real. El error de posición se obtiene integrando el 
-error de velocidad lo que indica que no son variables independientes, este va en la rama proporcional.
-En la rama integral se tendrá la integral del error de posición. 
+Para mejorar la dinámica del sistema y corregir los errores de estado estacionario por cargas perturbadoras, 
+se implementa un avanzado controlador PID con acción integral. Este controlador puede recibir consignas de 
+velocidad y posición, utilizando esta información para determinar el torque requerido y lograr un control 
+preciso de las acciones del sistema.
 
-Con esta configuración del controlador PID solo tendremos como entrada el error de velocidades, no tendremos
-que introducir acciones derivativas lo que nos permitirá evitar la amplificación del ruido y obtener un 
-controlador mas estable. Los bloques integrales actúan como filtros pasa bajos lo que nos ayuda a eliminar
-el ruido de los errores de posición y velocidad dada su naturaleza de alta frecuencia.
+El diseño del controlador se realiza mediante el método de sintonía serie, utilizando una acción integral 
+para el PID con parámetros $n=2,5$ y $\omega=800 \, \text{rad/s}$, y considerando los valores nominales de 
+inercia ($J_l$) y amortiguamiento ($b_l$) a temperatura ambiente.
 
-Se diseña el controlador utilizando el método de sintonía serie con $n = 2,5$, $\omega_{pos} = 800 rad/s$, y
-considerando los valores nominales de $j_l$, $b_l$. 
+Una decisión clave en la configuración del controlador es la elección de las variables de entrada. En este 
+caso, se opta por utilizar solo la velocidad angular del motor como entrada, evitando acciones derivativas 
+para evitar errores numéricos y lograr un control más estable. La integración de la consigna de velocidad 
+en lugar de derivar la consigna de posición evita inestabilidades y asegura que los errores de posición y 
+velocidad sean consistentes al estar relacionados.
+
+El controlador PID con acción integral utiliza tres ramas principales: proporcional, derivativa e integral. 
+En la rama proporcional, se toma como error la diferencia entre la consigna de posición y la posición actual.
+En la rama derivativa, el error es la diferencia entre la consigna de velocidad y la velocidad actual. La 
+rama integral calcula la integral del error de posición, lo que garantiza la consistencia entre los errores 
+de ambas magnitudes y evita generar trayectorias independientes, mejorando la estabilidad del sistema.
 
 El controlador de movimiento se muestra en la siguiente figura: 
 
 % IMAGEN DEL PID %
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pid.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pid_compacto.png}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagrama de bloques del PID.}
+\end{figure}
 
 La salida del controlador sera el torque consigna que ingresara al modulador de torque. Modelando en el 
 dominio de Laplace se tiene:
@@ -2027,10 +2050,10 @@ dominio de Laplace se tiene:
 
 Donde:
 
-\begin{align*}
+\begin{align}
     e_\theta(s) &= \Theta_m^*(s) - \Theta_m(s) \\
     e_\omega(s) &= e_\theta(s).s
-\end{align*}
+\end{align}
 
 La relación entre el torque y la variación de velocidad del motor en el modelo del subsistema mecánico, 
 teniendo en cuanta el desacople de fricción realizado anteriormente, es:
@@ -2065,23 +2088,25 @@ A partir de esta ecuación podemos obtener las funciones de transferencia del co
     G_2(s) &= \frac{\Theta_m(s)}{\frac{T_l(s)}{r}} = -\frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}
 \end{align}
 
-En régimen estacionario para una entrada escalón unitario podemos observar:
+En régimen estacionario para una entrada escalón unitario observamos:
 
 \begin{itemize}
     \item $K_{sai} \neq 0 \to G_1(s) = 1 $ y $G_2(s) = 0$
     \item $K_{sai} = 0 \to G_2(s) = 1 $ y $G_2(s) = \frac{1}{K_{sa}} $
 \end{itemize}
 
-Estos resultados muestran que que la función de transferencia
-correspondiente a la entrada de perturbación tejen un cero en el origen por lo que el error de estado 
-estacionario es nulo. En caso de que la acción integral sea nula si tendrá un error dado por $1/K_{sa}$.
-En cuanto a la función de transferencia correspondiente a la entrada de referencia tiene ganancia
-unitaria a baja frecuencia por lo que el error de estado estacionario, según el teorema del valor final, 
-es nulo. Podemos concluir que este  controlador no tiene error de régimen permanente ante entradas del tipo escalón.
+Los resultados muestran que la función de transferencia correspondiente a la entrada de perturbación 
+tiene un cero en el origen, lo que implica que el error de estado estacionario es nulo. Sin embargo, 
+si la acción integral es nula, se producirá un error dado por $1/K_{sa}$.
 
-Aplicamos el método de sintonía en serie, con $n = 2,5$ y $\omega_{pos} = 800 rad/s$
-para la determinar las ganancias del controlador. Dado que el polinomio 
-característico de forma normalizada del sistema es:
+Por otro lado, la función de transferencia correspondiente a la entrada de referencia presenta ganancia 
+unitaria a baja frecuencia, lo que garantiza que el error de estado estacionario, según el teorema del 
+valor final, sea nulo. En consecuencia, podemos concluir que este controlador no tiene error de régimen 
+permanente ante entradas del tipo escalón.
+
+Para determinar las ganancias del controlador, aplicamos el método de sintonía en serie con $n = 2,5$ y 
+$\omega_{pos} = 800 \, \text{rad/s}$. Dado que el polinomio característico del sistema se encuentra en 
+forma normalizada:
 
 \begin{equation}
     P(s) = s^3 + \frac{b_a}{J_{eq}}.s^2 + \frac{K_{sa}}{J_{eq}}.s + \frac{K_{sai}}{J_{eq}}
@@ -2102,7 +2127,7 @@ Dados los valores nominales de $J_{eq}$ y $b_l$, se obtiene $J_{eq} = 5,6510.10^
 \end{align*}
 
 Con estos valores podemos determinar los polos del sistema a lazo cerrado. Sabiendo que la distancia
-de los polos al origen es la misma para los 3 polos. Con $\xi = 0,75$
+de los polos al origen es la misma para los 3 polos.
 
 \begin{itemize}
     \item Para valores nominales de $J_l$ y $b_l$:
@@ -2126,6 +2151,11 @@ de los polos al origen es la misma para los 3 polos. Con $\xi = 0,75$
 \end{itemize}
 
 % MOSTRAR LA IMAGEN DE LOS POLOS %
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{polos.jpg}
+    \caption{Diagrama de polos del sistema.}
+\end{figure}
 
 %-------------------- 5.2.2 --------------------------%
 
@@ -2141,6 +2171,20 @@ el brazo, utilizando sus coordenadas articulares. De forma que:
 \end{equation}
 
 % IMAGEN DEL SET-POINT %
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{set_point.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{set_point_comp.png}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagrama de bloques del Set-Point.}
+\end{figure}
 
 %-------------------- 5.2.3 --------------------------%
 
@@ -2258,62 +2302,101 @@ Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$,
 \subsubsection{Seguimiento de consignas de movimiento}
 
 La posición deseada de la articulación, $q^*_1(t)$, se define como una función de tiempo que depende 
-de la variable $θ^∗_m(t)$, donde $r$ es una constante. 
-
-Para generar el perfil de movimiento, utilizamos un perfil trapezoidal en el que tanto la rampa de 
-ascenso como la de descenso se producen en un intervalo de tiempo de 5 segundos. Durante este tiempo,
-la posición deseada de $q^∗_1(t)$ alcanza un valor de $2\pi$ radianes entre las dos rampas.
+de la variable $θ^∗_m(t)/r$, donde $r$ es una constante. Para generar el perfil de movimiento, 
+utilizamos un perfil trapezoidal en el que tanto la rampa de ascenso como la de descenso se producen 
+en un intervalo de tiempo de 5 segundos. Durante este tiempo, la posición deseada de $q^∗_1(t)$ alcanza 
+un valor de $2\pi$ radianes entre las dos rampas.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{perfil_trapezoidal.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.a.1.png}
+    \caption{Consigna de posición.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.a.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.a.2.png}
+    \caption{Error entre la consigna y el valor real.}
+\end{figure}
+
+Este modelo de perfil trapezoidal para la posición articular conduce a consignas de velocidad 
+que se manifiestan como escalones, los cuales no son factibles de seguir fielmente en la realidad 
+debido a la necesidad de aceleraciones infinitas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.4.a.3.png}
+    \caption{Consigna de la velocidad angular.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.a.3.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.a.4.png}
+    \caption{Evolución de la velocidad angular en el tiempo.}
 \end{figure}
+
+A continuación se muestran las corrientes en coordenada "$abc$".
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.a.4.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.a.6.png}
+    \caption{Corrientes en coordenadas $abc$.}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.4.a.5.png}
-\end{figure}
+Se detectan anomalías transitorias al inicio de cada cambio de velocidad, generando grandes 
+aceleraciones en el sistema que, según la segunda ley de Newton, producen elevadas demandas de 
+par motor durante estos periodos transitorios. Tales demandas de par motor, a su vez, generan 
+picos de corriente y tensión, lo que implica la necesidad de garantizar que no se sobrepasen los 
+límites permitidos. A pesar de estas limitaciones físicas, el seguimiento de la consigna se logra 
+de manera óptima en los estados estables.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.4.a.6.png}
-\end{figure}
+Por otro lado, el input del sistema es un perfil de posición $q^*(t)$ de la articulación del hombro 
+del robot, que se convierte en una referencia de posición para el eje del motor $θ^*(t)$ mediante la 
+relación de reducción $r$. Se establece una revolución completa para la articulación, es decir, que 
+va y regresa, con rampas de 5 segundos. Sin embargo, este perfil se establece para un modulador de 
+tensión ideal y sin límites, resultando en valores de tensión y corriente que exceden los máximos 
+nominales. Esto plantea la necesidad de realizar modificaciones para evitar la exigencia de perfiles 
+cuadrados de velocidad y grandes impulsos de aceleración que sólo pueden alcanzarse mediante la 
+aplicación de altas tensiones, par motor y corriente.
+
+%-------------------- 5.2.4.b --------------------------%
 
 \subsubsection{Rechazo a perturbaciones}
 
-para evaluar la respuesta del sistema ante perturbaciones, proporcionamos una consigna constante 
-igual a 0 con un escalón como perturbación.
+Perturbación (cambio en escalón): considerando valores nominales ($0\,N.m$) y variación máximos de 
+los parámetros de carga mecánica física  ($\pm 6,28\,N.m$). Para ver como afecta esta perturbación al 
+sistema, aplicamos como consigna de posición un  valor constante igual a $0$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.b.1.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.b.1.png}
+    \caption{Consigna de posición.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.b.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.b.2.png}
+    \caption{Perturbación de la carga.}
 \end{figure}
 
-Notamos un error de estado estacionario en este caso.
+Cuando se consideran cargas de trabajo nominales, el seguimiento de la referencia de posición parece 
+ser idéntico al análisis previo; no se distinguen variaciones significativas a primera vista. Sin 
+embargo, al examinar más de cerca el desfase entre la posición real y la estimada, se identifica un 
+error de estado estacionario. Este error oscila entre valores positivos y negativos en respuesta al 
+cambio de signo en la perturbación. Este error es atribuible al hecho de que el observador de estado 
+propuesto opera solo en un modo PD (Proporcional-Derivativo), y no puede corregir este error de baja 
+frecuencia, sugiriendo la necesidad de mejoras en el observador.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.4.b.3.png}
+    \includegraphics[width=0.8\textwidth]{5.2.4.b.3.png}
+    \caption{Valores reales de la posición.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.4.b.5.png}
+    \caption{Evolución de las corrientes en coordenadas $abc$.}
 \end{figure}
 
 %-------------------- 5.2.5 --------------------------%
@@ -2324,58 +2407,87 @@ Notamos un error de estado estacionario en este caso.
 
 \subsubsection{Especificaciones de operación (valores límites)}
 
-\begin{center}
+\begin{table}[H]
+    \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
          & \multicolumn{2}{c|}{Especificación de Operación} & \multicolumn{2}{c|}{Valores obtenidos en simulación} \\
         \hline
          & Régimen continuo & Valor máximo & Régimen continuo & Valor máximo \\
         \hline
-        Torque motor & 0.023 & 0.093 & 0.009 & 3.7 \\
+        Torque motor [N.m] & 0.023 & 0.090 & 0.009 & 3.7 \\
         \hline
-        Velocidad angular & 691.15 &  & 394.9 &  \\
+        Velocidad angular [rad/s] & 691.15 &  & 394.9 &  \\
         \hline
-        Corriente en el estator & 0.4 & 2 & 0.030 & 54 \\
+        Corriente en el estator [A] & 0.4 & 2 & 0.080 & 50 \\
         \hline
-        Tensión en el estator & 24 &  & 19.01 &\\
+        Tensión en el estator [V] & 24 &  & 18.3 &\\
         \hline
     \end{tabular}
 \end{center}
+\caption{Especificaciones de operación y valores obtenidos en simulación.}
+\end{table}
 
-Causa primera: puntos de inflexión en la consigna genera picos muy altos.
+Como se puede observar en la tabla anterior, tanto el torque como la corriente del estator
+superan los valores admisibles. La causa principal de que estos valores excedan los valores nominales 
+es que los puntos de inflexión en la consigna generan picos extremadamente altos.
 
-Una forma de mejorar esto es suavizar la consigna. Podemos aplicar un filtro a la entrada de esta 
-o como en nuestro caso, trabajar sobre el perfil de velocidad angular. Al eliminar los cambios 
-abruptos o líneas verticales, logramos eliminar los picos que se generan en los puntos de 
-inflexión del perfil de posición.
+Una estrategia eficaz para mitigar este problema consiste en suavizar la consigna. Esto se puede lograr 
+aplicando un filtro en su entrada. Sin embargo, en nuestro caso específico, decidimos focalizar nuestros 
+esfuerzos en la manipulación del perfil de la velocidad angular. Al suprimir los cambios bruscos o líneas 
+verticales, conseguimos erradicar los picos que se producen en los puntos de inflexión del perfil de 
+posición. Este enfoque nos permite gestionar y controlar mejor las variaciones abruptas, resultando en 
+un rendimiento general más estable y predecible.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2..5.1.a.1.png}
+    \includegraphics[width=0.8\textwidth]{5.2..5.1.a.1.png}
+    \caption{Derivada de la consigna suavizada.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2..5.1.a.2.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2..5.1.a.3.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2..5.1.a.4.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2..5.1.a.5.png}
+    \includegraphics[width=0.8\textwidth]{5.2..5.1.a.2.png}
+    \caption{Consigna suavizada.}
 \end{figure}
 
 Al aplicar este cambio hacemos que el sistema no sobrepase los valores pico de las especificaciones
-que eran los que no respondían de forma satisfactoria.
+que eran los que no respondían de forma satisfactoria. Esto se pude ver en las siguientes imágenes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2..5.1.a.4.png}
+    \caption{Corriente en coordenadas $abc$ suavizada.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2..5.1.a.5.png}
+    \caption{Torque electromagnético suavizada.}
+\end{figure}
+
+Donde los valores de operación corregidos son:
+
+\begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+         & \multicolumn{2}{c|}{Valores corregidos} \\
+        \hline
+          & Régimen continuo & Valor máximo \\
+        \hline
+        Torque motor [N.m]  & -0.02 & -0.06 \\
+        \hline
+        Velocidad angular [rad/s] & 394 &  \\
+        \hline
+        Corriente en el estator [A] & 0.2 & 0.85 \\
+        \hline
+        Tensión en el estator [V]  & 18.4 &\\
+        \hline
+    \end{tabular}
+\end{center}
+\caption{Valores corregidos obtenidos en simulación.}
+\end{table}
 
 %-------------------- 5.2.5.b --------------------------%
 
@@ -2412,18 +2524,36 @@ asumimos que queremos que todos los polos del observador estén ubicados en -320
 da los valores de las ganancias del observador:
 
 \begin{align*}
-    K_e\theta = 9.6 \times 10^3 \, \text{rad/s}
-    K_e\omega = 3.072 \times 10^7 \, \text{rad/s}^2
-    K_ei = 3.2768 \times 10^{10} \, \text{rad/s}^3
+    K_{e\theta} = 9.6 \times 10^3 \, \text{rad/s}\\
+    K_{e\omega} = 3.072 \times 10^7 \, \text{rad/s}^2\\
+    K_{ei} = 3.2768 \times 10^{10} \, \text{rad/s}^3
 \end{align*}
+
+El nuevo observador de estado se representa en el siguiente diagrama de bloques:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{observador_mejorado.jpg}
+    \caption{Observador de estado mejorado.}
+\end{figure}
 
 Estas ganancias aseguran que el error de estado estacionario converja asintóticamente a cero, 
 incluso ante perturbaciones de carga. Así, la adición de la acción integral en el observador ha 
 resuelto el problema sin la necesidad de hardware adicional.
 
+Para determinar esto ponemos a prueba el sistema con una perturbación de carga de la sección
+3.4.2. Los resultados son los siguientes:
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.1.b.1.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.b.1.png}
+    \caption{Valor real de la posición angular.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.b.3.png}
+    \caption{Acercamiento del valor real de la posición angular.}
 \end{figure}
 
 Vemos como el valor de tita real es igual a 0 luego de un transitorio debido a la perturbación. 
@@ -2432,7 +2562,8 @@ el valor real de la posición angular:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.1.b.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.b.2.png}
+    \caption{Error entre el valor real y la consigna.}
 \end{figure}
 
 %-------------------- 5.2.5.c --------------------------%
@@ -2440,23 +2571,32 @@ el valor real de la posición angular:
 \subsubsection{Comportamiento térmico del motor}
 
 Procedemos a verificar la temperatura del bobinado cuando la consigna involucra una operación 
-continua repetitiva sumado una perturbación continua. Estas dos se crearon a partir de la consigna 
-inicial repetida dentro de un lapso de $300$ segundos.
+continua repetitiva. A partir de la consigna 
+trapezoidal inicial repetida dentro de un lapso de $300$ segundos obtenemos la siguiente figura:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.1.c.1.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.c.1.png}
     \caption{Temperatura sin suavizado}
 \end{figure}
 
 Vemos que cuando la consigna es la original, el sistema sobrepasa los limites de temperatura, lo 
-que podría producir una degradación de los componentes. Además notamos que esta se vuelve 
-asintótica.
+que podría producir una degradación de los componentes. Además notamos que esta se vuelve asintótica.
+
+Pasamos a probar con la consigna suavizada repetida continuamente durante el mismo periodo de tiempo.
     
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.1.c.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.c.2.png}
     \caption{Temperatura con suavizado}
+\end{figure}
+
+Finalmente, probamos la consigna suavizada junto con una perturbación de carga:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.1.c.3.png}
+    \caption{Temperatura con suavizado y perturbación}
 \end{figure}
     
 En este caso, al igual que en el anterior, la respuesta en temperatura se vuelve asintótica pero 
@@ -2483,16 +2623,16 @@ siguientes especificaciones:
 
 Para los filtros de segundo orden, se usa la función de transferencia:
 
-\begin{equation*}
+\begin{equation}
     G(s) = \frac{\omega_n^2}{s^2 + 2\omega_n\zeta s + \omega_n^2}
-\end{equation*}
+\end{equation}
 
 Donde se puede demostrar que la función de transferencia de un modelo en el espacio de estados se 
 calcula con la ecuación:
 
-\begin{equation*}
+\begin{equation}
     G(s) = C(sI - A)^{-1}B + D
-\end{equation*}
+\end{equation}
 
 Si se toma como matriz de estados $A$:
 
@@ -2563,13 +2703,12 @@ D_{pos} = \begin{bmatrix}
 
 Para el filtro de primer orden, la función de transferencia es:
 
-\[
+\begin{equation}
 G(s) = \frac{1}{1 + \tau s}
-\]
+\end{equation}
 
-De donde se puede deducir que:
+De donde se puede deducir que para el sensor de temperatura:
 
-Para el sensor de temperatura:
 \[
 A_T = \begin{bmatrix}
 -0.05
@@ -2587,94 +2726,109 @@ D_T = \begin{bmatrix}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.1.png}
+    \includegraphics[width=0.8\textwidth]{sensores_no_ideales.png}
+    \caption{Diagrama de bloque de sensores no ideales.}
+\end{figure}
+
+Procedemos a hacer estudios para los distintos tipos de sensores no ideales con la consigna trapezoidal 
+simple y con la perturbación de carga ya estudiada anteriormente.
+
+\bullet Caso 1
+
+Comenzamos colocando el sensor no ideal solo para la posición angular. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.1.png}
+    \caption{Respuesta de posición angular con sensor posición no ideal.}
+\end{figure}
+
+La respuesta del sistema presenta degradación de desempeño con respecto a la consigna. Esto provoca 
+que el controlador tenga que implementar ajustes considerables, que se aprecian en las corrientes 
+generadas para enmendar el error presente. Posteriormente, el sistema comienza a oscilar y 
+finalmente se vuelve inestable y diverge por completo, volviendo imposible la simulación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.2.png}
+    \caption{Respuesta de la corriente en coordenadas $abc$ con sensor no ideal.}
+\end{figure}
+
+\bullet Caso 2
+
+Para la siguiente prueba solo probamos con el sensor de temperatura no ideal.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.3.png}
+    \caption{Respuesta de la temperatura con sensor de temperatura no ideal.}
+\end{figure}
+
+Aquí no percibimos ninguna degradación del sistema debido a que la realimentación de la temperatura 
+influye muy poco en el sistema, como ya se menciono antes en este informe. Lo que si notamos es que
+la actuación de los sensores como filtros pasa bajos en los cambios repentinos de la temperatura, 
+notándose estos menos pronunciados. (Ver figura (7) del Anexo 1)
+
+\bullet Caso 3
+
+En este caso probamos el sensor de corriente no ideal.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.4.png}
+    \caption{Respuesta de la posición angular con sensores de corriente no ideales.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.5.png}
+    \caption{Respuesta de la corriente en coordenadas $abc$ con sensores de corriente no ideales.}
+\end{figure}
+
+La respuesta del sistema presenta una degradación de desempeño, igual que con el 
+sensor de posición no ideal. La causa de este comportamiento es la misma que en el caso del sensor de
+posición no ideal. 
+
+\bullet Caso 4
+
+Finalmente al probar con todos los sensores no ideales juntos obtenemos un sistema que es inestable y es 
+imposible de simular.
+
+\bullet Caso 5
+
+Para arreglar el problema de la inestabilidad del sistema, como primer instancia duplicamos los valores 
+de $\omega_n$ tanto para los sensores de corriente como para el de posición angular. Observamos que el 
+sistema sigue siendo inestable y diverge.
+
+\bullet Caso 6
+
+En el ultimo caso triplicamos los valores de $\omega_n$ tanto para los sensores del caso anterior.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.7.png}
+    \caption{Respuesta de la posición angular con sensores no ideales y $\omega_n$ triplicado.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.3.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.d.8.png}
+    \caption{Respuesta de las corrientes en coordenadas $abc$ con sensores no ideales y $\omega_n$ triplicado.}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.4.png}
-\end{figure}
+En este caso el sistema es los suficientemente flexible para seguir la consigna y no se notan degradaciones.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.5.png}
-\end{figure}
+%-------------------- 5.2.5.e --------------------------%
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.6.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.7.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.8.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.9.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.10.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.11.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.12.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.13.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.14.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.15.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.d.16.png}
-\end{figure}
-
-%-------------------- 5.2.5.d --------------------------%
-
-\subsubsection{Moduladore trifásico de tensión no ideal}
+\subsubsection{Modulador trifásico de tensión no ideal}
 
 El desempeño de un sistema eléctrico se analiza incorporando características no ideales en el 
 modulador de tensión trifásico, centrando la atención en la saturación y limitación del ancho de 
 banda. Se modela el modulador como un filtro pasa bajos con una saturación de tensión definida por 
-$√2.V_s.√3$, donde $V_{smáx} = 24\,Vca$ rms. El filtro pasa bajo se define con una frecuencia 
-natural $\omega = 6000\,rad/s$ y un factor de amortiguamiento $\xi = 1$, representándose en el 
-espacio de estados con las siguientes matrices: 
+$\frac{\sqrt{2}.V_s}{\sqrt{3}}$, donde $V_{smáx} = 24\,Vca$ rms. El filtro pasa bajo se define con 
+una frecuencia natural $\omega = 6000\,rad/s$ y un factor de amortiguamiento $\xi = 1$. Siguiendo un
+procedimiento similar al del punto anterior se representa el filtro en el espacio de estados con 
+las siguientes matrices: 
 
     \begin{align*}
     A = \begin{bmatrix}
@@ -2692,58 +2846,67 @@ espacio de estados con las siguientes matrices:
     \end{bmatrix}
 \end{align*}
 
-Estas matrices provienen de las obtenidas en el punto anterior. 
+El diagrama de bloques correspondiente es:
 
-Al implementar estas características no ideales, se observa una degradación en el desempeño 
-del sistema. La saturación del modulador provoca un creciente error entre la consigna y la
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{5.2.5.e.1.png}
+    \caption{Diagrama de bloques del modulador de tensión no ideal.}
+\end{figure}
+
+Con un proceso similar al del item anterior probaremos varios casos para poner a prueba al sistema.
+La consigna que utilizaremos, y la perturbación es la misma que en el item anterior.
+
+\bullet Caso 1
+
+Aplicando inicialmente solo la saturación, el sistema no presenta inestabilidades por lo que logra 
+seguir la consigna. Como la tensión de trabajo para cumplir la consigna es menor que la de saturación 
+esta no afecta al desempeño del sistema. 
+
+En caso de que las tensiones necesarias para cumplir la consigna sean mayores que la tensión de saturación
+el sistema no podría seguirla. La saturación del modulador provoca un creciente error entre la consigna y la
 posición actual. Este error se debe a que la máquina no recibe la tensión necesaria para generar 
 el torque correcto y corregir su posición. En consecuencia, las tensiones reales se estancan en 
 sus valores límites de saturación, mientras que las consignas de tensión siguen aumentando de 
-forma exponencial. 
+forma exponencial.
 
-Por otro lado, la introducción del modelo de filtro pasa-bajo provoca efectos 
-similares a la degradación de los sensores. La solución sugerida para estas inestabilidades es la 
-incorporación de la dinámica de los sensores y el modulador de torque en el modelo del sistema, 
-lo que permitiría un ajuste más preciso
+\bullet Caso 2
 
-Aplicando inicialmente solo la saturación:
+En este caso, se aplica una limitación del ancho de banda del modulador. El sistema resultante no es
+capaz de seguir la consigna debido una divergencia en los valores que adopta el sistema.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.e.1.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.e.2.png}
+    \caption{Respuesta de la posición angular con modulador de tensión con ancho de banda limitado.}
 \end{figure}
+
+\bullet Caso 3
+
+Finalmente se prueban los dos casos simultáneamente y como resultado el sistema no es capaz de seguir la consigna. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.5.e.2.png}
+    \includegraphics[width=0.8\textwidth]{5.2.5.e.3.png}
+    \caption{Respuesta de la posición angular con modulador de tensión con ancho de banda limitado y saturación.}
 \end{figure}
 
-Notamos que no afecta significativamente ya que para alcanzar la consigna suavizada, las tensiones 
-nunca superan la de saturación.
-
-Continuamos la simulación aplicando los bloques necesarios para implementar una respuesta no ideal 
-del modulador, ante la consigna con la que venimos trabajando. Se obtuvieron los siguientes 
-resultados:
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.e.3.png}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{5.2.5.e.4.png}
-\end{figure}
-
-Vemos que ahora el sistema es incapaz de cumplir con la consigna.
+A diferencia del caso anterior donde los valores divergían, los bloques de saturación limitan este inconveniente.
+Sin embargo, el sistema no es capaz de seguir la consigna debido a que la limitación del ancho de banda
+provoca que las magnitudes de tensión deban ser muy superiores a las permitidas haciendo que la respuesta del sistema
+no sea la esperada. 
 
 %-------------------- 5.2.6 --------------------------%
 
 \subsection{Version Final}
 
+Finalmente mostramos todos los pasos aplicados anteriormente sobre el modelo. Estos son el modulador de tensión,
+el observador de estado mejorado y los sensores no ideales.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{5.2.6.png}
+    \includegraphics[width=0.8\textwidth]{5.2.6.png}
+    \caption{Diagrama de bloques del sistema NL final con controlador completo.}
 \end{figure}
 
 \newpage
