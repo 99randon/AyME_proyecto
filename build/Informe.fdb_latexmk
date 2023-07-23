@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1690079281 "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" "build/Informe.pdf" "Informe" 1690079289 0
+["lualatex"] 1690079740 "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" "build/Informe.pdf" "Informe" 1690079748 0
   "5.1.6_carga2.jpg" 1689722933 31106 80d51a5120a97c347987a2d484a5cfdc ""
   "5.1.6_cid1.png" 1689897069 13922 b1b98af39e73999c0670e2ea29e05c21 ""
   "5.1.6_cid2.png" 1689897080 13766 d32bfcfef5218fc8decd17433eb570dc ""
@@ -411,15 +411,15 @@
   "C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/luaotfload-unicode.lua" 1664816352 7917 30f5b1073daa0c6e85ca1db843fbd9cd ""
   "C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/luaotfload.lua" 1664816352 13565 83bac25a8cf8630acccd6a7f8bb9f791 ""
   "C:/Users/brand/AppData/Roaming/MiKTeX/tex/generic/config/language.dat" 1689193606 2269 c2be9efecb8e53facf8213ae101f16af ""
-  "Informe.tex" 1690079280 127807 2f260febc5e1f057f2f036ccef9da84a ""
+  "Informe.tex" 1690079739 127804 21fef13cca398544e0e65508a96cb1b5 ""
   "LTI.png" 1689635997 77397 0f18b84eedced362c5590f8f84fa2ac7 ""
   "LTI_AUMENTADO_Q.jpg" 1689706883 59769 5d86c2321357873709dd67a0dc22b4d9 ""
   "LTI_AUMENTADO_Q_CONTROLADOR.jpg" 1689706897 67313 6f146f2ce941dfffc297d96050f65f4a ""
   "LTI_aumentado1.png" 1689707462 85951 9c584327947928a57b21f21be19aa134 ""
-  "build/Informe.aux" 1690079289 27411 88247f8f860838669a1595c8c311439d "lualatex"
-  "build/Informe.out" 1690079289 12808 ee4aa9050d69e0f7cfa656b0f2c7cc84 "lualatex"
-  "build/Informe.toc" 1690079289 5265 5c0c7164c6b0c98fdc803b730e2d4cb5 "lualatex"
-  "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" 1690079280 127807 2f260febc5e1f057f2f036ccef9da84a ""
+  "build/Informe.aux" 1690079747 27411 86c554d1c51c83e40c1d5e01e0b26c7b "lualatex"
+  "build/Informe.out" 1690079747 12808 ee4aa9050d69e0f7cfa656b0f2c7cc84 "lualatex"
+  "build/Informe.toc" 1690079747 5265 eae243237cffe0a02b2050b4afb12bbe "lualatex"
+  "c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex" 1690079739 127804 21fef13cca398544e0e65508a96cb1b5 ""
   "calibri.ttf" 1689190214 352736 5da8ee07ed07fb20fe2da6ef1f0f3504 ""
   "controlador.png" 1689636986 61879 b9dc242bcc3c76ce13edd32835001ee9 ""
   "desacople.png" 1689949077 35769 a9464a77c684ccdf20bc8f7a344e5b83 ""
