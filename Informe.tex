@@ -31,12 +31,13 @@
 \usepackage{wrapfig}
 \usepackage{subcaption}
 \usepackage{multirow}
+\usepackage{tocloft}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setmainfont{calibri}[BoldFont = Calibri Bold]
 \hypersetup{colorlinks=true, linkcolor=black, pdfborderstyle={/S/U/W 1}}
 \titleformat{\part}[block]{\normalfont\huge\bfseries}{\thepart. \,}{0pc}{}
-
+\setlength{\cftbeforesecskip}{0.4em}
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \geometry{a4paper}
@@ -57,20 +58,24 @@
 
 \begin{titlepage}
     \centering
-    \begin{figure}[H]
+    \begin{figure}[h]
         \centering
         \includegraphics[width=1\textwidth]{encabezado.png}
     \end{figure}
     \vspace*{3cm}
-    \huge{\textbf{Automática y Maquinas Eléctricas}}\\
+    \huge{\textbf{Automática y Máquinas Eléctricas}}\\
     \vspace*{3cm}
-    \Huge\textbf{Control de Accionamiento de CA con Motor Sincrónico de Imanes Permanentes}\\
-    \vspace{8cm}
+    \Huge\textbf{Control de Accionamiento de CA con Motor Síncrono de Imanes Permanentes}\\
+    \vspace*{6cm}
     \large{Autores:}\\
-    \large{\textbf{Alan Vignolo\\Brandon Mamani}}\\
+    \large{\textbf{Alan Vignolo - 12667\\Brandon Mamani - 12749}}\\
+    \vspace*{1cm}
+    \large{Profesor:}\\
+    \large{\textbf{Ing. Gabriel L. Julián}}\\
     \vfill
-    \the\year\\ % o puedes especificar una fecha específica en lugar de \today
+    \the\year\\ % o puedes especificar una fecha específica en lugar de \the\year
 \end{titlepage}
+
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 \tableofcontents
@@ -102,8 +107,8 @@ Para despues.
 \subsection{Carga Mecánica}
     
     La carga mecánica en este caso se refiere a un eje descentralizado utilizado en la articulación "hombro" 
-    de un robot SCARA. Esta articulación se encuentra en la base inercial y tiene un grado de libertad 
-    rotacional en un eje vertical. Los parámetros equivalentes de esta carga varían dependiendo de la posición 
+    de un robot SCARA. Esta articulación se encuentra referenciada a una base inercial (1 g.d.l.
+    rotacional de eje vertical). Los parámetros equivalentes de esta carga varían dependiendo de la posición 
     y la velocidad angular instantáneas de la articulación "codo" del robot.
 
     En este trabajo, no se incluye la modelización de la dinámica no lineal acoplada del robot. En su lugar, 
@@ -113,12 +118,12 @@ Para despues.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.25\textwidth]{Alan1.jpg}
-        \caption{Modelo ilustrativo del robot SCARA}
+        \caption{Modelo ilustrativo del robot SCARA.}
     \end{figure}
 
     El modelo simplificado equivalente utilizado parte del eje de salida del tren de transmisión y toma en 
-    cuenta la coordenada articular del eje de la articulación "hombro" denotada como $q_1(t) = θ_l(t)$. La 
-    ecuación que describe este modelo es:
+    cuenta la coordenada articular del eje de la articulación "hombro" denotada como $q_1(t) = \theta_l(t)$, 
+    consecuentemente $\omega_l(t)$ denota la velocidad angular. La ecuación que describe este modelo es:
 
     \begin{equation}\label{eq:carga_mecanica1}
         J_{l}.\dot{\omega}_{l}(t) = T_{q}(t)-b_{l}.\omega_{l}(t)-T_{l}(t)
@@ -127,6 +132,8 @@ Para despues.
     \begin{equation}\label{eq:carga_mecanica2}
         \dot{\theta}_{l} = \omega_{l} \,\, \Leftrightarrow \,\, \theta_{l}(t) = \int_{0}^{t} \omega_{l}(\xi). \,d\xi + \theta_{l}(0)
     \end{equation}
+
+    $T_q(t)$ es el torque de salida del tren de transmisión y $T_l(t)$ es el torque de carga.\\
 
     \noindent Parámetros equivalentes:\\
 
@@ -164,6 +171,15 @@ Para despues.
         T_{q}(t) = r.T_{d}(t)
     \end{equation}
 
+    En estas ecuaciones, $r$ es la relación de reducción total del tren de transmisión, $\omega_m(t)$ es la
+    velocidad angular del eje de salida del motor y $T_d(t)$ es el torque de entrada del tren de transmisión.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{Alan2.jpg}
+        \caption{Modelo ilustrativo del tren de transmisión.}
+    \end{figure}
+
     \noindent Parámetros equivalentes:\\
 
     \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
@@ -183,6 +199,12 @@ Para despues.
     
     En este caso, se utiliza un motor de corriente alterna (CA) trifásico con excitación por imanes permanentes. 
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{Alan3.jpg}
+        \caption{Modelo ilustrativo de la maquina eléctrica.}
+    \end{figure}
+
     \subsubsection{Subsistema mecánico}
         
         El subsistema mecánico del motor, que incluye el rotor y el tren de transmisión referidos 
@@ -192,6 +214,7 @@ Para despues.
             J_{m}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{m}.\omega_{m}(t)-T_{d}(t)
         \end{equation}
         
+        Donde $T_m(t)$ es el torque electromagnético entregado por el motor.
         Además, se establece una relación entre la velocidad angular $\omega_m(t)$ y la derivada temporal de la 
         coordenada angular $\theta_m(t)$ mediante la relación:
         
@@ -281,6 +304,12 @@ Para despues.
     \begin{equation}\label{termico2}
         P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
     \end{equation}
+    
+    Donde $R_s(t)$ esta dado por:
+
+    \begin{equation}\label{termico3}
+        R_s(t) = R_{s_{ref}}.(1+\alpha_Cu.(T_s(t)-T_{s_{ref}}))
+    \end{equation}
 
     \noindent Parámetros equivalentes:\\
 
@@ -293,7 +322,7 @@ Para despues.
         \(\bullet\) Inductancia de estator (eje directo): & \(L_d \approx 6.6 \, \text{mH}\) \\
         \(\bullet\) Inductancia de dispersión de estator: & \(L_{ls} \approx 0.8 \, \text{mH}\) \\
         \(\bullet\) Resistencia de estator, por fase: & \(R_s \approx 1.02 \, \Omega\) (@40 °C) → \(1.32 \, \Omega\) (@115 °C) \\
-        \(\bullet\) Coeficiente de aumento de \(R_s\) con \(T_s^\circ(t)\): & \(\alpha_C = 3.9 \times 10^{-3} \, 1°C\) \\
+        \(\bullet\) Coeficiente de aumento de \(R_s\) con \(T_s^\circ(t)\): & \(\alpha_Cu = 3.9 \times 10^{-3} \, 1°C\) \\
         \(\bullet\) Capacitancia térmica de estator: & \(C_{ts} \approx 0.818 \, \text{W°C/s}\) (almacenamiento interno) \\
         \(\bullet\) Resistencia térmica estator-ambiente: & \(R_{ts-amb} \approx 146.7 \, °C/W\) (disipación al ambiente) \\
         \(\bullet\) Constante de tiempo térmica: & \(\tau_{ts-amb} = R_{ts-amb} \cdot C_{ts} \approx 120 \, \text{s}\)
@@ -350,17 +379,17 @@ instantáneas de fase.
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
-      \includegraphics[width=0.75\textwidth]{Alan6.jpg}
+      \includegraphics[width=0.65\textwidth]{Alan6.jpg}
       \caption{Sensor de temperatura}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
-      \includegraphics[width=0.75\textwidth]{Alan5.jpg}
+      \includegraphics[width=0.65\textwidth]{Alan5.jpg}
       \caption{Encoder}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
-      \includegraphics[width=0.75\textwidth]{Alan4.jpg}
+      \includegraphics[width=0.65\textwidth]{Alan4.jpg}
       \caption{Sensor de corriente}
     \end{subfigure}
     \caption{Imágenes ilustrativas}
@@ -435,9 +464,8 @@ Se puede expresar de forma matricial como:
 \end{cases}
 \end{equation}
 
-Con este modelo matemático equivalente referido al eje del motor tiene como 
-ventaja que no presenta backlash, ademas no hay que considerar el efecto de 
-la elasticidad torsional de la transmisión.
+Esta compactación se puede realizar ya que no se presenta backlash y ademas no se considera el efecto de 
+la elasticidad torsional.
 
 % ------------------  5.1.2  --------------------- %
 
@@ -455,7 +483,7 @@ se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitaci�
 permanentes. El estator esta conectado en estrella con bornes $abc$ accesible y neutro no accesible.
 Consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
 
-Ecuaciones de tensión en coordenadas abc:
+Ecuaciones de tensión en coordenadas $abc$:
 
 \begin{equation}\label{eq.tensiones_abc}
     \begin{aligned}
@@ -467,7 +495,7 @@ Ecuaciones de tensión en coordenadas abc:
 
 Mediante la
 \hyperref[eq:transformacion_de_park]{transformación de Park (\ref*{eq:transformacion_de_park})}
-, se obtiene:
+, trabajando la expresión resultante, se llega a:
 
 \begin{equation}\label{eq.tensiones_qd0}
     \begin{aligned}
@@ -953,8 +981,6 @@ una dinámica lineal para el subsistema térmico.
         \caption{Diagrama de bloques del modulador de tensión ideal.}
     \end{figure}
 
-    
-
     \item \textbf{Dinámica Residual}
     
     Al aplicar la ley de control mínimo supusimos que $i_{ds} = 0$, sin embargo, esto no es del todo cierto
@@ -1023,7 +1049,6 @@ una dinámica lineal para el subsistema térmico.
         \includegraphics[width=0.8\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.jpg}
         \caption{Diagrama del controlador.}
     \end{figure}
-
 
 \end{enumerate}
 
@@ -1812,7 +1837,7 @@ cuadratura, lo que implica la pérdida de la posibilidad de realizar este tipo d
 
 El control vectorial es una técnica avanzada que se emplea en la gestión de máquinas eléctricas, como 
 los motores de corriente alterna y las máquinas síncronas. Esta metodología posibilita el control 
-independiente de la magnitud y la fase de la corriente de alimentación de la máquina, permitiendo así 
+independiente de la magnitud y la fase de la tensión de alimentación de la máquina con PWM, permitiendo así 
 un control preciso del torque y la velocidad. Una implementación frecuente de este tipo de control es 
 el controlador de movimiento en cascada con modulador de torque equivalente, especialmente en aplicaciones 
 de alto rendimiento como los sistemas de tracción eléctrica y los sistemas de accionamiento de maquinaria 
@@ -1832,8 +1857,7 @@ a la máquina.
 
 En su funcionamiento, el Modulador de Torque Equivalente recibe consignas de torque como entradas, 
 que representan la cantidad de par motor deseado. Estas consignas de torque se convierten posteriormente 
-en consignas de tensión, lo que permite controlar la magnitud y la fase de la corriente de alimentación 
-de la máquina eléctrica de forma independiente.
+en consignas de tensión.
 
 %-------------------- 5.2.1.a --------------------------%
 
@@ -1846,7 +1870,7 @@ suponer que el modulador de tensión es lo suficientemente rápido y preciso, de
 introduzca una amplificación o atenuación adicional de la señal. 
 
 Con esta hipótesis podemos considerar que la consigna de tensión a seguir en entrada del modulador 
-de tensión sera la misma que se aplicara en la salida. Est ose pude expresar como: 
+de tensión sera la misma que se aplicara en la salida. Esto se pude expresar como: 
 
 \begin{equation}
     v_{abc}(t) \approx v^*_{abc}(t)
@@ -1855,6 +1879,16 @@ de tensión sera la misma que se aplicara en la salida. Est ose pude expresar co
 Como ya vimos anteriormente, podemos pasar de coordenadas $abc$ a coordenadas $dq0$ mediante la
 transformada de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
 de forma que obtengamos valores que compensen las realimentaciones para lograr el desacoplamiento.
+
+Nuestra premisa inicial es que contamos con los sensores o mecanismos de observación necesarios para 
+medir y procesar las variables cruciales para el funcionamiento del controlador. Este último se 
+considera suficientemente eficiente para realizar dichos cálculos en tiempo real. Por ende, podemos 
+contrarrestar cualquier disminución de tensión en las bobinas del estator mediante retroalimentaciones, 
+lo que nos facilita obviar su influencia y ejercer un control directo sobre el par electromagnético.
+
+Esto significa que, gracias a las referencias de voltaje virtual, contamos con una vía inmediata para 
+afectar las corrientes virtuales y, en consecuencia, tener un acceso directo a la manipulación del par 
+electromagnético.
 
 A partir de las \hyperref[eq:mi_ecuacion]{ecuaciones \ref*{eq:mi_ecuacion}} que describen el comportamiento
 del modelo electromagnético, se determina la representación de las realimentaciones físicas del sistema. 
@@ -1895,16 +1929,17 @@ A continuación mostramos los diagramas de bloques:
         \includegraphics[width=0.8\textwidth]{desacople.png}
         \caption{Compacto.}
     \end{subfigure}
-    \caption{Diagramas de bloques de realimentación y desacople de variables.}
+    \caption{Diagramas de bloques de realimentación para desacople de realimentaciones físicas.}
 \end{figure}
 
-Para llevar a cabo el desacople de la realimentación de la temperatura también hacemos uso del 
-siguiente controlador, que representa la influencia de $T_s(t)$ sobre $R_s$.
+Para llevar a cabo el desacople necesitamos conocer el valor de $R_s$ a partir de la medición de la 
+temperatura $T_s$ (es el sensor con el que contamos). Para eso hacemos uso de la ecuación (\ref{termico3}).
+El diagrama de bloques respectivo se ve a continuación.
 
 \begin{figure}[H]
-    \begin{subfigure}[b]{0.75\textwidth}
+    \begin{subfigure}[b]{0.65\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{realimentacion_temperatura.jpg}
+        \includegraphics[width=0.65\textwidth]{realimentacion_temperatura.jpg}
         \caption{Expandido.}
     \end{subfigure}
     \begin{subfigure}[b]{0.24\textwidth}
@@ -1912,7 +1947,7 @@ siguiente controlador, que representa la influencia de $T_s(t)$ sobre $R_s$.
         \includegraphics[width=0.8\textwidth]{realimentacion_temperatura_compacto.jpg}
         \caption{Compacto.}
     \end{subfigure}
-    \caption{Diagramas de bloques de realimentación de la temperatura .}
+    \caption{Diagramas de bloques de realimentación de la temperatura.}
 \end{figure}
 
 %-------------------- 5.2.1.b --------------------------%
@@ -1922,7 +1957,7 @@ siguiente controlador, que representa la influencia de $T_s(t)$ sobre $R_s$.
 De la ecuación (\ref{eq:proporcionlaidad_corrientes_tensiones_de_entrada}) podemos observar 
 la consigna de tensión es función de la corriente del sistema, por lo que se puede controlar usando 
 una consigna de corriente proporcional. Con el error de corriente entre la corriente de consigna 
-$i_{qd0s}^{r*}(t)$ y la corriente real $i_{qd0s}^{r}(t)$ del sistema se modela $v_{qd0s}^{r*}(t)$ 
+$i_{qd0s}^{r*}(t)$ y la corriente medida $i_{qd0s}^{r}(t)$ del sistema se modela $v_{qd0s}^{r*}(t)$ 
 con una ley de control proporcional. El modelo resultante es el siguiente:
 
 \begin{equation}
@@ -1934,7 +1969,7 @@ con una ley de control proporcional. El modelo resultante es el siguiente:
 \end{equation}
 
 Las variables $R^\prime$ representan las ganancias del control proporcional. Se necesita obtener 
-el valor de óptimo de esta ganancia, por lo cual se analiza la función de transferencia del modulador.
+el valor de óptimo de estas ganancias, por lo cual se analiza la función de transferencia de los lazos de corriente.
 Para poder determinar estas ganancias aplicamos la transformada de Laplace y obtenemos:
 
 \begin{equation}
@@ -1963,12 +1998,7 @@ la frecuencia de corte del filtro. Si $\tau$ toma un valor muy pequeño, dispond
 banda muy grande, lo cual proporciona una respuesta rápida.
 
 El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que para todos los lazos $p = -5000 rad/s$
-podemos calcular los valores de las ganancias con la siguiente expresión:
-
-\begin{equation}
-    \frac{L}{R^\prime} = -\frac{1}{p} \to R^\prime = -L.p
-\end{equation}
-
+podemos calcular los valores de las ganancias trabajando las expresiones anteriores.
 Resolviendo para cada rama:
 
 \begin{align*}
@@ -2064,31 +2094,14 @@ Una decisión clave en la configuración del controlador es la elección de las 
 caso, se opta por utilizar solo la velocidad angular del motor como entrada, evitando acciones derivativas 
 para evitar errores numéricos y lograr un control más estable. La integración de la consigna de velocidad 
 en lugar de derivar la consigna de posición evita inestabilidades y asegura que los errores de posición y 
-velocidad sean consistentes al estar relacionados.
+velocidad sean consistentes al estar relacionados. Para poder ejecutar esto tenemos en cuenta que gracias 
+al observador, que se vera mas adelante, y al sensor de posición podemos obtener la velocidad angular del motor. 
 
 El controlador PID con acción integral utiliza tres ramas principales: proporcional, derivativa e integral. 
 En la rama proporcional, se toma como error la diferencia entre la consigna de posición y la posición actual.
 En la rama derivativa, el error es la diferencia entre la consigna de velocidad y la velocidad actual. La 
-rama integral calcula la integral del error de posición, lo que garantiza la consistencia entre los errores 
-de ambas magnitudes y evita generar trayectorias independientes, mejorando la estabilidad del sistema.
-
-El controlador de movimiento se muestra en la siguiente figura: 
-
-% IMAGEN DEL PID %
-
-\begin{figure}[H]
-    \begin{subfigure}[b]{0.75\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{pid.png}
-        \caption{Expandido.}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.24\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{pid_compacto.png}
-        \caption{Compacto.}
-    \end{subfigure}
-    \caption{Diagrama de bloques del PID.}
-\end{figure}
+rama integral calcula la integral del error de posición, lo que suponemos que garantiza la corrección del 
+error de estado estacionario, mejorando la estabilidad del sistema.
 
 La salida del controlador sera el torque consigna que ingresara al modulador de torque. Modelando en el 
 dominio de Laplace se tiene:
@@ -2108,7 +2121,7 @@ La relación entre el torque y la variación de velocidad del motor en el modelo
 teniendo en cuanta el desacople de fricción realizado anteriormente, es:
 
 \begin{equation}
-    J_{eq}.\dot{\omega}_(t) = T_m^*(t) - \frac{T_l(t)}{r}
+    J_{eq}.\dot{\omega}_m(t) = T_m^*(t) - \frac{T_l(t)}{r}
 \end{equation}
 
 Aplicando la transformada de Laplace:
@@ -2124,7 +2137,7 @@ Reemplazando esta ecuación en la
     J_{eq}.s^3.\Theta_m(s) = [s^2.b_a + s.K_{sa} + K_{sai}].[\Theta_m^*(s) - \Theta_m(s)] - s.\frac{T_l(s)}{r}
 \end{equation}
 
-Despejando, la posición del retor queda expresada como:
+Despejando, la posición del rotor queda expresada como:
 
 \begin{equation}
     \Theta_m(s) = \frac{s^2.b_a + s.K_{sa} + K_{sai}}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}.\Theta_m^*(s) - \frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}.\frac{T_l(s)}{r}
@@ -2167,7 +2180,7 @@ Podemos llegar a las siguientes expresiones:
     n.\omega_{pos} &= \frac{b_a}{J_{eq}}; & &n.\omega_{pos}^2 = \frac{K_{sa}}{J_{eq}}; & n.\omega_{pos}^3 = \frac{K_{sai}}{J_{eq}} \\
 \end{align*}
 
-Dados los valores nominales de $J_{eq}$ y $b_l$, se obtiene $J_{eq} = 5,6510.10^6$, entonces:
+Dados los valores nominales de $J_{eq}$ y $b_l$, se obtiene $J_{eq} = 5,6510.10^-6$, entonces:
 
 \begin{align*}
     b_a = J_{eq}.n.\omega_{pos} &= 0,0113\, \frac{N.m}{rad/s} \\ 
@@ -2175,8 +2188,25 @@ Dados los valores nominales de $J_{eq}$ y $b_l$, se obtiene $J_{eq} = 5,6510.10^
     K_{sai} = J_{eq}.n.\omega_{pos}^3 &= 2893\, \frac{N.m}{rad.s}
 \end{align*}
 
-Con estos valores podemos determinar los polos del sistema a lazo cerrado. Sabiendo que la distancia
-de los polos al origen es la misma para los 3 polos.
+El controlador de movimiento se muestra en la siguiente figura: 
+
+% IMAGEN DEL PID %
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pid.png}
+        \caption{Expandido.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{pid_compacto.png}
+        \caption{Compacto.}
+    \end{subfigure}
+    \caption{Diagrama de bloques del PID.}
+\end{figure}
+
+Con estos valores podemos determinar los polos del sistema a lazo cerrado.
 
 \begin{itemize}
     \item Para valores nominales de $J_l$ y $b_l$:
@@ -2219,6 +2249,10 @@ el brazo, utilizando sus coordenadas articulares. De forma que:
     q_1^* = \frac{\theta_m^*(t)}{r}
 \end{equation}
 
+Utilizando esta expresión podemos armar el siguiente diagramas de bloque que nos permite 
+crear una consigna de tita o de wm a partir de una consigna de posición en coordenadas 
+articulares.
+
 % IMAGEN DEL SET-POINT %
 
 \begin{figure}[H]
@@ -2258,7 +2292,7 @@ aplicar una acción de control adecuada para realimentar el sistema.
 Además, es importante tener en cuenta que en nuestro observador solo se incorpora el subsistema mecánico, 
 puesto que contamos con sensores de corriente con su realimentación física de efectos viscosos desacoplada. 
 Esto se debe a que nos interesa específicamente la velocidad angular del motor $\omega_m(t)$. La entrada del 
-observador es la consigna de torque $𝑇_𝑚^{∗\prime}$, obtenida a la salida del controlador de movimiento PID. 
+observador es la consigna de torque $T_m^{* \prime}$, obtenida a la salida del controlador de movimiento PID. 
 Suponemos que el modulador de torque tiene un ancho de banda grande y una ganancia unitaria.
 
 El modelo del subsistema mecánico se puede expresar como:
@@ -2313,7 +2347,7 @@ Donde la matriz $K_e$ contiene los parámetros de ajuste del observador
 \begin{equation}
     K_e = 
     \begin{bmatrix}
-        k_{e\theta} & k_{e\omega} \\
+        k_{e\theta}\\ k_{e\omega} \\
     \end{bmatrix}
 \end{equation}
 
@@ -2345,7 +2379,8 @@ $A^\prime = [A - K_e.C]$:
     = s^2 + k_{e\theta}.s + k_{e\omega}
 \end{equation}
 
-Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$, obtengo:
+Resolviendo el polinomio y ubicando los valores de los polos en $p_{1,2} = -3200\, rad/s$ 
+(para no interferir demasiado en el controlador de estado), obtengo:
 
 \begin{align*}
     K_{e\theta} = 6400\,rad/s \\
@@ -2353,6 +2388,8 @@ Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$,
 \end{align*}
 
 % IMAGEN DEL OBSERVADOR %
+
+El diagrama de bloques correspondiente es:
 
 \begin{figure}[H]
     \begin{subfigure}[b]{0.75\textwidth}
@@ -2375,7 +2412,7 @@ Resolviendo el polinomio y sabiendo que los polos son $p_{1,2} = -3200\, rad/s$,
 \subsubsection{Seguimiento de consignas de movimiento}
 
 La posición deseada de la articulación, $q^*_1(t)$, se define como una función de tiempo que depende 
-de la variable $θ^∗_m(t)/r$, donde $r$ es una constante. Para generar el perfil de movimiento, 
+de la variable $\theta^*_m(t)/r$, donde $r$ es una constante. Para generar el perfil de movimiento, 
 utilizamos un perfil trapezoidal en el que tanto la rampa de ascenso como la de descenso se producen 
 en un intervalo de tiempo de 5 segundos. Durante este tiempo, la posición deseada de $q^∗_1(t)$ alcanza 
 un valor de $2\pi$ radianes entre las dos rampas.
@@ -2383,7 +2420,7 @@ un valor de $2\pi$ radianes entre las dos rampas.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.4.a.1.png}
-    \caption{Consigna de posición.}
+    \caption{perfil de la consigna de posición.}
 \end{figure}
 
 \begin{figure}[H]
@@ -2399,7 +2436,7 @@ debido a la necesidad de aceleraciones infinitas.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.4.a.3.png}
-    \caption{Consigna de la velocidad angular.}
+    \caption{Perfil de consigna de la velocidad angular.}
 \end{figure}
 
 \begin{figure}[H]
@@ -2438,7 +2475,7 @@ aplicación de altas tensiones, par motor y corriente.
 
 Perturbación (cambio en escalón): considerando valores nominales ($0\,N.m$) y variación máximos de 
 los parámetros de carga mecánica física  ($\pm 6,28\,N.m$). Para ver como afecta esta perturbación al 
-sistema, aplicamos como consigna de posición un  valor constante igual a $0$.
+sistema, aplicamos como un valor consigna de posición constante igual a $0$.
 
 \begin{figure}[H]
     \centering
@@ -2449,7 +2486,7 @@ sistema, aplicamos como consigna de posición un  valor constante igual a $0$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.4.b.2.png}
-    \caption{Perturbación de la carga.}
+    \caption{Torque de la carga.}
 \end{figure}
 
 Cuando se consideran cargas de trabajo nominales, el seguimiento de la referencia de posición parece 
@@ -2463,7 +2500,7 @@ frecuencia, sugiriendo la necesidad de mejoras en el observador.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.4.b.3.png}
-    \caption{Valores reales de la posición.}
+    \caption{Diferencia entre la consigna y los valores reales de posición.}
 \end{figure}
 
 \begin{figure}[H]
@@ -2479,6 +2516,10 @@ frecuencia, sugiriendo la necesidad de mejoras en el observador.
 %-------------------- 5.2.5.a --------------------------%
 
 \subsubsection{Especificaciones de operación (valores límites)}
+
+A partir de los valores obtenidos en el inciso anterior y comparándolos con los parámetros 
+constructivos podremos definir si el sistema es capaz de soportar los valores requeridos para cumplir
+con la consigna.
 
 \begin{table}[H]
     \begin{center}
@@ -2502,7 +2543,7 @@ frecuencia, sugiriendo la necesidad de mejoras en el observador.
 \end{table}
 
 Como se puede observar en la tabla anterior, tanto el torque como la corriente del estator
-superan los valores admisibles. La causa principal de que estos valores excedan los valores nominales 
+superan los valores admisibles. La causa principal de que estos valores excedan los valores máximos 
 es que los puntos de inflexión en la consigna generan picos extremadamente altos.
 
 Una estrategia eficaz para mitigar este problema consiste en suavizar la consigna. Esto se puede lograr 
@@ -2539,7 +2580,7 @@ que eran los que no respondían de forma satisfactoria. Esto se pude ver en las 
     \caption{Torque electromagnético suavizada.}
 \end{figure}
 
-Donde los valores de operación corregidos son:
+Los nuevos valores a partir de las correcciones introducidas son los siguiente:
 
 \begin{table}[H]
     \begin{center}
@@ -2585,15 +2626,36 @@ una integración del error entre la variable medida y su estimación, y se defin
 Ahora, el modelo del observador se redefine para incluir este estado integral y la entrada del 
 observador también se ajusta para incluir este nuevo estado:
 
-\begin{align*}
+\begin{equation}
+    \begin{cases}
     \dot{\tilde{\theta}}(t) &= K_e \theta \left(\theta(t) - \tilde{\theta}(t)\right) + \tilde{\omega}(t) \\
     \dot{\tilde{\omega}}(t) &= K_e \omega \left(\theta(t) - \tilde{\theta}(t)\right) + T_m \dot{'}(t) J_eq + z(t) \\
     \dot{\tilde{z}}(t) &= K_e i \left(\theta(t) - \tilde{\theta}(t)\right)
-\end{align*}
+    \end{cases}
+\end{equation}
 
 Para sintonizar las ganancias del observador, determinamos la ecuación característica del 
-observador y la comparamos con la de un sistema con características deseadas. Para este propósito, 
-asumimos que queremos que todos los polos del observador estén ubicados en -3200 rad/s. Esto nos 
+observador y la comparamos con la de un sistema con características deseadas. A partir de los autovalores 
+de la matriz de lazo cerrado $A^\prime$:
+
+\[
+\mathbf{A}' = [\mathbf{A} - \mathbf{K_e}.\mathbf{C}] = \begin{bmatrix}
+-K_{e\theta} & 1 & 0 \\
+-K_{e \omega} & 0 & 1 \\
+-K_{e i} & 0 & 0
+\end{bmatrix}
+\]
+
+\[
+\left| s\mathbf{I} - \mathbf{A}' \right| = \left| \begin{array}{ccc}
+s + K_{e\theta} & -1 & 0 \\
+K_{e \omega} & s & -1 \\
+K_{e i} & 0 & s
+\end{array} \right| = s^3 + s^2.K_{e \theta} + s.K_{e \omega} + K_{e i}
+\]
+
+Para este propósito, 
+asumimos que queremos que todos los polos del observador estén ubicados en $-3200 rad/s$ ($ P(s) = (s + 3200)^3 $). Esto nos 
 da los valores de las ganancias del observador:
 
 \begin{align*}
@@ -2824,18 +2886,18 @@ simple y con la perturbación de carga ya estudiada anteriormente.
 
 \bullet Caso 1
 
-Comenzamos colocando el sensor no ideal solo para la posición angular. 
+Comenzamos colocando el sensor no ideal solo para la posición angular.
+
+La respuesta del sistema presenta degradación de desempeño con respecto a la consigna. Esto provoca 
+que el controlador tenga que implementar ajustes considerables, que se aprecian en las corrientes 
+generadas para enmendar el error presente. Posteriormente, el sistema comienza a oscilar y 
+finalmente se vuelve inestable y diverge por completo, volviendo imposible la simulación.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.d.1.png}
     \caption{Respuesta de posición angular con sensor posición no ideal.}
 \end{figure}
-
-La respuesta del sistema presenta degradación de desempeño con respecto a la consigna. Esto provoca 
-que el controlador tenga que implementar ajustes considerables, que se aprecian en las corrientes 
-generadas para enmendar el error presente. Posteriormente, el sistema comienza a oscilar y 
-finalmente se vuelve inestable y diverge por completo, volviendo imposible la simulación.
 
 \begin{figure}[H]
     \centering
@@ -2847,20 +2909,25 @@ finalmente se vuelve inestable y diverge por completo, volviendo imposible la si
 
 Para la siguiente prueba solo probamos con el sensor de temperatura no ideal.
 
+Aquí no percibimos ninguna degradación del sistema debido a que la realimentación de la temperatura 
+influye muy poco en el sistema, como ya se menciono antes en este informe. Lo que si notamos es que
+la actuación de los sensores como filtros pasa bajos en los cambios repentinos de la temperatura, 
+notándose estos menos pronunciados. (Ver figura (7) del Anexo 1)
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.d.3.png}
     \caption{Respuesta de la temperatura con sensor de temperatura no ideal.}
 \end{figure}
 
-Aquí no percibimos ninguna degradación del sistema debido a que la realimentación de la temperatura 
-influye muy poco en el sistema, como ya se menciono antes en este informe. Lo que si notamos es que
-la actuación de los sensores como filtros pasa bajos en los cambios repentinos de la temperatura, 
-notándose estos menos pronunciados. (Ver figura (7) del Anexo 1)
-
 \bullet Caso 3
 
 En este caso probamos el sensor de corriente no ideal.
+
+Agregando solo los sensores de corriente no ideales, obtenemos una degradación en el sistema, 
+produciéndose una nueva divergencia en las soluciones resultantes de las ecuaciones modelo. No 
+se puede seguir la consigna por lo que las corrientes se elevan intentado remediar esto hasta 
+un valor suficiente como para dañar la maquina y varios de los componentes.
 
 \begin{figure}[H]
     \centering
@@ -2874,24 +2941,19 @@ En este caso probamos el sensor de corriente no ideal.
     \caption{Respuesta de la corriente en coordenadas $abc$ con sensores de corriente no ideales.}
 \end{figure}
 
-La respuesta del sistema presenta una degradación de desempeño, igual que con el 
-sensor de posición no ideal. La causa de este comportamiento es la misma que en el caso del sensor de
-posición no ideal. 
-
 \bullet Caso 4
 
-Finalmente al probar con todos los sensores no ideales juntos obtenemos un sistema que es inestable y es 
-imposible de simular.
+Finalmente al probar con todos los sensores no ideales juntos, con sus respectivos valores de frecuencia, 
+obtenemos un sistema que es inestable y es imposible de simular.
 
 \bullet Caso 5
 
-Para arreglar el problema de la inestabilidad del sistema, como primer instancia duplicamos los valores 
-de $\omega_n$ tanto para los sensores de corriente como para el de posición angular. Observamos que el 
-sistema sigue siendo inestable y diverge.
+Para arreglar el problema de la inestabilidad del sistema, como primer instancia duplicamos los valores de !n tanto para
+los sensores de corriente como para el de posición angular.Observamos que los valores de corte siguen siendo insuficientes para obtener respuestas satisfactorias.
 
 \bullet Caso 6
 
-En el ultimo caso triplicamos los valores de $\omega_n$ tanto para los sensores del caso anterior.
+En el ultimo caso triplicamos los valores de $\omega_n$ tanto para los sensores de corriente como el de posición.
 
 \begin{figure}[H]
     \centering
@@ -2906,6 +2968,11 @@ En el ultimo caso triplicamos los valores de $\omega_n$ tanto para los sensores 
 \end{figure}
 
 En este caso el sistema es los suficientemente flexible para seguir la consigna y no se notan degradaciones.
+\\\\
+\indent Se observo que la gráfica de la temperatura sigue sufriendo los efectos del sensor no ideal de 
+temperatura. Probamos disminuyendo el valor de $\tau$ a 1 segundo ( es similar a aumentar la 
+frecuencia en el caso de los demás sensores) y comprobamos que la degradación se vuelve 
+insignificante.
 
 %-------------------- 5.2.5.e --------------------------%
 
@@ -2952,7 +3019,7 @@ El diagrama de bloques correspondiente es:
 \end{figure}
 
 Con un proceso similar al del item anterior probaremos varios casos para poner a prueba al sistema.
-La consigna que utilizaremos, y la perturbación es la misma que en el item anterior.
+La consigna que utilizaremos, y la perturbación es la misma que en el item anterior (consigna trapezoidal y perturbación escalón doble).
 
 \bullet Caso 1
 
@@ -2960,11 +3027,11 @@ Aplicando inicialmente solo la saturación, el sistema no presenta inestabilidad
 seguir la consigna. Como la tensión de trabajo para cumplir la consigna es menor que la de saturación 
 esta no afecta al desempeño del sistema. 
 
-En caso de que las tensiones necesarias para cumplir la consigna sean mayores que la tensión de saturación
-el sistema no podría seguirla. La saturación del modulador provoca un creciente error entre la consigna y la
-posición actual. Este error se debe a que la máquina no recibe la tensión necesaria para generar 
-el torque correcto y corregir su posición. En consecuencia, las tensiones reales se estancan en 
-sus valores límites de saturación, mientras que las consignas de tensión siguen aumentando de 
+En el caso de que las tensiones necesarias para cumplir la consigna fueran mayores que la tensión de saturación
+el sistema no podría seguirla. La saturación del modulador provocaría un creciente error entre la consigna y la
+posición actual. Este error se debe a que la máquina no recibiría la tensión necesaria para generar 
+el torque correcto y corregir su posición. En consecuencia, las tensiones reales se estancarían en 
+sus valores límites de saturación, mientras que las consignas de tensión seguirían aumentando de 
 forma exponencial.
 
 \bullet Caso 2
@@ -2988,10 +3055,19 @@ Finalmente se prueban los dos casos simultáneamente y como resultado el sistema
     \caption{Respuesta de la posición angular con modulador de tensión con ancho de banda limitado y saturación.}
 \end{figure}
 
-A diferencia del caso anterior donde los valores divergían, los bloques de saturación limitan este inconveniente.
-Sin embargo, el sistema no es capaz de seguir la consigna debido a que la limitación del ancho de banda
-provoca que las magnitudes de tensión deban ser muy superiores a las permitidas haciendo que la respuesta del sistema
-no sea la esperada. 
+Contrariamente a la divergencia de valores en el caso anterior, los bloques de saturación ayudan a mitigar dicho 
+inconveniente. Sin embargo, el sistema aún lucha por seguir la consigna, debido a las limitaciones en el ancho de 
+banda que requieren tensiones significativamente más altas de las permitidas, provocando una respuesta no deseada 
+del sistema.
+
+Se nota una degradación total del sistema en este último escenario, incapaz de ajustarse a las consignas de tensión 
+necesarias, debido al efecto del modulador de tensión como un filtro pasa bajos con saturación. Esto lleva a que las
+consignas de tensión aumenten exponencialmente, y las tensiones reales permanezcan en los valores límites de 
+saturación.
+
+Se observa un error creciente entre la consigna y la posición en cada momento, acentuado por la saturación de la 
+salida del modulador de tensión trifásica. Como resultado, la máquina no puede generar el torque necesario para la 
+aceleración
 
 %-------------------- 5.2.6 --------------------------%
 
