@@ -85,8 +85,25 @@
 
 \part*{Resumen}
 
-aLGO DE TEXTO
+Este informe presenta la implementación y diseño de un sistema de control de posición y movimiento para 
+la articulación del hombro de un robot SCARA, empleando un motor síncrono de corriente alterna trifásico 
+y una caja reductora acoplada. Mediante una estrategia de análisis progresivo, se ha logrado una 
+evaluación detallada del sistema, partiendo de un estudio a lazo abierto y evolucionando hacia un sistema 
+de control robusto.
 
+Se han establecido modelos para simular respuestas no ideales, con el fin de investigar posibles 
+deterioros en un entorno real y generar soluciones efectivas. Los sensores y el modulador de tensión 
+han sido considerados de manera relevante, resaltando la necesidad de una selección precisa de estos 
+componentes para garantizar un seguimiento exacto de las consignas.
+
+Las simulaciones se han utilizado como herramienta crucial en este estudio, proporcionando un entorno 
+seguro y controlado para analizar el sistema. Con consignas bien diseñadas y la implementación de 
+algoritmos apropiados, se ha logrado un sistema de control eficiente que cumple con las pautas operativas, manteniendo los picos de corriente y tensión dentro de los límites razonables.
+
+El resultado es un sistema de control resistente y optimizado para la articulación del hombro de un 
+robot SCARA. Se ha subrayado la importancia de seleccionar correctamente los componentes del sistema 
+y los algoritmos de control para su implementación práctica. Este estudio destaca el valor de aplicar 
+el conocimiento académico de manera pragmática a los retos de la ingeniería moderna.
 
 \newpage
 
@@ -94,7 +111,25 @@ aLGO DE TEXTO
 
 \lipsum[0]
 
-Para despues.
+Este trabajo se enfoca en el modelado, análisis y control de un sistema específico, que es la articulación 
+del "hombro" de un robot SCARA en referencia a una base inercial. La meta primordial es aplicar las 
+competencias adquiridas en la asignatura 'Automática y Máquinas Eléctricas' a un escenario de ingeniería real, 
+desafiante y complejo, con la finalidad de lograr un control eficiente y efectivo del sistema en cuestión, 
+compuesto por varios componentes, entre ellos, una máquina eléctrica de corriente alterna y varios sensores críticos.
+
+El presente informe se divide en dos secciones clave. En la primera, se establece el diseño de un modelo global 
+no lineal del sistema, abarcando un subsistema mecánico, uno electromagnético y uno térmico. En la segunda, se traza 
+y examina un sistema de control de movimiento en cascada con un modulador de torque equivalente. A través de la simulación, 
+se verificará la efectividad de este sistema y se confirmará que opera dentro de los límites aceptables.
+
+A lo largo del estudio, se llevará a cabo un análisis profundo e integral, identificando posibles dificultades y 
+proponiendo soluciones viables. El objetivo de esta evaluación minuciosa es optimizar el sistema y asegurar su 
+rendimiento máximo. La herramienta de simulación y cálculo, Matlab, juega un papel vital en este procedimiento, ya 
+que ofrece un software de alta confiabilidad y precisión.
+
+Finalmente, se presentarán las conclusiones, reflejando las principales lecciones aprendidas y los logros alcanzados a lo 
+largo del proyecto. Esto incluirá una revisión de cómo las decisiones de diseño y control afectaron el rendimiento del 
+sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de estudio.
 
 \newpage
 
@@ -305,7 +340,7 @@ Para despues.
         P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
     \end{equation}
     
-    Donde $R_s(t)$ esta dado por:
+    Donde $T_s(t)$ es la temperatura del bobinado de estator y $R_s(t)$ esta dado por:
 
     \begin{equation}\label{termico3}
         R_s(t) = R_{s_{ref}}.(1+\alpha_Cu.(T_s(t)-T_{s_{ref}}))
@@ -349,12 +384,12 @@ tensiones de fase equilibradas y senoidales en el estator de la máquina eléctr
 El modelo promediado considera las tensiones de fase en el estator como senoidales de secuencia positiva 
 (abc) equilibradas, con un módulo variable $V_{sl}(t)$ y una frecuencia $\omega_e(t)$. El ángulo de carga del rotor, 
 $\delta (t)$, representa el desfasaje instantáneo entre la coordenada eléctrica fija al rotor y la coordenada 
-eléctrica sincrónica del estator, y depende del torque erogado.
+eléctrica sincrónica del estator, y depende del torque.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{Alan7.jpg}
-    \caption{Circuito inversor ilustrativo}
+    \caption{Circuito inversor ilustrativo.}
 \end{figure}
 
 \subsection{Sensores de realimentación}
@@ -380,26 +415,24 @@ instantáneas de fase.
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
       \includegraphics[width=0.65\textwidth]{Alan6.jpg}
-      \caption{Sensor de temperatura}
+      \caption{Sensor de temperatura.}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
       \includegraphics[width=0.65\textwidth]{Alan5.jpg}
-      \caption{Encoder}
+      \caption{Encoder.}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
       \centering
       \includegraphics[width=0.65\textwidth]{Alan4.jpg}
-      \caption{Sensor de corriente}
+      \caption{Sensor de corriente.}
     \end{subfigure}
-    \caption{Imágenes ilustrativas}
+    \caption{Imágenes ilustrativas.}
   \end{figure}
 
 
 Se asume que todos los sensores tienen una respuesta ideal, es decir, un filtro "pasa-todo" con ganancia 
 unitaria y un ancho de banda infinito.
-
-\newpage
 
 %-------------------------5.1-------------------------%
 
@@ -415,8 +448,9 @@ nos permitirá obtener un modelo matemático que tenga en cuenta la dinámica de
 el rotor.
 
 Comenzamos sustituyendo las ecuaciones de
-\hyperref[eq:carga_mecanica1]{Carga mecánica (\ref*{eq:carga_mecanica1})}, 
-\hyperref[eq:tren_de_transmision1, eq:tren_de_transmision2]{Tren de transmisión (\ref*{eq:tren_de_transmision1}, \ref*{eq:tren_de_transmision2})}, y
+\hyperref[eq:carga_mecanica1]{Carga mecánica (\ref*{eq:carga_mecanica1})} y 
+\hyperref[eq:tren_de_transmision1, eq:tren_de_transmision2]{Tren de transmisión (\ref*{eq:tren_de_transmision1}, \ref*{eq:tren_de_transmision2})} 
+en la ecuación del
 \hyperref[eq:subsistema_macanico1]{Subsistema mecánico (\ref*{eq:subsistema_macanico1})} de la maquina eléctrica.
 
 \begin{equation}
@@ -478,10 +512,10 @@ la elasticidad torsional.
 En el modelo global no lineal consideramos todos los sistemas involucrados 
 tanto el sistema mecánico, previamente desarrollado, como los subsistemas de la maquina eléctrica.
 
-En primer lugar, nos enfocaremos en el subsistema electromagnético, recordando que 
+En primer lugar, nos enfocaremos en el subsistema electromagnético. Recordando que 
 se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitación de imanes 
-permanentes. El estator esta conectado en estrella con bornes $abc$ accesible y neutro no accesible.
-Consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
+permanentes y estator conectado en estrella con bornes $abc$ accesible y neutro no accesible.
+Ademas consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
 
 Ecuaciones de tensión en coordenadas $abc$:
 
@@ -495,7 +529,7 @@ Ecuaciones de tensión en coordenadas $abc$:
 
 Mediante la
 \hyperref[eq:transformacion_de_park]{transformación de Park (\ref*{eq:transformacion_de_park})}
-, trabajando la expresión resultante, se llega a:
+y trabajando la expresión resultante, se llega a:
 
 \begin{equation}\label{eq.tensiones_qd0}
     \begin{aligned}
@@ -515,9 +549,7 @@ Reordenando nos quedan las ecuaciones que definen al sistema electromagnético:
     \end{cases}
 \end{equation}
 
-Recordando que el
-\hyperref[eq.torque_electromagnetico]{Torque electromagnético (\ref*{eq.torque_electromagnetico})} 
-se reordena la expresión de forma que quede despejada la variable de interés:
+Luego, reordenamos la ecuación (\ref{eq.torque_electromagnetico}) de forma que queda despejada la variable de interés.
 
 \begin{equation}\label{eq.torque_electromagnetico_reordenado}
     \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
@@ -531,7 +563,7 @@ llegamos a la siguiente expresión:
     \dot{T}_{s}(t) = \frac{1}{C_{ts}}.[\frac{3}{2}.R_{s}(t).[{i_{qs}^r(t)}^2+{i_{ds}^r(t)}^2 + 2.i_{0s}(t)^2] - \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
 \end{equation}
 
-El modelo global no lineal queda definido por las ecuaciones (\ref{eq:subsistema_mecanico2}),
+Finalmente, el modelo global no lineal queda definido por las ecuaciones (\ref{eq:subsistema_mecanico2}),
 (\ref{eq:mi_ecuacion}), (\ref{eq.torque_electromagnetico_reordenado}) y (\ref{termico3}).
 
 \begin{equation}\label{eq.modelo_global}
@@ -584,11 +616,6 @@ T_{\text{amb}}(t)
 y(t) = 
 \begin{bmatrix}
     \theta_m(t) \\
-    \omega_m(t) \\
-    i^r_{qs}(t) \\
-    i^r_{ds}(t) \\
-    i_{0s}(t) \\
-    T_s(t)
 \end{bmatrix}
 \]
 
@@ -600,7 +627,7 @@ diagrama de bloques utilizando la herramienta que nos provee Matlab, Simulink.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{no_lineal.png}
-    \caption{Modelo global no lineal}
+    \caption{Modelo global no lineal.}
 \end{figure}
 
 El subsistema mecánico esta compuesto por:
@@ -608,10 +635,10 @@ El subsistema mecánico esta compuesto por:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{sub_mecanico.png}
-    \caption{Diagramas de bloques subsistema mecánico}
+    \caption{Diagramas de bloques del subsistema mecánico completo.}
 \end{figure}
 
-Donde los bloques interno son:
+Donde los bloques internos son:
 
 \begin{figure}[H]
     \centering
@@ -623,7 +650,7 @@ Donde los bloques interno son:
         \centering
         \includegraphics[width=1\textwidth]{sub_mecanico3.png}
     \end{subfigure}
-    \caption{Bloques internos del subsistema mecánico}
+    \caption{Bloques internos del subsistema mecánico completo.}
 \end{figure}
 
 Mientras que el subsistema térmico esta dado por:
@@ -631,35 +658,40 @@ Mientras que el subsistema térmico esta dado por:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{sub_termico.png}
-    \caption{Diagramas de bloques subsistema térmico}
+    \caption{Diagramas de bloques del subsistema térmico.}
 \end{figure}
 
 Finalmente el subsistema electromagnético esta compuesto por:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{sub_electromagentico.png}
+    \includegraphics[width=0.75\textwidth]{sub_electromagentico.png}
+    \caption{Diagramas de bloques del subsistema electromagnético.}
 \end{figure}
 
-Los bloques interno contienen:
+Los bloques internos contienen:
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[]{0.8\textwidth}
+    \begin{subfigure}[]{0.75\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico4.png}
     \end{subfigure}
     \\
-    \begin{subfigure}[b]{0.8\textwidth}
+    \begin{subfigure}[b]{0.75\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico3.png}
     \end{subfigure}
-    \\
-    \begin{subfigure}[b]{0.8\textwidth}
+    \caption{Bloques internos del subsistema electromagnético.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.75\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico2.png}
     \end{subfigure}
-    \caption{Bloques internos del subsistema electromagnético}
+    \caption{Bloques internos del subsistema electromagnético.}
 \end{figure}
 
 %-------------------------- 5.1.2.B ------------------------------------------%
@@ -707,14 +739,14 @@ De forma que el el sistema genérico global NL queda representado por:
     \end{cases}
 \end{equation}
 
-Aproximación mediante la serie de Taylor truncada al primer orden y despreciando los terminos
+Aproximamos mediante la serie de Taylor truncada al primer orden y despreciando los terminos
 de orden superior:
 
 \begin{equation}
     f(X_{0}(t) + \Delta x(t), U_{0}(t) + \Delta u (t)) \approx f(X_{0}(t), U_{0}(t)) + \frac{\partial f}{\partial x}\mid_{0}\Delta x(t) + \frac{\partial f}{\partial u}\mid_{0}\Delta u(t)
 \end{equation}
 
-Al aplicar esto a nuestro modelo NL el sistema se divide en dos partes, una NL cuasi-estacionaria y otra 
+Al aplicar esto a nuestro modelo NL, el sistema se divide en dos partes, una NL cuasi-estacionaria y otra 
 lineal dinámica que representa las pequeñas variaciones alrededor de puntos de operación.
 
 Modelo NL cuasi-estacionario:
@@ -911,8 +943,8 @@ una dinámica lineal para el subsistema térmico.
         v_{ds}^r(t) = -L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}
     \end{equation}
 
-    Dado que se trata de una variable virtual no podemos controlarla directamente, por lo que buscaremos
-    expresarla en termino de las coordenadas "$abc$", por lo que aplicamos la transformada inversa de Park.
+    Dado que se trata de una variable virtual, no podemos controlarla directamente, por lo que buscaremos
+    expresarla en termino de las coordenadas "$abc$" y lo haremos aplicando la transformada inversa de Park.
     Resolviendo llegamos a:
 
     \begin{equation}
@@ -1020,9 +1052,9 @@ una dinámica lineal para el subsistema térmico.
 
     \item \textbf{Restricción Ley de Control complementaria mínima en el eje q}
     
-    Para anular el efecto NL del acoplamiento de la dinámica residual podemos a partir de la
-    \hyperref[eq.dinamica_residual]{ecuación (\ref*{eq.dinamica_residual})}
-    plantear la siguiente restricción sobre el eje q de forma que la no linealidad se anule:
+    Para anular el efecto NL del acoplamiento de la dinámica residual podemos, a partir de la
+    \hyperref[eq.dinamica_residual]{ecuación (\ref*{eq.dinamica_residual})},
+    plantear la siguiente restricción sobre el eje $q$ de forma que la no linealidad se anule:
 
     \begin{equation}
         v_{qs}(t) = L_{q}\frac{di_{qs}^r(t)}{dt} + R_{s}.i_{qs}^r(t) + P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r} + L_{d}.i_{ds}^r(t).P_{p}.\omega_{m}(t) - \mathbf{L_{d}.i_{ds}^r(t).P_{p}.\omega_{m}(t)}
@@ -1034,13 +1066,13 @@ una dinámica lineal para el subsistema térmico.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{LTI_aumentado1.png}
+        \includegraphics[width=0.8\textwidth]{LTI_aumentado1.png}
         \caption{Diagrama de bloques del modelo LTI equivalente aumentado.}
     \end{figure}
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1\textwidth]{LTI_AUMENTADO_Q.jpg}
+        \includegraphics[width=0.8\textwidth]{LTI_AUMENTADO_Q.jpg}
         \caption{Diagrama de bloques del sistema NL con ley de control mínima en eje d y q.}
     \end{figure}
 
@@ -1077,8 +1109,8 @@ ciertos escenarios.
     
     Recordando la
     \hyperref[eq.torque_electromagnetico]{ecuación (\ref*{eq.torque_electromagnetico})}
-    que describe el comportamiento del Torque Electromagnético.
-    Podemos observar que para motores de polos salientes $L_{d} > L_{q}$, entonces cuando $i_{ds}^r(t)$
+    que describe el comportamiento del Torque Electromagnético,
+    podemos observar que para motores de polos salientes $L_{d} > L_{q}$, entonces cuando $i_{ds}^r(t)$
     toma valores \textbf{positivos} el campo magnético se refuerza lo que aumenta el torque del
     motor. Si la corriente directa toma valores \textbf{negativos} el campo magnético se debilita 
     y disminuye el torque del motor. En el caso que $i_{ds}^r(t) = 0$, el flujo concatenado solamente esta afectado por 
@@ -1095,7 +1127,7 @@ ciertos escenarios.
     \end{equation}
 
     En este caso, la velocidad del motor disminuye cuando la corriente $i_{ds}^r$ 
-    aumenta. Por lo que podemos concluir que el torque reaccionara inversamente 
+    aumenta. Por lo que podemos concluir que el torque reaccionará inversamente 
     a la velocidad.
 
 \end{itemize}
@@ -1187,7 +1219,7 @@ $R_s$. Asi obtenemos la siguiente figura:
 \begin{figure}[H]
     \centering
     \includegraphics{polosyceros.png}
-    \caption{Polos y ceros en función de $R_s$}
+    \caption{Polos y ceros en función de $R_s$.}
 \end{figure}
 
 En esta figura se grafican los sucesivos valores que pueden tomar los polos y el cero si variamos el 
@@ -1223,8 +1255,8 @@ Igualando ambas expresiones obtenemos los siguiente valores:
 Reemplazando los valores de los parámetros obtenemos que:
 
 \begin{equation*}\begin{aligned}
-    314,50\,rad/s < \omega_n < 314,72\,rad/s \\
-    0.28 < \xi < 0.36 \quad\quad\quad\quad
+    314,50\,rad/s \leq  \omega_n \leq 314,72\,rad/s \\
+    0.28 \leq \xi \leq 0.36 \quad\quad\quad\quad
 \end{aligned}\end{equation*}
 
 La frecuencia natural ($\omega_n$) no varia significativamente con $R_s$, en cambio el valor de $\xi$
@@ -1236,7 +1268,7 @@ Podemos ver como varían estos valores en los siguientes gráficos:
 \begin{figure}[H]
     \centering
     \includegraphics{frecuancia_amortiguamiento_rs.png}
-    \caption{Frecuencia natural y amortiguamiento en función de $R_s$}
+    \caption{Frecuencia natural y amortiguamiento en función de $R_s$.}
 \end{figure}
 
 %-------------------- 5.1.4 --------------------------%
@@ -1247,7 +1279,7 @@ Para realizar el análisis de observabilidad completa de estados para el modelo 
 aumentado desde la salida $\theta_m$, evaluamos el rango de la matriz de observabilidad "$O$".
 
 En este caso la matriz de observabilidad, teniendo en cuenta que es un sistema de 3er orden, 
-debe tener orden 3 también. Asi:
+debe tener orden 3 también. Sabemos que:
 
 \begin{equation}
     O = \begin{bmatrix}
@@ -1476,7 +1508,7 @@ destinadas específicamente para esto.
 
 \subsection{Simulación Dinámica}
 
-Realizamos uan simulación dinámica en el dominio del tiempo, comparando el modelo NL completo 
+Realizamos una simulación dinámica en el dominio del tiempo, comparando el modelo NL completo 
 desacoplado con Ley de control NL con el modelo LTI equivalente aumentado.
 
 \subsubsection{Respuesta del estado interno a pulso de consigna de tensión de estador en el eje $q$}
@@ -1496,7 +1528,7 @@ $T_l(t)$ toma su  valor máximo ($+6.28 \, N.m$) de $0.3 \, s$ a $0.5 \, s$ y su
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{5.1.6_carga2.jpg}
-    \caption{Carga $T_l(t)$}
+    \caption{Carga $T_l(t)$.}
     \label{fig:torque_carga}
 \end{figure}
 
@@ -1512,7 +1544,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_tita_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de la posición ($\theta_m(t)$) en función del tiempo.}
+    \caption{Respuesta de la posición ($\theta_m(t)$) en función del tiempo (LTI/NL).}
     \label{fig:posicion}
 \end{figure}
 
@@ -1524,7 +1556,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_omega_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de la velocidad ($\omega_m(t)$) en función del tiempo.}
+    \caption{Respuesta de la velocidad ($\omega_m(t)$) en función del tiempo (LTI/NL).}
     \label{fig:velocidad}
 \end{figure}
 
@@ -1536,7 +1568,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_torque_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta del torque ($T_m(t)$) en función del tiempo.}
+    \caption{Respuesta del torque ($T_m(t)$) en función del tiempo (LTI/NL).}
     \label{fig:torque_electromagentico}
 \end{figure}
 
@@ -1548,7 +1580,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_iabc_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de las corrientes ($i_{abc}(t)$) en función del tiempo.}
+    \caption{Respuesta de las corrientes ($i_{abc}(t)$) en función del tiempo (LTI/NL).}
     \label{fig:iabc}
 \end{figure}
 
@@ -1560,7 +1592,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_iqd0_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de las corrientes ($i_{qd0}(t)$) en función del tiempo.}
+    \caption{Respuesta de las corrientes ($i_{qd0}(t)$) en función del tiempo (LTI/NL).}
     \label{fig:iqd0}
 \end{figure}
 
@@ -1572,8 +1604,8 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_temperatura_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de la temperatura ($T_s(t)$) en función del tiempo.}
-    \label{fig:temperatura}
+    \caption{Respuesta de la temperatura ($T_s(t)$) en función del tiempo (LTI/NL).}
+    \label{fig:temperatura} 
 \end{figure}
 
 \begin{figure}[H]
@@ -1584,7 +1616,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_vqd0_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de la tensión ($v_{qd0}(t)$) en función del tiempo.}
+    \caption{Respuesta de la tensión ($v_{qd0}(t)$) en función del tiempo (LTI/NL).}
     \label{fig:temperatura}
 \end{figure}
 
@@ -1596,7 +1628,7 @@ en ese mismo orden.
     \begin{subfigure}[b]{0.8\textwidth}
         \includegraphics[width=1\textwidth]{5.1.6_vabc_NL.jpg}
     \end{subfigure}
-    \caption{Respuesta de la tensión ($v_{abc}(t)$) en función del tiempo.}
+    \caption{Respuesta de la tensión ($v_{abc}(t)$) en función del tiempo (LTI/NL).}
     \label{fig:temperatura}
 \end{figure}
 
@@ -1615,14 +1647,14 @@ se producen picos de corriente. Esto se debe a que el torque electromagnético e
 Estos picos produce que en la Figura de la temperatura (\ref{fig:temperatura}) se produzcan aumentos de esta.
 La temperatura tiene un comportamiento escalonado debido a los dos transitorios que se producen.
 Es posible observar también que al momento de activarse el torque de carga, la temperatura tiene una 
-pendiente mayor, esto se debe a que el torque electromagnético aumento para compensar el de carga.
+pendiente mayor, esto se debe a que el torque electromagnético aumenta para compensar el de carga.
 
 Para ambos modelos encontramos un comportamiento bastante similar, lo cual nos indica que el modelo LTI
 es una buena aproximación del modelo NL. Esto se debe a que como ya se ha mencionado anteriormente, la 
 variación de la temperatura es muy pequeña, por lo que no influye significativamente en los valores de $R_s$.
 
 Podemos observar en la siguiente figura que la Ley de control aplicada es efectiva, ya que la corriente
-en ele eje $d$ toma un rango de valores muy pequeños.
+en ele eje $d$ toma un rango de valores muy pequeños (del orden de $10^-14$).
 
 \begin{figure}[H]
     \centering
@@ -1641,10 +1673,10 @@ Finalmente mostramos los cuadrantes de operación de la maquina eléctrica.
     \caption{Cuadrantes de operación de la maquina eléctrica.}
 \end{figure}
 
-De esta figura podemos observar que la maquina trabaja en los 4 cuadrantes, esto quiere decir que trabaja como 
+De esta figura podemos observar que la maquina pasa por los 4 cuadrantes, esto quiere decir que trabaja como 
 motor y como generador. Ademas se puede determinar dos puntos de equilibrio, uno correspondiente al punto 
-de trabajo de la maquina, cuando esta en motorización. El otro corresponde a la posición de la de apagado.
-Las oscilaciones que se presentan al rededor de estos puntos son debido a los cambios del torque de carga.
+de trabajo de la maquina, cuando esta en motorización, y el otro corresponde al momento en el que la misma se apaga.
+Las oscilaciones que se presentan alrededor de estos puntos son debido a los cambios del torque de carga.
 
 \subsubsection{Velocidad y corriente final de establecimiento luego de cada transitorio}
 
@@ -1695,11 +1727,11 @@ Estos equivalen a los tiempos en el que la consigna o el torque de carga cambian
     \caption{Características de la corriente.}
 \end{table}
 
-Los resultados obtenidos en el sistema LTI son muy parecidos y se determino no introducirlos. ya 
+Los resultados obtenidos en el sistema LTI son muy parecidos y se determinó no introducirlos, ya 
 que el método gráfico es muy sensible y se pueden ver variaciones entre los dos modelos que no 
 son concisos. Por otro lado es importante remarcar que dichas características son muy parecidos 
 si comparamos valor por valor. Esto es debido a la poca variación que se tiene al trabajar de una 
-forma u la otra. 
+forma u otra. 
 
 En el estudio de las acciones externas sobre el sistema, se nota que tanto la velocidad angular como 
 el torque electromagnético responden de manera diferente a ciertos cambios. La velocidad angular
@@ -1828,8 +1860,6 @@ Es crucial señalar que esta nueva consigna no afecta en absoluto al sistema LTI
 La razón radica en el hecho de haber desacoplado la corriente en directo de la corriente en 
 cuadratura, lo que implica la pérdida de la posibilidad de realizar este tipo de acciones
 
-\newpage
-
 %-------------------- 5.2 --------------------------%
 
 
@@ -1878,7 +1908,8 @@ de tensión sera la misma que se aplicara en la salida. Esto se pude expresar co
 
 Como ya vimos anteriormente, podemos pasar de coordenadas $abc$ a coordenadas $dq0$ mediante la
 transformada de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
-de forma que obtengamos valores que compensen las realimentaciones para lograr el desacoplamiento.
+de forma que con la ecuación (\ref{eq:mi_ecuacion}) obtengamos los términos de  realimentación física 
+necesarios para poder compensarlos y lograr el desacoplamiento.
 
 Nuestra premisa inicial es que contamos con los sensores o mecanismos de observación necesarios para 
 medir y procesar las variables cruciales para el funcionamiento del controlador. Este último se 
@@ -1890,15 +1921,13 @@ Esto significa que, gracias a las referencias de voltaje virtual, contamos con u
 afectar las corrientes virtuales y, en consecuencia, tener un acceso directo a la manipulación del par 
 electromagnético.
 
-A partir de las \hyperref[eq:mi_ecuacion]{ecuaciones \ref*{eq:mi_ecuacion}} que describen el comportamiento
-del modelo electromagnético, se determina la representación de las realimentaciones físicas del sistema. 
-Por lo tanto, podemos definir las realimentaciones que deben realizarse como:
+Definimos las realimentaciones que deben realizarse como:
 
 \begin{equation}\label{eq:compensaciones}
     \begin{cases}
-        v^r_{qs}(t) = v^{r*}_{qs}(t) + R_{s}.i_{qs}^r(t) + \omega_m(t).P_p.[\lambda^{\prime r}_m + L_d.i_{qs}^r(t)] \\
-        v^r_{ds}(t) = v^{r*}_{ds}(t) + R_{s}.i_{ds}^r(t) - \omega_m(t).P_p.L_q.i_{qs}^r(t) \\
-        v^r_{0s}(t) = v^{r*}_{0s}(t) + R_{s}.i_{0s}^r(t) \\
+        L_q.\dot{i}^r_{qs}(t) \approx v^{r}_{qs}(t) - R_{s}.i_{qs}^r(t) - \omega_m(t).P_p.[\lambda^{\prime r}_m + L_d.i_{qs}^r(t)] = v^{r*}_{qs}(t)\\
+        L_d.\dot{i}^r_{ds}(t) \approx v^{r}_{ds}(t) - R_{s}.i_{ds}^r(t) + \omega_m(t).P_p.L_q.i_{qs}^r(t) = v^{r*}_{ds}(t)\\
+        L_{ls}.\dot{i}^r_{0s}(t) \approx v^{r}_{0s}(t) - R_{s}.i_{0s}^r(t) = v^{r*}_{0s}(t)\\
     \end{cases}
 \end{equation}
 
@@ -1988,8 +2017,8 @@ A partir de estas ecuaciones determinamos las funciones de transferencia:
     G_{0s}(s) &= \frac{I_{0s}^r(s)}{I_{0s}^{r*}(s)} = \frac{1}{\frac{L_{ls}}{R_{0}^\prime}.s + 1}
 \end{align*}
 
-Estas funciones de transferencia son de primer orden y no poseen ceros. Dado que
-los parámetros de cada una son positivos también podemos afirmar que las funciones de 
+Las tres funciones de transferencia son de primer orden y ninguna poseen ceros. Dado que
+los parámetros de cada una son positivos también es lógico afirmar que las funciones de 
 transferencia son estables.
 
 Estas funciones de transferencia tienen la forma típica de un filtro pasa bajos, donde el valor que
@@ -2002,9 +2031,9 @@ podemos calcular los valores de las ganancias trabajando las expresiones anterio
 Resolviendo para cada rama:
 
 \begin{align*}
-    R_q^\prime &= -L_q.p = 29\varOmega  \\
-    R_d^\prime &= -L_d.p = 33\varOmega \\
-    R_0^\prime &= -L_{ls}.p = 4\varOmega
+    R_q^\prime &= -L_q.p = 29\,\Omega  \\
+    R_d^\prime &= -L_d.p = 33\,\Omega \\
+    R_0^\prime &= -L_{ls}.p = 4\,\Omega
 \end{align*}
 
 Con este lazo de corriente logramos que el error entre la consigna de corriente y la corriente real
@@ -2031,13 +2060,12 @@ El diagrama de bloques correspondiente a este lazo de control es el siguiente:
 \subsubsection{Incorporación de consigna de torque}
 
 Volvemos a usar nuevamente el método de la sección anterior en el que realizamos una realimentación
-para controlar el sistema mediante consignas de torque $T_m^*(t)$. La consigna sigue el siguiente modelo:
+para controlar el sistema mediante consignas de torque $T_m^*(t)$. La consigna sigue el siguiente modelo,
+que contempla la realimentación física debida a la fricción, que genera perdidas en el torque:
 
 \begin{equation}\label{eq.1}
     T_m^*(t) = T_m^{r\prime}(t) + b_{eq}.\omega_m(t)
 \end{equation}
-
-Este modelo contempla la realimentación física debida a la fricción, que genera perdidas en el torque.
 
 Sabiendo que el torque y la corriente están relacionados por la ecuación del
 \hyperref[eq.torque_electromagnetico]{Torque electromagnético (\ref*{eq.torque_electromagnetico})}
@@ -2250,7 +2278,7 @@ el brazo, utilizando sus coordenadas articulares. De forma que:
 \end{equation}
 
 Utilizando esta expresión podemos armar el siguiente diagramas de bloque que nos permite 
-crear una consigna de tita o de wm a partir de una consigna de posición en coordenadas 
+crear una consigna de $\theta_m$ o de $\omega_m$ a partir de una consigna de posición en coordenadas 
 articulares.
 
 % IMAGEN DEL SET-POINT %
@@ -2720,7 +2748,7 @@ trapezoidal inicial repetida dentro de un lapso de $300$ segundos obtenemos la s
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.1.c.1.png}
-    \caption{Temperatura sin suavizado}
+    \caption{Temperatura sin suavizado.}
 \end{figure}
 
 Vemos que cuando la consigna es la original, el sistema sobrepasa los limites de temperatura, lo 
@@ -2731,7 +2759,7 @@ Pasamos a probar con la consigna suavizada repetida continuamente durante el mis
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.1.c.2.png}
-    \caption{Temperatura con suavizado}
+    \caption{Temperatura con suavizado.}
 \end{figure}
 
 Finalmente, probamos la consigna suavizada junto con una perturbación de carga:
@@ -2739,7 +2767,7 @@ Finalmente, probamos la consigna suavizada junto con una perturbación de carga:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.1.c.3.png}
-    \caption{Temperatura con suavizado y perturbación}
+    \caption{Temperatura con suavizado y perturbación.}
 \end{figure}
     
 En este caso, al igual que en el anterior, la respuesta en temperatura se vuelve asintótica pero 
@@ -2912,8 +2940,7 @@ Para la siguiente prueba solo probamos con el sensor de temperatura no ideal.
 Aquí no percibimos ninguna degradación del sistema debido a que la realimentación de la temperatura 
 influye muy poco en el sistema, como ya se menciono antes en este informe. Lo que si notamos es que
 la actuación de los sensores como filtros pasa bajos en los cambios repentinos de la temperatura, 
-notándose estos menos pronunciados. (Ver figura (7) del Anexo 1)
-
+notándose estos menos pronunciados.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{5.2.5.d.3.png}
@@ -3120,8 +3147,14 @@ para el éxito de futuros proyectos en este campo.
 
 \part*{Referencias}
 
-A continuación se listan las referencias utilizadas para la realización de este trabajo:
-
+\begin{itemize}
+    \item Ing. Gabriel Julián. "Proyecto Global Integrador: Control de Accionamiento de CA con Motor Sincrónico de Imanes Permanentes".
+    \item Ing. Gabriel Julián. "Apuntes de cátedra Automática y Maquinas Eléctricas 2022"
+    \item Dr. Ing. Rodrigo González "Apuntes y videos de cátedra Control y Sistemas 2022"
+    \item Soporte Matlab. "https://www.mathworks.com/help/matlab/"
+    \item Soporte Simulink. "https://www.mathworks.com/help/simulink/"
+    \item Katsuhiko Ogata. “Ingeniería de control moderna 5ta Edición”
+  \end{itemize}
 
 \label{LastPage}    
 
