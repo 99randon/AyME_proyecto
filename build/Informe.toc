@@ -19,34 +19,34 @@
 \contentsline {subsection}{\numberline {2.2}Modelo dinámico del sistema físico completo}{9}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Modelo global no lineal (NL)}{9}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Modelo global linealizado con parámetros variables (LPV)}{13}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Linealización por Realimentación NL}{14}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3}Linealización por Realimentación NL}{15}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Comparación modelo dinámico LTI equivalente aumentado vs modelo dinámico global LPV}{20}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Funciones de transferencia para el modelo LTI}{20}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.5}Funciones de transferencia para el modelo LTI}{21}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}Análisis de Estabilidad}{21}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Análisis de Observabilidad}{23}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Análisis de Controlabilidad}{24}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Simulación Dinámica}{25}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Respuesta del estado interno a pulso de consigna de tensión de estador en el eje $q$}{25}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Velocidad y corriente final de establecimiento luego de cada transitorio}{31}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.2}Velocidad y corriente final de establecimiento luego de cada transitorio}{32}{subsubsection.2.6.2}%
 \contentsline {subsubsection}{\numberline {2.6.3}Comparación de distintas condiciones iniciales}{32}{subsubsection.2.6.3}%
 \contentsline {subsubsection}{\numberline {2.6.4}Field forcing/weakening}{34}{subsubsection.2.6.4}%
-\contentsline {section}{\numberline {3}Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}{36}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}{36}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Desacople de las realimentaciones de estado hacia la entrada}{36}{subsubsection.3.1.1}%
+\contentsline {section}{\numberline {3}Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}{37}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}{37}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Desacople de las realimentaciones de estado hacia la entrada}{37}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Diseño de lazos de control de corrientes}{38}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Incorporación de consigna de torque}{39}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Controlador externo de movimiento (posición/velocidad)}{40}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Incorporación de consigna de torque}{40}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Controlador externo de movimiento (posición/velocidad)}{41}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Entrada de referencia o set-point}{43}{subsubsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.3}Observador de Estado de orden reducido}{44}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Simulación en tiempo continuo con modelo completo NL}{45}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Seguimiento de consignas de movimiento}{45}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Rechazo a perturbaciones}{47}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Verificación de desempeño y/o mejoras}{48}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Especificaciones de operación (valores límites)}{48}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5}Verificación de desempeño y/o mejoras}{49}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Especificaciones de operación (valores límites)}{49}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Observador}{50}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}Comportamiento térmico del motor}{52}{subsubsection.3.5.3}%
 \contentsline {subsubsection}{\numberline {3.5.4}Desempeño del sistema ante una respuesta no ideal de los sensores}{53}{subsubsection.3.5.4}%
 \contentsline {subsubsection}{\numberline {3.5.5}Modulador trifásico de tensión no ideal}{57}{subsubsection.3.5.5}%
 \contentsline {subsection}{\numberline {3.6}Version Final}{59}{subsection.3.6}%
-\contentsline {part}{Conclusiones}{60}{figure.caption.91}%
-\contentsline {part}{Referencias}{61}{figure.caption.91}%
+\contentsline {part}{Conclusiones}{60}{figure.caption.90}%
+\contentsline {part}{Referencias}{61}{figure.caption.90}%

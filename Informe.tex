@@ -170,7 +170,7 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
 
     $T_q(t)$ es el torque de salida del tren de transmisión y $T_l(t)$ es el torque de carga.\\
 
-    \noindent Parámetros equivalentes:\\
+    \noindent Parámetros equivalentes variables:\\
 
     \begin{tabular}{@{} p{0.35\textwidth} p{0.65\textwidth} @{}}
         \(\bullet\) Momento de inercia: & \(J_l \thickapprox (0.2520 \pm 0.1260) \, \text{kg.m}^2\) \\
@@ -211,7 +211,7 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.25\textwidth]{Alan2.jpg}
+        \includegraphics[width=0.35\textwidth]{Alan2.jpg}
         \caption{Modelo ilustrativo del tren de transmisión.}
     \end{figure}
 
@@ -323,6 +323,38 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
     \begin{equation}\label{eq.torque_electromagnetico}
         T_{m}(t) = \frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t)
     \end{equation}
+
+    Recordando que 
+    se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitación de imanes 
+    permanentes y estator conectado en estrella y considerando que la carga de cada fase es equilibrada, entonces:
+
+    \begin{equation}\label{eq.tensiones_abc}
+        \begin{aligned}
+            v_{as}(t) &= R_{s}(t).i_{as}(t) + \frac{d\lambda_{as}}{dt}\\
+            v_{bs}(t) &= R_{s}(t).i_{bs}(t) + \frac{d\lambda_{bs}}{dt}\\
+            v_{cs}(t) &= R_{s}(t).i_{cs}(t) + \frac{d\lambda_{cs}}{dt}\\
+        \end{aligned}
+    \end{equation}
+
+    Mediante la
+    \hyperref[eq:transformacion_de_park]{transformación de Park (\ref*{eq:transformacion_de_park})}
+    y trabajando la expresión resultante, se llega a:
+
+    \begin{equation}\label{eq.tensiones_qd0}
+        \begin{aligned}
+            v_{qs}(t) &= R_{s}(t).i_{qs}(t) + L_{q}.\dot{i}_{qs}^r(t) + [\lambda_{m}^{\prime r} + L_{d}.i_{ds}(t)].\omega_{r}(t)\\
+            v_{ds}(t) &= R_{s}(t).i_{ds}(t) + L_{d}.\dot{i}_{ds}^r(t)  - L_{q}.i_{qs}(t).\omega_{r}(t)\\
+            v_{0s}(t) &= R_{s}(t).i_{0s}(t) + L_{ls}.\dot{i}_{0s}^r(t)
+        \end{aligned}
+    \end{equation}
+
+    La variación de la resistencia óhmica es:
+
+    \begin{equation}\label{termico3}
+        R_s(t) = R_{s_{ref}}.(1+\alpha_Cu.(T_s(t)-T_{s_{ref}}))
+    \end{equation}
+
+    Donde $T_s(t)$ es la temperatura del bobinado de estator.
         
     \subsubsection{Subsistema térmico} 
     
@@ -338,12 +370,6 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
     
     \begin{equation}\label{termico2}
         P_{s_{perd}}(t) = C_{ts}.\dot{T}_{s}(t) + \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}
-    \end{equation}
-    
-    Donde $T_s(t)$ es la temperatura del bobinado de estator y $R_s(t)$ esta dado por:
-
-    \begin{equation}\label{termico3}
-        R_s(t) = R_{s_{ref}}.(1+\alpha_Cu.(T_s(t)-T_{s_{ref}}))
     \end{equation}
 
     \noindent Parámetros equivalentes:\\
@@ -462,7 +488,7 @@ en la ecuación del
     J_{eq}.\dot{\omega}_{m}(t) = T_{m}(t)-b_{eq}.\omega_{m}(t)-\frac{T_{l}(t)}{r} \\
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:4.2}
     \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[T_{m}(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
 \end{equation}
 
@@ -512,34 +538,8 @@ la elasticidad torsional.
 En el modelo global no lineal consideramos todos los sistemas involucrados 
 tanto el sistema mecánico, previamente desarrollado, como los subsistemas de la maquina eléctrica.
 
-En primer lugar, nos enfocaremos en el subsistema electromagnético. Recordando que 
-se utiliza un motor síncrono de corriente alterna (CA) trifásico con excitación de imanes 
-permanentes y estator conectado en estrella con bornes $abc$ accesible y neutro no accesible.
-Ademas consideramos que la carga de cada fase sera equivalente de forma que la conexión estrella este equilibrada.
-
-Ecuaciones de tensión en coordenadas $abc$:
-
-\begin{equation}\label{eq.tensiones_abc}
-    \begin{aligned}
-        v_{as}(t) &= R_{s}(t).i_{as}(t) + \frac{d\lambda_{as}}{dt}\\
-        v_{bs}(t) &= R_{s}(t).i_{bs}(t) + \frac{d\lambda_{bs}}{dt}\\
-        v_{cs}(t) &= R_{s}(t).i_{cs}(t) + \frac{d\lambda_{cs}}{dt}\\
-    \end{aligned}
-\end{equation}
-
-Mediante la
-\hyperref[eq:transformacion_de_park]{transformación de Park (\ref*{eq:transformacion_de_park})}
-y trabajando la expresión resultante, se llega a:
-
-\begin{equation}\label{eq.tensiones_qd0}
-    \begin{aligned}
-        v_{qs}(t) &= R_{s}(t).i_{qs}(t) + L_{q}.\dot{i}_{qs}^r(t) + [\lambda_{m}^{\prime r} + L_{d}.i_{ds}(t)].\omega_{r}(t)\\
-        v_{ds}(t) &= R_{s}(t).i_{ds}(t) + L_{d}.\dot{i}_{ds}^r(t)  - L_{q}.i_{qs}(t).\omega_{r}(t)\\
-        v_{0s}(t) &= R_{s}(t).i_{0s}(t) + L_{ls}.\dot{i}_{0s}^r(t)
-    \end{aligned}
-\end{equation}
-
-Reordenando nos quedan las ecuaciones que definen al sistema electromagnético:
+En primer lugar, nos enfocaremos en el subsistema electromagnético. Reordenando las ecuaciones \ref{eq.tensiones_qd0}
+nos quedan las ecuaciones que definen al sistema electromagnético:
 
 \begin{equation}\label{eq:mi_ecuacion}
     \begin{cases}
@@ -549,15 +549,15 @@ Reordenando nos quedan las ecuaciones que definen al sistema electromagnético:
     \end{cases}
 \end{equation}
 
-Luego, reordenamos la ecuación (\ref{eq.torque_electromagnetico}) de forma que queda despejada la variable de interés.
+Luego, reordenamos la ecuación (\ref{eq.torque_electromagnetico}) de forma que queda despejada la variable de interés y reemplazando en la ecuación \ref{eq:4.2}.
 
 \begin{equation}\label{eq.torque_electromagnetico_reordenado}
     \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
 \end{equation}
 
-El comportamiento subsistema térmico es descripto por las ecuaciones del
-\hyperref[termico1, termico2]{(\ref*{termico1}, \ref*{termico2})}, igualando estas ecuaciones 
-llegamos a la siguiente expresión:
+El comportamiento del subsistema térmico es descripto por las ecuaciones del
+\hyperref[termico1, termico2]{(\ref*{termico1}, \ref*{termico2})}, reemplazado la potencia de perdidas calóricas en el balance térmico del estator
+obtenemos:
 
 \begin{equation}\label{termico3}
     \dot{T}_{s}(t) = \frac{1}{C_{ts}}.[\frac{3}{2}.R_{s}(t).[{i_{qs}^r(t)}^2+{i_{ds}^r(t)}^2 + 2.i_{0s}(t)^2] - \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
@@ -578,7 +578,7 @@ Finalmente, el modelo global no lineal queda definido por las ecuaciones (\ref{e
 \end{equation}
 
 De este sistema podemos definir el vector de las variables de estado, las entradas 
-manipuladas, las entradas de perturbación y las salidas:
+manipuladas, las entradas de perturbación y la salida:
 
 \[ x(t) =
 \begin{bmatrix}
@@ -698,7 +698,7 @@ Los bloques internos contienen:
 
 \subsubsection{Modelo global linealizado con parámetros variables (LPV)}
 
-Para el caso general en el que ${i}_{ds}(t) \neq 0$. Se puede representar al sistema no lineal de forma genérica
+Se puede representar al sistema no lineal de forma genérica
 como: 
 
 \begin{equation}
@@ -710,7 +710,7 @@ como:
 
 Donde $f$ es una función que representa la dinámica del sistema en términos de las variable 
 de estado $x(t)$ y las estradas $u(t)$.  
-Dados los punto de equilibrio dinámico donde las derivadas de las variables de estado son nulas:
+Dados los punto de equilibrio dinámico donde las derivadas de las variables de estado sean nulas o constantes:
 
 \begin{equation}
     \dot{x}(t) = f(x(t),u(t)) = 0
@@ -850,26 +850,22 @@ que la corriente en el eje $d$ ($i_{ds}(t)$) sea igual a cero. Además, podemos 
 el acoplamiento no lineal con el subsistema térmico debido a las pequeñas variaciones de la 
 resistencia \(R_s\) con la temperatura, lo que nos permite considerar su dinámica como lineal.
 
-Considerando que el estator de la máquina eléctrica es de tipo estrella con neutro flotante, 
-podemos afirmar que la suma de las corrientes de fase \(abc\) será nula. Con esto, podemos aplicar 
-una transformación directa de Park para relacionar las corrientes en el sistema.
-
-Para lograr la desacoplar los canales de flujo magnético y torque, aplicamos la estrategia de 
+Para desacoplar los canales de flujo magnético y torque, aplicamos la estrategia de 
 "Control Vectorial con campo orientado." Esto consiste en forzar una corriente nula en el eje 
 $d$ ($i_{ds}(t) = 0$) mediante el controlador y, si es necesario, aplicar una "Restricción o Ley 
 de Control NL" sobre la variable manipulada virtual \(v_{qd0s}(t)\) o su equivalente por 
-transformada de Park, \(v_{{abc}}(t)\).
+transformación de Park, \(v_{{abc}}(t)\).
 
 Para desacoplar el subsistema térmico, consideramos que las variaciones en la resistencia \(R_s\) 
 en el rango de temperaturas de trabajo son despreciables y, por lo tanto, la temperatura no 
-afectará significativamente el comportamiento del resto del sistema. Esto nos permite asumir 
-una dinámica lineal para el subsistema térmico.
+afectará significativamente el comportamiento del resto del sistema. Asumiendo un valor de $R_s$ constante
+en el rango de temperaturas de trabajo, podemos considerar una dinámica lineal para el subsistema térmico.
 
 \begin{enumerate}[label=\roman*.]
     \item \textbf{Ecuaciones vectoriales/matriciales LTI de estado y de salida.} 
     
     Aplicadas las condiciones mencionadas nos queda un sistema LTI similar al de un maquina 
-    de corriente continua con escobillas. El estado inicial sera nulo.
+    de corriente continua con escobillas.
 
     \begin{equation}\label{eq.lti}
         \begin{cases}
@@ -919,8 +915,7 @@ una dinámica lineal para el subsistema térmico.
         \end{cases}
     \end{equation}
 
-    Para linealizar el subsistema térmico podemos suponer que $R_s$ sera constante debido a su poca variación
-    de forma que:
+    Por otro lado, haciendo las consideraciones sobre el subsistema térmico antes mencionadas:
 
     \begin{equation}
         \dot{T}_{s}(t) = \frac{1}{C_{ts}}.[\frac{3}{2}.R_{s}.{i_{qs}^r(t)}^2 - \frac{T_{s}(t)-T_{amb}(t)}{R_{ts-amb}}]\\
@@ -936,15 +931,14 @@ una dinámica lineal para el subsistema térmico.
     
     \item \textbf{Restricción o Ley de Control mínima}
 
-    Para poder cumplir con la restricción de $i_{ds} = 0$ se tiene que cumplir la condición dada por la
-    \hyperref[eq.tensiones_qd0]{ecuación (\ref*{eq.tensiones_qd0})}. De manera que:
+    Para poder cumplir con la restricción de $i_{ds} = 0$, $v_ds^r(t)$  debe cumplir la siguiente condición:
 
     \begin{equation}
         v_{ds}^r(t) = -L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}
     \end{equation}
 
     Dado que se trata de una variable virtual, no podemos controlarla directamente, por lo que buscaremos
-    expresarla en termino de las coordenadas "$abc$" y lo haremos aplicando la transformada inversa de Park.
+    expresarla en termino de las coordenadas "$abc$" y lo haremos aplicando la transformación inversa de Park.
     Resolviendo llegamos a:
 
     \begin{equation}
@@ -982,7 +976,7 @@ una dinámica lineal para el subsistema térmico.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{controlador.png}
-        \caption{Diagrama del controlador.}
+        \caption{Diagrama de bloques del controlador.}
     \end{figure}
 
     \begin{figure}[H]
@@ -1020,13 +1014,13 @@ una dinámica lineal para el subsistema térmico.
     modelar con la siguiente EDO:
 
     \begin{equation}
-        \frac{di_{ds}^r(t)}{dt} + \frac{R_{s}(t)}{L_{d}}.i_{ds}^r(t) = 0 
+        \frac{di_{ds}^r(t)}{dt} + \frac{R_{s}}{L_{d}}.i_{ds}^r(t) = 0 
     \end{equation} 
 
     La cual tiene como solución:
 
     \begin{equation}
-        i_{ds}^r(t) = i_{ds}^r(0).e^{-\frac{R_{s}(t)}{L_{d}}.t}
+        i_{ds}^r(t) = i_{ds}^r(0).e^{-\frac{R_{s}}{L_{d}}.t}
     \end{equation}
 
     Esta solución nos indica que el efecto de la dinámica residual es despreciable en el tiempo, ya que actúa como
@@ -1045,8 +1039,8 @@ una dinámica lineal para el subsistema térmico.
             \dot{\theta}_{m}(t) = \omega_{m}(t)\\
             \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r} .i_{qs}^r(t) - b_{eq}.\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
             \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}.[v_{qs}^r(t) - R_{s}.i_{qs}^r(t) - P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r}]\\
-            \dot{i}_{ds}^r(t) = -\frac{R_{s}(t)}{L_{d}}.i_{ds}^r(t) \\
-            \dot{T}_{s}(t) = \frac{1}{C_[ts]}.\{\frac{3}{2}.R_{s}(t)[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
+            \dot{i}_{ds}^r(t) = -\frac{R_{s}}{L_{d}}.i_{ds}^r(t) \\
+            \dot{T}_{s}(t) = \frac{1}{C_[ts]}.\{\frac{3}{2}.R_{s}[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
         \end{cases}    
     \end{equation}
 
@@ -1097,8 +1091,7 @@ modelo global LPV ofrece una mayor cantidad de puntos de trabajo en comparación
 equivalente.
 
 Por otro lado, el Modelo Dinámico LTI Equivalente Aumentado es un caso particular del modelo LPV, 
-donde se impone la restricción $i^r_{ds}(t) \equiv 0$, es decir, la corriente en directo se mantiene 
-constante. Esta restricción conduce a un sistema lineal y más simple, lo que facilita el análisis 
+donde se impone la restricción $i^r_{ds}(t) \equiv 0$. Esta restricción conduce a un sistema lineal y más simple, lo que facilita el análisis 
 matemático y el diseño de controladores. Sin embargo, esta simplicidad viene a expensas de la pérdida 
 de la esencia no lineal del sistema real, lo que puede limitar la precisión de las predicciones en 
 ciertos escenarios.
@@ -1120,10 +1113,10 @@ ciertos escenarios.
 
     % Voltaje con minúsculas
     \begin{equation}
-        \dot{i}_{ds}^r = \frac{1}{L_{d}}[v_{ds}(t) - R_{s}(t).i_{ds}^r(t) + L_{q}.i_{qs}^r(t).P_{p}.\omega_[m](t)] = 0
+        \dot{i}_{ds}^r = \frac{1}{L_{d}}[v_{ds}(t) - R_{s}(t).i_{ds}^r(t) + L_{q}.i_{qs}^r(t).P_{p}.\omega_{m}(t)] = 0
     \end{equation}
     \begin{equation}
-        \omega_{m}(t) = \frac{-v_{ds}(t) + R_{s}(t).i_{ds}^r(t)}{L_{q}}
+        \omega_{m}(t) = \frac{-v_{ds}(t) + R_{s}(t).i_{ds}^r(t)}{L_{q}.P_p.i_{qs}^r(t)}
     \end{equation}
 
     En este caso, la velocidad del motor disminuye cuando la corriente $i_{ds}^r$ 
@@ -1145,14 +1138,14 @@ representación de sistemas reales complejos.
 
 Las funciones de transferencia nos permiten relacionar las salidas con las entradas del sistema.
 Como nuestro sistema dispone de dos entradas obtendremos dos funciones de transferencia. Aplicando 
-la transformada de Laplace $L[f(t)] = F(s)$ a las ecuaciones del modelo LTI (\ref{eq.lti}), ademas,
+la transformada de Laplace $L[f(t)] = F(s)$ a las ecuaciones del modelo LTI (\ref{eq.lti}), y ademas,
 recordando que la transformada de Laplace posee la siguiente propiedad
 
 \begin{equation}
         L[\dot{f}(t)] = s.F(s) - f(0)
 \end{equation}
 
-Entonces al aplicar la transformada y recordando que las condiciones iniciales son nulas, el 
+Entonces al aplicar la transformada y considerando que las condiciones iniciales son nulas, el 
 modelo queda:
 
 \begin{equation}
@@ -1196,8 +1189,8 @@ Utilizando Matlab para poder resolver este polinomio obtenemos que los valores q
 
 \begin{align*}
     s_{1} &= 0\\
-    s_{2} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) + sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_eq + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}\\
-    s_{3} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) - sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_eq + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}
+    s_{2} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) + \sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_{eq} + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}\\
+    s_{3} &= \frac{-(L_q.b_{eq} + R_s.J_{eq}) - \sqrt{(L_q.b_{eq} + R_s.J_{eq})^2 - 4.J_{eq}.L_q.(R_s.b_{eq} + \frac{3}{2}.P_p^2.\lambda_{m}^{\prime r})^2}}{2.J_{eq}.L_q}
 \end{align*}
 
 Reemplazando los valores de los parámetros y teniendo en cuenta que $R_s$ puede variar con la temperatura entre 
@@ -1907,7 +1900,7 @@ de tensión sera la misma que se aplicara en la salida. Esto se pude expresar co
 \end{equation}
 
 Como ya vimos anteriormente, podemos pasar de coordenadas $abc$ a coordenadas $dq0$ mediante la
-transformada de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
+transformación de Park. Por lo tanto, podemos expresar la consigna de tensión en coordenadas $dq0$
 de forma que con la ecuación (\ref{eq:mi_ecuacion}) obtengamos los términos de  realimentación física 
 necesarios para poder compensarlos y lograr el desacoplamiento.
 
@@ -2026,7 +2019,7 @@ multiplica a la variable $s$ es la constante del tiempo del sistema $\tau$ que a
 la frecuencia de corte del filtro. Si $\tau$ toma un valor muy pequeño, dispondremos de una ancho de 
 banda muy grande, lo cual proporciona una respuesta rápida.
 
-El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que para todos los lazos $p = -5000 rad/s$
+El polo del filtro pasa bajos es $p = -\frac{1}{\tau}$ y dado que asignamos para todos los lazos $p = -5000 rad/s$
 podemos calcular los valores de las ganancias trabajando las expresiones anteriores.
 Resolviendo para cada rama:
 
@@ -2109,8 +2102,8 @@ produce un debilitamiento de campo.
 
 \subsection{Controlador externo de movimiento (posición/velocidad)}
 
-Para mejorar la dinámica del sistema y corregir los errores de estado estacionario por cargas perturbadoras, 
-se implementa un avanzado controlador PID con acción integral. Este controlador puede recibir consignas de 
+Implementamos un avanzado controlador PID que nos permita controlar el error de estando estacionario
+ante consignabas de posición/velocidadEste controlador puede recibir consignas de 
 velocidad y posición, utilizando esta información para determinar el torque requerido y lograr un control 
 preciso de las acciones del sistema.
 
@@ -2178,11 +2171,11 @@ A partir de esta ecuación podemos obtener las funciones de transferencia del co
     G_2(s) &= \frac{\Theta_m(s)}{\frac{T_l(s)}{r}} = -\frac{s}{s^3.J_{eq} + s^2.b_a + s.K_{sa} + K_{sai}}
 \end{align}
 
-En régimen estacionario para una entrada escalón unitario observamos:
+En régimen estacionario para una entrada escalón unitario, observamos:
 
 \begin{itemize}
-    \item $K_{sai} \neq 0 \to G_1(s) = 1 $ y $G_2(s) = 0$
-    \item $K_{sai} = 0 \to G_2(s) = 1 $ y $G_2(s) = \frac{1}{K_{sa}} $
+    \item $K_{sai} \neq 0 \to G_1(s = 0) = 1 $ y $G_2(s = 0) = 0$
+    \item $K_{sai} = 0 \to G_2(s = 0) = 1 $ y $G_2(s = 0) = \frac{1}{K_{sa}} $
 \end{itemize}
 
 Los resultados muestran que la función de transferencia correspondiente a la entrada de perturbación 
@@ -2202,7 +2195,8 @@ forma normalizada:
     P(s) = s^3 + \frac{b_a}{J_{eq}}.s^2 + \frac{K_{sa}}{J_{eq}}.s + \frac{K_{sai}}{J_{eq}}
 \end{equation}
 
-Podemos llegar a las siguientes expresiones:
+Comparando con un polinomio característico de tercer orden
+podemos llegar a las siguientes expresiones:
 
 \begin{align*}
     n.\omega_{pos} &= \frac{b_a}{J_{eq}}; & &n.\omega_{pos}^2 = \frac{K_{sa}}{J_{eq}}; & n.\omega_{pos}^3 = \frac{K_{sai}}{J_{eq}} \\
@@ -2648,7 +2642,7 @@ cuenta el tiempo que permanece la estimación del estado en un valor erróneo. E
 una integración del error entre la variable medida y su estimación, y se define como:
 
 \begin{equation}
-    z(t) = \int (\theta(t) - \hat{\theta}(t))\,dt
+    z(t) = \int (\theta_m(t) - \hat{\theta_m}(t))\,dt
 \end{equation}
 
 Ahora, el modelo del observador se redefine para incluir este estado integral y la entrada del 
@@ -2656,9 +2650,9 @@ observador también se ajusta para incluir este nuevo estado:
 
 \begin{equation}
     \begin{cases}
-    \dot{\tilde{\theta}}(t) &= K_e \theta \left(\theta(t) - \tilde{\theta}(t)\right) + \tilde{\omega}(t) \\
-    \dot{\tilde{\omega}}(t) &= K_e \omega \left(\theta(t) - \tilde{\theta}(t)\right) + T_m \dot{'}(t) J_eq + z(t) \\
-    \dot{\tilde{z}}(t) &= K_e i \left(\theta(t) - \tilde{\theta}(t)\right)
+    \dot{\tilde{\theta_m}}(t) &= K_{e \theta} \left(\theta_m(t) - \tilde{\theta_m}(t)\right) + \tilde{\omega_m}(t) \\
+    \dot{\tilde{\omega_m}}(t) &= K_{e \omega} \left(\theta_m(t) - \tilde{\theta_m}(t)\right) + \frac{T_m^\prime(t) }{J_{eq}} + z(t) \\
+    \dot{\tilde{z}}(t) &= K_{e i} \left(\theta_m(t) - \tilde{\theta_m}(t)\right)
     \end{cases}
 \end{equation}
 
@@ -2742,19 +2736,9 @@ el valor real de la posición angular:
 \subsubsection{Comportamiento térmico del motor}
 
 Procedemos a verificar la temperatura del bobinado cuando la consigna involucra una operación 
-continua repetitiva. A partir de la consigna 
-trapezoidal inicial repetida dentro de un lapso de $300$ segundos obtenemos la siguiente figura:
+continua repetitiva.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{5.2.5.1.c.1.png}
-    \caption{Temperatura sin suavizado.}
-\end{figure}
-
-Vemos que cuando la consigna es la original, el sistema sobrepasa los limites de temperatura, lo 
-que podría producir una degradación de los componentes. Además notamos que esta se vuelve asintótica.
-
-Pasamos a probar con la consigna suavizada repetida continuamente durante el mismo periodo de tiempo.
+Probamos con la consigna suavizada repetida continuamente durante $300\,s$.
     
 \begin{figure}[H]
     \centering
@@ -2798,7 +2782,7 @@ Para los filtros de segundo orden, se usa la función de transferencia:
     G(s) = \frac{\omega_n^2}{s^2 + 2\omega_n\zeta s + \omega_n^2}
 \end{equation}
 
-Donde se puede demostrar que la función de transferencia de un modelo en el espacio de estados se 
+Ademas, se puede demostrar que la función de transferencia de un modelo en el espacio de estados se 
 calcula con la ecuación:
 
 \begin{equation}
@@ -2949,7 +2933,7 @@ notándose estos menos pronunciados.
 
 \bullet Caso 3
 
-En este caso probamos el sensor de corriente no ideal.
+En este caso probamos los sensores de corriente no ideales.
 
 Agregando solo los sensores de corriente no ideales, obtenemos una degradación en el sistema, 
 produciéndose una nueva divergencia en las soluciones resultantes de las ecuaciones modelo. No 
