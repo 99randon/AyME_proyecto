@@ -362,7 +362,8 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
     estator, sin tener en cuenta las pérdidas magnéticas en el núcleo. Además, se asume que la 
     transferencia de calor se produce por conducción y convección natural, sin utilizar ventilación forzada.
 
-    La potencia de pérdidas calóricas se calcula utilizando las siguientes expresiones:
+    Se muestran las expresiones para la potencia de pérdidas calóricas y el 
+    balance térmico:
 
     \begin{equation}\label{termico1}
         P_{s_{perd}}(t) =  \frac{3}{2}.R_{s}(t).[i_{qs}^r(t)^2+i_{ds}^r(t)^2+2.i_{0s}(t)]\\
@@ -634,23 +635,8 @@ El subsistema mecánico esta compuesto por:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{sub_mecanico.png}
-    \caption{Diagramas de bloques del subsistema mecánico completo.}
-\end{figure}
-
-Donde los bloques internos son:
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{sub_mecanico2.png}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{sub_mecanico3.png}
-    \end{subfigure}
-    \caption{Bloques internos del subsistema mecánico completo.}
+    \includegraphics[width=0.8\textwidth]{sub_mecanico2.png}
+    \caption{Diagrama de bloques del subsistema mecánico completo.}
 \end{figure}
 
 Mientras que el subsistema térmico esta dado por:
@@ -677,22 +663,21 @@ Los bloques internos contienen:
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico4.png}
     \end{subfigure}
-    \\
     \begin{subfigure}[b]{0.75\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico3.png}
     \end{subfigure}
-    \caption{Bloques internos del subsistema electromagnético.}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
     \begin{subfigure}[b]{0.75\textwidth}
         \centering
         \includegraphics[width=1\textwidth]{sub_electromagentico2.png}
     \end{subfigure}
+    \begin{subfigure}[b]{0.75\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{sub_electromagentico5.png}
+    \end{subfigure}
     \caption{Bloques internos del subsistema electromagnético.}
 \end{figure}
+
 
 %-------------------------- 5.1.2.B ------------------------------------------%
 
@@ -1072,8 +1057,8 @@ en el rango de temperaturas de trabajo, podemos considerar una dinámica lineal 
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.jpg}
-        \caption{Diagrama del controlador.}
+        \includegraphics[width=0.8\textwidth]{LTI_AUMENTADO_Q_CONTROLADOR.png}
+        \caption{Diagrama de bloques del controlador.}
     \end{figure}
 
 \end{enumerate}
@@ -1961,7 +1946,7 @@ El diagrama de bloques respectivo se ve a continuación.
 \begin{figure}[H]
     \begin{subfigure}[b]{0.65\textwidth}
         \centering
-        \includegraphics[width=0.65\textwidth]{realimentacion_temperatura.jpg}
+        \includegraphics[width=0.65\textwidth]{realimentacion_temperatura.png}
         \caption{Expandido.}
     \end{subfigure}
     \begin{subfigure}[b]{0.24\textwidth}
@@ -2254,7 +2239,7 @@ Con estos valores podemos determinar los polos del sistema a lazo cerrado.
 % MOSTRAR LA IMAGEN DE LOS POLOS %
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{polos.jpg}
+    \includegraphics[width=0.8\textwidth]{polos.png}
     \caption{Diagrama de polos del sistema.}
 \end{figure}
 
