@@ -141,7 +141,7 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
 
 \subsection{Carga Mecánica}
     
-    La carga mecánica en este caso se refiere a un eje descentralizado utilizado en la articulación "hombro" 
+    La carga mecánica en este caso se refiere al eje utilizado en la articulación "hombro" 
     de un robot SCARA. Esta articulación se encuentra referenciada a una base inercial (1 g.d.l.
     rotacional de eje vertical). Los parámetros equivalentes de esta carga varían dependiendo de la posición 
     y la velocidad angular instantáneas de la articulación "codo" del robot.
@@ -384,7 +384,7 @@ sistema, y cómo los hallazgos pueden guiar futuros esfuerzos en esta área de e
         \(\bullet\) Inductancia de estator (eje directo): & \(L_d \approx 6.6 \, \text{mH}\) \\
         \(\bullet\) Inductancia de dispersión de estator: & \(L_{ls} \approx 0.8 \, \text{mH}\) \\
         \(\bullet\) Resistencia de estator, por fase: & \(R_s \approx 1.02 \, \Omega\) (@40 °C) → \(1.32 \, \Omega\) (@115 °C) \\
-        \(\bullet\) Coeficiente de aumento de \(R_s\) con \(T_s^\circ(t)\): & \(\alpha_Cu = 3.9 \times 10^{-3} \, 1°C\) \\
+        \(\bullet\) Coeficiente de aumento de \(R_s\) con \(T_s^\circ(t)\): & \(\alpha_{Cu} = 3.9 \times 10^{-3} \, 1°C\) \\
         \(\bullet\) Capacitancia térmica de estator: & \(C_{ts} \approx 0.818 \, \text{W°C/s}\) (almacenamiento interno) \\
         \(\bullet\) Resistencia térmica estator-ambiente: & \(R_{ts-amb} \approx 146.7 \, °C/W\) (disipación al ambiente) \\
         \(\bullet\) Constante de tiempo térmica: & \(\tau_{ts-amb} = R_{ts-amb} \cdot C_{ts} \approx 120 \, \text{s}\)
@@ -526,7 +526,7 @@ Se puede expresar de forma matricial como:
 \end{equation}
 
 Esta compactación se puede realizar ya que no se presenta backlash y ademas no se considera el efecto de 
-la elasticidad torsional.
+la elasticidad torsional, lo que nos permite considerar que el sistema tiene un único grado de libertad.
 
 % ------------------  5.1.2  --------------------- %
 
@@ -539,7 +539,7 @@ la elasticidad torsional.
 En el modelo global no lineal consideramos todos los sistemas involucrados 
 tanto el sistema mecánico, previamente desarrollado, como los subsistemas de la maquina eléctrica.
 
-En primer lugar, nos enfocaremos en el subsistema electromagnético. Reordenando las ecuaciones \ref{eq.tensiones_qd0}
+En primer lugar, nos enfocaremos en el subsistema electromagnético. Reordenando las ecuaciones de tensión (\ref{eq.tensiones_qd0})
 nos quedan las ecuaciones que definen al sistema electromagnético:
 
 \begin{equation}\label{eq:mi_ecuacion}
@@ -556,8 +556,8 @@ Luego, reordenamos la ecuación (\ref{eq.torque_electromagnetico}) de forma que 
     \dot{\omega}_{m}(t) = \frac{1}{J_{eq}}.[\frac{3}{2}.P_{p}.[\lambda_{m}^{\prime r}+i_{ds}^r(t).(L_{d}-L_{q})].i_{qs}^r(t) - b_{eq}.\omega_{m}(t) - \frac{T_{l}(t)}{r}]\\
 \end{equation}
 
-El comportamiento del subsistema térmico es descripto por las ecuaciones del
-\hyperref[termico1, termico2]{(\ref*{termico1}, \ref*{termico2})}, reemplazado la potencia de perdidas calóricas en el balance térmico del estator
+El comportamiento del subsistema térmico es descripto por las ecuaciones
+\hyperref[termico1, termico2]{(\ref*{termico1}, \ref*{termico2})}, reemplazando la potencia de perdidas calóricas en el balance térmico del estator
 obtenemos:
 
 \begin{equation}\label{termico3}
@@ -829,7 +829,7 @@ obtenemos:
 
 \subsubsection{Linealización por Realimentación NL}
 
-Podemos obtener un modelo simplificado lineal invariante en el tiempo (LTI) equivalente del sistema
+A partir del modelo NL podemos obtener un modelo simplificado lineal invariante en el tiempo (LTI) equivalente del sistema
 si aplicamos una estrategia de control vectorial con campo orientado en el controlador para imponer
 que la corriente en el eje $d$ ($i_{ds}(t)$) sea igual a cero. Además, podemos despreciar 
 el acoplamiento no lineal con el subsistema térmico debido a las pequeñas variaciones de la 
@@ -916,7 +916,7 @@ en el rango de temperaturas de trabajo, podemos considerar una dinámica lineal 
     
     \item \textbf{Restricción o Ley de Control mínima}
 
-    Para poder cumplir con la restricción de $i_{ds} = 0$, $v_ds^r(t)$  debe cumplir la siguiente condición:
+    Basándose en la ecuación (\ref{eq:mi_ecuacion}), para poder cumplir con la restricción de $i_{ds} = 0$, $v_{ds}^r(t)$ debe cumplir la siguiente condición:
 
     \begin{equation}
         v_{ds}^r(t) = -L_{q}.i_{qs}^r(t).\omega_{m}(t).P_{p}
@@ -994,7 +994,7 @@ en el rango de temperaturas de trabajo, podemos considerar una dinámica lineal 
 
     \item \textbf{Dinámica Residual}
     
-    Al aplicar la ley de control mínimo supusimos que $i_{ds} = 0$, sin embargo, esto no es del todo cierto
+    Al aplicar la ley de control mínimo supusimos que $i_{ds}(t) = 0$, sin embargo, esto no es del todo cierto
     por lo que se debe tener en cuenta la dinámica residual de la corriente $i_{ds}$, la cual se puede
     modelar con la siguiente EDO:
 
@@ -1025,7 +1025,7 @@ en el rango de temperaturas de trabajo, podemos considerar una dinámica lineal 
             \dot{\omega}_{m}(t) = -\frac{1}{J_{eq}}[\frac{3}{2}.P_{p}.\lambda_{m}^{\prime r} .i_{qs}^r(t) - b_{eq}.\omega_{m}(t)-\frac{T_{l}(t)}{r}]\\
             \dot{i}_{qs}^r(t) = \frac{1}{L_{q}}.[v_{qs}^r(t) - R_{s}.i_{qs}^r(t) - P_{p}.\omega_{m}(t).\lambda_{m}^{\prime r}]\\
             \dot{i}_{ds}^r(t) = -\frac{R_{s}}{L_{d}}.i_{ds}^r(t) \\
-            \dot{T}_{s}(t) = \frac{1}{C_[ts]}.\{\frac{3}{2}.R_{s}[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
+            \dot{T}_{s}(t) = \frac{1}{C_{ts}}.\{\frac{3}{2}.R_{s}[{i_{qs}^r}^2(t) + {i_{ds}^r}^2(t)] - \frac{1}{R_{ts-amb}}[T_{s}(t) - T_{amb}(t)]\}\\
         \end{cases}    
     \end{equation}
 
@@ -1196,7 +1196,7 @@ $R_s$. Asi obtenemos la siguiente figura:
 
 \begin{figure}[H]
     \centering
-    \includegraphics{polosyceros.png}
+    \includegraphics[width=0.8\textwidth]{polosyceros.png}
     \caption{Polos y ceros en función de $R_s$.}
 \end{figure}
 
@@ -1253,8 +1253,12 @@ Podemos ver como varían estos valores en los siguientes gráficos:
 
 \subsection{Análisis de Observabilidad}
 
-Para realizar el análisis de observabilidad completa de estados para el modelo LTI equivalente 
-aumentado desde la salida $\theta_m$, evaluamos el rango de la matriz de observabilidad "$O$".
+Un sistema LTI es observable si a partir de cualquier condición inicial se puede determinar el estado
+mediante la observación de la salida durante un intervalo de tiempo finito.
+
+Siguiendo el criterio de Kalman, 
+para realizar el análisis de observabilidad completa de estados para el modelo LTI equivalente 
+ desde la salida $\theta_m$, evaluamos el rango de la matriz de observabilidad "$O$".
 
 En este caso la matriz de observabilidad, teniendo en cuenta que es un sistema de 3er orden, 
 debe tener orden 3 también. Sabemos que:
@@ -1380,15 +1384,41 @@ Entonces:
 \begin{equation*}
     O = 
     \begin{bmatrix}
-        0 & 1 & 0 \\
-        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} \\
-        0 & -\frac{b_{eq}}{J_{eq}} - \frac{3.P_p^2.{\lambda_m^{\prime r}}^2}{2.J_{eq}.L_q} & \frac{3.b_{eq}.P_p.\lambda_m^{\prime r}}{2.J_{eq}^2}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} & 0 \\ 
+
     \end{bmatrix}
 \end{equation*}
 
 El rango de esta matriz es 2, por lo tanto podemos afirmar que el sistema no es observable a 
 partir de la salida $\omega_n$. Esto se debe a que, conociendo la velocidad, no se puede estimar la 
 posición sin conocer la condición inicial de la misma.
+
+Ahora, trabajando con el LTI aumentado, volveremos a calcular la matriz de observabilidad a partir de la posición angular.
+En este caso la matriz A sera de orden 4 y esta dada por:
+
+\begin{equation}
+    A = \begin{bmatrix}
+        0 & 1 & 0 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} & 0 \\
+        0 & -\frac{P_p.\lambda_m^{\prime r}}{L_q} & -\frac{R_s}{L_q} & 0 \\
+        0 & 0 & 0 & -\frac{R_s}{L_d}
+    \end{bmatrix}
+\end{equation}
+
+Entonces la matriz de observabilidad, siguiendo el mismo procedimiento antes visto es:
+
+\begin{equation}
+    O = \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & -\frac{b_{eq}}{J_{eq}} & \frac{3.P_p.\lambda_m^{\prime r}}{2.J_{eq}} & 0 \\ 
+        0 & (\frac{b_{eq}}{J_{eq}})^2 - \frac{3.b_{eq}.P_p^2.{\lambda_m^{\prime r}}^2}{2.J_{eq}.L_q} & -(\frac{3.b_{eq}.P_p.{\lambda_m^{\prime r}}}{2.J_{eq}^2} + \frac{3.R_s.P_p.{\lambda_m^{\prime r}}}{2.J_{eq}.L_q}) & 0 \\ 
+    \end{bmatrix}
+\end{equation}
+
+El rango de esta matriz es 3 por lo que podemos concluir que el sistema no es completamente observable a partir de $\theta_m$.
 
 %-------------------- 5.1.5 --------------------------%
 
@@ -1478,7 +1508,7 @@ Entonces:
 
 En este caso el rango de la matriz de controlabilidad es 3, por lo tanto podemos afirmar que el 
 sistema LTI equivalente simplificado es controlable desde la entrada indicada. Cabe aclarar que 
-a partir de $v_{qs}^r(t)$ no es posible controlar la salida de los estados $i_ds^r$ ni $T_s^°$ 
+a partir de $v_{qs}^r(t)$ no es posible controlar la salida de los estados $i_{ds}^r$ ni $T_s^°$ 
 del sistema LTI equivalente aumentado. Estas podrían controlares si se agrega entradas de control 
 destinadas específicamente para esto.
 
@@ -1632,7 +1662,7 @@ es una buena aproximación del modelo NL. Esto se debe a que como ya se ha menci
 variación de la temperatura es muy pequeña, por lo que no influye significativamente en los valores de $R_s$.
 
 Podemos observar en la siguiente figura que la Ley de control aplicada es efectiva, ya que la corriente
-en ele eje $d$ toma un rango de valores muy pequeños (del orden de $10^-14$).
+en ele eje $d$ toma un rango de valores muy pequeños (del orden de $10^{-14}$).
 
 \begin{figure}[H]
     \centering
@@ -1903,9 +1933,9 @@ Definimos las realimentaciones que deben realizarse como:
 
 \begin{equation}\label{eq:compensaciones}
     \begin{cases}
-        L_q.\dot{i}^r_{qs}(t) \approx v^{r}_{qs}(t) - R_{s}.i_{qs}^r(t) - \omega_m(t).P_p.[\lambda^{\prime r}_m + L_d.i_{qs}^r(t)] = v^{r*}_{qs}(t)\\
-        L_d.\dot{i}^r_{ds}(t) \approx v^{r}_{ds}(t) - R_{s}.i_{ds}^r(t) + \omega_m(t).P_p.L_q.i_{qs}^r(t) = v^{r*}_{ds}(t)\\
-        L_{ls}.\dot{i}^r_{0s}(t) \approx v^{r}_{0s}(t) - R_{s}.i_{0s}^r(t) = v^{r*}_{0s}(t)\\
+        L_q.\dot{i}^r_{qs}(t) = v^{r}_{qs}(t) - R_{s}.i_{qs}^r(t) - \omega_m(t).P_p.[\lambda^{\prime r}_m + L_d.i_{qs}^r(t)] = v^{r*}_{qs}(t)\\
+        L_d.\dot{i}^r_{ds}(t) = v^{r}_{ds}(t) - R_{s}.i_{ds}^r(t) + \omega_m(t).P_p.L_q.i_{qs}^r(t) = v^{r*}_{ds}(t)\\
+        L_{ls}.\dot{i}^r_{0s}(t) = v^{r}_{0s}(t) - R_{s}.i_{0s}^r(t) = v^{r*}_{0s}(t)\\
     \end{cases}
 \end{equation}
 
@@ -2468,7 +2498,7 @@ límites permitidos. A pesar de estas limitaciones físicas, el seguimiento de l
 de manera óptima en los estados estables.
 
 Por otro lado, el input del sistema es un perfil de posición $q^*(t)$ de la articulación del hombro 
-del robot, que se convierte en una referencia de posición para el eje del motor $θ^*(t)$ mediante la 
+del robot, que se convierte en una referencia de posición para el eje del motor $\theta^*(t)$ mediante la 
 relación de reducción $r$. Se establece una revolución completa para la articulación, es decir, que 
 va y regresa, con rampas de 5 segundos. Sin embargo, este perfil se establece para un modulador de 
 tensión ideal y sin límites, resultando en valores de tensión y corriente que exceden los máximos 

@@ -1,21 +1,18 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.8.2)  2 AUG 2023 21:55
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.5) (format=lualatex 2023.7.12)  14 AUG 2023 22:26
  restricted system commands enabled.
  file:line:error style messages enabled.
-**"d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/Ay
-ME_proyecto/Informe.tex"
-
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/Informe.tex"
+**c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex
+(c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/Informe.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
 Lua module: luaotfload 2022-10-03 3.23 Lua based OpenType font support
 Lua module: lualibs 2022-10-04 2.75 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2022-10-04 2.75 ConTeXt Lua libraries -- extended c
 ollection.
-luaotfload | conf : Root cache directory is "C:/Users/alanv/AppData/Local/MiKTeX
+luaotfload | conf : Root cache directory is "C:/Users/brand/AppData/Local/MiKTeX
 /luatex-cache/generic/names".
 luaotfload | init : Loading fontloader "fontloader-2022-10-03.lua" from kpse-res
-olved path "C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/f
+olved path "C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/luatex/luaotfload/f
 ontloader-2022-10-03.lua".
 Lua-only attribute luaotfload@noligature = 1
 luaotfload | init : Context OpenType loader version 3.120
@@ -24,7 +21,7 @@ Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
 Inserting `luaotfload.define_font' in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "C:/Users/alanv/AppData/Local/MiKTeX
+luaotfload | conf : Root cache directory is "C:/Users/brand/AppData/Local/MiKTeX
 /luatex-cache/generic/names".
 Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
@@ -43,12 +40,12 @@ Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
-Inserting `tracingstacklevels' in `input_level_string'. (C:/Users/alanv/AppData
+Inserting `tracingstacklevels' in `input_level_string'. (C:/Users/brand/AppData
 /Local/Programs/MiKTeX/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo
 File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
-luaotfload | db : Font names database loaded from C:/Users/alanv/AppData/Local/M
+luaotfload | db : Font names database loaded from C:/Users/brand/AppData/Local/M
 iKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \c@part=\count183
 \c@section=\count184
@@ -62,17 +59,17 @@ iKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \belowcaptionskip=\skip49
 \bibindent=\dimen139
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
 \Gm@cnth=\count191
@@ -88,31 +85,31 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutvoffset=\dimen147
 \Gm@dimlist=\toks18
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg)) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.c
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.c
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 107.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.def
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/luatex.def
 File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 ))
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -120,24 +117,24 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
+)) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen150
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen151
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count194
@@ -188,7 +185,7 @@ LaTeX Info: Redefining \Relbar on input line 971.
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amscls/amsthm.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks25
 \thm@bodyfont=\toks26
@@ -200,15 +197,15 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip55
 \dth@everypar=\toks30
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/empheq.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/empheq.sty
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/mhsetup.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/mathtools.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count272
 \calc@Bcount=\count273
@@ -250,23 +247,23 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \EQ_tag_box=\box55
 \g_EQ_temprow_int=\count279
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/mdframed/mdframed.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xpars
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xpars
 e.sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
 Package: expl3 2023-06-30 L3 programming layer (loader) 
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
 tex.def
 File: l3backend-luatex.def 2023-04-19 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count280
@@ -275,25 +272,25 @@ Inserting `l3color' in `luaotfload.parse_color'.
 ))
 Package: xparse 2023-02-02 L3 Experimental document command parser
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count281
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty
 Package: zref-base 2022-04-07 v2.34 Module base for zref (HO)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.s
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.s
 ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefine
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefine
 keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds
 .sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -302,31 +299,31 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 \pdftexcmds@toks=\toks31
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/etexcmds/etexcmds.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/auxhook/auxhook.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/atbegshi-ltx.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
 \c@abspage=\count282
 Package zref Info: New property: abspage on input line 65.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/needspace/needspace.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/color.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: luatex.def on input line 149.
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx))
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx))
 \mdf@templength=\skip60
 \c@mdf@globalstyle@cnt=\count283
 \mdf@skipabove@length=\skip61
@@ -369,7 +366,7 @@ Package color Info: Driver file: luatex.def on input line 149.
 \mdf@subsubtitleinneraboveskip@length=\skip98
 \mdf@subsubtitleinnerbelowskip@length=\skip99
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/mdframed/md-frame-0.mdf
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/mdframed/md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
 \mdf@frametitlebox=\box57
@@ -416,7 +413,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count288
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen179
 \lightrulewidth=\dimen180
@@ -436,8 +433,8 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count292
 \@thisrulewidth=\dimen191
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/l3keys2e/l3k
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/l3keys2e/l3k
 eys2e.sty
 Package: l3keys2e 2023-02-02 LaTeX2e option processing using LaTeX3 keys
 )
@@ -446,53 +443,53 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_a_int=\count294
 \l__lipsum_b_int=\count295
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.ltd.tex)) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/psfrag/psfrag.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.ltd.tex)) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count296
 \pfg@scount=\count297
 \pfg@temp=\write3
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgfplots/pgfplots.sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.rev
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgfplots/pgfplots.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.rev
 ision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz.
 sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.st
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfrcs.st
 y
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -common.tex
 \pgfutil@everybye=\toks32
 \pgfutil@tempdima=\dimen192
 \pgfutil@tempdimb=\dimen193
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -latex.def
 \pgfutil@abb=\box62
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfrcs.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfrcs.
 code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf.revision.tex)
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgfcore.
 sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgfsys.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/systemlayer/pgfsys.
 sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 s.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 .code.tex
 \pgfkeys@pathtoks=\toks33
 \pgfkeys@temptoks=\toks34
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 libraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks35
 ))
@@ -517,39 +514,39 @@ libraryfiltered.code.tex
 \t@pgf@tokc=\toks38
 \pgf@sys@id@count=\count302
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.c
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.c
 fg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-luatex.def
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 s-luatex.def
 File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 s-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count303
 \pgfsyssoftpath@bigbuffer@items=\count304
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: luatex.def on input line 227.
 LaTeX Info: Redefining \color on input line 711.
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx)
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -560,15 +557,15 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 e.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code
 .tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathutil.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathutil.
 code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparse
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen260
 \pgfmath@count=\count305
@@ -577,33 +574,33 @@ r.code.tex
 \pgfmath@stack@operand=\toks40
 \pgfmath@stack@operation=\toks41
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.basic.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.trigonometric.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.random.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.comparison.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.base.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.round.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.misc.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.integerarithmetics.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathcalc.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathcalc.
 code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloat
 .code.tex
 \c@pgfmathroundto@lastzeros=\count306
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.
 tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen261
@@ -621,19 +618,19 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@zx=\dimen273
 \pgf@zy=\dimen274
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen275
 \pgf@path@lasty=\dimen276
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen277
 \pgf@shorten@start@additional=\dimen278
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 escopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box64
@@ -641,96 +638,96 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerbox@main=\box66
 \pgf@picture@serial@count=\count307
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen279
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen280
 \pgf@pt@y=\dimen281
 \pgf@pt@temp=\dimen282
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 equick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen283
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen284
 \pgf@sys@shading@range@num=\count308
 \pgf@shadingcount=\count309
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box67
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 elayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 etransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 erdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 shapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box68
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 plot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen285
 \pgf@nodesepend=\dimen286
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgffor.st
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgffor.st
 y
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.s
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/utilities/pgfkeys.s
 ty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 .code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/pgfmath.sty
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/pgf/math/pgfmath.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmath.code
 .tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor.
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor.
 code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen287
@@ -738,11 +735,11 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count310
@@ -765,7 +762,7 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikznumberofcurrentchild=\count313
 \tikz@fig@count=\count314
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfmatrixcurrentrow=\count315
@@ -774,13 +771,13 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 \tikz@expandcount=\count318
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.cod
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.cod
 e.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotscore
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotscore
 .code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \pgfplots@luabackend@table=\catcodetable14
@@ -791,87 +788,87 @@ Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \c@pgfplots@coordindex=\count319
 \c@pgfplots@scanlineindex=\count320
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgfplots
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgfplots
 sysgeneric.code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgfplot
 slibrary.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
 ib/pgfplotsoldpgfsupp_loader.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks47
 \t@pgf@tokb=\toks48
 \t@pgf@tokc=\toks49
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
 ib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/luamath
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/luamath
 /pgflibraryluamath.code.tex)
 Package pgfplots info on input line 290: luamath library shipped with pgf 3.1.1
 0 is up-to-date
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 sutil.code.tex
 Package pgfplots info on input line 82: Found new luatex: initializing lua comm
 ands instead of write18 (shell-escape)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsliststructure.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsliststructureext.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsarray.code.tex
 \c@pgfplotsarray@tmp=\count321
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsmatrix.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/numtable/pgf
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/numtable/pgf
 plotstableshared.code.tex
 \c@pgfplotstable@counta=\count322
 \t@pgfplotstable@a=\toks50
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsdeque.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 sbinary.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 sbinary.data.code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 sutil.verb.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgflibr
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgflibr
 arypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count323
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgflibra
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgflibra
 rypgfplots.surfshading.pgfsys-luatex.def)))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 scolormap.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/util/pgfplot
 scolor.code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsstac
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsstac
 kedplots.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsplot
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsplot
 handlers.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsmesh
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsmesh
 plothandler.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsmesh
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotsmesh
 plotimage.code.tex)))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.sca
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.sca
 ling.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotscoor
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotscoor
 dprocessing.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.err
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.err
 orbars.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.mar
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.mar
 kers.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotstick
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplotstick
 s.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.pat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/pgfplots.pat
 hs.code.tex)
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarydecorations.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 decorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen299
 \pgfdecoratedremainingdistance=\dimen300
@@ -884,15 +881,15 @@ decorations.code.tex
 )
 \tikz@lib@dec@box=\box73
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarydecorations.pathmorphing.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorat
 ions/pgflibrarydecorations.pathmorphing.code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarydecorations.pathreplacing.code.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorat
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/decorat
 ions/pgflibrarydecorations.pathreplacing.code.tex))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count325
 \pgfplots@xmin@reg=\dimen306
@@ -902,15 +899,15 @@ rarypgfplots.contourlua.code.tex)
 \pgfplots@zmin@reg=\dimen310
 \pgfplots@zmax@reg=\dimen311
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty
 Package: bm 2022/01/05 v1.2f Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
@@ -920,7 +917,7 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip127
@@ -933,10 +930,10 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip134
 \f@nch@O@orf=\skip135
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec-luate
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec-luate
 x.sty
 Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaT
 eX
@@ -954,13 +951,13 @@ eX
 \l__fontspec_tmpa_dim=\dimen312
 \l__fontspec_tmpb_dim=\dimen313
 \l__fontspec_tmpc_dim=\dimen314
- (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
+ (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg
-))) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty
-Package: babel 2023/07/15 v3.92 The Babel package
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg
+))) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty
+Package: babel 2023/06/26 v3.90 The Babel package
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
 \bbl@readstream=\read3
 \l@afrikaans=\language2
 Package babel Info: Non-standard hyphenation setup on input line 118.
@@ -1047,17 +1044,17 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \U@D=\dimen315
 \l@unhyphenated=\language79
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
 \bbl@attr@locale=\attribute4
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/arabi/bblopts.cfg
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/arabi/bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/babel-spanish/spanish.l
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/babel-spanish/spanish.l
 df
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks51
@@ -1067,39 +1064,39 @@ Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/lo
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/lo
 adhyph-es.tex UTF-8 Spanish hyphenation patterns
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/te
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/te
 x/hyph-es.tex))))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/es/babel
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/es/babel
 -spanish.tex
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/datetime/datetime.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/datetime/datetime.sty
 Package: datetime 2015/03/20 v2.60 Date Time Package
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fmtcount.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fmtcount.sty
 Package: fmtcount 2020/01/30 v3.07
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.tex
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.tex
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkeyval.tex
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks52
 \XKV@tempa@toks=\toks53
 )
 \XKV@depth=\count339
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fcprefix.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fcprefix.sty
 Package: fcprefix 2012/09/28
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fcnumparser.st
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/fmtcount/fcnumparser.st
 y
 Package: fcnumparser 2017/06/15
 \fc@digit@counter=\count340
@@ -1114,7 +1111,7 @@ Package: fcnumparser 2017/06/15
 \@DT@loopN=\count348
 \@DT@X=\count349
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/datetime/datetime-defau
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/datetime/datetime-defau
 lts.sty
 Package: datetime-defaults 2013/09/10
 )
@@ -1137,14 +1134,14 @@ put line 308.
 \dayofweek=\count364
 LaTeX Info: Redefining \today on input line 736.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/datetime/dt-spanish.def
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/datetime/dt-spanish.def
 File: dt-spanish.def 2013/09/10
 LaTeX Info: Redefining \datespanish on input line 85.
 )
 \dt@a=\toks54
 \dt@b=\toks55
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip136
 \enit@outerparindent=\dimen316
@@ -1153,26 +1150,26 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count365
 \enitdp@description=\count366
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2023-06-25 v7.01a Hypertext links for LaTeX
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.s
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/pdfescape/pdfescape.s
 ty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/letltxmacro/letltxmacro
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/letltxmacro/letltxmacro
 .sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-06-18 v2.52 Cross-referencing by name of section
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettit
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettit
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
@@ -1182,16 +1179,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 \Hy@linkcounter=\count368
 \Hy@pagecounter=\count369
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2023-06-25 v7.01a Hyperref: PDFDocEncoding definition (HO)
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count370
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
+File: puenc.def 2023-06-25 v7.01a Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4167.
 Package hyperref Info: Link nesting OFF on input line 4172.
@@ -1202,17 +1199,17 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
 \c@Hy@tempcnt=\count371
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4772.
 \XeTeXLinkMargin=\dimen318
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc
 .sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
@@ -1233,15 +1230,15 @@ Package hyperref Info: PDF/A mode OFF on input line 6081.
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
-File: hluatex.def 2023-07-08 v7.01b Hyperref driver for luaTeX
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2023-06-25 v7.01a Hyperref driver for luaTeX
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.s
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/stringenc/stringenc.s
 ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/atveryend-ltx.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
@@ -1249,11 +1246,11 @@ with kernel methods
 \Fld@listcount=\count376
 \c@bookmark@seq@number=\count377
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/uniquecounter/uniquec
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/uniquecounter/uniquec
 ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -1262,7 +1259,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip137
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count378
 \float@exts=\toks57
@@ -1270,13 +1267,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks58
 \@floatcapt=\box76
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/tocbibind/tocbibind.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has section divisions on input line 50.
 
 Package tocbibind Note: Using section or other style headings.
 
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box77
 \beforetitleunit=\skip138
@@ -1287,7 +1284,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidth=\dimen323
 \titlewidthlast=\dimen324
 \titlewidthfirst=\dimen325
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/tocloft/tocloft.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
 \cftparskip=\skip140
@@ -1324,7 +1321,7 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cfttabindent=\skip169
 \cfttabnumwidth=\skip170
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen326
 \WF@size=\dimen327
 \c@WF@wrappedlines=\count381
@@ -1332,13 +1329,13 @@ Package tocloft Info: The document has section divisions on input line 51.
 \WF@everypar=\toks60
 Package: wrapfig 2003/01/31  v 3.6
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
 Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
 \caption@tempdima=\dimen328
 \captionmargin=\dimen329
@@ -1360,14 +1357,14 @@ Package caption Info: New subtype `subfigure' on input line 239.
 \c@subfigure=\count384
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count385
-) (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
+) (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip171
 \multirow@cntb=\count386
 \multirow@dima=\skip172
 \bigstrutjot=\dimen336
 )
-luaotfload | cache : Lookup cache loaded from C:/Users/alanv/AppData/Local/MiKTe
+luaotfload | cache : Lookup cache loaded from C:/Users/brand/AppData/Local/MiKTe
 X/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 
 Package fontspec Info: Could not resolve font "CalibriBold/I" (it probably
@@ -1405,9 +1402,9 @@ g;+smcp;"
 ;+smcp;"
 
 Package hyperref Info: Option `colorlinks' set `true' on input line 38.
-
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/build/Informe.aux"
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
+(c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 
@@ -1434,7 +1431,7 @@ LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 7.
- (C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
+ (C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 57.
@@ -1484,7 +1481,7 @@ LaTeX Font Info:    ... okay on input line 57.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count387
@@ -1499,13 +1496,13 @@ ii
 \makeMPintoPDFobject=\count392
 \everyMPtoPDFconversion=\toks62
 )
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.c
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/00miktex/epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
@@ -1573,14 +1570,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 57.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 57.
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
 Package hyperref Info: Link coloring ON on input line 57.
-
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/build/Informe.out")
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/build/Informe.out")
+(c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.out)
+(c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.out)
 \@outlinefile=\write5
 
 \openout5 = Informe.out
@@ -1591,23 +1583,23 @@ File: encabezado.png Graphic file (type png)
 <use encabezado.png>
 Package luatex.def Info: encabezado.png  used on input line 63.
 (luatex.def)             Requested size: 505.88997pt x 53.53024pt.
- [1
+
+[1
 Non-PDF special ignored!
 
-{C:/Users/alanv/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./encabezado.p
+{C:/Users/brand/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./encabezado.p
 ng>]
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/build/Informe.toc"
+(c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write6
@@ -1634,9 +1626,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [3]
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/lo
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/lo
 adhyph-la.tex UTF-8 Latin hyphenation patterns
-(C:/Users/alanv/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/te
+(C:/Users/brand/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/te
 x/hyph-la.tex))
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1917,7 +1909,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [15]
-<realimentacion.png, id=440, 713.24931pt x 452.52138pt>
+<realimentacion.png, id=441, 713.24931pt x 452.52138pt>
 File: realimentacion.png Graphic file (type png)
 <use realimentacion.png>
 Package luatex.def Info: realimentacion.png  used on input line 957.
@@ -1932,17 +1924,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [16<./LTI.png>]
-<controlador.png, id=455, 523.67953pt x 163.99731pt>
+<controlador.png, id=456, 523.67953pt x 163.99731pt>
 File: controlador.png Graphic file (type png)
 <use controlador.png>
 Package luatex.def Info: controlador.png  used on input line 963.
 (luatex.def)             Requested size: 404.71352pt x 126.74626pt.
-<sensores_ideales.jpg, id=456, 478.03593pt x 469.00218pt>
+<sensores_ideales.jpg, id=457, 478.03593pt x 469.00218pt>
 File: sensores_ideales.jpg Graphic file (type jpg)
 <use sensores_ideales.jpg>
 Package luatex.def Info: sensores_ideales.jpg  used on input line 970.
 (luatex.def)             Requested size: 230.17676pt x 225.82697pt.
-<sensores_ideales_compacto.jpg, id=457, 149.05687pt x 471.26062pt>
+<sensores_ideales_compacto.jpg, id=458, 149.05687pt x 471.26062pt>
 File: sensores_ideales_compacto.jpg Graphic file (type jpg)
 <use sensores_ideales_compacto.jpg>
 Package luatex.def Info: sensores_ideales_compacto.jpg  used on input line 975.
@@ -1962,12 +1954,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [17<./realimentacion.png><./controlador.png>]
-<modulador_tension.jpg, id=468, 564.60938pt x 476.53032pt>
+<modulador_tension.jpg, id=469, 564.60938pt x 476.53032pt>
 File: modulador_tension.jpg Graphic file (type jpg)
 <use modulador_tension.jpg>
 Package luatex.def Info: modulador_tension.jpg  used on input line 984.
 (luatex.def)             Requested size: 212.475pt x 179.33102pt.
-<modulador_tension_compacto.jpg, id=469, 335.75438pt x 490.08093pt>
+<modulador_tension_compacto.jpg, id=470, 335.75438pt x 490.08093pt>
 File: modulador_tension_compacto.jpg Graphic file (type jpg)
 <use modulador_tension_compacto.jpg>
 Package luatex.def Info: modulador_tension_compacto.jpg  used on input line 989
@@ -1988,12 +1980,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [18<./sensores_ideales.jpg><./sensores_ideales_compacto.jpg><./modulador_tension
 .jpg><./modulador_tension_compacto.jpg>]
-<LTI_aumentado1.png, id=482, 523.67953pt x 284.63261pt>
+<LTI_aumentado1.png, id=483, 523.67953pt x 284.63261pt>
 File: LTI_aumentado1.png Graphic file (type png)
 <use LTI_aumentado1.png>
 Package luatex.def Info: LTI_aumentado1.png  used on input line 1048.
 (luatex.def)             Requested size: 404.71352pt x 219.97995pt.
-<LTI_AUMENTADO_Q.jpg, id=483, 1076.02pt x 690.58pt>
+<LTI_AUMENTADO_Q.jpg, id=484, 1076.02pt x 690.58pt>
 File: LTI_AUMENTADO_Q.jpg Graphic file (type jpg)
 <use LTI_AUMENTADO_Q.jpg>
 Package luatex.def Info: LTI_AUMENTADO_Q.jpg  used on input line 1054.
@@ -2008,7 +2000,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [19<./LTI_aumentado1.png>]
-<LTI_AUMENTADO_Q_CONTROLADOR.png, id=496, 523.67953pt x 148.98738pt>
+<LTI_AUMENTADO_Q_CONTROLADOR.png, id=497, 523.67953pt x 148.98738pt>
 File: LTI_AUMENTADO_Q_CONTROLADOR.png Graphic file (type png)
 <use LTI_AUMENTADO_Q_CONTROLADOR.png>
 Package luatex.def Info: LTI_AUMENTADO_Q_CONTROLADOR.png  used on input line 10
@@ -2033,11 +2025,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [21]
-<polosyceros.png, id=524, 413.60677pt x 338.55716pt>
+<polosyceros.png, id=525, 595.47469pt x 504.38437pt>
 File: polosyceros.png Graphic file (type png)
 <use polosyceros.png>
 Package luatex.def Info: polosyceros.png  used on input line 1199.
-(luatex.def)             Requested size: 413.60574pt x 338.55632pt.
+(luatex.def)             Requested size: 404.71352pt x 342.79982pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2075,22 +2067,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1492.
+(hyperref)                removing `math shift' on input line 1522.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1492.
+(hyperref)                removing `math shift' on input line 1522.
 
 <5.1.6_consigna.jpg, id=558, 1051.93pt x 531.9875pt>
 File: 5.1.6_consigna.jpg Graphic file (type jpg)
 <use 5.1.6_consigna.jpg>
-Package luatex.def Info: 5.1.6_consigna.jpg  used on input line 1498.
+Package luatex.def Info: 5.1.6_consigna.jpg  used on input line 1528.
 (luatex.def)             Requested size: 430.00955pt x 217.46689pt.
-<5.1.6_carga2.jpg, id=560, 946.53625pt x 355.3275pt>
-File: 5.1.6_carga2.jpg Graphic file (type jpg)
-<use 5.1.6_carga2.jpg>
-Package luatex.def Info: 5.1.6_carga2.jpg  used on input line 1508.
-(luatex.def)             Requested size: 430.00955pt x 161.42485pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2099,118 +2086,134 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[25<./5.1.6_consigna.jpg>]
+[25]
+<5.1.6_carga2.jpg, id=568, 946.53625pt x 355.3275pt>
+File: 5.1.6_carga2.jpg Graphic file (type jpg)
+<use 5.1.6_carga2.jpg>
+Package luatex.def Info: 5.1.6_carga2.jpg  used on input line 1538.
+(luatex.def)             Requested size: 430.00955pt x 161.42485pt.
 <5.1.6_tita.jpg, id=569, 959.585pt x 358.33875pt>
 File: 5.1.6_tita.jpg Graphic file (type jpg)
 <use 5.1.6_tita.jpg>
-Package luatex.def Info: 5.1.6_tita.jpg  used on input line 1520.
+Package luatex.def Info: 5.1.6_tita.jpg  used on input line 1550.
 (luatex.def)             Requested size: 404.71352pt x 151.13551pt.
 <5.1.6_tita_NL.jpg, id=570, 949.5475pt x 355.3275pt>
 File: 5.1.6_tita_NL.jpg Graphic file (type jpg)
 <use 5.1.6_tita_NL.jpg>
-Package luatex.def Info: 5.1.6_tita_NL.jpg  used on input line 1523.
+Package luatex.def Info: 5.1.6_tita_NL.jpg  used on input line 1553.
 (luatex.def)             Requested size: 404.71352pt x 151.44864pt.
-<5.1.6_omega.jpg, id=571, 945.5325pt x 351.3125pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[26<./5.1.6_consigna.jpg><./5.1.6_carga2.jpg>]
+<5.1.6_omega.jpg, id=579, 945.5325pt x 351.3125pt>
 File: 5.1.6_omega.jpg Graphic file (type jpg)
 <use 5.1.6_omega.jpg>
-Package luatex.def Info: 5.1.6_omega.jpg  used on input line 1532.
+Package luatex.def Info: 5.1.6_omega.jpg  used on input line 1562.
 (luatex.def)             Requested size: 404.71352pt x 150.37526pt.
-<5.1.6_omega_NL.jpg, id=572, 949.5475pt x 354.32375pt>
+<5.1.6_omega_NL.jpg, id=580, 949.5475pt x 354.32375pt>
 File: 5.1.6_omega_NL.jpg Graphic file (type jpg)
 <use 5.1.6_omega_NL.jpg>
-Package luatex.def Info: 5.1.6_omega_NL.jpg  used on input line 1535.
+Package luatex.def Info: 5.1.6_omega_NL.jpg  used on input line 1565.
 (luatex.def)             Requested size: 404.71352pt x 151.02081pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[26<./5.1.6_carga2.jpg><./5.1.6_tita.jpg><./5.1.6_tita_NL.jpg>]
-<5.1.6_torque.jpg, id=580, 950.55125pt x 352.31625pt>
+<5.1.6_torque.jpg, id=581, 950.55125pt x 352.31625pt>
 File: 5.1.6_torque.jpg Graphic file (type jpg)
 <use 5.1.6_torque.jpg>
-Package luatex.def Info: 5.1.6_torque.jpg  used on input line 1544.
+Package luatex.def Info: 5.1.6_torque.jpg  used on input line 1574.
 (luatex.def)             Requested size: 404.71352pt x 150.0039pt.
-<5.1.6_torque_NL.jpg, id=581, 946.53625pt x 351.3125pt>
+<5.1.6_torque_NL.jpg, id=582, 946.53625pt x 351.3125pt>
 File: 5.1.6_torque_NL.jpg Graphic file (type jpg)
 <use 5.1.6_torque_NL.jpg>
-Package luatex.def Info: 5.1.6_torque_NL.jpg  used on input line 1547.
+Package luatex.def Info: 5.1.6_torque_NL.jpg  used on input line 1577.
 (luatex.def)             Requested size: 404.71352pt x 150.20909pt.
-<5.1.6_iabc.jpg, id=582, 950.55125pt x 354.32375pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[27<./5.1.6_tita.jpg><./5.1.6_tita_NL.jpg><./5.1.6_omega.jpg><./5.1.6_omega_NL.j
+pg>]
+<5.1.6_iabc.jpg, id=591, 950.55125pt x 354.32375pt>
 File: 5.1.6_iabc.jpg Graphic file (type jpg)
 <use 5.1.6_iabc.jpg>
-Package luatex.def Info: 5.1.6_iabc.jpg  used on input line 1556.
+Package luatex.def Info: 5.1.6_iabc.jpg  used on input line 1586.
 (luatex.def)             Requested size: 404.71352pt x 150.85863pt.
-<5.1.6_iabc_NL.jpg, id=583, 950.55125pt x 352.31625pt>
+<5.1.6_iabc_NL.jpg, id=592, 950.55125pt x 352.31625pt>
 File: 5.1.6_iabc_NL.jpg Graphic file (type jpg)
 <use 5.1.6_iabc_NL.jpg>
-Package luatex.def Info: 5.1.6_iabc_NL.jpg  used on input line 1559.
+Package luatex.def Info: 5.1.6_iabc_NL.jpg  used on input line 1589.
 (luatex.def)             Requested size: 404.71352pt x 150.0039pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[27<./5.1.6_omega.jpg><./5.1.6_omega_NL.jpg><./5.1.6_torque.jpg><./5.1.6_torque_
-NL.jpg>]
-<5.1.6_iqd0.jpg, id=592, 940.51375pt x 350.30875pt>
+<5.1.6_iqd0.jpg, id=593, 940.51375pt x 350.30875pt>
 File: 5.1.6_iqd0.jpg Graphic file (type jpg)
 <use 5.1.6_iqd0.jpg>
-Package luatex.def Info: 5.1.6_iqd0.jpg  used on input line 1568.
+Package luatex.def Info: 5.1.6_iqd0.jpg  used on input line 1598.
 (luatex.def)             Requested size: 404.71352pt x 150.74207pt.
-<5.1.6_iqd0_NL.jpg, id=593, 948.54375pt x 353.32pt>
+<5.1.6_iqd0_NL.jpg, id=594, 948.54375pt x 353.32pt>
 File: 5.1.6_iqd0_NL.jpg Graphic file (type jpg)
 <use 5.1.6_iqd0_NL.jpg>
-Package luatex.def Info: 5.1.6_iqd0_NL.jpg  used on input line 1571.
+Package luatex.def Info: 5.1.6_iqd0_NL.jpg  used on input line 1601.
 (luatex.def)             Requested size: 404.71352pt x 150.74934pt.
-<5.1.6_temperatura.jpg, id=594, 953.5625pt x 352.31625pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[28<./5.1.6_torque.jpg><./5.1.6_torque_NL.jpg><./5.1.6_iabc.jpg><./5.1.6_iabc_NL
+.jpg>]
+<5.1.6_temperatura.jpg, id=603, 953.5625pt x 352.31625pt>
 File: 5.1.6_temperatura.jpg Graphic file (type jpg)
 <use 5.1.6_temperatura.jpg>
-Package luatex.def Info: 5.1.6_temperatura.jpg  used on input line 1580.
+Package luatex.def Info: 5.1.6_temperatura.jpg  used on input line 1610.
 (luatex.def)             Requested size: 404.71352pt x 149.53082pt.
-<5.1.6_temperatura_NL.jpg, id=595, 950.55125pt x 355.3275pt>
+<5.1.6_temperatura_NL.jpg, id=604, 950.55125pt x 355.3275pt>
 File: 5.1.6_temperatura_NL.jpg Graphic file (type jpg)
 <use 5.1.6_temperatura_NL.jpg>
-Package luatex.def Info: 5.1.6_temperatura_NL.jpg  used on input line 1583.
+Package luatex.def Info: 5.1.6_temperatura_NL.jpg  used on input line 1613.
 (luatex.def)             Requested size: 404.71352pt x 151.28598pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[28<./5.1.6_iabc.jpg><./5.1.6_iabc_NL.jpg><./5.1.6_iqd0.jpg><./5.1.6_iqd0_NL.jpg
->]
-<5.1.6_vqd0.jpg, id=604, 712.16063pt x 262.73157pt>
+<5.1.6_vqd0.jpg, id=605, 712.16063pt x 262.73157pt>
 File: 5.1.6_vqd0.jpg Graphic file (type jpg)
 <use 5.1.6_vqd0.jpg>
-Package luatex.def Info: 5.1.6_vqd0.jpg  used on input line 1592.
+Package luatex.def Info: 5.1.6_vqd0.jpg  used on input line 1622.
 (luatex.def)             Requested size: 404.71352pt x 149.30553pt.
-<5.1.6_vqd0_NL.jpg, id=605, 694.84593pt x 283.81032pt>
+<5.1.6_vqd0_NL.jpg, id=606, 694.84593pt x 283.81032pt>
 File: 5.1.6_vqd0_NL.jpg Graphic file (type jpg)
 <use 5.1.6_vqd0_NL.jpg>
-Package luatex.def Info: 5.1.6_vqd0_NL.jpg  used on input line 1595.
+Package luatex.def Info: 5.1.6_vqd0_NL.jpg  used on input line 1625.
 (luatex.def)             Requested size: 404.71352pt x 165.30298pt.
-<5.1.6_vabc.jpg, id=606, 711.4078pt x 264.23718pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[29<./5.1.6_iqd0.jpg><./5.1.6_iqd0_NL.jpg><./5.1.6_temperatura.jpg><./5.1.6_temp
+eratura_NL.jpg>]
+<5.1.6_vabc.jpg, id=615, 711.4078pt x 264.23718pt>
 File: 5.1.6_vabc.jpg Graphic file (type jpg)
 <use 5.1.6_vabc.jpg>
-Package luatex.def Info: 5.1.6_vabc.jpg  used on input line 1604.
+Package luatex.def Info: 5.1.6_vabc.jpg  used on input line 1634.
 (luatex.def)             Requested size: 404.71352pt x 150.32645pt.
-<5.1.6_vabc_NL.jpg, id=607, 711.4078pt x 264.23718pt>
+<5.1.6_vabc_NL.jpg, id=616, 711.4078pt x 264.23718pt>
 File: 5.1.6_vabc_NL.jpg Graphic file (type jpg)
 <use 5.1.6_vabc_NL.jpg>
-Package luatex.def Info: 5.1.6_vabc_NL.jpg  used on input line 1607.
+Package luatex.def Info: 5.1.6_vabc_NL.jpg  used on input line 1637.
 (luatex.def)             Requested size: 404.71352pt x 150.32645pt.
 
 
@@ -2221,27 +2224,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[29<./5.1.6_temperatura.jpg><./5.1.6_temperatura_NL.jpg><./5.1.6_vqd0.jpg><./5.1
-.6_vqd0_NL.jpg>]
-<5.1.6_id.jpg, id=622, 712.91344pt x 268.75406pt>
+[30<./5.1.6_vqd0.jpg><./5.1.6_vqd0_NL.jpg><./5.1.6_vabc.jpg><./5.1.6_vabc_NL.jpg
+>]
+<5.1.6_id.jpg, id=632, 712.91344pt x 268.75406pt>
 File: 5.1.6_id.jpg Graphic file (type jpg)
 <use 5.1.6_id.jpg>
-Package luatex.def Info: 5.1.6_id.jpg  used on input line 1639.
+Package luatex.def Info: 5.1.6_id.jpg  used on input line 1669.
 (luatex.def)             Requested size: 404.71352pt x 152.56807pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[30<./5.1.6_vabc.jpg><./5.1.6_vabc_NL.jpg>]
-<5.1.6_torque_velocidad.png, id=631, 443.0707pt x 361.35pt>
+<5.1.6_torque_velocidad.png, id=633, 443.0707pt x 361.35pt>
 File: 5.1.6_torque_velocidad.png Graphic file (type png)
 <use 5.1.6_torque_velocidad.png>
-Package luatex.def Info: 5.1.6_torque_velocidad.png  used on input line 1650.
+Package luatex.def Info: 5.1.6_torque_velocidad.png  used on input line 1680.
 (luatex.def)             Requested size: 404.71352pt x 330.06961pt.
 
 
@@ -2252,12 +2245,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[31<./5.1.6_id.jpg><./5.1.6_torque_velocidad.png>]
-<5.1.6_cid1.png, id=640, 532.01839pt x 202.91193pt>
+[31<./5.1.6_id.jpg>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 23.8471pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.8471pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
+
+[32<./5.1.6_torque_velocidad.png>]
+<5.1.6_cid1.png, id=649, 532.01839pt x 202.91193pt>
 File: 5.1.6_cid1.png Graphic file (type png)
 <use 5.1.6_cid1.png>
-Package luatex.def Info: 5.1.6_cid1.png  used on input line 1738.
+Package luatex.def Info: 5.1.6_cid1.png  used on input line 1768.
 (luatex.def)             Requested size: 404.71352pt x 154.36017pt.
+<5.1.6_cid2.png, id=650, 527.571pt x 196.24084pt>
+File: 5.1.6_cid2.png Graphic file (type png)
+<use 5.1.6_cid2.png>
+Package luatex.def Info: 5.1.6_cid2.png  used on input line 1776.
+(luatex.def)             Requested size: 404.71352pt x 150.54295pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2267,21 +2274,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[32]
-<5.1.6_cid2.png, id=649, 527.571pt x 196.24084pt>
-File: 5.1.6_cid2.png Graphic file (type png)
-<use 5.1.6_cid2.png>
-Package luatex.def Info: 5.1.6_cid2.png  used on input line 1746.
-(luatex.def)             Requested size: 404.71352pt x 150.54295pt.
-<5.1.6_cid3.png, id=650, 524.79138pt x 193.46123pt>
+[33<./5.1.6_cid1.png>]
+<5.1.6_cid3.png, id=660, 524.79138pt x 193.46123pt>
 File: 5.1.6_cid3.png Graphic file (type png)
 <use 5.1.6_cid3.png>
-Package luatex.def Info: 5.1.6_cid3.png  used on input line 1758.
+Package luatex.def Info: 5.1.6_cid3.png  used on input line 1788.
 (luatex.def)             Requested size: 404.71352pt x 149.19585pt.
-<5.1.6_cid4.png, id=651, 525.3473pt x 196.24084pt>
+<5.1.6_cid4.png, id=661, 525.3473pt x 196.24084pt>
 File: 5.1.6_cid4.png Graphic file (type png)
 <use 5.1.6_cid4.png>
-Package luatex.def Info: 5.1.6_cid4.png  used on input line 1766.
+Package luatex.def Info: 5.1.6_cid4.png  used on input line 1796.
 (luatex.def)             Requested size: 404.71352pt x 151.17776pt.
 
 
@@ -2292,42 +2294,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[33<./5.1.6_cid1.png><./5.1.6_cid2.png><./5.1.6_cid3.png>]
-<5.1.6_d1.png, id=664, 523.67953pt x 194.57307pt>
+[34<./5.1.6_cid2.png><./5.1.6_cid3.png><./5.1.6_cid4.png>]
+<5.1.6_d1.png, id=674, 523.67953pt x 194.57307pt>
 File: 5.1.6_d1.png Graphic file (type png)
 <use 5.1.6_d1.png>
-Package luatex.def Info: 5.1.6_d1.png  used on input line 1787.
+Package luatex.def Info: 5.1.6_d1.png  used on input line 1817.
 (luatex.def)             Requested size: 404.71352pt x 150.3769pt.
-<5.1.6_d2.png, id=665, 523.67953pt x 196.24084pt>
+<5.1.6_d2.png, id=675, 523.67953pt x 196.24084pt>
 File: 5.1.6_d2.png Graphic file (type png)
 <use 5.1.6_d2.png>
-Package luatex.def Info: 5.1.6_d2.png  used on input line 1793.
+Package luatex.def Info: 5.1.6_d2.png  used on input line 1823.
 (luatex.def)             Requested size: 404.71352pt x 151.66585pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 23.8471pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.8471pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
-
-[34<./5.1.6_cid4.png><./5.1.6_d1.png>]
 <5.1.6_d3.png, id=676, 523.67953pt x 194.01715pt>
 File: 5.1.6_d3.png Graphic file (type png)
 <use 5.1.6_d3.png>
-Package luatex.def Info: 5.1.6_d3.png  used on input line 1799.
+Package luatex.def Info: 5.1.6_d3.png  used on input line 1829.
 (luatex.def)             Requested size: 404.71352pt x 149.94725pt.
-<5.1.6_d4.png, id=677, 523.67953pt x 196.24084pt>
-File: 5.1.6_d4.png Graphic file (type png)
-<use 5.1.6_d4.png>
-Package luatex.def Info: 5.1.6_d4.png  used on input line 1811.
-(luatex.def)             Requested size: 404.71352pt x 151.66585pt.
-<5.1.6_d5.png, id=678, 526.45915pt x 195.129pt>
-File: 5.1.6_d5.png Graphic file (type png)
-<use 5.1.6_d5.png>
-Package luatex.def Info: 5.1.6_d5.png  used on input line 1817.
-(luatex.def)             Requested size: 404.71352pt x 150.0086pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2337,16 +2319,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[35<./5.1.6_d2.png><./5.1.6_d3.png><./5.1.6_d4.png>]
+[35<./5.1.6_d1.png><./5.1.6_d2.png><./5.1.6_d3.png>]
+<5.1.6_d4.png, id=689, 523.67953pt x 196.24084pt>
+File: 5.1.6_d4.png Graphic file (type png)
+<use 5.1.6_d4.png>
+Package luatex.def Info: 5.1.6_d4.png  used on input line 1841.
+(luatex.def)             Requested size: 404.71352pt x 151.66585pt.
+<5.1.6_d5.png, id=690, 526.45915pt x 195.129pt>
+File: 5.1.6_d5.png Graphic file (type png)
+<use 5.1.6_d5.png>
+Package luatex.def Info: 5.1.6_d5.png  used on input line 1847.
+(luatex.def)             Requested size: 404.71352pt x 150.0086pt.
 <5.1.6_d6.png, id=691, 523.67953pt x 198.46454pt>
 File: 5.1.6_d6.png Graphic file (type png)
 <use 5.1.6_d6.png>
-Package luatex.def Info: 5.1.6_d6.png  used on input line 1827.
+Package luatex.def Info: 5.1.6_d6.png  used on input line 1857.
 (luatex.def)             Requested size: 404.71352pt x 153.38446pt.
 <5.1.6_d7.png, id=692, 523.67953pt x 194.01715pt>
 File: 5.1.6_d7.png Graphic file (type png)
 <use 5.1.6_d7.png>
-Package luatex.def Info: 5.1.6_d7.png  used on input line 1833.
+Package luatex.def Info: 5.1.6_d7.png  used on input line 1863.
 (luatex.def)             Requested size: 404.71352pt x 149.94725pt.
 
 
@@ -2357,18 +2349,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[36<./5.1.6_d5.png><./5.1.6_d6.png><./5.1.6_d7.png>]
-<desacople_expandido.png, id=708, 438.6233pt x 384.14285pt>
-File: desacople_expandido.png Graphic file (type png)
-<use desacople_expandido.png>
-Package luatex.def Info: desacople_expandido.png  used on input line 1931.
-(luatex.def)             Requested size: 303.53513pt x 265.85016pt.
-<desacople.png, id=709, 312.9847pt x 406.37978pt>
-File: desacople.png Graphic file (type png)
-<use desacople.png>
-Package luatex.def Info: desacople.png  used on input line 1936.
-(luatex.def)             Requested size: 97.13345pt x 126.11903pt.
-
+[36<./5.1.6_d4.png><./5.1.6_d5.png><./5.1.6_d6.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2377,18 +2358,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[37]
+[37<./5.1.6_d7.png>]
+<desacople_expandido.png, id=717, 438.6233pt x 384.14285pt>
+File: desacople_expandido.png Graphic file (type png)
+<use desacople_expandido.png>
+Package luatex.def Info: desacople_expandido.png  used on input line 1961.
+(luatex.def)             Requested size: 303.53513pt x 265.85016pt.
+<desacople.png, id=718, 312.9847pt x 406.37978pt>
+File: desacople.png Graphic file (type png)
+<use desacople.png>
+Package luatex.def Info: desacople.png  used on input line 1966.
+(luatex.def)             Requested size: 97.13345pt x 126.11903pt.
 <realimentacion_temperatura.png, id=720, 381.91916pt x 290.74777pt>
 File: realimentacion_temperatura.png Graphic file (type png)
 <use realimentacion_temperatura.png>
-Package luatex.def Info: realimentacion_temperatura.png  used on input line 194
+Package luatex.def Info: realimentacion_temperatura.png  used on input line 197
 9.
 (luatex.def)             Requested size: 213.73448pt x 162.71559pt.
 <realimentacion_temperatura_compacto.jpg, id=721, 222.07968pt x 140.77594pt>
 File: realimentacion_temperatura_compacto.jpg Graphic file (type jpg)
 <use realimentacion_temperatura_compacto.jpg>
 Package luatex.def Info: realimentacion_temperatura_compacto.jpg  used on input
- line 1954.
+ line 1984.
 (luatex.def)             Requested size: 97.13345pt x 61.57213pt.
 
 
@@ -2399,20 +2390,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[38<./desacople_expandido.png><./desacople.png><./realimentacion_temperatura.png
-><./realimentacion_temperatura_compacto.jpg>]
-<modulador_de_corriente_extendido.png, id=735, 475.87015pt x 405.26793pt>
-File: modulador_de_corriente_extendido.png Graphic file (type png)
-<use modulador_de_corriente_extendido.png>
-Package luatex.def Info: modulador_de_corriente_extendido.png  used on input li
-ne 2025.
-(luatex.def)             Requested size: 303.53513pt x 258.51103pt.
-<modulador_de_corriente.png, id=736, 343.56046pt x 399.7087pt>
-File: modulador_de_corriente.png Graphic file (type png)
-<use modulador_de_corriente.png>
-Package luatex.def Info: modulador_de_corriente.png  used on input line 2030.
-(luatex.def)             Requested size: 97.13345pt x 113.0094pt.
-
+[38<./desacople_expandido.png><./desacople.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2421,17 +2399,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[39]
-<modulador_de_torque_expandido.png, id=747, 523.67953pt x 222.36923pt>
+[39<./realimentacion_temperatura.png><./realimentacion_temperatura_compacto.jpg>
+]
+<modulador_de_corriente_extendido.png, id=744, 475.87015pt x 405.26793pt>
+File: modulador_de_corriente_extendido.png Graphic file (type png)
+<use modulador_de_corriente_extendido.png>
+Package luatex.def Info: modulador_de_corriente_extendido.png  used on input li
+ne 2055.
+(luatex.def)             Requested size: 303.53513pt x 258.51103pt.
+<modulador_de_corriente.png, id=745, 343.56046pt x 399.7087pt>
+File: modulador_de_corriente.png Graphic file (type png)
+<use modulador_de_corriente.png>
+Package luatex.def Info: modulador_de_corriente.png  used on input line 2060.
+(luatex.def)             Requested size: 97.13345pt x 113.0094pt.
+<modulador_de_torque_expandido.png, id=749, 523.67953pt x 222.36923pt>
 File: modulador_de_torque_expandido.png Graphic file (type png)
 <use modulador_de_torque_expandido.png>
 Package luatex.def Info: modulador_de_torque_expandido.png  used on input line 
-2069.
+2099.
 (luatex.def)             Requested size: 303.53513pt x 128.8928pt.
-<modulador_de_torque.png, id=748, 260.72792pt x 346.896pt>
+<modulador_de_torque.png, id=750, 260.72792pt x 346.896pt>
 File: modulador_de_torque.png Graphic file (type png)
 <use modulador_de_torque.png>
-Package luatex.def Info: modulador_de_torque.png  used on input line 2074.
+Package luatex.def Info: modulador_de_torque.png  used on input line 2104.
 (luatex.def)             Requested size: 97.13345pt x 129.23346pt.
 
 
@@ -2452,15 +2442,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [41<./modulador_de_torque_expandido.png><./modulador_de_torque.png>]
-<pid.png, id=777, 644.31485pt x 314.65247pt>
+<pid.png, id=779, 644.31485pt x 314.65247pt>
 File: pid.png Graphic file (type png)
 <use pid.png>
-Package luatex.def Info: pid.png  used on input line 2205.
+Package luatex.def Info: pid.png  used on input line 2235.
 (luatex.def)             Requested size: 303.53513pt x 148.22755pt.
-<pid_compacto.png, id=778, 294.63924pt x 377.47177pt>
+<pid_compacto.png, id=780, 294.63924pt x 377.47177pt>
 File: pid_compacto.png Graphic file (type png)
 <use pid_compacto.png>
-Package luatex.def Info: pid_compacto.png  used on input line 2210.
+Package luatex.def Info: pid_compacto.png  used on input line 2240.
 (luatex.def)             Requested size: 97.13345pt x 124.43935pt.
 
 
@@ -2472,11 +2462,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [42]
-<polos.png, id=790, 423.05746pt x 345.22823pt>
+<polos.png, id=792, 614.295pt x 484.81125pt>
 File: polos.png Graphic file (type png)
 <use polos.png>
-Package luatex.def Info: polos.png  used on input line 2242.
-(luatex.def)             Requested size: 404.71352pt x 330.2775pt.
+Package luatex.def Info: polos.png  used on input line 2272.
+(luatex.def)             Requested size: 404.71352pt x 319.40678pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2487,15 +2477,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [43<./pid.png><./pid_compacto.png>]
-<set_point.png, id=800, 523.67953pt x 249.60947pt>
+<set_point.png, id=802, 523.67953pt x 249.60947pt>
 File: set_point.png Graphic file (type png)
 <use set_point.png>
-Package luatex.def Info: set_point.png  used on input line 2268.
+Package luatex.def Info: set_point.png  used on input line 2298.
 (luatex.def)             Requested size: 303.53513pt x 144.68217pt.
-<set_point_comp.png, id=801, 372.46846pt x 320.21169pt>
+<set_point_comp.png, id=803, 372.46846pt x 320.21169pt>
 File: set_point_comp.png Graphic file (type png)
 <use set_point_comp.png>
-Package luatex.def Info: set_point_comp.png  used on input line 2273.
+Package luatex.def Info: set_point_comp.png  used on input line 2303.
 (luatex.def)             Requested size: 97.13345pt x 83.50714pt.
 
 
@@ -2507,16 +2497,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [44<./polos.png><./set_point.png><./set_point_comp.png>]
-<observador_reducido.jpg, id=815, 858.95906pt x 376.40625pt>
+<observador_reducido.jpg, id=816, 858.95906pt x 376.40625pt>
 File: observador_reducido.jpg Graphic file (type jpg)
 <use observador_reducido.jpg>
-Package luatex.def Info: observador_reducido.jpg  used on input line 2404.
+Package luatex.def Info: observador_reducido.jpg  used on input line 2434.
 (luatex.def)             Requested size: 303.53513pt x 133.01346pt.
-<observador_reducido_compacto.jpg, id=816, 347.04657pt x 348.55219pt>
+<observador_reducido_compacto.jpg, id=817, 347.04657pt x 348.55219pt>
 File: observador_reducido_compacto.jpg Graphic file (type jpg)
 <use observador_reducido_compacto.jpg>
 Package luatex.def Info: observador_reducido_compacto.jpg  used on input line 2
-409.
+439.
 (luatex.def)             Requested size: 97.13345pt x 97.5567pt.
 
 
@@ -2532,15 +2522,15 @@ Missing character: There is no ∗ (U+2217) in font calibri:mode=node;script=lat
 n;language=dflt;+tlig;!
 Missing character: There is no ∗ (U+2217) in font calibri:mode=node;script=lat
 n;language=dflt;+tlig;!
-<5.2.4.a.1.png, id=830, 528.12692pt x 194.57307pt>
+<5.2.4.a.1.png, id=831, 528.12692pt x 194.57307pt>
 File: 5.2.4.a.1.png Graphic file (type png)
 <use 5.2.4.a.1.png>
-Package luatex.def Info: 5.2.4.a.1.png  used on input line 2429.
+Package luatex.def Info: 5.2.4.a.1.png  used on input line 2459.
 (luatex.def)             Requested size: 404.71352pt x 149.10323pt.
-<5.2.4.a.2.png, id=831, 526.45915pt x 194.57307pt>
+<5.2.4.a.2.png, id=832, 526.45915pt x 194.57307pt>
 File: 5.2.4.a.2.png Graphic file (type png)
 <use 5.2.4.a.2.png>
-Package luatex.def Info: 5.2.4.a.2.png  used on input line 2435.
+Package luatex.def Info: 5.2.4.a.2.png  used on input line 2465.
 (luatex.def)             Requested size: 404.71352pt x 149.58124pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2552,23 +2542,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [46<./observador_reducido.jpg><./observador_reducido_compacto.jpg><./5.2.4.a.1.p
 ng><./5.2.4.a.2.png>]
-<5.2.4.a.3.png, id=843, 526.45915pt x 194.01715pt>
+<5.2.4.a.3.png, id=844, 526.45915pt x 194.01715pt>
 File: 5.2.4.a.3.png Graphic file (type png)
 <use 5.2.4.a.3.png>
-Package luatex.def Info: 5.2.4.a.3.png  used on input line 2445.
+Package luatex.def Info: 5.2.4.a.3.png  used on input line 2475.
 (luatex.def)             Requested size: 404.71352pt x 149.15385pt.
-<5.2.4.a.4.png, id=844, 528.12692pt x 196.24084pt>
+<5.2.4.a.4.png, id=845, 528.12692pt x 196.24084pt>
 File: 5.2.4.a.4.png Graphic file (type png)
 <use 5.2.4.a.4.png>
-Package luatex.def Info: 5.2.4.a.4.png  used on input line 2451.
+Package luatex.def Info: 5.2.4.a.4.png  used on input line 2481.
 (luatex.def)             Requested size: 404.71352pt x 150.38126pt.
-<5.2.4.a.6.png, id=845, 527.571pt x 195.129pt>
+<5.2.4.a.6.png, id=846, 527.571pt x 195.129pt>
 File: 5.2.4.a.6.png Graphic file (type png)
 <use 5.2.4.a.6.png>
-Package luatex.def Info: 5.2.4.a.6.png  used on input line 2459.
+Package luatex.def Info: 5.2.4.a.6.png  used on input line 2489.
 (luatex.def)             Requested size: 404.71352pt x 149.69002pt.
 
-Missing character: There is no θ (U+03B8) in font cmmi10!
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 23.8471pt, for example:
@@ -2578,20 +2567,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [47<./5.2.4.a.3.png><./5.2.4.a.4.png><./5.2.4.a.6.png>]
-<5.2.4.b.1.png, id=858, 528.68285pt x 198.46454pt>
+<5.2.4.b.1.png, id=859, 528.68285pt x 198.46454pt>
 File: 5.2.4.b.1.png Graphic file (type png)
 <use 5.2.4.b.1.png>
-Package luatex.def Info: 5.2.4.b.1.png  used on input line 2489.
+Package luatex.def Info: 5.2.4.b.1.png  used on input line 2519.
 (luatex.def)             Requested size: 404.71352pt x 151.93388pt.
-<5.2.4.b.2.png, id=859, 525.90323pt x 194.57307pt>
+<5.2.4.b.2.png, id=860, 525.90323pt x 194.57307pt>
 File: 5.2.4.b.2.png Graphic file (type png)
 <use 5.2.4.b.2.png>
-Package luatex.def Info: 5.2.4.b.2.png  used on input line 2495.
+Package luatex.def Info: 5.2.4.b.2.png  used on input line 2525.
 (luatex.def)             Requested size: 404.71352pt x 149.74155pt.
-<5.2.4.b.3.png, id=860, 528.12692pt x 197.90862pt>
+<5.2.4.b.3.png, id=861, 528.12692pt x 197.90862pt>
 File: 5.2.4.b.3.png Graphic file (type png)
 <use 5.2.4.b.3.png>
-Package luatex.def Info: 5.2.4.b.3.png  used on input line 2509.
+Package luatex.def Info: 5.2.4.b.3.png  used on input line 2539.
 (luatex.def)             Requested size: 404.71352pt x 151.6593pt.
 
 
@@ -2603,15 +2592,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [48<./5.2.4.b.1.png><./5.2.4.b.2.png>]
-<5.2.4.b.5.png, id=871, 527.571pt x 195.129pt>
+<5.2.4.b.5.png, id=872, 527.571pt x 195.129pt>
 File: 5.2.4.b.5.png Graphic file (type png)
 <use 5.2.4.b.5.png>
-Package luatex.def Info: 5.2.4.b.5.png  used on input line 2515.
+Package luatex.def Info: 5.2.4.b.5.png  used on input line 2545.
 (luatex.def)             Requested size: 404.71352pt x 149.69002pt.
-<5.2..5.1.a.1.png, id=872, 524.79138pt x 194.01715pt>
+<5.2..5.1.a.1.png, id=873, 524.79138pt x 194.01715pt>
 File: 5.2..5.1.a.1.png Graphic file (type png)
 <use 5.2..5.1.a.1.png>
-Package luatex.def Info: 5.2..5.1.a.1.png  used on input line 2565.
+Package luatex.def Info: 5.2..5.1.a.1.png  used on input line 2595.
 (luatex.def)             Requested size: 404.71352pt x 149.62457pt.
 
 
@@ -2623,20 +2612,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [49<./5.2.4.b.3.png><./5.2.4.b.5.png>]
-<5.2..5.1.a.2.png, id=884, 528.68285pt x 195.129pt>
+<5.2..5.1.a.2.png, id=885, 528.68285pt x 195.129pt>
 File: 5.2..5.1.a.2.png Graphic file (type png)
 <use 5.2..5.1.a.2.png>
-Package luatex.def Info: 5.2..5.1.a.2.png  used on input line 2571.
+Package luatex.def Info: 5.2..5.1.a.2.png  used on input line 2601.
 (luatex.def)             Requested size: 404.71352pt x 149.38037pt.
-<5.2..5.1.a.4.png, id=885, 713.66624pt x 263.48438pt>
+<5.2..5.1.a.4.png, id=886, 713.66624pt x 263.48438pt>
 File: 5.2..5.1.a.4.png Graphic file (type png)
 <use 5.2..5.1.a.4.png>
-Package luatex.def Info: 5.2..5.1.a.4.png  used on input line 2580.
+Package luatex.def Info: 5.2..5.1.a.4.png  used on input line 2610.
 (luatex.def)             Requested size: 404.71352pt x 149.41974pt.
-<5.2..5.1.a.5.png, id=886, 713.66624pt x 265.74281pt>
+<5.2..5.1.a.5.png, id=887, 713.66624pt x 265.74281pt>
 File: 5.2..5.1.a.5.png Graphic file (type png)
 <use 5.2..5.1.a.5.png>
-Package luatex.def Info: 5.2..5.1.a.5.png  used on input line 2586.
+Package luatex.def Info: 5.2..5.1.a.5.png  used on input line 2616.
 (luatex.def)             Requested size: 404.71352pt x 150.70049pt.
 
 
@@ -2657,25 +2646,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [51<./5.2..5.1.a.5.png>]
-<observador_mejorado.jpg, id=909, 963.6pt x 478.03593pt>
+<observador_mejorado.jpg, id=910, 963.6pt x 478.03593pt>
 File: observador_mejorado.jpg Graphic file (type jpg)
 <use observador_mejorado.jpg>
-Package luatex.def Info: observador_mejorado.jpg  used on input line 2679.
+Package luatex.def Info: observador_mejorado.jpg  used on input line 2709.
 (luatex.def)             Requested size: 303.53513pt x 150.5821pt.
 File: observador_reducido_compacto.jpg Graphic file (type jpg)
 <use observador_reducido_compacto.jpg>
 Package luatex.def Info: observador_reducido_compacto.jpg  used on input line 2
-684.
+714.
 (luatex.def)             Requested size: 97.13345pt x 97.5567pt.
-<5.2.5.1.b.1.png, id=910, 714.41907pt x 268.00125pt>
+<5.2.5.1.b.1.png, id=911, 714.41907pt x 268.00125pt>
 File: 5.2.5.1.b.1.png Graphic file (type png)
 <use 5.2.5.1.b.1.png>
-Package luatex.def Info: 5.2.5.1.b.1.png  used on input line 2699.
+Package luatex.def Info: 5.2.5.1.b.1.png  used on input line 2729.
 (luatex.def)             Requested size: 404.71352pt x 151.82173pt.
-<5.2.5.1.b.3.png, id=911, 710.655pt x 269.50688pt>
+<5.2.5.1.b.3.png, id=912, 710.655pt x 269.50688pt>
 File: 5.2.5.1.b.3.png Graphic file (type png)
 <use 5.2.5.1.b.3.png>
-Package luatex.def Info: 5.2.5.1.b.3.png  used on input line 2705.
+Package luatex.def Info: 5.2.5.1.b.3.png  used on input line 2735.
 (luatex.def)             Requested size: 404.71352pt x 153.4848pt.
 
 
@@ -2687,20 +2676,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [52<./observador_mejorado.jpg><./5.2.5.1.b.1.png>]
-<5.2.5.1.b.2.png, id=920, 715.92468pt x 268.75406pt>
+<5.2.5.1.b.2.png, id=921, 715.92468pt x 268.75406pt>
 File: 5.2.5.1.b.2.png Graphic file (type png)
 <use 5.2.5.1.b.2.png>
-Package luatex.def Info: 5.2.5.1.b.2.png  used on input line 2715.
+Package luatex.def Info: 5.2.5.1.b.2.png  used on input line 2745.
 (luatex.def)             Requested size: 404.71352pt x 151.92834pt.
-<5.2.5.1.c.2.png, id=921, 716.6775pt x 262.73157pt>
+<5.2.5.1.c.2.png, id=922, 716.6775pt x 262.73157pt>
 File: 5.2.5.1.c.2.png Graphic file (type png)
 <use 5.2.5.1.c.2.png>
-Package luatex.def Info: 5.2.5.1.c.2.png  used on input line 2730.
+Package luatex.def Info: 5.2.5.1.c.2.png  used on input line 2760.
 (luatex.def)             Requested size: 404.71352pt x 148.36743pt.
-<5.2.5.1.c.3.png, id=922, 717.43031pt x 267.24844pt>
+<5.2.5.1.c.3.png, id=923, 717.43031pt x 267.24844pt>
 File: 5.2.5.1.c.3.png Graphic file (type png)
 <use 5.2.5.1.c.3.png>
-Package luatex.def Info: 5.2.5.1.c.3.png  used on input line 2738.
+Package luatex.def Info: 5.2.5.1.c.3.png  used on input line 2768.
 (luatex.def)             Requested size: 404.71352pt x 150.7632pt.
 
 
@@ -2721,20 +2710,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [54<./5.2.5.1.c.3.png>]
-<sensores_no_ideales.png, id=941, 404.15608pt x 393.03761pt>
+<sensores_no_ideales.png, id=942, 404.15608pt x 393.03761pt>
 File: sensores_no_ideales.png Graphic file (type png)
 <use sensores_no_ideales.png>
-Package luatex.def Info: sensores_no_ideales.png  used on input line 2870.
+Package luatex.def Info: sensores_no_ideales.png  used on input line 2900.
 (luatex.def)             Requested size: 303.53513pt x 295.20328pt.
 File: sensores_ideales_compacto.jpg Graphic file (type jpg)
 <use sensores_ideales_compacto.jpg>
-Package luatex.def Info: sensores_ideales_compacto.jpg  used on input line 2875
+Package luatex.def Info: sensores_ideales_compacto.jpg  used on input line 2905
 .
 (luatex.def)             Requested size: 78.91989pt x 249.51526pt.
-<5.2.5.d.1.png, id=942, 523.67953pt x 194.01715pt>
+<5.2.5.d.1.png, id=943, 523.67953pt x 194.01715pt>
 File: 5.2.5.d.1.png Graphic file (type png)
 <use 5.2.5.d.1.png>
-Package luatex.def Info: 5.2.5.d.1.png  used on input line 2895.
+Package luatex.def Info: 5.2.5.d.1.png  used on input line 2925.
 (luatex.def)             Requested size: 404.71352pt x 149.94725pt.
 
 
@@ -2746,20 +2735,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [55<./sensores_no_ideales.png>]
-<5.2.5.d.2.png, id=952, 710.655pt x 263.48438pt>
+<5.2.5.d.2.png, id=953, 710.655pt x 263.48438pt>
 File: 5.2.5.d.2.png Graphic file (type png)
 <use 5.2.5.d.2.png>
-Package luatex.def Info: 5.2.5.d.2.png  used on input line 2901.
+Package luatex.def Info: 5.2.5.d.2.png  used on input line 2931.
 (luatex.def)             Requested size: 404.71352pt x 150.05496pt.
-<5.2.5.d.3.png, id=953, 715.17188pt x 265.74281pt>
+<5.2.5.d.3.png, id=954, 715.17188pt x 265.74281pt>
 File: 5.2.5.d.3.png Graphic file (type png)
 <use 5.2.5.d.3.png>
-Package luatex.def Info: 5.2.5.d.3.png  used on input line 2915.
+Package luatex.def Info: 5.2.5.d.3.png  used on input line 2945.
 (luatex.def)             Requested size: 404.71352pt x 150.3842pt.
-<5.2.5.d.4.png, id=954, 526.45915pt x 194.01715pt>
+<5.2.5.d.4.png, id=955, 526.45915pt x 194.01715pt>
 File: 5.2.5.d.4.png Graphic file (type png)
 <use 5.2.5.d.4.png>
-Package luatex.def Info: 5.2.5.d.4.png  used on input line 2930.
+Package luatex.def Info: 5.2.5.d.4.png  used on input line 2960.
 (luatex.def)             Requested size: 404.71352pt x 149.15385pt.
 
 
@@ -2771,15 +2760,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [56<./5.2.5.d.1.png><./5.2.5.d.2.png><./5.2.5.d.3.png>]
-<5.2.5.d.5.png, id=965, 714.41907pt x 264.99pt>
+<5.2.5.d.5.png, id=966, 714.41907pt x 264.99pt>
 File: 5.2.5.d.5.png Graphic file (type png)
 <use 5.2.5.d.5.png>
-Package luatex.def Info: 5.2.5.d.5.png  used on input line 2936.
+Package luatex.def Info: 5.2.5.d.5.png  used on input line 2966.
 (luatex.def)             Requested size: 404.71352pt x 150.11588pt.
-<5.2.5.d.7.png, id=966, 528.68285pt x 196.24084pt>
+<5.2.5.d.7.png, id=967, 528.68285pt x 196.24084pt>
 File: 5.2.5.d.7.png Graphic file (type png)
 <use 5.2.5.d.7.png>
-Package luatex.def Info: 5.2.5.d.7.png  used on input line 2956.
+Package luatex.def Info: 5.2.5.d.7.png  used on input line 2986.
 (luatex.def)             Requested size: 404.71352pt x 150.23154pt.
 
 
@@ -2791,26 +2780,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [57<./5.2.5.d.4.png><./5.2.5.d.5.png>]
-<5.2.5.d.8.png, id=976, 713.66624pt x 263.48438pt>
+<5.2.5.d.8.png, id=977, 713.66624pt x 263.48438pt>
 File: 5.2.5.d.8.png Graphic file (type png)
 <use 5.2.5.d.8.png>
-Package luatex.def Info: 5.2.5.d.8.png  used on input line 2962.
+Package luatex.def Info: 5.2.5.d.8.png  used on input line 2992.
 (luatex.def)             Requested size: 404.71352pt x 149.41974pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2966--2972
+Underfull \hbox (badness 10000) in paragraph at lines 2996--3002
 
  []
 
 Missing character: There is no á (U+00E1) in font cmmi7!
 Missing character: There is no á (U+00E1) in font cmmi7!
-<5.2.5.e.1.png, id=977, 365.79738pt x 273.51416pt>
+<5.2.5.e.1.png, id=978, 365.79738pt x 273.51416pt>
 File: 5.2.5.e.1.png Graphic file (type png)
 <use 5.2.5.e.1.png>
-Package luatex.def Info: 5.2.5.e.1.png  used on input line 3006.
+Package luatex.def Info: 5.2.5.e.1.png  used on input line 3036.
 (luatex.def)             Requested size: 303.53513pt x 226.96661pt.
 File: modulador_tension_compacto.jpg Graphic file (type jpg)
 <use modulador_tension_compacto.jpg>
-Package luatex.def Info: modulador_tension_compacto.jpg  used on input line 301
+Package luatex.def Info: modulador_tension_compacto.jpg  used on input line 304
 1.
 (luatex.def)             Requested size: 97.13345pt x 141.77583pt.
 
@@ -2822,15 +2811,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [58<./5.2.5.d.7.png><./5.2.5.d.8.png>]
-<5.2.5.e.2.png, id=987, 525.90323pt x 195.68492pt>
+<5.2.5.e.2.png, id=988, 525.90323pt x 195.68492pt>
 File: 5.2.5.e.2.png Graphic file (type png)
 <use 5.2.5.e.2.png>
-Package luatex.def Info: 5.2.5.e.2.png  used on input line 3040.
+Package luatex.def Info: 5.2.5.e.2.png  used on input line 3070.
 (luatex.def)             Requested size: 404.71352pt x 150.59723pt.
-<5.2.5.e.3.png, id=988, 528.68285pt x 194.01715pt>
+<5.2.5.e.3.png, id=989, 528.68285pt x 194.01715pt>
 File: 5.2.5.e.3.png Graphic file (type png)
 <use 5.2.5.e.3.png>
-Package luatex.def Info: 5.2.5.e.3.png  used on input line 3050.
+Package luatex.def Info: 5.2.5.e.3.png  used on input line 3080.
 (luatex.def)             Requested size: 404.71352pt x 148.52919pt.
 
 
@@ -2842,10 +2831,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
 [59<./5.2.5.e.1.png><./5.2.5.e.2.png>]
-<5.2.6.png, id=999, 523.67953pt x 230.70808pt>
+<5.2.6.png, id=1000, 523.67953pt x 230.70808pt>
 File: 5.2.6.png Graphic file (type png)
 <use 5.2.6.png>
-Package luatex.def Info: 5.2.6.png  used on input line 3077.
+Package luatex.def Info: 5.2.6.png  used on input line 3107.
 (luatex.def)             Requested size: 505.88997pt x 222.87831pt.
 
 
@@ -2874,9 +2863,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-11.8471pt}.
 
-[62]
-("d:/FACULTAD/MATERIAS PENDIENTES/91 Automatica y Maquinas Electricas/LATEx/AyM
-E_proyecto/build/Informe.aux"
+[62] (c:/Users/brand/Documents/AyME_proyecto/AyME_proyecto/build/Informe.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
@@ -2897,32 +2884,32 @@ Package rerunfilecheck Info: File `Informe.out' has not changed.
 
 Here is how much of LuaTeX's memory you used:
  42955 strings out of 477545
- 156416,1977958 words of node,token memory allocated
- 2097 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 405 attribute, 131 glue_sp
-ec, 204 attribute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:2219,3:495,4:198,5:1349,6:142,7:10892,8:105,9:2188,10:19,1
-1:1461
- 62385 multiletter control sequences out of 65536+600000
- 98 fonts using 20314431 bytes
- 99i,15n,128p,1129b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<./calibri.ttf><C:/WINDOWS/Fonts/calibrib.ttf><C:/Users/alanv/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/alanv/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/alanv/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/a
-lanv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
-Users/alanv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/Users/alanv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr5.pfb><C:/Users/alanv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb><C:/Users/alanv/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Users/alanv/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy5.pfb><C:/Users/alanv/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/alanv/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/alanv/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Informe.pdf (63 pages, 4188255 bytes).
+ 125129,1977958 words of node,token memory allocated
+ 2123 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 414 attribute, 131 glue_sp
+ec, 208 attribute_list, 2 write, 2 pdf_action nodes
+   avail lists: 1:1,2:2207,3:494,4:198,5:1155,6:142,7:9135,8:105,9:2188,10:19,11
+:1299
+ 62383 multiletter control sequences out of 65536+600000
+ 98 fonts using 20131391 bytes
+ 99i,15n,128p,1092b,813s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<./calibri.ttf><//?/c:/windows/fonts/calibrib.ttf><C:/Users/brand/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/brand/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/bran
+d/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Use
+rs/brand/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
+<C:/Users/brand/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+10.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr5.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr7.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy5.pfb><C:/Users/brand/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/brand/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/brand/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Informe.pdf (63 pages, 4178931 bytes).
 
-PDF statistics: 1085 PDF objects out of 1200 (max. 8388607)
- 292 named destinations out of 1000 (max. 131072)
+PDF statistics: 1086 PDF objects out of 1200 (max. 8388607)
+ 294 named destinations out of 1000 (max. 131072)
  408 words of extra memory for PDF output out of 10000 (max. 100000000)
 

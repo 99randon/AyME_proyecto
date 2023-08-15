@@ -24,16 +24,16 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Funciones de transferencia para el modelo LTI}{21}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}Análisis de Estabilidad}{21}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Análisis de Observabilidad}{23}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Análisis de Controlabilidad}{24}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}Análisis de Controlabilidad}{25}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Simulación Dinámica}{25}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Respuesta del estado interno a pulso de consigna de tensión de estador en el eje $q$}{25}{subsubsection.2.6.1}%
 \contentsline {subsubsection}{\numberline {2.6.2}Velocidad y corriente final de establecimiento luego de cada transitorio}{32}{subsubsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}Comparación de distintas condiciones iniciales}{32}{subsubsection.2.6.3}%
-\contentsline {subsubsection}{\numberline {2.6.4}Field forcing/weakening}{34}{subsubsection.2.6.4}%
+\contentsline {subsubsection}{\numberline {2.6.3}Comparación de distintas condiciones iniciales}{33}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}Field forcing/weakening}{35}{subsubsection.2.6.4}%
 \contentsline {section}{\numberline {3}Diseño, análisis y simulación con controlador de movimiento en cascada con modulador de torque equivalente (Control Vectorial)}{37}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Modulador de torque equivalente (Controlador interno vectorial de corriente/torque)}{37}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Desacople de las realimentaciones de estado hacia la entrada}{37}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Diseño de lazos de control de corrientes}{38}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}Diseño de lazos de control de corrientes}{39}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Incorporación de consigna de torque}{40}{subsubsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.2}Controlador externo de movimiento (posición/velocidad)}{41}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Entrada de referencia o set-point}{44}{subsubsection.3.2.1}%
